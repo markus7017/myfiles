@@ -106,16 +106,22 @@ Every device has a channel group "device" with the following channels:
 |device    |uptime       |Number   |yes      |Number of seconds since the device was powered up                                |
 |          |lastUpdate   |DateTime |yes      |Timestamp of last update on any of the device's channel                          |
 |          |signal       |Number   |yes      |WiFi signal strength (RSSI)                                                      |
-|          |event        |Trigger  |yes      |JSON formatted event information, can be processed by a Rule Trigger             |
+|          |lastAlarm    |String   |yes      |Most recent alarm for health check                                               |
 
 
-### Event Channel (device#event)
 
-Every device has an event channel, which could be used to intercept the following the provided HTTP events
-- Button on/off - the button was pressed or release
-- Push short/long - the buton was pressed for a short period of time or a long one
-- Out on/off - the relay output was switched on/off
-- Sensor reported an update
+### Event Channel
+
+The binding maps the inbound http events into trigger events when enabled in the Thing Configuration
+
+|Event Type|Description|
+|----------|-------------------------------------------------------------------------------------------------------------------|
+|BTN_ON    |The Button was pressed                                                                                             |
+|BTN_OFF   |The Button was released                                                                                            |
+|SHORTPUSH |A short push to the button was detected  (requires FW 1.5.6)                                                       |
+|SHORTPUSH |A long push to the button was detected   (requires FW 1.5.6)                                                       |
+|OUT_ON    |Relais output is on                                                                                                |
+|OUT_OFF   |Relais output is off                                                                                               |
 
 The channel is implemented as a Trigger and could be used in a Rule:
 ```
