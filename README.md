@@ -221,7 +221,7 @@ Those alarms could be received through the event channel as a trigger.
 |roller    |control      |Rollershutter|r/w  |can be open (0%), stop, or close (100%); could also handle ON (open) and OFF (close)  |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                            |
 |          |rollerpos    |Number   |r/w      |Roller position: 100%=open...0%=closed; gets updated when the roller stops, see Notes |
-|          |direction    |String   |yes      |Last direction: open or close                                                         |
+|          |lastDirection|String   |yes      |Last direction: open or close                                                         |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                  |
 |          |event        |Trigger  |yes      |Triggers an event with a payload provinding more information, JSON format             |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                                    |
@@ -253,7 +253,7 @@ For this the binding aggregates the power consumption of both relays and include
 |roller    |control      |Rollershutter   |r/w      |can be open (0%), stop, or close (100%); could also handle ON (open) and OFF (close)|
 |          |rollerpos    |Dimmer  |r/w      |Roller position: 100%=open...0%=closed; gets updated when the roller stopped                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                                 |
-|          |direction    |String   |yes      |Last direction: open or close                                                              |
+|          |lastDirection|String   |yes      |Last direction: open or close                                                              |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                       |
 |          |calibrating  |Switch   |yes      |ON: Roller is in calibration mode, OFF: normal mode (no calibration)                       |
 |          |positioning  |Switch   |yes      |ON: Roller is positioning/moving                                                           |
