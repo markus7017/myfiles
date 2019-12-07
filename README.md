@@ -510,3 +510,5 @@ sitemap demo label="Home"
 }
 
 ```
+
+Tip: Formatting timestamps could be done by adding this pattern: [%1$tA, %1$td.%1$tm.%1$tY %1$tH:%1$tM]
