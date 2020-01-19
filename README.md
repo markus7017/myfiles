@@ -1,6 +1,6 @@
 # Shelly Binding
 
-This Binding integrates [Shelly devices](https://shelly.cloud/).
+This Binding integrated Shelly devices.
 
 ## Supported Devices
 
@@ -15,19 +15,19 @@ This Binding integrates [Shelly devices](https://shelly.cloud/).
 | shelly25-roller    | Shelly 2.5 in Roller Mode                              |
 | shelly4pro         | Shelly 4x Relay Switch                                 |
 | shellydimmer       | Shelly Dimmer                                          |
-| shellyplug         | Shelly Plug                                            |
 | shellyplugs        | Shelly Plug-S                                          |
+| shellyplug         | Shelly Plug                                            |
 | shellyrgbw2        | Shelly RGB Controller                                  |
 | shellybulb         | Shelly Bulb in Color or White Mode                     |
-| shellyht           | Shelly Sensor (temperature + humidity)                 |
+| shellyht           | Shelly Sensor (temp+humidity)                          |
 | shellyflood        | Shelly Flood Sensor                                    |
 | shellysmoke        | Shelly Smoke Sensor                                    |
 | shellysense        | Shelly Motion and IR Controller                        |
-| shellydevice       | A password protected device or an unknown type         |
+| shellydevice       | A password protected Shelly device or an unknown type  |
 
-### Firmware
+## Firmware
 
-To utilize all features, the binding requires firmware version 1.5.2 or newer.
+To utilize all features the binding requires firmware version 1.5.2 or newer.
 This should be available for all devices.
 Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices).
 
@@ -70,10 +70,8 @@ The binding has the following configuration options:
 |deviceIp          |IP address of the Shelly device                               |    yes  |none                                              |
 |userId            |The user id used for HTTP authentication                      |    no   |none                                              |
 |password          |Password for HTTP authentication*                             |    no   |none                                              |
-|lowBattery        |An alarm is raised when battery level is < this threshold     |    no   |20 (=20%), only for battery powered devices       |
-|weakSignal        |An alarm is raised when wifi signal strength is < this threshold  |    no   |-80 dBm                                           |
+|lowBattery        |Threshold for battery level. Set alert when level is below.   |    no   |20 (=20%), only for battery powered devices       |
 |updateInterval    |Interval for the background status check in seconds.          |    no   |1h for battery powered devices, 60s for all others|
-|brightnessAutoOn  |true: Setting brightness > 0 automatically turns on the device|    no   |true                                             |
 |eventsButton      |true: register event "trigger when a button is pushed"        |    no   |false                                             |
 |eventsPush        |true: register event "trigger on short and long push"         |    no   |false                                             |
 |eventsSwitch      |true: register event "trigger of switching the relay output"  |    no   |true                                              |
@@ -92,10 +90,10 @@ The binding has the following configuration options:
 
 Every device has a channel group `device` with the following channels:
 
-|Group     |Channel      |Type     |read-only|Description                                                                      |
+|Group     |Channel      |Type     |read-only|Desciption                                                                       |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |device    |uptime       |Number   |yes      |Number of seconds since the device was powered up                                |
-|          |wifiSignal   |Number   |yes      |WiFi signal strength (4=excellent, 3=good, 2=not strong, 1=unreliable, 0=none)   |
+|          |wifiSignal   |Number   |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
 |          |alarm        |Trigger  |yes      |Most recent alarm for health check                                               |
 
 
@@ -112,7 +110,7 @@ When an alarm condition is detected the channel alarm gets triggered and provide
 |OVER_LOAD   |An over load condition has been detected, e.g. from the roller motor.                                            |
 |OVER_POWER  |Maximum allowed power was exceeded. The relay was turned off.                                                    |
 |LOAD_ERROR  |Device reported a load problem.                                                                                  |
-|LOW_BATTERY |A low battery level was detected.                                                                                |
+|LOW_BATTERY |Device reported a load problem.                                                                                  |
 
 A new alarm will be triggered on a new condition or every 5 minutes if the condition persists.
 
@@ -127,14 +125,17 @@ end
 
 ### Shelly 1 (thing-type: shelly1)
 
-|Group     |Channel      |Type     |read-only|Description                                                                       |
+|Group     |Channel      |Type     |read-only|Desciption                                                                       |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to device)                 |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to device)                 |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to device)                 |
 
 ### Shelly 1PM (thing-type: shelly1pm)
 
-|Group     |Channel      |Type     |read-only|Description                                                                       |
+|Group     |Channel      |Type     |read-only|Desciption                                                                       |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
@@ -145,6 +146,9 @@ end
 |          |lastPower3   |Number   |yes      |Energy consumption in Watts for a round minute, 3 minutes ago                    |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to device)                 |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to device)                 |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to device)                 |
 
 ### Shelly EM (thing-type: shellyem)
 
@@ -172,16 +176,16 @@ end
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay1    |output       |Switch   |r/w      |Relay #1: Controls the relay's output channel (on/off)                           |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Relay #1: Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
 |          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |relay2    |output       |Switch   |r/w      |Relay #2: Controls the relay's output channel (on/off)                           |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Relay #2: Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
 |          |autoOn       |Number   |r/w      |Relay #2: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #2: Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |Relay #2: ON: An auto-on/off timer is active                                     |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |lastPower1   |Number   |yes      |Energy consumption in Watts for a round minute, 1 minute  ago                    |
 |          |lastPower2   |Number   |yes      |Energy consumption in Watts for a round minute, 2 minutes ago                    |
@@ -223,17 +227,17 @@ The Shelly 2.5 includes 2 meters, one for each channel.
 However, it doesn't make sense to differ power consumption for the roller moving up vs. moving down.
 For this the binding aggregates the power consumption of both relays and includes the values in "meter1".
 
-|Group     |Channel      |Type     |read-only|Description                                                                           |
-|----------|-------------|---------|---------|--------------------------------------------------------------------------------------|
-|roller    |control      |Rollershutter|r/w  |can be open (0%), stop, or close (100%); could also handle ON (open) and OFF (close)  |
-|          |rollerpos    |Dimmer  |r/w       |Roller position: 100%=open...0%=closed; gets updated when the roller stopped          |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                            |
-|          |lastDirection|String   |yes      |Last direction: open or close                                                         |
-|          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                  |
-|          |calibrating  |Switch   |yes      |ON: Roller is in calibration mode, OFF: normal mode (no calibration)                  |
-|          |positioning  |Switch   |yes      |ON: Roller is positioning/moving                                                      |
-|          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP            |
-|meter     |             |         |         |See group meter1 for Shelly 2                                                         |
+|Group     |Channel      |Type     |read-only|Description                                                                                |
+|----------|-------------|---------|---------|-------------------------------------------------------------------------------------------|
+|roller    |control      |Rollershutter   |r/w      |can be open (0%), stop, or close (100%); could also handle ON (open) and OFF (close)|
+|          |rollerpos    |Dimmer  |r/w      |Roller position: 100%=open...0%=closed; gets updated when the roller stopped                |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                                 |
+|          |lastDirection|String   |yes      |Last direction: open or close                                                              |
+|          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                       |
+|          |calibrating  |Switch   |yes      |ON: Roller is in calibration mode, OFF: normal mode (no calibration)                       |
+|          |positioning  |Switch   |yes      |ON: Roller is positioning/moving                                                           |
+|          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP                 |
+|meter     |             |         |         |See group meter1 for Shelly 2                                                              |
 
 ### Shelly4 Pro (thing-type: shelly4pro)
 
@@ -249,13 +253,6 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |meter2    |             |         |         |See group meter1 for Shelly 2                                                    |
 |meter3    |             |         |         |See group meter1 for Shelly 2                                                    |
 |meter4    |             |         |         |See group meter1 for Shelly 2                                                    |
-
-### Shelly Plug (thing-type: shellyplug)
-
-|Group     |Channel      |Type     |read-only|Description                                                                      |
-|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
-|relay     |             |         |         |See group relay1 for Shelly 2                                                    |
-|meter     |             |         |         |See group meter1 for Shelly 2                                                    |
 
 ### Shelly Plug-S (thing-type: shellyplugs)
 
@@ -313,11 +310,9 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
  
 ### Shelly RGBW2 in Color Mode (thing-type: shellyrgbw2-color)
 
-|Group     |Channel      |Type     |read-only|Description                                                             |
+|Group     |Channel      |Type     |read-only|Desciption                                                             |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |control   |power        |Switch   |r/w      |Switch light ON/OFF                                                    |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Relay #1: Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
@@ -335,12 +330,10 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 
 ### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-white)
 
-|Group     |Channel      |Type     |read-only|Description                                                             |
+|Group     |Channel      |Type     |read-only|Desciption                                                             |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |control   |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Relay #1: Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |channel1  |power        |Switch   |r/w      |Channel 1: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 1: Brightness: 0..100                                          |
@@ -417,8 +410,8 @@ Thing shelly:shelly25-relay:XXXXX4 "Shelly 25 Relay XXXXX4" @ "Dining Room" [dev
 Thing shelly:shelly25-relay:XXXXX5 "Shelly 25 Relay XXXXX5" @ "Bed Room" [deviceIp="x.x.x.x", userId="", password=""]
 
 /* Other *
-Thing shelly:shellyht:XXXXXX "ShellyChimenea" @ "lowerground" [ deviceIp="10.0.55.101", userId="", password="", lowBattery=15 , eventsCoIoT=true ]
-Thing shelly:shellyht:XXXXXX "ShellyDormitorio" @ "upperground" [ deviceIp="10.0.55.102", userId="", password="", lowBattery=15 , eventsCoIoT=true ]
+Thing shelly:shellyht:e01691 "ShellyChimenea" @ "lowerground" [ deviceIp="10.0.55.101", userId="", password="", lowBattery=15 , eventsCoIoT=true ]
+Thing shelly:shellyht:e01681 "ShellyDormitorio" @ "upperground" [ deviceIp="10.0.55.102", userId="", password="", lowBattery=15 , eventsCoIoT=true ]
 Thing shelly:shellyflood:XXXXXX "ShellyFlood" @ "cellar" [ deviceIp="10.0.0.103", userId="", password="", lowBattery=15, eventsSwitch=true, eventsButton=true, eventsCoIoT=true ]
 
 ```
