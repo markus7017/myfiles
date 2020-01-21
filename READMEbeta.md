@@ -28,13 +28,14 @@ At the moment I have 3 build locations
 - The official [2.5 SNAPSHOT build](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.0-SNAPSHOT/). Please be aware of limited stability.
 - My private [2.5 DEV build](https://github.com/markus7017/myfiles). This is the latest build, could be instable. Once initial testing has been done I checkin to the SNAPSHOT repo.
 
-**If you want to use the version released with openHAB 2.5 final**
+**If you want to use the version released with openHAB 2.5/2.5.1 final**
 - The final release could be installed as usual using PaperUI:Addons:Bindings:Shelly
 - This version works fine. However, in between some bugs (e.g. LOW_BATTERY alarm for sensor devices, input channels for Dimmers) has been fixed and new features are implemented (e.g. German translation). If you want to get access to these you need to switch to the dev/snapshot build - see below:
 
 If you want to use the SNAPSHOT/DEV build you can NOT install this using PaperUI. Make sure that the release version is not installed. You can NOT run the SNAPSHOT on top of the version you install with PaperUI.
 
 **2.4 & 2.5M3-M6 and DEV/SNAPSHOT users,** which want to use the latest 2.5 DEV/SNAPSHOT builds:
+- Make sure that the release version of the binding is not installed. If so user PaperUI:Addons to deinstall the release version. You can't install the DEV/SNAPSHOT builds using PaperUI.
 - Stop openHAB and wait a minute
 - Run "bundle:list | grep Gson" on the openHAB console and check if Gson 2.8.5 (or newer) is installed (sometimes version 2.7 is installed, which doesn't solve the dependencies).
 If not: Download the gson from http://central.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
