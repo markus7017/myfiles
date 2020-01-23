@@ -47,79 +47,21 @@
 
 ```
 {
-    "device": {
-        "type": "SHSW-PM",
-        "mac": "XXXXXXXX",
-        "hostname": "shelly1pm-XXXXXX",
-        "num_outputs": 1,
-        "num_meters": 1
-    },
-    "wifi_ap": {
-        "enabled": false,
-        "ssid": "shelly1pm-XXXXXX",
-        "key": ""
-    },
-    "wifi_sta": {
-        "enabled": true,
-        "ssid": "iot-wlan",
-        "ipv4_method": "dhcp",
-        "ip": null,
-        "gw": null,
-        "mask": null,
-        "dns": null
-    },
-    "wifi_sta1": {
-        "enabled": false,
-        "ssid": null,
-        "ipv4_method": "dhcp",
-        "ip": null,
-        "gw": null,
-        "mask": null,
-        "dns": null
-    },
-    "mqtt": {
-        "enable": false,
-        "server": "10.0.0.2:1883",
-        "user": "",
-        "id": "shelly1pm-XXXXXX",
-        "reconnect_timeout_max": 60.0,
-        "reconnect_timeout_min": 2.0,
-        "clean_session": true,
-        "keep_alive": 60,
-        "max_qos": 0,
-        "retain": false,
-        "update_period": 30
-    },
-    "sntp": {
-        "server": "time.google.com"
-    },
-    "login": {
-        "enabled": false,
-        "unprotected": false,
-        "username": "admin",
-        "password": "admin"
-    },
+    "device":    {"type": "SHSW-PM", "mac": "XXXXXXXX", "hostname": "shelly1pm-XXXXXX", "num_outputs": 1, "num_meters": 1},
+    "wifi_ap":   { "enabled": false, "ssid": "shelly1pm-XXXXXX", "key": ""},
+    "wifi_sta":  {"enabled": true, "ssid": "iot-wlan", "ipv4_method": "dhcp", "ip": null, "gw": null, "mask": null, "dns": null},
+    "wifi_sta1": { "enabled": false, "ssid": null, "ipv4_method": "dhcp", "ip": null, "gw": null, "mask": null, "dns": null},
+    "mqtt":      {"enable": false, "server": "10.0.0.2:1883", "user": "", "id": "shelly1pm-XXXXXX","reconnect_timeout_max": 60.0,"reconnect_timeout_min": 2.0,"clean_session": true,"keep_alive": 60,"max_qos": 0,"retain": false,"update_period": 30},
+    "sntp":      {"server": "time.google.com"},
+    "login":     {"enabled": false,"unprotected": false,"username": "admin","password": "admin"},
     "pin_code": "RPSR$p",
     "name": "",
     "fw": "20191127-095910/v1.5.6@0d769d69",
-    "build_info": {
-        "build_id": "20191127-095910/v1.5.6@0d769d69",
-        "build_timestamp": "2019-11-27T09:59:10Z",
-        "build_version": "1.0"
-    },
-    "cloud": {
-        "enabled": true,
-        "connected": true
-    },
-    "timezone": "Europe/Berlin",
-    "lat": 50.252491,
-    "lng": 5.779092,
-    "tzautodetect": false,
-    "time": "12:41",
-    "hwinfo": {
-        "hw_revision": "prod-190329",
-        "batch_id": 1
-    },
+    "build_info": {"build_id": "20191127-095910/v1.5.6@0d769d69","build_timestamp": "2019-11-27T09:59:10Z","build_version": "1.0"},
+    "cloud": {"enabled": true,"connected": true},
+    "timezone": "Europe/Berlin","lat": 50.252491,"lng": 5.779092,"tzautodetect": false,"time": "12:41",
+    "hwinfo": {"hw_revision": "prod-190329","batch_id": 1},
+
     "max_power": 3500,
     "mode": "relay",
     "relays": [
@@ -144,14 +86,9 @@
         }
     ],
     "meters": [
-        {
-            "power": 0.0,
-            "is_valid": true,
-            "timestamp": 1575117676,
-            "counters": [
-                0.0,
-                0.0,
-                0.0
+        {"power": 0.0,"is_valid": true,"timestamp": 1575117676,
+        	"counters": [
+                0.0,0.0,0.0
             ],
             "total": 2262
         }
@@ -318,10 +255,7 @@
 		{"power":0.00,"is_valid":true,"timestamp":1563292829,"counters":[0.000, 0.000, 0.000],"total":35473}
 	],
 	"update":{"status":"pending","has_update":true,"new_version":"20190711-084105/v1.5.0-hotfix4@3b4f7414","old_version":"20190531-075812/v1.5.0-hotfix2@022ec015"},
-	"ram_total":50264,"ram_free":37548,
-	"fs_size":233681,
-	"fs_free":155620,
-	"uptime":1352018
+	"ram_total":50264,"ram_free":37548,"fs_size":233681,"fs_free":155620,"uptime":1352018
 }
 ```
 
@@ -1529,7 +1463,16 @@ Firmware Version 1.5.2
 ### Shelly Sense /status
 
 ```
-{"wifi_sta":{"connected":true,"ssid":"iot-wlan","ip":"10.0.0.2","rssi":-69},"cloud":{"enabled":true,"connected":true},"mqtt":{"connected":false},"time":"19:32","serial":4768,"has_update":false,"mac":"XXXXXXXXXXXX","motion":false,"charger":true,"tmp":{"value":24.249284,"is_valid":true,"units":"C"},"hum":{"value":44.250477,"is_valid":true},"lux":{"value":12.987013,"is_valid":true},"bat":{"value":40},"update":{"status":"idle","has_update":false,"new_version":"20190821-095017/v1.5.2@4148d2b7","old_version":"20190821-095017/v1.5.2@4148d2b7"},"ram_total":51112,"ram_free":26848,"fs_size":83081,"fs_free":26857,"uptime":1823498}
+{
+	"wifi_sta":{"connected":true,"ssid":"iot-wlan","ip":"10.0.0.2","rssi":-69},
+	"cloud":{"enabled":true,"connected":true},
+	"mqtt":{"connected":false},
+	"time":"19:32","serial":4768,"has_update":false,"mac":"XXXXXXXXXXXX",
+	"motion":false,"charger":true,"tmp":{"value":24.249284,"is_valid":true,"units":"C"},
+	"hum":{"value":44.250477,"is_valid":true},
+	"lux":{"value":12.987013,"is_valid":true},"bat":{"value":40},
+	"update":{"status":"idle","has_update":false,"new_version":"20190821-095017/v1.5.2@4148d2b7","old_version":"20190821-095017/v1.5.2@4148d2b7"},
+	"ram_total":51112,"ram_free":26848,"fs_size":83081,"fs_free":26857,"uptime":1823498}
 ```
 
 ### Shelly Sense /ir/list
