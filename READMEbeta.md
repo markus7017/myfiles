@@ -50,7 +50,7 @@ Download https://repo1.maven.org/maven2/org/eclipse/californium/element-connecto
 - If you want to use the official SNAPSHOT release
 download https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.0-SNAPSHOT/org.openhab.binding.shelly-2.5.0-SNAPSHOT.jar
 OR
-If you want to use the latest DEV version download https://github.com/markus7017/myfiles/blob/master/org.openhab.binding.shelly-2.5.0-SNAPSHOT.jar?raw=true
+If you want to use the latest DEV version download https://github.com/markus7017/myfiles/blob/master/org.openhab.binding.shelly-2.5.2-SNAPSHOT.kar?raw=true
 Usually the DEV version is newer than the SNAPSHOT release from the above link.
 - Copy the downloaded jar into openHAB's addons folder.
 - Start openHAB and wait until it is fully initialized
