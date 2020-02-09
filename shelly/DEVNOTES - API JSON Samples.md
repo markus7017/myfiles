@@ -1549,7 +1549,68 @@ Firmware Version 1.5.2
 
 # COAP API JSON
 
+## Shelly Door / Window
 
+### Shelly DW /settings
+
+```
+{
+	“device”:{“type”:“SHDW-1”,“mac”:“XXXXXXXXX”,“hostname”:“shellydw-F3BXXX”,“sleep_mode”:true},
+	“wifi_ap”:{“enabled”:false,“ssid”:“shellydw-F3XXX”,“key”:""},
+	“wifi_sta”:{“enabled”:true,“ssid”:“XXXXXXXXX”,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
+	“wifi_sta1”:{“enabled”:false,“ssid”:null,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
+	“mqtt”: {“enable”:false,“server”:“192.168.33.3:1883”,“user”:"",“id”:“shellydw-F3B7F5”,“reconnect_timeout_max”:60.000000,“reconnect_timeout_min”:2.000000,“clean_session”:true,“keep_alive”:60,“max_qos”:0,“retain”:false,“update_period”:30},
+	“sntp”: {“server”:“time.google.com”},“login”:{“enabled”:false,“unprotected”:false,“username”:“xxxxx”,“password”:“XXXXX”},“pin_code”:“xxxx”,“name”:"",
+	“fw”:“20191216-090511/v1.5.7@c30657ba”,“build_info”:{“build_id”:“20191216-090511/v1.5.7@c30657ba”,“build_timestamp”:“2019-12-16T09:05:11Z”,“build_version”:“1.0”},
+	“cloud”:{“enabled”:true,“connected”:true},“timezone”:“Europe/Amsterdam”,“lat”:XX.XXXXX,“lng”:X.XXXXX,“tzautodetect”:true,“time”:“12:29”,
+	“dark_threshold”:100,
+	“twilight_threshold”:300,
+	“sleep_mode”:{“period”:6,“unit”:“h”},
+	“led_status_disable”:true,
+	“report_url”:"",
+	 “dark_url”:"", 
+	 “twilight_url”:""
+}
+```
+
+
+### Shelly DW /status
+output when door in OPEN state: 
+
+```
+{
+	“wifi_sta”:{“connected”:true,“ssid”:“XXXXXXX”,“ip”:“192.168.1.135”,“rssi”:-59},
+	“cloud”:{“enabled”:true,“connected”:true},
+	“mqtt”:{“connected”:false},“time”:“12:24”,“serial”:4,“has_update”:false,“mac”:“XXXXXXXXX”,
+	
+	“is_valid”:true,
+	“lux”:{“value”:30, “illumination”: “dark”, “is_valid”:true},
+	“sensor”:{“state”:“open”, “is_valid”:true},
+	“bat”:{“value”:100,“voltage”:6.38},
+	“act_reasons”:[“button”],
+	
+	“update”:{“status”:“idle”,“has_update”:false,“new_version”:“20191216-090511/v1.5.7@c30657ba”,“old_version”:“20191216-090511/v1.5.7@c30657ba”},
+	“ram_total”:50592,“ram_free”:39700,“fs_size”:233681,“fs_free”:162648,“uptime”:19
+}
+```
+
+Output when in closed state:
+
+```
+	...
+	“is_valid”:true,
+	“lux”:{“value”:5, “illumination”: “dark”, “is_valid”:true},
+	“sensor”:{“state”:“close”, “is_valid”:true},
+	“bat”:{“value”:100,“voltage”:6.38},
+	“act_reasons”:[“button”],
+	...
+```
+
+status values
+```
+state: open, close
+illumination:  dark, twilight, bright
+```
 
 
 ### Decoded Device Description
