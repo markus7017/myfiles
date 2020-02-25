@@ -1615,6 +1615,38 @@ illumination:  dark, twilight, bright
 
 ### Decoded Device Description
 
+# Shelly Duo
+
+## Duo /settings
+{
+	"device": {"type": "SHBDUO-1","mac": "BCDDC2663FCC","hostname": "ShellyBulbDuo-663FCC","num_outputs": 1},
+	"wifi_ap": {"enabled": false,"ssid": "ShellyBulbDuo-663FCC","key": ""},
+	"wifi_sta": {"enabled": true,"ssid": "IGI","ipv4_method": "dhcp","ip": null,"gw": null,"mask": null,"dns": null},
+	"wifi_sta1": {"enabled": false,"ssid": null,"ipv4_method": "dhcp","ip": null,"gw": null,"mask": null,"dns": null},
+	"mqtt": {"enable": false,"server": "192.168.33.3:1883","user": "","id": "ShellyBulbDuo-663FCC","reconnect_timeout_max": 60.0,"reconnect_timeout_min": 2.0,"clean_session": true,"keep_alive": 60,"max_qos": 0,"retain": false,"update_period": 30},
+	"coiot": {"update_period": 15},
+	"sntp": {"server": "time.google.com","enabled": true},
+	"login": {"enabled": false,"unprotected": false,"username": "admin","password": "admin"},
+	"pin_code": "Q*/lu&",
+	"name": "",
+	"fw": "20200224-150831/master@d594e05d",
+	"discoverable": true,
+	"build_info": {"build_id": "20200224-150831/master@d594e05d","build_timestamp": "2020-02-24T15:08:31Z","build_version": "1.0"},
+	"cloud": {"enabled": true,"connected": true},
+	"timezone": "Europe/Berlin","lat": 51.252491,"lng": 6.779092,"tzautodetect": false,"tz_utc_offset": 3600,"tz_dst": false,"tz_dst_auto": true,"time": "21:58","unixtime": 1582581485,
+	"hwinfo": {"hw_revision": "prod-2019-12","batch_id": 0},
+	"mode": "white",
+	"transition": 3000,
+	"lights": [
+		{"ison": false,"brightness": 22,"white": 0,"temp": 2700,"default_state": "last","auto_on": 0.0,"auto_off": 0.0,"schedule": false,"out_on_url": "","out_off_url": "","schedule_rules": []}
+	],
+	"night_mode": {"enabled": 0,"start_time": "00:00","end_time": "00:00","brightness": 0}
+}
+
+## Duo /status
+
+
+
 ```
 	id=0: Relay0
 	id=1: Relay1
