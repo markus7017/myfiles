@@ -1065,10 +1065,12 @@
 			"total": 0
 		}
 	]
-}```
+}
+```
 
 ### Shelly Plug-S: /status
 
+```
 {
 	"wifi_sta": {
 		"connected": true,
@@ -1191,8 +1193,8 @@ Shelly EM3 /settings
 
 ```
 {
-	"device":{"type":"SHEM-3","mac":"DC4F2276467A","hostname":"shellyem3-DC4F2276467A","num_outputs":1, "num_meters": 0, "num_emeters":3},
-	"wifi_ap":{"enabled":false,"ssid":"shellyem3-DC4F2276467A","key":""},
+	"device":{"type":"SHEM-3","mac":"XXXXXXXXXXXX","hostname":"shellyem3-XXXXXX","num_outputs":1, "num_meters": 0, "num_emeters":3},
+	"wifi_ap":{"enabled":false,"ssid":"shellyem3-XXXXXX","key":""},
 	"wifi_sta":{"enabled":true,"ssid":"xxxxx","ipv4_method":"static","ip":"xxx.xxx.xxx.xxx","gw":"xxx.xxx.xxx.xxx","mask":"255.255.255.0","dns":null},
 	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"mqtt": {"enable":true,"server":"xxx.xxx.xxx.xxx:1883","user":"xxx","id":"shellyem3-DC4F2276467A","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
@@ -1222,6 +1224,23 @@ Shelly EM3 /settings
 ```
 
 ### Shelly EM3 /status
+
+```
+{
+	"wifi_sta":{"connected":true,"ssid":"xxxxxx","ip":"xxx.xxx.xxx.xxx","rssi":-57},"cloud":{"enabled":false,"connected":false},
+	"mqtt":{"connected":true},"time":"08:23","serial":1,"has_update":false,"mac":"DC4F2276467A",
+	"relays":[
+		{"ison":false,"has_timer":false,"overpower":false,"is_valid":true}
+	],
+	"emeters":[
+		{"power":30.63,"pf":0.32,"current":0.40,"voltage":236.41,"is_valid":true,"total":26560.9,"total_returned":0.0},
+		{"power":316.27,"pf":0.69,"current":1.92,"voltage":237.27,"is_valid":true,"total":67514.3,"total_returned":0.0},
+		{"power":-56.44,"pf":-0.20,"current":1.21,"voltage":237.57,"is_valid":true,"total":21726.1,"total_returned":33183.2}
+	],
+	"fs_mounted":true,
+	"update":{"status":"idle","has_update":false,"new_version":"20200205-183800/master@fa9ba943","old_version":"20200205-183800/master@fa9ba943"},
+	"ram_total":48704,"ram_free":30744,"fs_size":233681,"fs_free":162146,"uptime":651613}
+```
 
 ### Shelly Dimmer /settings
 
@@ -1654,6 +1673,7 @@ illumination:  dark, twilight, bright
 # Shelly Duo
 
 ## Duo /settings
+```
 {
 	"device": {"type": "SHBDUO-1","mac": "BCDDC2663FCC","hostname": "ShellyBulbDuo-XXXXXX","num_outputs": 1},
 	"wifi_ap": {"enabled": false,"ssid": "ShellyBulbDuo-XXXXXX","key": ""},
@@ -1679,8 +1699,44 @@ illumination:  dark, twilight, bright
 	"night_mode": {"enabled": 0,"start_time": "00:00","end_time": "00:00","brightness": 0}
 }
 
+```
+
 ## Duo /status
 
+```
+{
+	"wifi_sta": {"connected": true, "ssid": "ShellyIoT","ip": "192.168.x.x","rssi": -64},
+	"cloud": {"enabled": true,"connected": true},"mqtt": {"connected": false},
+	"time": "21:57","unixtime": 1582581479,"serial": 30,"has_update": true,"mac": "BCDDC2663FCC",
+	"lights": [
+		{
+			"ison": false,
+			"has_timer": false,
+			"timer_remaining": 0,
+			"brightness": 22,
+			"white": 0,
+			"temp": 2700
+		}
+	],
+	"meters": [
+		{
+			"power": 0.0,
+			"is_valid": "true"
+		}
+	],
+	"update": {"status": "pending","has_update": true,"new_version": "20200129-155730/master@a18bfaec","old_version": "20200224-150831/master@d594e05d"},
+	"ram_total": 50488,"ram_free": 39784,"fs_size": 233681,"fs_free": 164154,"uptime": 19134
+}
+```
+
+## Duo Coap
+
+{“blk”:[{“I”:0,“D”:“Channel0”}],
+“sen”:[{“I”:111,“T”:“S”,“D”:“Brightness”,“R”:“0/100”,“L”:0}]}
+        {"I":141,"T":"White","R":"0/255","L":0},
+
+        {"I":161,"T":"Temp","R":"3000/6500","L":0},
+        {"I":171,"T":"Brightness","R":"0/100","L":0},
 
 
 ```
