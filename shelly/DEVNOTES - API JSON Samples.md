@@ -1187,6 +1187,42 @@
 }
 ```
 
+Shelly EM3 /settings
+
+```
+{
+	"device":{"type":"SHEM-3","mac":"DC4F2276467A","hostname":"shellyem3-DC4F2276467A","num_outputs":1, "num_meters": 0, "num_emeters":3},
+	"wifi_ap":{"enabled":false,"ssid":"shellyem3-DC4F2276467A","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"xxxxx","ipv4_method":"static","ip":"xxx.xxx.xxx.xxx","gw":"xxx.xxx.xxx.xxx","mask":"255.255.255.0","dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":true,"server":"xxx.xxx.xxx.xxx:1883","user":"xxx","id":"shellyem3-DC4F2276467A","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},
+	"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":true,"unprotected":false,"username":"xxxxx","password":"xxxxxxx"},
+	"pin_code":"","name":"",
+	"fw":"20200205-183800/master@fa9ba943","discoverable":false,"
+	build_info":{"build_id":"20200205-183800/master@fa9ba943","build_timestamp":"2020-02-05T18:38:00Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Amsterdam","lat":xx.xxxxxx,"lng":xx.xxxxxx,"tzautodetect":true,"tz_utc_offset":3600,"tz_dst":false,"tz_dst_auto":true,"time":"08:18",
+	"hwinfo":{"hw_revision":"prod-2020-1", "batch_id":1},
+	"max_power":120,
+	"relays":[
+		{	"name":null,"ison":false,"has_timer":false,"overpower":false,"default_state":"off","auto_on":0.00,"auto_off":0.00,
+			"max_power":0,"out_on_url":null,"out_off_url":null,"schedule":false,"schedule_rules":[]
+		}
+	],
+	"emeters":[
+		{"ctraf_type":50},
+		{"ctraf_type":120},
+		{"ctraf_type":120}]
+	}
+	 "update":{"status":"idle","has_update":false,"new_version":"20190821-095337/v1.5.2@4148d2b7","old_version":"20190821-095337/v1.5.2@4148d2b7"},
+	 "ram_total":49960,"ram_free":33784,"fs_size":233681,"fs_free":169425,"uptime":174189
+}
+```
+
+### Shelly EM3 /status
+
 ### Shelly Dimmer /settings
 
 ```
@@ -1619,11 +1655,11 @@ illumination:  dark, twilight, bright
 
 ## Duo /settings
 {
-	"device": {"type": "SHBDUO-1","mac": "BCDDC2663FCC","hostname": "ShellyBulbDuo-663FCC","num_outputs": 1},
-	"wifi_ap": {"enabled": false,"ssid": "ShellyBulbDuo-663FCC","key": ""},
-	"wifi_sta": {"enabled": true,"ssid": "IGI","ipv4_method": "dhcp","ip": null,"gw": null,"mask": null,"dns": null},
+	"device": {"type": "SHBDUO-1","mac": "BCDDC2663FCC","hostname": "ShellyBulbDuo-XXXXXX","num_outputs": 1},
+	"wifi_ap": {"enabled": false,"ssid": "ShellyBulbDuo-XXXXXX","key": ""},
+	"wifi_sta": {"enabled": true,"ssid": "ShellyIoT","ipv4_method": "dhcp","ip": null,"gw": null,"mask": null,"dns": null},
 	"wifi_sta1": {"enabled": false,"ssid": null,"ipv4_method": "dhcp","ip": null,"gw": null,"mask": null,"dns": null},
-	"mqtt": {"enable": false,"server": "192.168.33.3:1883","user": "","id": "ShellyBulbDuo-663FCC","reconnect_timeout_max": 60.0,"reconnect_timeout_min": 2.0,"clean_session": true,"keep_alive": 60,"max_qos": 0,"retain": false,"update_period": 30},
+	"mqtt": {"enable": false,"server": "192.168.x.x:1883","user": "","id": "ShellyBulbDuo-XXXXXX","reconnect_timeout_max": 60.0,"reconnect_timeout_min": 2.0,"clean_session": true,"keep_alive": 60,"max_qos": 0,"retain": false,"update_period": 30},
 	"coiot": {"update_period": 15},
 	"sntp": {"server": "time.google.com","enabled": true},
 	"login": {"enabled": false,"unprotected": false,"username": "admin","password": "admin"},
