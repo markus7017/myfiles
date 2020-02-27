@@ -9,6 +9,7 @@ This Binding integrated Shelly devices.
 | shelly1            | Shelly Single Relay Switch                             |
 | shelly1pm          | Shelly Single Relay Switch with integrated Power Meter |
 | shellyem           | Shelly EM with integrated Power Meter                  |
+| shellyem3          | Shelly EM3 with 3 integrated Power Meter               |
 | shelly2-relay      | Shelly Double Relay Switch in relay mode               |
 | shelly2-roller     | Shelly2 in Roller Mode                                 |
 | shelly25-relay     | Shelly 2.5 in Relay Switch                             |
@@ -170,6 +171,33 @@ end
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
+
+### Shelly EM3 (thing-type: shellyem3)
+
+|Group     |Channel      |Type     |read-only|Desciption                                                                       |
+|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
+|relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|meter1    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
+|          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
+|          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
+|          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
+|          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
+|meter2    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
+|          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
+|          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
+|          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
+|          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
+|meter3    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
+|          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
+|          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
+|          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
+|          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
+
 
 ### Shelly 2 - relay mode thing-type: shelly2-relay)
 
