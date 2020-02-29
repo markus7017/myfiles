@@ -8,7 +8,7 @@ This Binding integrated Shelly devices.
 |--------------------|--------------------------------------------------------|
 | shelly1            | Shelly Single Relay Switch                             |
 | shelly1pm          | Shelly Single Relay Switch with integrated Power Meter |
-| shellyem           | Shelly EM with integrated Power Meter                  |
+| shellyem           | Shelly EM with integrated Power Meters                 |
 | shellyem3          | Shelly EM3 with 3 integrated Power Meter               |
 | shelly2-relay      | Shelly Double Relay Switch in relay mode               |
 | shelly2-roller     | Shelly2 in Roller Mode                                 |
@@ -19,7 +19,7 @@ This Binding integrated Shelly devices.
 | shellyplugs        | Shelly Plug-S                                          |
 | shellyplug         | Shelly Plug                                            |
 | shellyrgbw2        | Shelly RGB Controller                                  |
-| shellybulb         | Shelly Bulb in Color or White Mode                     |
+| shellyduo          | Shelly Bulb in Color or White Mode                     |
 | shellybulb         | Shelly Duo (White Mode)                                |
 | shellyht           | Shelly Sensor (temp+humidity)                          |
 | shellyflood        | Shelly Flood Sensor                                    |
@@ -346,7 +346,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON: in sec            |
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |white     |             |         |         |Color settings: only valid in WHITE mode                               |
-|          |temperature  |Number   |r/w      |color temperature (K): 0..100% or 3000..6500                           |
+|          |temperature  |Number   |r/w      |color temperature (K): 0..100% or 2700..6500                           |
 |          |brightness   |Dimmer   |         |Brightness: 0..100% or 0..100                                          |
  
  ## Shelly RGBW2 in Color Mode (thing-type: shellyrgbw2-color)
