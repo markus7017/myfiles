@@ -1731,12 +1731,23 @@ illumination:  dark, twilight, bright
 
 ## Duo Coap
 
-{“blk”:[{“I”:0,“D”:“Channel0”}],
-“sen”:[{“I”:111,“T”:“S”,“D”:“Brightness”,“R”:“0/100”,“L”:0}]}
-        {"I":141,"T":"White","R":"0/255","L":0},
-
-        {"I":161,"T":"Temp","R":"3000/6500","L":0},
-        {"I":171,"T":"Brightness","R":"0/100","L":0},
+```
+{
+	"blk":[
+		{"I":0,"D":"Channel0"}
+	],
+	"sen":[
+		{"I":121,"T":"S","D":"State","R":"0/1","L":0},
+		{"I":111,"T":"S","D":"Brightness","R":"0/100","L":0},
+		{"I":131,"T":"S","D":"ColorTemperature","R":"2700/6500","L":0},
+		{"I":141,"T":"P","D":"Power","R":"0/9","L":0},
+		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
+		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
+		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
+		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0}
+	]
+}
+```
 
 
 ```
