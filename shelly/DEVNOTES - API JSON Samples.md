@@ -164,6 +164,30 @@
 }
 ```
 
+### 1PM Coap
+
+```
+{
+	"blk":[
+		{"I":0,"D":"Relay0"},
+		{"I":1,"D":"Sensors"}
+	],
+	"sen":[
+		{"I":111,"T":"P","D":"Power","R":"0/3500","L":0},
+		{"I":112,"T":"S","D":"Switch","R":"0/1","L":0},
+		{"I":113,"T":"tC","D":"Temperature C","R":"-40/300","L":0},
+		{"I":114,"T":"tF","D":"Temperature F","R":"-40/300","L":0},
+		{"I":115,"T":"S","D":"Overtemp","R":"0/1","L":0},
+		{"I":118,"T":"S","D":"Input","R":"0(off)/1(on)/2(longpush)","L":0},
+		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
+		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
+		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
+		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0},
+		{"I":119,"T":"tC","D":"External temperature C","R":"-55/125","L":1}
+	]
+}
+```
+
 ## Shelly2
  
 ### /settings
