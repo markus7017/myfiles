@@ -429,10 +429,7 @@
 	"mode": "relay",
 	"max_power": 1840,
 	"relays": [
-		{
-			"name": null,
-			"ison": false,
-			"has_timer": false,
+		{	"name": null, "ison": false, "has_timer": false,
 			"overpower": false,
 			"default_state": "off",
 			"btn_type": "edge",

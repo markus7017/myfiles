@@ -19,8 +19,8 @@ This Binding integrated Shelly devices.
 | shellyplugs        | Shelly Plug-S                                          |
 | shellyplug         | Shelly Plug                                            |
 | shellyrgbw2        | Shelly RGB Controller                                  |
-| shellyduo          | Shelly Bulb in Color or White Mode                     |
-| shellybulb         | Shelly Duo (White Mode)                                |
+| shellybulb         | Shelly Bulb in Color or White Mode                     |
+| shellybulbduo      | Shelly Duo (White Mode)                                |
 | shellyht           | Shelly Sensor (temp+humidity)                          |
 | shellyflood        | Shelly Flood Sensor                                    |
 | shellysmoke        | Shelly Smoke Sensor                                    |
@@ -29,7 +29,7 @@ This Binding integrated Shelly devices.
 
 ## Firmware
 
-To utilize all features the binding requires firmware version 1.5.2 or newer.
+To utilize all features the binding requires firmware version 1.5.7 or newer, version 1.6 is recommended.
 This should be available for all devices.
 Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices).
 
@@ -184,18 +184,24 @@ end
 |          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |current      |Number   |yes      |Current in A                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
 |meter2    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
 |          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |current      |Number   |yes      |Current in A                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
 |meter3    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
 |          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |current      |Number   |yes      |Current in A                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
 
 
@@ -337,7 +343,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |temperature  |Number   |r/w      |color temperature (K): 0..100% or 3000..6500                           |
 |          |brightness   |Dimmer   |         |Brightness: 0..100% or 0..100                                          |
  
-#### Shelly Duo (thing-type: shellyduo)
+#### Shelly Duo (thing-type: shellybulbduo)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -348,6 +354,12 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |white     |             |         |         |Color settings: only valid in WHITE mode                               |
 |          |temperature  |Number   |r/w      |color temperature (K): 0..100% or 2700..6500                           |
 |          |brightness   |Dimmer   |         |Brightness: 0..100% or 0..100                                          |
+|meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
+|          |lastPower1   |Number   |yes      |Energy consumption in Watts for a round minute, 1 minute  ago                    |
+|          |lastPower2   |Number   |yes      |Energy consumption in Watts for a round minute, 2 minutes ago                    |
+|          |lastPower3   |Number   |yes      |Energy consumption in Watts for a round minute, 3 minutes ago                    |
+|          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
+|          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
  
  ## Shelly RGBW2 in Color Mode (thing-type: shellyrgbw2-color)
 
