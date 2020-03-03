@@ -8,6 +8,7 @@
 |SHSW-PM|Shelly 1PM|
 |SHSW-21|Shelly 2|
 |SHSW-25|Shelly 2.5|
+|SHPLG-1|Shelly Plug|
 |SHPLG-S|Shelly Plug-S
 |SHEM|Shelly EM|
 |SHEM-3|Shelly EM3|
@@ -28,6 +29,7 @@
 | Device    | FW Version | Setting                   | Description                           |
 |-----------|------------|---------------------------|---------------------------------------|
 | General   | 1.6-rc4    | factory_reset_from_switch | When set to 1 the device doesn't reset when the butten/switch is pressed 5 times. You need to reset the device using the App. |
+| General   | 1.6-rc2    | discoverable              | true: device is shown in the App, false: device will be hinnen in the App | 
 
 ### /status
 
