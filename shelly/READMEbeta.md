@@ -15,40 +15,27 @@ This includes some general comments, information how to debug and request new fe
 
 IMPORTANT FOR 2.4 & 2.5M3-M6 users / Beta users:
 
-The 2.5 release version of the binding does no longer include the Californium libs. Those libraries are required to implement the CoIoT / Coap protocol. Those need to be installed on pre-2.5 final installations. openHAB 2.4 is still supported (at the moment), but 2.4 and 2.5 pre-releases require the installation of Gson 2.8.5 and the Californium libs.
+The 2.5 release version of the binding does no longer include the Californium libs. Those libraries are required to implement the CoIoT / Coap protocol.
 
 I'm waiting on the information how the official path going forward will be. At the moment it looks like having
-- one repo/branch for openHAB 3.0 and
-- one branch for 2.5 updates (backports from 3.0)
+- one repo/branch for openHAB 3.0 and- one branch for 2.5 updates (backports from 3.0)
 
 This will allow to provide fixes and enhancements for the time given until openHAB 3.0 becomes available (at least stable milestone builds).
 
 At the moment I have 3 build locations
 - The official openHAB 2.5 install package providing the released version when installing with PaperUI
-- The official [2.5 SNAPSHOT build](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.0-SNAPSHOT/). Please be aware of limited stability.
-- My private [2.5 DEV build](https://github.com/markus7017/myfiles). This is the latest build, could be instable. Once initial testing has been done I checkin to the SNAPSHOT repo.
+- The official [2.5.2 SNAPSHOT build](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.2-SNAPSHOT/). Please be aware of limited stability.
+- My private [2.5 DEV build](https://github.com/markus7017/myfiles/shelly). This is the latest build, could be instable. Oncethe PR has been merged it does into the official SNPSHOT build.
 
-**If you want to use the version released with openHAB 2.5/2.5.1 final**
-- The final release could be installed as usual using PaperUI:Addons:Bindings:Shelly
-- This version works fine. However, in between some bugs (e.g. LOW_BATTERY alarm for sensor devices, input channels for Dimmers) has been fixed and new features are implemented (e.g. German translation). If you want to get access to these you need to switch to the dev/snapshot build - see below:
+**If you want to use the version released with openHAB 2.5 final**
+- The official distro releases could be installed as usual using PaperUI:Addons:Bindings:Shelly. This version works fine. Make sure you updated to the 2.5.1-2 release.
+- However, in between some bugs (e.g. LOW_BATTERY alarm for sensor devices, input channels for Dimmers) has been fixed and new features are implemented (e.g. German translation). If you want to get access to these you need to switch to the dev/snapshot build - see below:
 
 If you want to use the SNAPSHOT/DEV build you can NOT install this using PaperUI. Make sure that the release version is not installed. You can NOT run the SNAPSHOT on top of the version you install with PaperUI.
 
-**2.4 & 2.5M3-M6 and DEV/SNAPSHOT users,** which want to use the latest 2.5 DEV/SNAPSHOT builds:
-- Make sure that the release version of the binding is not installed. If so user PaperUI:Addons to deinstall the release version. You can't install the DEV/SNAPSHOT builds using PaperUI.
-- Stop openHAB and wait a minute
-- Run "bundle:list | grep Gson" on the openHAB console and check if Gson 2.8.5 (or newer) is installed (sometimes version 2.7 is installed, which doesn't solve the dependencies).
-If not: Download the gson from http://central.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
-and copy the jar to the OH addons folder
-- Now install the Californium libs
-Run "bundle:list | grep Californium" and check if the libs are already installed (e.g. when the Tradfi binding 2.5 is also installed), otherwise
-Download https://repo1.maven.org/maven2/org/eclipse/californium/californium-core/2.0.0/californium-core-2.0.0.jar and copy to addons folder
-Download https://repo1.maven.org/maven2/org/eclipse/californium/element-connector/2.0.0/element-connector-2.0.0.jar and copy to addons folder
-
 **Install DEV/SNAPSHOT build of the binding**
-- Perform the above mentioned installation steps.
 - If you want to use the official SNAPSHOT release
-download https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.0-SNAPSHOT/org.openhab.binding.shelly-2.5.0-SNAPSHOT.jar
+download https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.2-SNAPSHOT/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar
 OR
 If you want to use the latest DEV version download https://github.com/markus7017/myfiles/blob/master/org.openhab.binding.shelly-2.5.2-SNAPSHOT.kar?raw=true
 Usually the DEV version is newer than the SNAPSHOT release from the above link.
@@ -84,16 +71,14 @@ If you hit a problem make sure to post a TRACE log (or send PM) so I could look 
 
 As described above the binding will be installed by copying the jar into the addons folder of your OH installation.
 Once a stable state is reached the binding may become part of the openHAB 2.5 distribution, but this will take some time.
-The binding was developed an tested on OH version 2.4 and 2.5. 
-Please post an info if you also verified compatibility to version 2.3.
-However, this release is not officially supported.
+The binding was developed an tested on OH version 2.5. It may still run on 2.4, but I'm no longer testing this.
 
 # Additional Notes
 
 ## General
 
-* You should use firmware version 1.5.2 or never.
-It might be that the binding is working with older versions, but this was never tested.
+* You should use firmware version 1.5.7 or never.  Consider to go to 1.6, it has various fixes and features for CoIoT and other new features,
+It might be that the binding is working with older versions, but thos will no longer supported.
 List of Firmware Versions for the different devices could be found here: https://api.shelly.cloud/files/firmware
 
 
@@ -118,12 +103,8 @@ Any comment or feature request is welcome. Post the idea to the community thread
 
 ## Other devices
 
-The thing definition of the following devices is primarily.
+Check the README.md for supported devices.
 If you have one of those devices send a PM to marks7017 and we could work on the implementation/testing.
-
-- thing-type: shellysmoke
-- thing-type: shellysense
-- thing-type: shellyplug
 
 ## Supporting new devices
 
