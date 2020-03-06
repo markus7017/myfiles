@@ -55,10 +55,6 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 -
 ### Installation
 
-- Open the OH console ("openhab-cli console") and run "bundle:list | grep Gson", check if GSon version 2.8.5 is installed
-```csv
-	245 │ Installed │  80 │ 2.8.5                  │ Gson
-```
 - Stop OH
 - copy californium-core-2.0.0.jar to OH's addons folder
 - copy element-connector-2.0.0.jar to OH's addons folder
@@ -68,7 +64,6 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 If everything was install correct a "bundle:list" output show be similar to this:
 
 ```csv
-245 │ Installed │  80 │ 2.8.5                  │ Gson
 246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
 247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
 248 │ Installed │  80 │ 2.5.0.201912112158     │ openHAB Add-ons :: Bundles :: Shelly Binding
