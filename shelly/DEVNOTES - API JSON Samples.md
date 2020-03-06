@@ -1797,6 +1797,7 @@ illumination:  dark, twilight, bright
 
 ## Plug /settings
 
+```
 {
 	"device": {"type": "SHPLG-1","mac": "000000000000","hostname": "shellyplug-000000","num_outputs": 1,"num_meters": 1},
     "wifi_ap": {"enabled": false,"ssid": "shellyplug-000000","key": ""},
@@ -1827,9 +1828,11 @@ illumination:  dark, twilight, bright
 		}
     ]
 }
+```
 
 ## Plug /status
 
+```
     {
     	"wifi_sta": {
 "connected": true,
@@ -1882,10 +1885,11 @@ illumination:  dark, twilight, bright
     	"fs_free": 18323,
     	"uptime": 301039
     }
-
+```
 
 ## Plug Coap /cit/d
 
+```
     {
     	"blk": [
 {
@@ -1932,9 +1936,11 @@ illumination:  dark, twilight, bright
 }
     	]
     }
+```
 
 ## Plug Coap /cit/s
 
+```
     {
     	"G": [
 [
@@ -1969,758 +1975,780 @@ illumination:  dark, twilight, bright
 ]
     	]
     }
+```
 
 # Shelly Sense FW 1.6
 
 ## Sense /settings
 
-    {
-    	"device": {
-"type": "SHSEN-1",
-"mac": "000000000000",
-"hostname": "shellysense-000000"
-    	},
-    	"wifi_ap": {
-"enabled": false,
-"ssid": "shellysense-000000",
-"key": ""
-    	},
-    	"wifi_sta": {
-"enabled": true,
-"ssid": "SSID",
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"wifi_sta1": {
-"enabled": false,
-"ssid": null,
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"mqtt": {
-"enable": false,
-"server": "192.168.33.3:1883",
-"user": "",
-"id": "shellysense-000000",
-"reconnect_timeout_max": 60,
-"reconnect_timeout_min": 2,
-"clean_session": true,
-"keep_alive": 60,
-"max_qos": 0,
-"retain": false,
-"update_period": 30
-    	},
-    	"coiot": {
-"update_period": 15
-    	},
-    	"sntp": {
-"server": "time.google.com",
-"enabled": true
-    	},
-    	"login": {
-"enabled": false,
-"unprotected": false,
-"username": "admin",
-"password": "admin"
-    	},
-    	"pin_code": "000000",
-    	"name": "",
-    	"fw": "20200228-153247/v1.6.0-rc4@a7a0b9f1",
-    	"discoverable": true,
-    	"build_info": {
-"build_id": "20200228-153247/v1.6.0-rc4@a7a0b9f1",
-"build_timestamp": "2020-02-28T15:32:47Z",
-"build_version": "1.0"
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"timezone": "Europe/Berlin",
-    	"lat": 0.000000,
-    	"lng": 0.000000,
-    	"tzautodetect": true,
-    	"tz_utc_offset": 3600,
-    	"tz_dst": false,
-    	"tz_dst_auto": true,
-    	"time": "19:10",
-    	"unixtime": 1583262620,
-    	"light_sensor": "NOA1305",
-    	"schedule": false,
-    	"schedule_rules": [],
-    	"sensors": {
-"motion_duration": 60,
-"motion_led": false,
-"temperature_unit": "C"
-    	}
-    }
+```
+{
+	"device": {
+		"type": "SHSEN-1",
+		"mac": "000000000000",
+		"hostname": "shellysense-000000"
+	},
+	"wifi_ap": {
+		"enabled": false,
+		"ssid": "shellysense-000000",
+		"key": ""
+	},
+	"wifi_sta": {
+		"enabled": true,
+		"ssid": "SSID",
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"wifi_sta1": {
+		"enabled": false,
+		"ssid": null,
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"mqtt": {
+		"enable": false,
+		"server": "192.168.33.3:1883",
+		"user": "",
+		"id": "shellysense-000000",
+		"reconnect_timeout_max": 60,
+		"reconnect_timeout_min": 2,
+		"clean_session": true,
+		"keep_alive": 60,
+		"max_qos": 0,
+		"retain": false,
+		"update_period": 30
+	},
+	"coiot": {
+		"update_period": 15
+	},
+	"sntp": {
+		"server": "time.google.com",
+		"enabled": true
+	},
+	"login": {
+		"enabled": false,
+		"unprotected": false,
+		"username": "admin",
+		"password": "admin"
+	},
+	"pin_code": "000000",
+	"name": "",
+	"fw": "20200228-153247/v1.6.0-rc4@a7a0b9f1",
+	"discoverable": true,
+	"build_info": {
+		"build_id": "20200228-153247/v1.6.0-rc4@a7a0b9f1",
+		"build_timestamp": "2020-02-28T15:32:47Z",
+		"build_version": "1.0"
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"timezone": "Europe/Berlin",
+	"lat": 0.0,
+	"lng": 0.0,
+	"tzautodetect": true,
+	"tz_utc_offset": 3600,
+	"tz_dst": false,
+	"tz_dst_auto": true,
+	"time": "19:10",
+	"unixtime": 1583262620,
+	"light_sensor": "NOA1305",
+	"schedule": false,
+	"schedule_rules": [],
+	"sensors": {
+		"motion_duration": 60,
+		"motion_led": false,
+		"temperature_unit": "C"
+	}
+}
+```
 
 ## Sense /status
 
-    {
-    	"wifi_sta": {
-"connected": true,
-"ssid": "SSID",
-"ip": "192.168.0.100",
-"rssi": -68
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"mqtt": {
-"connected": false
-    	},
-    	"time": "19:11",
-    	"unixtime": 1583262717,
-    	"serial": 30214,
-    	"has_update": true,
-    	"mac": "000000000000",
-    	"motion": true,
-    	"charger": false,
-    	"tmp": {
-"value": 24.389915,
-"is_valid": true,
-"units": "C"
-    	},
-    	"hum": {
-"value": 42.28691,
-"is_valid": true
-    	},
-    	"lux": {
-"value": 0,
-"is_valid": true
-    	},
-    	"bat": {
-"value": 99
-    	},
-    	"update": {
-"status": "pending",
-"has_update": true,
-"new_version": "20191216-090234/v1.5.7@c30657ba",
-"old_version": "20200228-153247/v1.6.0-rc4@a7a0b9f1"
-    	},
-    	"ram_total": 48020,
-    	"ram_free": 23804,
-    	"fs_size": 83081,
-    	"fs_free": 21335,
-    	"uptime": 300222
-    }
+```
+{
+	"wifi_sta": {
+		"connected": true,
+		"ssid": "SSID",
+		"ip": "192.168.0.100",
+		"rssi": -68
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"time": "19:11",
+	"unixtime": 1583262717,
+	"serial": 30214,
+	"has_update": true,
+	"mac": "000000000000",
+	"motion": true,
+	"charger": false,
+	"tmp": {
+		"value": 24.389915,
+		"is_valid": true,
+		"units": "C"
+	},
+	"hum": {
+		"value": 42.28691,
+		"is_valid": true
+	},
+	"lux": {
+		"value": 0,
+		"is_valid": true
+	},
+	"bat": {
+		"value": 99
+	},
+	"update": {
+		"status": "pending",
+		"has_update": true,
+		"new_version": "20191216-090234/v1.5.7@c30657ba",
+		"old_version": "20200228-153247/v1.6.0-rc4@a7a0b9f1"
+	},
+	"ram_total": 48020,
+	"ram_free": 23804,
+	"fs_size": 83081,
+	"fs_free": 21335,
+	"uptime": 300222
+}
+```
 
 ## Sense Coap /cit/d
 
-    {
-    	"blk": [
+```
 {
-	"I": 1,
-	"D": "Sensors"
+	"blk": [
+		{
+			"I": 1,
+			"D": "Sensors"
+		}
+	],
+	"sen": [
+		{
+			"I": 11,
+			"D": "Motion",
+			"T": "M",
+			"R": "0/1",
+			"L": 1
+		},
+		{
+			"I": 22,
+			"D": "Charger",
+			"T": "S",
+			"R": "0/1",
+			"L": 1
+		},
+		{
+			"I": 33,
+			"D": "Temperature",
+			"T": "T",
+			"R": "-40/125",
+			"L": 1
+		},
+		{
+			"I": 44,
+			"D": "Humidity",
+			"T": "H",
+			"R": "0/100",
+			"L": 1
+		},
+		{
+			"I": 66,
+			"D": "Lux",
+			"T": "L",
+			"R": "0/1",
+			"L": 1
+		},
+		{
+			"I": 77,
+			"D": "Battery",
+			"T": "B",
+			"R": "0/100",
+			"L": 1
+		}
+	]
 }
-    	],
-    	"sen": [
-{
-	"I": 11,
-	"D": "Motion",
-	"T": "M",
-	"R": "0/1",
-	"L": 1
-},
-{
-	"I": 22,
-	"D": "Charger",
-	"T": "S",
-	"R": "0/1",
-	"L": 1
-},
-{
-	"I": 33,
-	"D": "Temperature",
-	"T": "T",
-	"R": "-40/125",
-	"L": 1
-},
-{
-	"I": 44,
-	"D": "Humidity",
-	"T": "H",
-	"R": "0/100",
-	"L": 1
-},
-{
-	"I": 66,
-	"D": "Lux",
-	"T": "L",
-	"R": "0/1",
-	"L": 1
-},
-{
-	"I": 77,
-	"D": "Battery",
-	"T": "B",
-	"R": "0/100",
-	"L": 1
-}
-    	]
-    }
-
-   
+```
 
 ## Sense Coap /cit/s
 
-    {
-    	"G": [
-[
-	0,
-	11,
-	1
-],
-[
-	0,
-	22,
-	0
-],
-[
-	0,
-	33,
-	24.389915
-],
-[
-	0,
-	44,
-	42.46324
-],
-[
-	0,
-	66,
-	0.0
-],
-[
-	0,
-	77,
-	99
-]
-    	]
-    }
+```
+{
+	"G": [
+		[
+			0,
+			11,
+			1
+		],
+		[
+			0,
+			22,
+			0
+		],
+		[
+			0,
+			33,
+			24.389915
+		],
+		[
+			0,
+			44,
+			42.46324
+		],
+		[
+			0,
+			66,
+			0.0
+		],
+		[
+			0,
+			77,
+			99
+		]
+	]
+}
+```
 
 # Shelly Bulb FW 1.6
 
 ## Bulb /settings
 
-    {
-    	"device": {
-"type": "SHBLB-1",
-"mac": "000000000000",
-"hostname": "shellybulb-000000",
-"num_outputs": 1
-    	},
-    	"wifi_ap": {
-"enabled": false,
-"ssid": "shellybulb-000000",
-"key": ""
-    	},
-    	"wifi_sta": {
-"enabled": true,
-"ssid": "SSID",
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"wifi_sta1": {
-"enabled": false,
-"ssid": null,
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"mqtt": {
-"enable": false,
-"server": "192.168.33.3:1883",
-"user": "",
-"id": "shellybulb-000000",
-"reconnect_timeout_max": 60,
-"reconnect_timeout_min": 2,
-"clean_session": true,
-"keep_alive": 60,
-"max_qos": 0,
-"retain": false,
-"update_period": 30
-    	},
-    	"coiot": {
-"update_period": 15
-    	},
-    	"sntp": {
-"server": "time.google.com",
-"enabled": true
-    	},
-    	"login": {
-"enabled": false,
-"unprotected": false,
-"username": "admin",
-"password": "admin"
-    	},
-    	"pin_code": "000000",
-    	"name": "",
-    	"fw": "20200228-153004/v1.6.0-rc4@a7a0b9f1",
-    	"discoverable": true,
-    	"build_info": {
-"build_id": "20200228-153004/v1.6.0-rc4@a7a0b9f1",
-"build_timestamp": "2020-02-28T15:30:04Z",
-"build_version": "1.0"
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"timezone": "Europe/Berlin",
-    	"lat": 0.000000,
-    	"lng": 0.000000,
-    	"tzautodetect": true,
-    	"tz_utc_offset": 3600,
-    	"tz_dst": false,
-    	"tz_dst_auto": true,
-    	"time": "19:09",
-    	"unixtime": 1583262550,
-    	"hwinfo": {
-"hw_revision": "prod-1.3",
-"batch_id": 1
-    	},
-    	"mode": "color",
-    	"lights": [
+```
 {
-	"ison": false,
-	"red": 255,
-	"green": 0,
-	"blue": 0,
-	"white": 0,
-	"gain": 100,
-	"temp": 4750,
-	"brightness": 100,
-	"effect": 0,
-	"default_state": "off",
-	"auto_on": 0,
-	"auto_off": 0,
-	"power": 0,
-	"schedule": false,
-	"schedule_rules": []
+	"device": {
+		"type": "SHBLB-1",
+		"mac": "000000000000",
+		"hostname": "shellybulb-000000",
+		"num_outputs": 1
+	},
+	"wifi_ap": {
+		"enabled": false,
+		"ssid": "shellybulb-000000",
+		"key": ""
+	},
+	"wifi_sta": {
+		"enabled": true,
+		"ssid": "SSID",
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"wifi_sta1": {
+		"enabled": false,
+		"ssid": null,
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"mqtt": {
+		"enable": false,
+		"server": "192.168.33.3:1883",
+		"user": "",
+		"id": "shellybulb-000000",
+		"reconnect_timeout_max": 60,
+		"reconnect_timeout_min": 2,
+		"clean_session": true,
+		"keep_alive": 60,
+		"max_qos": 0,
+		"retain": false,
+		"update_period": 30
+	},
+	"coiot": {
+		"update_period": 15
+	},
+	"sntp": {
+		"server": "time.google.com",
+		"enabled": true
+	},
+	"login": {
+		"enabled": false,
+		"unprotected": false,
+		"username": "admin",
+		"password": "admin"
+	},
+	"pin_code": "000000",
+	"name": "",
+	"fw": "20200228-153004/v1.6.0-rc4@a7a0b9f1",
+	"discoverable": true,
+	"build_info": {
+		"build_id": "20200228-153004/v1.6.0-rc4@a7a0b9f1",
+		"build_timestamp": "2020-02-28T15:30:04Z",
+		"build_version": "1.0"
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"timezone": "Europe/Berlin",
+	"lat": 0.0,
+	"lng": 0.0,
+	"tzautodetect": true,
+	"tz_utc_offset": 3600,
+	"tz_dst": false,
+	"tz_dst_auto": true,
+	"time": "19:09",
+	"unixtime": 1583262550,
+	"hwinfo": {
+		"hw_revision": "prod-1.3",
+		"batch_id": 1
+	},
+	"mode": "color",
+	"lights": [
+		{
+			"ison": false,
+			"red": 255,
+			"green": 0,
+			"blue": 0,
+			"white": 0,
+			"gain": 100,
+			"temp": 4750,
+			"brightness": 100,
+			"effect": 0,
+			"default_state": "off",
+			"auto_on": 0,
+			"auto_off": 0,
+			"power": 0,
+			"schedule": false,
+			"schedule_rules": []
+		}
+	]
 }
-    	]
-    }
+```
 
 ## Bulb /status
 
-    {
-    	"wifi_sta": {
-"connected": true,
-"ssid": "SSID",
-"ip": "192.168.0.100",
-"rssi": -84
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"mqtt": {
-"connected": false
-    	},
-    	"time": "19:08",
-    	"unixtime": 1583262492,
-    	"serial": 4,
-    	"has_update": true,
-    	"mac": "000000000000",
-    	"lights": [
+```
 {
-	"ison": false,
-	"has_timer": false,
-	"timer_remaining": 0,
-	"mode": "color",
-	"red": 255,
-	"green": 0,
-	"blue": 0,
-	"white": 0,
-	"gain": 100,
-	"temp": 4750,
-	"brightness": 100,
-	"effect": 0
+	"wifi_sta": {
+		"connected": true,
+		"ssid": "SSID",
+		"ip": "192.168.0.100",
+		"rssi": -84
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"time": "19:08",
+	"unixtime": 1583262492,
+	"serial": 4,
+	"has_update": true,
+	"mac": "000000000000",
+	"lights": [
+		{
+			"ison": false,
+			"has_timer": false,
+			"timer_remaining": 0,
+			"mode": "color",
+			"red": 255,
+			"green": 0,
+			"blue": 0,
+			"white": 0,
+			"gain": 100,
+			"temp": 4750,
+			"brightness": 100,
+			"effect": 0
+		}
+	],
+	"meters": [
+		{
+			"power": 0,
+			"is_valid": "true"
+		}
+	],
+	"update": {
+		"status": "pending",
+		"has_update": true,
+		"new_version": "20191216-090015/v1.5.7@c30657ba",
+		"old_version": "20200228-153004/v1.6.0-rc4@a7a0b9f1"
+	},
+	"ram_total": 50816,
+	"ram_free": 36956,
+	"fs_size": 233681,
+	"fs_free": 164907,
+	"uptime": 264421
 }
-    	],
-    	"meters": [
-{
-	"power": 0,
-	"is_valid": "true"
-}
-    	],
-    	"update": {
-"status": "pending",
-"has_update": true,
-"new_version": "20191216-090015/v1.5.7@c30657ba",
-"old_version": "20200228-153004/v1.6.0-rc4@a7a0b9f1"
-    	},
-    	"ram_total": 50816,
-    	"ram_free": 36956,
-    	"fs_size": 233681,
-    	"fs_free": 164907,
-    	"uptime": 264421
-    }
+```
 
 ## Bulb Coap /cit/d
 
-    {
-    	"blk": [
+```
 {
-	"I": 0,
-	"D": "RGBW"
+	"blk": [
+		{
+			"I": 0,
+			"D": "RGBW"
+		}
+	],
+	"sen": [
+		{
+			"I": 111,
+			"T": "S",
+			"D": "Red",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "S",
+			"D": "Green",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 131,
+			"T": "S",
+			"D": "Blue",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 141,
+			"T": "S",
+			"D": "White",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 151,
+			"T": "S",
+			"D": "Gain",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 161,
+			"T": "S",
+			"D": "Temp",
+			"R": "3000/6500",
+			"L": 0
+		},
+		{
+			"I": 171,
+			"T": "S",
+			"D": "Brightness",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 181,
+			"T": "S",
+			"D": "VSwitch",
+			"R": "0/1",
+			"L": 0
+		}
+	]
 }
-    	],
-    	"sen": [
-{
-	"I": 111,
-	"T": "S",
-	"D": "Red",
-	"R": "0/255",
-	"L": 0
-},
-{
-	"I": 121,
-	"T": "S",
-	"D": "Green",
-	"R": "0/255",
-	"L": 0
-},
-{
-	"I": 131,
-	"T": "S",
-	"D": "Blue",
-	"R": "0/255",
-	"L": 0
-},
-{
-	"I": 141,
-	"T": "S",
-	"D": "White",
-	"R": "0/255",
-	"L": 0
-},
-{
-	"I": 151,
-	"T": "S",
-	"D": "Gain",
-	"R": "0/100",
-	"L": 0
-},
-{
-	"I": 161,
-	"T": "S",
-	"D": "Temp",
-	"R": "3000/6500",
-	"L": 0
-},
-{
-	"I": 171,
-	"T": "S",
-	"D": "Brightness",
-	"R": "0/100",
-	"L": 0
-},
-{
-	"I": 181,
-	"T": "S",
-	"D": "VSwitch",
-	"R": "0/1",
-	"L": 0
-}
-    	]
-    }
+```
 
 ## Bulb Coap /cit/s
 
-    {
-    	"G": [
-[
-	0,
-	111,
-	255
-],
-[
-	0,
-	121,
-	0
-],
-[
-	0,
-	131,
-	0
-],
-[
-	0,
-	141,
-	0
-],
-[
-	0,
-	151,
-	100
-],
-[
-	0,
-	161,
-	4750
-],
-[
-	0,
-	171,
-	100
-],
-[
-	0,
-	181,
-	0
-]
-    	]
-    }
+```
+{
+	"G": [
+		[
+			0,
+			111,
+			255
+		],
+		[
+			0,
+			121,
+			0
+		],
+		[
+			0,
+			131,
+			0
+		],
+		[
+			0,
+			141,
+			0
+		],
+		[
+			0,
+			151,
+			100
+		],
+		[
+			0,
+			161,
+			4750
+		],
+		[
+			0,
+			171,
+			100
+		],
+		[
+			0,
+			181,
+			0
+		]
+	]
+}
+```
 
 # Shelly EM FW 1.6
 
 ## EM /settings
 
-    {
-    	"device": {
-"type": "SHEM",
-"mac": "000000000000",
-"hostname": "shellyem-000000",
-"num_outputs": 1,
-"num_meters": 0,
-"num_emeters": 2
-    	},
-    	"wifi_ap": {
-"enabled": false,
-"ssid": "shellyem-000000",
-"key": ""
-    	},
-    	"wifi_sta": {
-"enabled": true,
-"ssid": "SSID",
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"wifi_sta1": {
-"enabled": false,
-"ssid": null,
-"ipv4_method": "dhcp",
-"ip": null,
-"gw": null,
-"mask": null,
-"dns": null
-    	},
-    	"mqtt": {
-"enable": false,
-"server": "192.168.33.3:1883",
-"user": "",
-"id": "shellyem-000000",
-"reconnect_timeout_max": 60,
-"reconnect_timeout_min": 2,
-"clean_session": true,
-"keep_alive": 60,
-"max_qos": 0,
-"retain": false,
-"update_period": 30
-    	},
-    	"coiot": {
-"update_period": 15
-    	},
-    	"sntp": {
-"server": "time.google.com",
-"enabled": true
-    	},
-    	"login": {
-"enabled": false,
-"unprotected": false,
-"username": "admin",
-"password": "admin"
-    	},
-    	"pin_code": "000000",
-    	"name": "",
-    	"fw": "20200228-153702/v1.6.0-rc4@a7a0b9f1",
-    	"discoverable": true,
-    	"build_info": {
-"build_id": "20200228-153702/v1.6.0-rc4@a7a0b9f1",
-"build_timestamp": "2020-02-28T15:37:02Z",
-"build_version": "1.0"
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"timezone": "Europe/Berlin",
-    	"lat": 0.000000,
-    	"lng": 0.000000,
-    	"tzautodetect": true,
-    	"tz_utc_offset": 3600,
-    	"tz_dst": false,
-    	"tz_dst_auto": true,
-    	"time": "19:13",
-    	"unixtime": 1583262781,
-    	"dual_phases_mode": false,
-    	"hwinfo": {
-"hw_revision": "prod-2019-06",
-"batch_id": 0
-    	},
-    	"max_power": 0,
-    	"relays": [
+```
 {
-	"name": null,
-	"ison": false,
-	"has_timer": false,
-	"overpower": false,
-	"default_state": "off",
-	"auto_on": 0,
-	"auto_off": 0,
+	"device": {
+		"type": "SHEM",
+		"mac": "000000000000",
+		"hostname": "shellyem-000000",
+		"num_outputs": 1,
+		"num_meters": 0,
+		"num_emeters": 2
+	},
+	"wifi_ap": {
+		"enabled": false,
+		"ssid": "shellyem-000000",
+		"key": ""
+	},
+	"wifi_sta": {
+		"enabled": true,
+		"ssid": "SSID",
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"wifi_sta1": {
+		"enabled": false,
+		"ssid": null,
+		"ipv4_method": "dhcp",
+		"ip": null,
+		"gw": null,
+		"mask": null,
+		"dns": null
+	},
+	"mqtt": {
+		"enable": false,
+		"server": "192.168.33.3:1883",
+		"user": "",
+		"id": "shellyem-000000",
+		"reconnect_timeout_max": 60,
+		"reconnect_timeout_min": 2,
+		"clean_session": true,
+		"keep_alive": 60,
+		"max_qos": 0,
+		"retain": false,
+		"update_period": 30
+	},
+	"coiot": {
+		"update_period": 15
+	},
+	"sntp": {
+		"server": "time.google.com",
+		"enabled": true
+	},
+	"login": {
+		"enabled": false,
+		"unprotected": false,
+		"username": "admin",
+		"password": "admin"
+	},
+	"pin_code": "000000",
+	"name": "",
+	"fw": "20200228-153702/v1.6.0-rc4@a7a0b9f1",
+	"discoverable": true,
+	"build_info": {
+		"build_id": "20200228-153702/v1.6.0-rc4@a7a0b9f1",
+		"build_timestamp": "2020-02-28T15:37:02Z",
+		"build_version": "1.0"
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"timezone": "Europe/Berlin",
+	"lat": 0.0,
+	"lng": 0.0,
+	"tzautodetect": true,
+	"tz_utc_offset": 3600,
+	"tz_dst": false,
+	"tz_dst_auto": true,
+	"time": "19:13",
+	"unixtime": 1583262781,
+	"dual_phases_mode": false,
+	"hwinfo": {
+		"hw_revision": "prod-2019-06",
+		"batch_id": 0
+	},
 	"max_power": 0,
-	"out_on_url": null,
-	"out_off_url": null,
-	"schedule": false,
-	"schedule_rules": []
+	"relays": [
+		{
+			"name": null,
+			"ison": false,
+			"has_timer": false,
+			"overpower": false,
+			"default_state": "off",
+			"auto_on": 0,
+			"auto_off": 0,
+			"max_power": 0,
+			"out_on_url": null,
+			"out_off_url": null,
+			"schedule": false,
+			"schedule_rules": []
+		}
+	],
+	"emeters": [
+		{
+			"ctraf_type": 50
+		},
+		{
+			"ctraf_type": 50
+		}
+	]
 }
-    	],
-    	"emeters": [
-{
-	"ctraf_type": 50
-},
-{
-	"ctraf_type": 50
-}
-    	]
-    }
+```
 
 ## EM /status
 
-    {
-    	"wifi_sta": {
-"connected": true,
-"ssid": "SSID",
-"ip": "192.168.0.100",
-"rssi": -72
-    	},
-    	"cloud": {
-"enabled": true,
-"connected": true
-    	},
-    	"mqtt": {
-"connected": false
-    	},
-    	"time": "19:12",
-    	"unixtime": 1583262750,
-    	"serial": 719,
-    	"has_update": true,
-    	"mac": "000000000000",
-    	"relays": [
+```
 {
-	"ison": false,
-	"has_timer": false,
-	"timer_remaining": 0,
-	"overpower": false,
-	"is_valid": true
+	"wifi_sta": {
+		"connected": true,
+		"ssid": "SSID",
+		"ip": "192.168.0.100",
+		"rssi": -72
+	},
+	"cloud": {
+		"enabled": true,
+		"connected": true
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"time": "19:12",
+	"unixtime": 1583262750,
+	"serial": 719,
+	"has_update": true,
+	"mac": "000000000000",
+	"relays": [
+		{
+			"ison": false,
+			"has_timer": false,
+			"timer_remaining": 0,
+			"overpower": false,
+			"is_valid": true
+		}
+	],
+	"emeters": [
+		{
+			"power": 0,
+			"reactive": 0,
+			"voltage": 232.83,
+			"is_valid": true,
+			"total": 51365.1,
+			"total_returned": 0
+		},
+		{
+			"power": 0,
+			"reactive": 0,
+			"voltage": 232.83,
+			"is_valid": true,
+			"total": 0,
+			"total_returned": 0
+		}
+	],
+	"update": {
+		"status": "pending",
+		"has_update": true,
+		"new_version": "20200206-083637/v1.5.10@e6a4205e",
+		"old_version": "20200228-153702/v1.6.0-rc4@a7a0b9f1"
+	},
+	"ram_total": 49744,
+	"ram_free": 33760,
+	"fs_size": 233681,
+	"fs_free": 161393,
+	"uptime": 300106
 }
-    	],
-    	"emeters": [
-{
-	"power": 0,
-	"reactive": 0,
-	"voltage": 232.83,
-	"is_valid": true,
-	"total": 51365.1,
-	"total_returned": 0
-},
-{
-	"power": 0,
-	"reactive": 0,
-	"voltage": 232.83,
-	"is_valid": true,
-	"total": 0,
-	"total_returned": 0
-}
-    	],
-    	"update": {
-"status": "pending",
-"has_update": true,
-"new_version": "20200206-083637/v1.5.10@e6a4205e",
-"old_version": "20200228-153702/v1.6.0-rc4@a7a0b9f1"
-    	},
-    	"ram_total": 49744,
-    	"ram_free": 33760,
-    	"fs_size": 233681,
-    	"fs_free": 161393,
-    	"uptime": 300106
-    }
+```
 
 ## EM Coap /cit/d
 
-    {
-    	"blk": [
+```
 {
-	"I": 0,
-	"D": "Relay0"
-},
-{
-	"I": 1,
-	"D": "Device"
+	"blk": [
+		{
+			"I": 0,
+			"D": "Relay0"
+		},
+		{
+			"I": 1,
+			"D": "Device"
+		}
+	],
+	"sen": [
+		{
+			"I": 112,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 111,
+			"T": "W",
+			"D": "Power",
+			"R": "0/2300",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "W",
+			"D": "Power",
+			"R": "0/2300",
+			"L": 1
+		}
+	]
 }
-    	],
-    	"sen": [
-{
-	"I": 112,
-	"T": "S",
-	"D": "State",
-	"R": "0/1",
-	"L": 0
-},
-{
-	"I": 111,
-	"T": "W",
-	"D": "Power",
-	"R": "0/2300",
-	"L": 0
-},
-{
-	"I": 121,
-	"T": "W",
-	"D": "Power",
-	"R": "0/2300",
-	"L": 1
-}
-    	]
-    }
+```
 
 ## EM Coap /cit/s
 
-    {
-    	"G": [
-[
-	0,
-	112,
-	0
-],
-[
-	0,
-	111,
-	0.0
-],
-[
-	0,
-	121,
-	0.0
-]
-    	]
-    }
-
+```
+{
+	"G": [
+		[
+			0,
+			112,
+			0
+		],
+		[
+			0,
+			111,
+			0.0
+		],
+		[
+			0,
+			121,
+			0.0
+		]
+	]
+}
+```
