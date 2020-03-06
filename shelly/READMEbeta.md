@@ -11,36 +11,46 @@ This includes some general comments, information how to debug and request new fe
 
 ---
 
-## Installing DEV/SNAPSHOT version
+--- 
 
-IMPORTANT FOR 2.4 & 2.5M3-M6 users / Beta users:
+DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the stability of your installation and cause backward compatibility issues. Do a full backup of your installation any time you do an update.
 
-The 2.5 release version of the binding does no longer include the Californium libs. Those libraries are required to implement the CoIoT / Coap protocol.
-
-I'm waiting on the information how the official path going forward will be. At the moment it looks like having
-- one repo/branch for openHAB 3.0 and- one branch for 2.5 updates (backports from 3.0)
-
-This will allow to provide fixes and enhancements for the time given until openHAB 3.0 becomes available (at least stable milestone builds).
-
-At the moment I have 3 build locations
-- The official openHAB 2.5 install package providing the released version when installing with PaperUI
-- The official [2.5.2 SNAPSHOT build](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.2-SNAPSHOT/). Please be aware of limited stability.
-- My private [2.5 DEV build](https://github.com/markus7017/myfiles/shelly). This is the latest build, could be instable. Oncethe PR has been merged it does into the official SNPSHOT build.
+## General Notes
 
 **If you want to use the version released with openHAB 2.5 final**
-- The official distro releases could be installed as usual using PaperUI:Addons:Bindings:Shelly. This version works fine. Make sure you updated to the 2.5.1-2 release.
-- However, in between some bugs (e.g. LOW_BATTERY alarm for sensor devices, input channels for Dimmers) has been fixed and new features are implemented (e.g. German translation). If you want to get access to these you need to switch to the dev/snapshot build - see below:
+The official distro releases could be installed as usual using PaperUI:Addons:Bindings:Shelly. This version works fine. Make sure you updated to the 2.5.1-2 core and 2.5.2 Addon releases.
+IMPORTANT: Version numbers of openHAB Core and Addons are different. Core has a frozen status on 2.5.1-2, whereas monthly updates are provided to the Addons, currently 2.5.2
 
-If you want to use the SNAPSHOT/DEV build you can NOT install this using PaperUI. Make sure that the release version is not installed. You can NOT run the SNAPSHOT on top of the version you install with PaperUI.
+If you want to use the SNAPSHOT/DEV build you can NOT install it using PaperUI. 
+Make sure that the release version is not installed. **You can NOT run the SNAPSHOT on top of the version you install with PaperUI.**
 
 **Install DEV/SNAPSHOT build of the binding**
 - If you want to use the official SNAPSHOT release
 download https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.2-SNAPSHOT/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar
-OR
-If you want to use the latest DEV version download https://github.com/markus7017/myfiles/blob/master/org.openhab.binding.shelly-2.5.2-SNAPSHOT.kar?raw=true
-Usually the DEV version is newer than the SNAPSHOT release from the above link.
-- Copy the downloaded jar into openHAB's addons folder.
-- Start openHAB and wait until it is fully initialized
+
+**OR**
+
+If you want to use the latest DEV version download https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar?raw=true
+Usually the DEV version is newer than the SNAPSHOT release.
+
+## Installing DEV/SNAPSHOT version
+
+### Download the following files
+- https://github.com/markus7017/myfiles/blob/master/shelly/californium-core-2.0.0.jar?raw=true
+- https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true
+- https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar?raw=true
+
+### Installation
+
+- Open OH console ("openhab-cli console") and run "bundle:list | grep GSon", check if GSon version 2.8.5 is installed
+```csv
+245 │ Installed │  80 │ 2.8.5                  │ Gson
+```
+- Stop OH
+- copy californium-core-2.0.0.jar to OH's addon folder
+- copy element-connector-2.0.0.jar to OH's addon folder
+- Start OH, wait until fully initialized
+- copy org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar to OH's addon folder
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
@@ -53,13 +63,14 @@ If everything was install correct a "bundle:list" output show be similar to this
 
 Please let me know if you have problems installing the new build or this doc can be improved.
 
-## Updating Alpha/Beta versions
+## Updating DEV version
 
 Channel definitions are subject to change with any alpha or beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
 - **remove all shelly entries from paperui**
 - stop oh2 service
-- openhab-cli clear-cache
+- run "openhab-cli clean-cache"
+  You might skip this step, but it has the risk to have left-overs in the cache
 - copy jar into addons (set correct permission)
 - start oh2 service
 - **re-discover things**
@@ -69,13 +80,12 @@ If you hit a problem make sure to post a TRACE log (or send PM) so I could look 
 
 ### Instalation
 
-As described above the binding will be installed by copying the jar into the addons folder of your OH installation.
-Once a stable state is reached the binding may become part of the openHAB 2.5 distribution, but this will take some time.
-The binding was developed an tested on OH version 2.5. It may still run on 2.4, but I'm no longer testing this.
 
-# Additional Notes
+## Additional Notes
 
-## General
+### General
+
+* The binding was developed an tested on OH version 2.5. It may still run on 2.4, but I'm no longer testing this.
 
 * You should use firmware version 1.5.7 or never.  Consider to go to 1.6, it has various fixes and features for CoIoT and other new features,
 It might be that the binding is working with older versions, but thos will no longer supported.
@@ -88,23 +98,30 @@ Open PaperUI and go to Configuration:System-:Network Settings and verify the sel
 If the Shelly devices are not on the same network you could try to add them manually.
 However, devices in different networks have not been tested yet (please post a comment in the community thread if you are successful).
 
-## Reporting a problem/bug
+### Reporting a problem/bug
 
-If you encounter a problem you could put the device into DEBUG or TRACE mode
+If you encounter a problem you could put the device into DEBUG or TRACE mode.
+Check the community thread first - maybe others already solved the problem: https://community.openhab.org/t/shelly-binding/
 
 - open OH console (execute "openhab-cli console")
-- set the debug level ("log:set DEBUG org.openhab.binding.shelly")
+- set the debug level ("log:set DEBUG org.openhab.binding.shelly" or "log:set TRACE org.openhab.binding.shelly" for even more details)
 - issue command or wait until problem occurs
-- post an extract of openhab.log to the community thread (or send the author a PM - make sure the log extract has enough information, some more lines are fine)
 
-## Feature Request
+Create a new Issue here: https://github.com/openhab/openhab-addons/issues
+Use [shelly] as prefix for the subject, add a specific title and exact description of the problem.
+You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
+
+### Feature Request
 
 Any comment or feature request is welcome. Post the idea to the community thread, all of us will benefit.
+Create a new Issue here: https://github.com/openhab/openhab-addons/issues
+Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
+You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
 
 ## Other devices
 
 Check the README.md for supported devices.
-If you have one of those devices send a PM to marks7017 and we could work on the implementation/testing.
+If you have one of those devices send me a PM and we could work on the implementation/testing.
 
 ## Supporting new devices
 
@@ -114,13 +131,14 @@ You could help to integrate and support new devices. In general the following in
 - http://&lt;device ip&gt;/settings
 - http://&lt;device ip&gt;/status
 
-once basic discovery is implemented the Coap Discription could be discovered
+once basic discovery is implemented the coapDiscription in the Thing properties is required
 
 - enable CoIoT events within the thing configuration
 - open the thing properties ([Show Properties])
 - and copy&amp;paste the coapDescr property
 
-post this information in the community thread or send a PM to the author.
-Depending on the device type and complexity of the integration you should be prepared to run test cycles with snapshort binds of the binding incl. back and forth communication with the author. 
+Create a new Issue here: https://github.com/openhab/openhab-addons/issues
+Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
+You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
 
 
