@@ -38,8 +38,8 @@
 		{"I": 118,"T": "S","D": "Input","R": "0/1/2","L": 0},
 		{"I": 211,"T": "S","D": "Energy counter 0 [W-min]","L": 0},
 		{"I": 212,"T": "S","D": "Energy counter 1 [W-min]","L": 0},
-		{	"I": 213,"T": "S", "D": "Energy counter 2 [W-min]", "L": 0},
-		{ "I": 214, "T": "S", "D": "Energy counter total [W-min]", "L": 0}
+		{"I": 213,"T": "S","D": "Energy counter 2 [W-min]", "L": 0},
+		{"I": 214,"T": "S","D": "Energy counter total [W-min]", "L": 0}
 	]
 }
 
@@ -169,26 +169,87 @@
 }
 ```
 
-### 1PM Coap
+### 1PM Coap FW 1.6
 
 ```
 {
-	"blk":[
-		{"I":0,"D":"Relay0"},
-		{"I":1,"D":"Sensors"}
+	"blk": [
+		{
+			"I": 0,
+			"D": "Relay0"
+		},
+		{
+			"I": 1,
+			"D": "Sensors"
+		}
 	],
-	"sen":[
-		{"I":111,"T":"P","D":"Power","R":"0/3500","L":0},
-		{"I":112,"T":"S","D":"Switch","R":"0/1","L":0},
-		{"I":113,"T":"tC","D":"Temperature C","R":"-40/300","L":0},
-		{"I":114,"T":"tF","D":"Temperature F","R":"-40/300","L":0},
-		{"I":115,"T":"S","D":"Overtemp","R":"0/1","L":0},
-		{"I":118,"T":"S","D":"Input","R":"0(off)/1(on)/2(longpush)","L":0},
-		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
-		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
-		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
-		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0},
-		{"I":119,"T":"tC","D":"External temperature C","R":"-55/125","L":1}
+	"sen": [
+		{
+			"I": 111,
+			"T": "P",
+			"D": "Power",
+			"R": "0/3500",
+			"L": 0
+		},
+		{
+			"I": 112,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 113,
+			"T": "T",
+			"D": "Temperature C",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 114,
+			"T": "T",
+			"D": "Temperature F",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 115,
+			"T": "S",
+			"D": "Overtemp",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 118,
+			"T": "S",
+			"D": "Input",
+			"R": "0(off)/1(on)/2(longpush)",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		}
 	]
 }
 ```
@@ -642,49 +703,138 @@
 }
 ```
 
-### Shelly 2.5 Coap Description
-
-
-```
-{"blk":[
-    {"I":0,"D":"Relay0"},{"I":1,"D":"Relay1"},
-    {"I":2,"D":"Device"}],"sen":[
-        {"I":112,"T":"S","D":"State","R":"0/1","L":0},
-        {"I":122,"T":"S","D":"State","R":"0/1","L":1},
-        {"I":111,"T":"W","D":"Power","R":"0/2300","L":0},
-        {"I":121,"T":"W","D":"Power","R":"0/2300","L":1},
-        {"I":113,"T":"S","D":"Position","R":"0/100","L":2}
-    ],
-    "act":[
-        {"I":211,"D":"Switch","L":0,"P":[{"I":2011,"D":"ToState","R":"0/1"}]},
-        {"I":221,"D":"Switch","L":1,"P":[{"I":2021,"D":"ToState","R":"0/1"}]}
-    ]
-}
-```
+### Shelly 2.5 Coap Description FW 1.6
 
 
 ```
 {
-    "blk":[
-        {"I":0,"D":"Relay0"},
-        {"I":1,"D":"Relay1"},
-        {"I":2,"D":"Device"}
-        ],
-    "sen":[
-        {"I":112,"T":"S","D":"State","R":"0/1","L":0},
-        {"I":122,"T":"S","D":"State","R":"0/1","L":1},
-        {"I":111,"T":"W","D":"Power","R":"0/3680","L":2},
-        {"I":113,"T":"S","D":"Position","R":"0/100","L":2}
-        ],
-    "act":[
-        {"I":211,"D":"Switch","L":0,"P":[
-            {"I":2011,"D":"ToState","R":"0/1"}
-            ]
-        },
-        {"I":221,"D":"Switch","L":1,"P":[
-            {"I":2021,"D":"ToState","R":"0/1"}
-            ]
-        }]
+	"blk": [
+		{
+			"I": 0,
+			"D": "Relay0"
+		},
+		{
+			"I": 1,
+			"D": "Relay1"
+		},
+		{
+			"I": 2,
+			"D": "Device"
+		}
+	],
+	"sen": [
+		{
+			"I": 112,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 122,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 1
+		},
+		{
+			"I": 111,
+			"T": "P",
+			"D": "Power",
+			"R": "0/2300",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "P",
+			"D": "Power",
+			"R": "0/2300",
+			"L": 1
+		},
+		{
+			"I": 118,
+			"T": "S",
+			"D": "Input",
+			"R": "0(off)/1(on)/2(longpush)",
+			"L": 0
+		},
+		{
+			"I": 128,
+			"T": "S",
+			"D": "Input",
+			"R": "0(off)/1(on)/2(longpush)",
+			"L": 1
+		},
+		{
+			"I": 115,
+			"T": "T",
+			"D": "Temperature C",
+			"R": "-40/300",
+			"L": 2
+		},
+		{
+			"I": 116,
+			"T": "T",
+			"D": "Temperature F",
+			"R": "-40/300",
+			"L": 2
+		},
+		{
+			"I": 117,
+			"T": "S",
+			"D": "Overtemp",
+			"R": "0/1",
+			"L": 2
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		},
+		{
+			"I": 221,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 1
+		},
+		{
+			"I": 222,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 1
+		},
+		{
+			"I": 223,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 1
+		},
+		{
+			"I": 224,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 1
+		}
+	]
 }
 ```
 
@@ -1156,24 +1306,79 @@
 }
 ```
 
-### ### Shelly Plug-S Coap Description
+### Shelly Plug-S Coap Description FW 1.6
 
 ```
 {
-    “blk”:[
-        {“I”:0,“D”:“Relay0”}
-    ],
-    “sen”:[
-        {“I”:111,“T”:“W”,“R”:“0/2500”,“L”:0},
-        {“I”:112,“T”:“Switch”,“R”:“0/1”,“L”:0},
-        {“I”:113,“T”:“tC”,“R”:"-40/300",“L”:0},
-        {“I”:114,“T”:“tF”,“R”:"-40/300",“L”:0},
-        {“I”:115,“T”:“Overtemp”,“R”:“0/1”,“L”:0}
-     ],
-     “act”:[{“I”:211,“D”:“Switch”,“L”:0,“P”:[{“I”:2011,“D”:“ToState”,“R”:“0/1”}]}]
- }
- 
- ```
+	"blk": [
+		{
+			"I": 0,
+			"D": "Relay0"
+		}
+	],
+	"sen": [
+		{
+			"I": 111,
+			"T": "P",
+			"D": "Power",
+			"R": "0/2500",
+			"L": 0
+		},
+		{
+			"I": 112,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 113,
+			"T": "T",
+			"D": "Temperature C",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 114,
+			"T": "T",
+			"D": "Temperature F",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 115,
+			"T": "S",
+			"D": "Overtemp",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		}
+	]
+} 
+```
 
 ## Shelly EM
 
@@ -1322,6 +1527,72 @@ Shelly EM3 /settings
 }
 ```
 
+### Shelly Dimmer Coap Description FW 1.6
+
+```
+{
+	"blk": [
+		{
+			"I": 0,
+			"D": "Dimmer"
+		}
+	],
+	"sen": [
+		{
+			"I": 111,
+			"T": "S",
+			"D": "Brightness",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "S",
+			"D": "Output",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 131,
+			"T": "S",
+			"D": "Input",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 141,
+			"T": "S",
+			"D": "Input",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		}
+	]
+}
+```
 
 ## Shelly Bulb
 
@@ -1476,6 +1747,76 @@ Firmware Version 1.5.2
 	"ram_total":50448,"ram_free":35824,"fs_size":233681,"fs_free":162648,"uptime":30380
 }
 ```
+### RGBW2 Color Mode Coap Description FW 1.6
+
+```
+{
+	"blk": [
+		{
+			"I": 0,
+			"D": "RGBW2"
+		}
+	],
+	"sen": [
+		{
+			"I": 118,
+			"T": "S",
+			"D": "Input",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 111,
+			"T": "S",
+			"D": "Red",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "S",
+			"D": "Green",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 131,
+			"T": "S",
+			"D": "Blue",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 141,
+			"T": "S",
+			"D": "White",
+			"R": "0/255",
+			"L": 0
+		},
+		{
+			"I": 151,
+			"T": "S",
+			"D": "Gain",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 161,
+			"T": "S",
+			"D": "VSwitch",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "P",
+			"D": "Power",
+			"R": "0/288",
+			"L": 0
+		}
+	]
+}
+```
 
 ### RGBW2 /settings in white mode
 
@@ -1530,6 +1871,112 @@ Firmware Version 1.5.2
 	"update":{"status":"idle","has_update":false,"new_version":"20190711-084448/v1.5.0-hotfix4@3b4f7414","old_version":"20190711-084448/v1.5.0-hotfix4@3b4f7414"},
 	"ram_total":50448,"ram_free":35360,"fs_size":233681,"fs_free":162648,
 	"uptime":7201
+}
+```
+
+### RGBW2 White Mode Coap Descritpion FW 1.6
+
+```
+{
+	"blk": [
+		{
+			"I": 0,
+			"D": "RGBW2"
+		}
+	],
+	"sen": [
+		{
+			"I": 118,
+			"T": "S",
+			"D": "Input",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 111,
+			"T": "S",
+			"D": "Brightness_0",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 121,
+			"T": "S",
+			"D": "Brightness_1",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 131,
+			"T": "S",
+			"D": "Brightness_2",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 141,
+			"T": "S",
+			"D": "Brightness_3",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 151,
+			"T": "S",
+			"D": "VSwitch_0",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 161,
+			"T": "S",
+			"D": "VSwitch_1",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 171,
+			"T": "S",
+			"D": "VSwitch_2",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 181,
+			"T": "S",
+			"D": "VSwitch_3",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "P",
+			"D": "Power_0",
+			"R": "0/288",
+			"L": 0
+		},
+		{
+			"I": 221,
+			"T": "P",
+			"D": "Power_1",
+			"R": "0/288",
+			"L": 0
+		},
+		{
+			"I": 231,
+			"T": "P",
+			"D": "Power_2",
+			"R": "0/288",
+			"L": 0
+		},
+		{
+			"I": 241,
+			"T": "P",
+			"D": "Power_3",
+			"R": "0/288",
+			"L": 0
+		}
+	]
 }
 ```
 
@@ -1755,22 +2202,69 @@ illumination:  dark, twilight, bright
 }
 ```
 
-## Duo Coap
+## Duo Coap FW 1.6
 
 ```
 {
-	"blk":[
-		{"I":0,"D":"Channel0"}
+	"blk": [
+		{
+			"I": 0,
+			"D": "Channel0"
+		}
 	],
-	"sen":[
-		{"I":121,"T":"S","D":"State","R":"0/1","L":0},
-		{"I":111,"T":"S","D":"Brightness","R":"0/100","L":0},
-		{"I":131,"T":"S","D":"ColorTemperature","R":"2700/6500","L":0},
-		{"I":141,"T":"P","D":"Power","R":"0/9","L":0},
-		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
-		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
-		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
-		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0}
+	"sen": [
+		{
+			"I": 121,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 111,
+			"T": "S",
+			"D": "Brightness",
+			"R": "0/100",
+			"L": 0
+		},
+		{
+			"I": 131,
+			"T": "S",
+			"D": "ColorTemperature",
+			"R": "2700/6500",
+			"L": 0
+		},
+		{
+			"I": 141,
+			"T": "P",
+			"D": "Power",
+			"R": "0/9",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		}
 	]
 }
 ```
@@ -1887,94 +2381,132 @@ illumination:  dark, twilight, bright
     }
 ```
 
-## Plug Coap /cit/d
+## Plug Coap /cit/d FW 1.6
 
 ```
-    {
-    	"blk": [
 {
-	"I": 0,
-	"D": "Relay0"
+	"blk": [
+		{
+			"I": 0,
+			"D": "Relay0"
+		}
+	],
+	"sen": [
+		{
+			"I": 111,
+			"T": "P",
+			"D": "Power",
+			"R": "0/2500",
+			"L": 0
+		},
+		{
+			"I": 112,
+			"T": "S",
+			"D": "State",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 113,
+			"T": "T",
+			"D": "Temperature C",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 114,
+			"T": "T",
+			"D": "Temperature F",
+			"R": "-40/300",
+			"L": 0
+		},
+		{
+			"I": 115,
+			"T": "S",
+			"D": "Overtemp",
+			"R": "0/1",
+			"L": 0
+		},
+		{
+			"I": 211,
+			"T": "S",
+			"D": "Energy counter 0 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 212,
+			"T": "S",
+			"D": "Energy counter 1 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 213,
+			"T": "S",
+			"D": "Energy counter 2 [W-min]",
+			"L": 0
+		},
+		{
+			"I": 214,
+			"T": "S",
+			"D": "Energy counter total [W-min]",
+			"L": 0
+		}
+	]
 }
-    	],
-    	"sen": [
+```
+
+## Plug Coap /cit/s FW 1.6
+
+```
 {
-	"I": 111,
-	"T": "W",
-	"R": "",
-	"L": 0
-},
-{
-	"I": 112,
-	"T": "Switch",
-	"R": "0/1",
-	"L": 0
-},
-{
-	"I": 211,
-	"T": "S",
-	"D": "Energy counter 0 [W-min]",
-	"L": 0
-},
-{
-	"I": 212,
-	"T": "S",
-	"D": "Energy counter 1 [W-min]",
-	"L": 0
-},
-{
-	"I": 213,
-	"T": "S",
-	"D": "Energy counter 2 [W-min]",
-	"L": 0
-},
-{
-	"I": 214,
-	"T": "S",
-	"D": "Energy counter total [W-min]",
-	"L": 0
+	"G": [
+		[
+			0,
+			111,
+			0.0
+		],
+		[
+			0,
+			112,
+			0
+		],
+		[
+			0,
+			113,
+			33.57
+		],
+		[
+			0,
+			114,
+			92.42
+		],
+		[
+			0,
+			115,
+			0
+		],
+		[
+			0,
+			211,
+			0.0
+		],
+		[
+			0,
+			212,
+			0.0
+		],
+		[
+			0,
+			213,
+			0.0
+		],
+		[
+			0,
+			214,
+			390
+		]
+	]
 }
-    	]
-    }
-```
-
-## Plug Coap /cit/s
-
-```
-    {
-    	"G": [
-[
-	0,
-	111,
-	1.651659
-],
-[
-	0,
-	112,
-	1
-],
-[
-	0,
-	211,
-	0.0
-],
-[
-	0,
-	212,
-	0.0
-],
-[
-	0,
-	213,
-	0.0
-],
-[
-	0,
-	214,
-	423986
-]
-    	]
-    }
 ```
 
 # Shelly Sense FW 1.6
