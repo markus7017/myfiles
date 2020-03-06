@@ -114,6 +114,7 @@ You might want to send me a PM to give me a heads-up that there is a new Issue, 
 ### Feature Request
 
 Any comment or feature request is welcome. Post the idea to the community thread, all of us will benefit.
+
 Create a new Issue here: https://github.com/openhab/openhab-addons/issues
 Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
 You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
@@ -123,15 +124,13 @@ You might want to send me a PM to give me a heads-up that there is a new Issue, 
 Check the README.md for supported devices.
 If you have one of those devices send me a PM and we could work on the implementation/testing.
 
-## Supporting new devices
-
 You could help to integrate and support new devices. In general the following information is a good start
 
 - open a browser and issue the following urls
 - http://&lt;device ip&gt;/settings
 - http://&lt;device ip&gt;/status
 
-once basic discovery is implemented the coapDiscription in the Thing properties is required
+Once basic discovery is implemented the coapDiscription in the Thing properties is required
 
 - enable CoIoT events within the thing configuration
 - open the thing properties ([Show Properties])
@@ -140,5 +139,4 @@ once basic discovery is implemented the coapDiscription in the Thing properties 
 Create a new Issue here: https://github.com/openhab/openhab-addons/issues
 Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
 You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
-
 
