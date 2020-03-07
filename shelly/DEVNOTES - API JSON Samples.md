@@ -1532,64 +1532,17 @@ Shelly EM3 /settings
 ```
 {
 	"blk": [
-		{
-			"I": 0,
-			"D": "Dimmer"
-		}
+		{	"I": 0,"D": "Dimmer"}
 	],
 	"sen": [
-		{
-			"I": 111,
-			"T": "S",
-			"D": "Brightness",
-			"R": "0/100",
-			"L": 0
-		},
-		{
-			"I": 121,
-			"T": "S",
-			"D": "Output",
-			"R": "0/1",
-			"L": 0
-		},
-		{
-			"I": 131,
-			"T": "S",
-			"D": "Input",
-			"R": "0/1",
-			"L": 0
-		},
-		{
-			"I": 141,
-			"T": "S",
-			"D": "Input",
-			"R": "0/1",
-			"L": 0
-		},
-		{
-			"I": 211,
-			"T": "S",
-			"D": "Energy counter 0 [W-min]",
-			"L": 0
-		},
-		{
-			"I": 212,
-			"T": "S",
-			"D": "Energy counter 1 [W-min]",
-			"L": 0
-		},
-		{
-			"I": 213,
-			"T": "S",
-			"D": "Energy counter 2 [W-min]",
-			"L": 0
-		},
-		{
-			"I": 214,
-			"T": "S",
-			"D": "Energy counter total [W-min]",
-			"L": 0
-		}
+		{	"I": 111,"T": "S","D": "Brightness","R": "0/100","L": 0},
+		{	"I": 121, "T": "S", "D": "Output", "R": "0/1", "L": 0},
+		{	"I": 131,"T": "S","D": "Input","R": "0/1","L": 0},
+		{	"I": 141,"T": "S","D": "Input","R": "0/1","L": 0},
+		{"I": 211,"T": "S","D": "Energy counter 0 [W-min]","L": 0},
+		{"I": 212,"T": "S","D": "Energy counter 1 [W-min]","L": 0},
+		{"I": 213,"T": "S","D": "Energy counter 2 [W-min]", "L": 0},
+		{"I": 214,"T": "S","D": "Energy counter total [W-min]", "L": 0}
 	]
 }
 ```
