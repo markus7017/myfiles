@@ -1380,6 +1380,106 @@
 } 
 ```
 
+## Shelly 4 Pro
+
+### 4 Pro /settings
+```
+{
+	"device":{"type":"SHSW-44","mac":"90E202CC7D7A","hostname":"shelly4pro-CC7D7A","num_outputs":4, "num_meters":4, "num_rollers":0},
+	"wifi_ap":{"enabled":false,"ssid":"shelly4pro-CC7D7A","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shelly4pro-CC7D7A","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},
+	"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},
+	"pin_code":"","name":"","fw":"20200306-150856/v1.6.0-rc6@43056d58","discoverable":true,
+	"build_info":{"build_id":"20200306-150856/v1.6.0-rc6@43056d58","build_timestamp":"2020-03-06T15:08:56Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":49.864700,"lng":8.625460,"tzautodetect":true,"tz_utc_offset":3600,"tz_dst":false,"tz_dst_auto":true,"time":"22:55","unixtime":1583621752,
+	"hwinfo":{"hw_revision":"prod-2018-12","batch_id":6},"lat":49.864700,"lng":8.625460,
+	"relays":[
+		{"name":null,"ison":false,"has_timer":false,"overpower":false,"default_state":"off","btn_type":"toggle","auto_on":0.00,"auto_off":0.00,"max_power":2300,"schedule":false,"schedule_rules":[]},
+		{"name":null,"ison":false,"has_timer":false,"overpower":false,"default_state":"off","btn_type":"toggle","auto_on":0.00,"auto_off":0.00,"max_power":2300,"schedule":false,"schedule_rules":[]},
+		{"name":null,"ison":false,"has_timer":false,"overpower":false,"default_state":"off","btn_type":"toggle","auto_on":0.00,"auto_off":0.00,"max_power":2300,"schedule":false,"schedule_rules":[]},
+		{"name":null,"ison":false,"has_timer":false,"overpower":false,"default_state":"off","btn_type":"toggle","auto_on":0.00,"auto_off":0.00,"max_power":2300,"schedule":false,"schedule_rules":[]}
+	],
+	"meters":[
+		{"power":0.0,"is_valid":true,"timestamp":1583621752,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583621752,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583621752,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583621752,"counters":[0.000, 0.000, 0.000],"total":0}
+	]
+}
+```
+
+### 4 Pro /status
+
+```
+{
+	"wifi_sta":{"connected":true,"ssid":"TurtlePineHouse","ip":"192.168.6.86","rssi":-56},
+	"cloud":{"enabled":false,"connected":false},"mqtt":{"connected":false},"time":"23:01","unixtime":1583622115,"serial":1,"has_update":true,"mac":"90E202CC7D7A",
+	"relays":[
+		{"ison":false,"has_timer":false,"timer_remaining":0,"overpower":false,"is_valid":true},
+		{"ison":false,"has_timer":false,"timer_remaining":0,"overpower":false,"is_valid":true},
+		{"ison":false,"has_timer":false,"timer_remaining":0,"overpower":false,"is_valid":true},
+		{"ison":false,"has_timer":false,"timer_remaining":0,"overpower":false,"is_valid":true}
+	],
+	"meters":[
+		{"power":0.0,"is_valid":true,"timestamp":1583622115,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583622115,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583622115,"counters":[0.000, 0.000, 0.000],"total":0},
+		{"power":0.0,"is_valid":true,"timestamp":1583622115,"counters":[0.000, 0.000, 0.000],"total":0}
+	],
+	"update":{"status":"pending","has_update":true,"new_version":"20191216-090307/v1.5.7@c30657ba","old_version":"20200306-150856/v1.6.0-rc6@43056d58"},
+	"ram_total":35896,"ram_free":7396,"fs_size":83081,"fs_free":12048,"voltage":232.44,"uptime":19719
+}
+```
+
+#### Shelly Pro CoAP Descrition
+
+```
+{
+	"blk":[
+		{"I":0,"D":"Relay0"},
+		{"I":1,"D":"Relay1"},
+		{"I":2,"D":"Relay2"},
+		{"I":3,"D":"Relay3"}
+	],
+	"sen":[
+		{"I":111,"T":"W","D":"Power","R":"0/2650","L":0},
+		{"I":112,"T":"Switch","D":"State","R":"0/1","L":0},
+		{"I":121,"T":"W","D":"Power","R":"0/2650","L":1},
+		{"I":122,"T":"Switch","D":"State","R":"0/1","L":1},
+		{"I":131,"T":"W","D":"Power","R":"0/2650","L":2},
+		{"I":132,"T":"Switch","D":"State","R":"0/1","L":2},
+		{"I":141,"T":"W","D":"Power","R":"0/2650","L":3},
+		{"I":142,"T":"Switch","D":"State","R":"0/1","L":3},
+		{"I":118,"T":"S","D":"Input","R":"0/1","L":0},
+		{"I":128,"T":"S","D":"Input","R":"0/1","L":1},
+		{"I":138,"T":"S","D":"Input","R":"0/1","L":2},
+		{"I":148,"T":"S","D":"Input","R":"0/1","L":3},
+		{"I":211,"T":"S","D":"E cnt 0 [W-min]","L":0},
+		{"I":212,"T":"S","D":"E cnt 1 [W-min]","L":0},
+		{"I":213,"T":"S","D":"E cnt 2 [W-min]","L":0},
+		{"I":214,"T":"S","D":"E cnt total [W-min]","L":0},
+		{"I":221,"T":"S","D":"E cnt 0 [W-min]","L":1},
+		{"I":222,"T":"S","D":"E cnt 1 [W-min]","L":1},
+		{"I":223,"T":"S","D":"E cnt 2 [W-min]","L":1},
+		{"I":224,"T":"S","D":"E cnt total [W-min]","L":1},
+		{"I":231,"T":"S","D":"E cnt 0 [W-min]","L":2},
+		{"I":232,"T":"S","D":"E cnt 1 [W-min]","L":2},
+		{"I":233,"T":"S","D":"E cnt 2 [W-min]","L":2},
+		{"I":234,"T":"S","D":"E cnt total [W-min]","L":2},
+		{"I":241,"T":"S","D":"E cnt 0 [W-min]","L":3},
+		{"I":242,"T":"S","D":"E cnt 1 [W-min]","L":3},
+		{"I":243,"T":"S","D":"E cnt 2 [W-min]","L":3},
+		{"I":244,"T":"S","D":"E cnt total [W-min]","L":3}
+	]
+}
+```
+
+
 ## Shelly EM
 
 ### Shelly EM /settings
