@@ -2075,6 +2075,21 @@ output when door in OPEN state:
 }
 ```
 
+### Shelly DW CoAP Desc
+
+```
+{
+	"blk":[
+		{"I":1, "D":"sensors"}
+	],
+	"sen":[
+		{"I":66, "D":"lux", "T":"L", "R":"0/100000", "L":1},
+		{"I":55, "D":"State", "T":"S", "R":"0/1", "L":1},
+		{"I":77, "D":"battery", "T":"B", "R":"0/100", "L":1}
+	]
+}
+```
+
 Output when in closed state:
 
 ```
