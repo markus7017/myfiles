@@ -1,0 +1,50 @@
+{
+  "build_id": "20200306-151251/v1.6.0-rc6@43056d58", 
+  "build_timestamp": "2020-03-06T15:12:51Z", 
+  "name": "shellyem3", 
+  "parts": {
+    "boot": {
+      "addr": 0, 
+      "cs_sha1": "cfccf356c37f3b1bc84392f97383ed919deb36ed", 
+      "size": 2736, 
+      "src": "rboot.bin", 
+      "update": false
+    }, 
+    "boot_cfg": {
+      "addr": 4096, 
+      "fill": 255, 
+      "size": 4096
+    }, 
+    "fs": {
+      "addr": 765952, 
+      "cs_sha1": "71a1d20951c910fb59678b3e72b471c6ab377c2f", 
+      "fs_block_size": 4096, 
+      "fs_erase_size": 4096, 
+      "fs_page_size": 256, 
+      "fs_size": 262144, 
+      "size": 262144, 
+      "src": "fs.bin", 
+      "type": "fs"
+    }, 
+    "fw": {
+      "addr": 32768, 
+      "cs_sha1": "ddc93c73d28e7f794a3d12c7bbcfdd3c141d5b79", 
+      "size": 560800, 
+      "src": "shellyem3.bin"
+    }, 
+    "rf_cal_data": {
+      "addr": 2076672, 
+      "fill": 255, 
+      "size": 4096
+    }, 
+    "sys_params": {
+      "addr": 2080768, 
+      "cs_sha1": "ff105e66b313201f5b40a2e02b7f00db24022088", 
+      "size": 128, 
+      "src": "esp_init_data_default_v08.bin", 
+      "type": "sys_params"
+    }
+  }, 
+  "platform": "esp8266", 
+  "version": "1.0"
+}
