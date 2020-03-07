@@ -63,7 +63,7 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
-```csv
+```
 246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
 247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
 248 │ Installed │  80 │ 2.5.0.201912112158     │ openHAB Add-ons :: Bundles :: Shelly Binding
@@ -93,7 +93,18 @@ If you hit a problem make sure to post a TRACE log (or send PM) so I could look 
 * You should use firmware version 1.5.7 or never.  Consider to go to 1.6 when availavle, it has various fixes and features for CoIoT and other new features,
 It might be that the binding is working with older versions, but thos will no longer supported.
 If the device is connected to the Internet you could use the Shelly Apps to do the update.
+
+### Firmware 
+
 List of Firmware Versions for the different devices could be found here: https://api.shelly.cloud/files/firmware
+
+You could install the firmware using curl
+```
+curl -s http://&gt;device ip&gt;/ota?url=http://api.shelly.cloud/files/firmware/&lt;device type id&gt;_build.zip
+
+Example for 1PM:
+curl -s http://&gt;device ip&gt;/ota?url=http://api.shelly.cloud/files/firmware/SHSW-PM_build.zip
+```
 
 * If you have multiple network interfaces you should check openHAB's default setting 
 Open PaperUI and go to Configuration:System-:Network Settings and verify the selected interface. 
