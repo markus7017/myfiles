@@ -18,21 +18,21 @@ and copy to OH's addons folder
 - dowlnoad the firmware files into this folder
 
 ```csv
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHPLG-S_build.zip     # Plug-S
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-1_build.zip      # Shelly 1
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHPLG2-1_build.zip    # Shelly 2
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-25_build.zip     # Shelly 2.5
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-PM_build.zip     # Shelly PM
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-44_build.zip     # Shelly 4 Pro
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHEM_build.zip        # Shelly EM
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHEM-3_build.zip      # Shelly EM3
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHDM-1_build.zip      # Shelly Dimmer
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHBLB-1_build.zip     # Shelly Bulb
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHBDUO-1_build.zip    # Shelly Duoexception
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHRGBW2_build.zip     # Shelly RGBW2
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHHT-1_build.zip      # Shelly H&T
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHWT-1_build.zip      # Shelly Flood
-wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHDW-1_build.zip      # Shelly Door Window
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHPLG-S_build.zip?raw=true     # Plug-S
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-1_build.zip?raw=true      # Shelly 1
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHPLG2-1_build.zip?raw=true    # Shelly 2
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-25_build.zip?raw=true     # Shelly 2.5
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-PM_build.zip?raw=true     # Shelly PM
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHSW-44_build.zip?raw=true     # Shelly 4 Pro
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHEM_build.zip?raw=true        # Shelly EM
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHEM-3_build.zip?raw=true      # Shelly EM3
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHDM-1_build.zip?raw=true      # Shelly Dimmer
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHBLB-1_build.zip?raw=true     # Shelly Bulb
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHBDUO-1_build.zip?raw=true    # Shelly Duoexception
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHRGBW2_build.zip?raw=true     # Shelly RGBW2
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHHT-1_build.zip?raw=true      # Shelly H&T
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHWT-1_build.zip?raw=true      # Shelly Flood
+wget https://github.com/markus7017/myfiles/blob/master/shelly/fwbeta/SHDW-1_build.zip?raw=true      # Shelly Door Window
 ```
 
 ## Upgrade the deivces - 1 by 1 with the correct firmware file!

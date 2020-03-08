@@ -42,14 +42,36 @@ Use the device' web ui or the Shelly App to perform the update.
 The binding uses mDNS to discover the Shelly devices.
 They periodically announce their presence, which is used by the binding to find them on the local network.
 
-Make sure to wake-up battery powered devices (press the button inside the device), so that they show up on the network.
 Sometimes you need to run the manual discovery multiple times until you see all your devices.
 
+### Important for battery power devices
+
+Make sure to wake-up battery powered devices (press the button inside the device), so that they show up on the network.
+The device has a push button inside, open the case, press that button and the LED starts blinking.
+The device should show up in the Inbox and can be added.
+
+`
+Important: If device is in sleep mode and can't be reached by the binding, the Thing will change into UNKNOWN state.
+Once the device wakes up the thing does the initialization and the state changes to ONLINE.
+`
+
+Once the device is discovered and initialized successful the binding is able to perform an auto-initialization when OH was restarted in between. The device wake-up triggers the event URL and/or CoIoT packet, which is processed by the binding and triggers the initialization.
+So you don't need to manually wake-up the devices after an openHAB restart.
+
+Devices having no battery are expected to be ON/reachable on the network all the time.
+Otherwise the thing will go OFFLINE with COMMUNICATION_ERROR as status.
+
+### Re-discover when IP address has changed
+ 
 Important: The IP address should not be changed after the device is added to openHAB.
+
 This can be achieved by
 
 - assigning a static IP address or
 - using DHCP and setup the router to always assign the same IP address to the device
+
+When you change the IP address for a specific reason you need to delete the Thing and re-discover the device.
+In this case channel linkage gets lost and you need to re-link the channels/items.
 
 ### Password Protected Devices
 
