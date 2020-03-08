@@ -1050,6 +1050,60 @@ Firmware Version 1.5.2
 }
 ```
 
+## Shelly H&T FW 1.6
+
+### H&T /settings
+
+```
+{	"device":{"type":"SHHT-1","mac":"84F3EBE01AD9","hostname":"shellyht-E01AD9",
+			"sleep_mode":true},
+	"wifi_ap":{"enabled":false,"ssid":"shellyht-E01AD9","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyht-E01AD9","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},
+	"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"wbnkw{",
+	"name":"","fw":"20200306-151016/v1.6.0-rc6@43056d58","discoverable":true,
+	"build_info":{"build_id":"20200306-151016/v1.6.0-rc6@43056d58","build_timestamp":"2020-03-06T15:10:16Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"America/New_York","lat":500.000000,"lng":500.000000,"tzautodetect":true,"tz_utc_offset":0,"tz_dst":false,"tz_dst_auto":true,"time":"","unixtime":0,
+	"sensors":{"temperature_threshold":1.0,"temperature_unit":"C","humidity_threshold":5.0},
+	"sleep_mode":{"period":12,"unit":"h"},
+	"report_url":"",
+	"external_power":0,
+	"temperature_offset":0.0,"humidity_offset":0.0
+}
+```
+
+### H&T /status
+
+```
+{
+	"wifi_sta":{"connected":true,"ssid":"TurtlePineHouse","ip":"192.168.6.88","rssi":-59},
+	"cloud":{"enabled":false,"connected":false},
+	"mqtt":{"connected":false},
+	"time":"","unixtime":0,"serial":1,"has_update":false,"mac":"84F3EBE01AD9",
+	"is_valid":true,
+	"tmp":{"value":24.62,"units":"C","tC":24.62,"tF":76.32, "is_valid":true},
+	"hum":{"value":39.0, "is_valid":true},"bat":{"value":97,"voltage":2.93},
+	"act_reasons":["button"],"connect_retries":0,
+	"update":{"status":"unknown","has_update":false,"new_version":"","old_version":"20200306-151016/v1.6.0-rc6@43056d58"},
+	"ram_total":50432,"ram_free":40032,"fs_size":233681,"fs_free":156122,"uptime":122
+}
+```
+
+## HT&T CoAP Descr
+
+```
+{	"blk":[
+		{"I":1, "D":"sensors"}
+	],
+	"sen":[
+		{"I":33, "D":"temperature", "T":"T", "R":"-40/125", "L":1},
+		{"I":44, "D":"humidity", "T":"H", "R":"0/100", "L":1},
+		{"I":77, "D":"battery", "T":"B", "R":"0/100", "L":1}]
+	}
+```
+
 ## Shelly Flood
 
 ### Shelly Flood /settings
