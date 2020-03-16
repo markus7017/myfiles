@@ -990,65 +990,7 @@ Firmware Version 1.5.2
 }
 ```
 
-## Shelly Sense
 
-### Shelly Sense: /settings
-
-```
-{	"device":{	"type":"SHSEN-1","mac":"XXXXXXXXXXXX","hostname":"shellysense-XXXXXX"},
-	"wifi_ap":{	"enabled":false,"ssid":"shellysense-XXXXXX","key":""},
-	"wifi_sta":{	"enabled":true,"ssid":"iot-wlan","ipv4_method":"static","ip":"10.0.0.2","gw":"10.0.0.1","mask":"255.255.255.0","dns":"10.0.0.1"},
-	"wifi_sta1":{	"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
-	"mqtt": {	"enable":false,"server":"10.0.0.10:1883","user":"","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"will_topic":"shellies/shellysense-XXXXXXX/online","will_message":"false","max_qos":0,"retain":false,"update_period":30},
-	"Sntp": {	"server":"time.google.com"},
-	"login":{	"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"bS^Mtq",
-	"coiot_execute_enable":true,"name":"","fw":"20190821-095017/v1.5.2@4148d2b7",
-	"build_info": {	"build_id":"20190821-095017/v1.5.2@4148d2b7","build_timestamp":"2019-08-21T09:50:17Z","build_version":"1.0"},
-	"cloud": {	"enabled":true,"connected":true},"timezone":"Europe/Berlin","lat":51.394344,"lng":8.571319,"tzautodetect":false,"time":"19:32","light_sensor":"NOA1305","schedule":false,"schedule_rules":[],"sensors":{	"motion_duration":20,"motion_led":false,"temperature_unit":"C"}}
-```
-
-### Shelly Sense /status
-
-```
-{
-	"wifi_sta":{	"connected":true,"ssid":"iot-wlan","ip":"10.0.0.2","rssi":-69},
-	"cloud":{	"enabled":true,"connected":true},
-	"mqtt":{	"connected":false}, "time":"19:32","serial":4768,"has_update":false,"mac":"XXXXXXXXXXXX",
-	"motion":false,"charger":true"
-	tmp":{	"value":24.249284,"is_valid":true,"units":"C"},
-	"hum":{	"value":44.250477,"is_valid":true}, "lux":{	"value":12.987013,"is_valid":true}, "bat":{	"value":40},
-	"update":{	"status":"idle","has_update":false,"new_version":"20190821-095017/v1.5.2@4148d2b7","old_version":"20190821-095017/v1.5.2@4148d2b7"},
-	"ram_total":51112,"ram_free":26848,"fs_size":83081,"fs_free":26857,"uptime":1823498}
-```
-
-### Shelly Sense /ir/list
-
-```
-[
-	["1_231_pwr","tv(231) - Power"],["1_231_chdwn","tv(231) - Channel Down"],["1_231_chup","tv(231) - Channel Up"],["1_231_voldwn","tv(231) - Volume Down"],
-	["1_231_volup","tv(231) - Volume Up"],["1_231_mute","tv(231) - Mute"],["1_231_menu","tv(231) - Menu"],["1_231_inp","tv(231) - Input"],["1_231_info","tv(231) - Info"],
-	["1_231_left","tv(231) - Left"],["1_231_up","tv(231) - Up"],["1_231_right","tv(231) - Right"],["1_231_ok","tv(231) - OK"],["1_231_down","tv(231) - Down"],
-	["1_231_back","tv(231) - Back"],["6_546_pwr","receiver(546) - Power"],["6_546_voldwn","receiver(546) - Volume Down"],["6_546_volup","receiver(546) - Volume Up"],
-	["6_546_mute","receiver(546) - Mute"],["6_546_menu","receiver(546) - Menu"],["6_546_info","receiver(546) - Info"],["6_546_left","receiver(546) - Left"],
-	["6_546_up","receiver(546) - Up"],["6_546_right","receiver(546) - Right"],["6_546_ok","receiver(546) - OK"],["6_546_down","receiver(546) - Down"],["6_546_back","receiver(546) - Back"]
-]
-```
-
-###  Shelly Sense Coap Description
-
-```
-{
-	"blk":[{	"I":1, "D":"sensors"}],
-	"sen":[
-		{	"I":11, "D":"motion", "T":"S", "R":"0/1", "L":1},
-		{	"I":22, "D":"charger", "T":"S", "R":"0/1", "L":1},
-		{	"I":33, "D":"temperature", "T":"T", "R":"-40/125", "L":1},
-		{	"I":44, "D":"humidity", "T":"H", "R":"0/100", "L":1},
-		{	"I":66, "D":"lux", "T":"L", "R":"0/1", "L":1},
-		{	"I":77, "D":"battery", "T":"H", "R":"0/100", "L":1}
-	 ]
-}
-```
 
 ## Shelly H&T FW 1.6
 
@@ -1060,7 +1002,8 @@ Firmware Version 1.5.2
 	"wifi_ap":{"enabled":false,"ssid":"shellyht-E01AD9","key":""},
 	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
-	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyht-E01AD9","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyht-E01AD9","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},
 	"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"wbnkw{",
 	"name":"","fw":"20200306-151016/v1.6.0-rc6@43056d58","discoverable":true,
 	"build_info":{"build_id":"20200306-151016/v1.6.0-rc6@43056d58","build_timestamp":"2020-03-06T15:10:16Z","build_version":"1.0"},
@@ -1227,7 +1170,66 @@ illumination:  dark, twilight, bright
 ```
 
 
-### Decoded Device Description
+## Shelly Sense
+
+### Shelly Sense: /settings
+
+```
+{	"device":{	"type":"SHSEN-1","mac":"XXXXXXXXXXXX","hostname":"shellysense-XXXXXX"},
+	"wifi_ap":{	"enabled":false,"ssid":"shellysense-XXXXXX","key":""},
+	"wifi_sta":{	"enabled":true,"ssid":"iot-wlan","ipv4_method":"static","ip":"10.0.0.2","gw":"10.0.0.1","mask":"255.255.255.0","dns":"10.0.0.1"},
+	"wifi_sta1":{	"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {	"enable":false,"server":"10.0.0.10:1883","user":"","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"will_topic":"shellies/shellysense-XXXXXXX/online","will_message":"false","max_qos":0,"retain":false,"update_period":30},
+	"Sntp": {	"server":"time.google.com"},
+	"login":{	"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"bS^Mtq",
+	"coiot_execute_enable":true,"name":"","fw":"20190821-095017/v1.5.2@4148d2b7",
+	"build_info": {	"build_id":"20190821-095017/v1.5.2@4148d2b7","build_timestamp":"2019-08-21T09:50:17Z","build_version":"1.0"},
+	"cloud": {	"enabled":true,"connected":true},"timezone":"Europe/Berlin","lat":51.394344,"lng":8.571319,"tzautodetect":false,"time":"19:32","light_sensor":"NOA1305","schedule":false,"schedule_rules":[],"sensors":{	"motion_duration":20,"motion_led":false,"temperature_unit":"C"}}
+```
+
+### Shelly Sense /status
+
+```
+{
+	"wifi_sta":{	"connected":true,"ssid":"iot-wlan","ip":"10.0.0.2","rssi":-69},
+	"cloud":{	"enabled":true,"connected":true},
+	"mqtt":{	"connected":false}, "time":"19:32","serial":4768,"has_update":false,"mac":"XXXXXXXXXXXX",
+	"motion":false,
+	"charger":true"
+	"tmp":{	"value":24.249284,"is_valid":true,"units":"C"},
+	"hum":{	"value":44.250477,"is_valid":true}, "lux":{	"value":12.987013,"is_valid":true}, "bat":{	"value":40},
+	"update":{	"status":"idle","has_update":false,"new_version":"20190821-095017/v1.5.2@4148d2b7","old_version":"20190821-095017/v1.5.2@4148d2b7"},
+	"ram_total":51112,"ram_free":26848,"fs_size":83081,"fs_free":26857,"uptime":1823498}
+```
+
+### Shelly Sense /ir/list
+
+```
+[
+	["1_231_pwr","tv(231) - Power"],["1_231_chdwn","tv(231) - Channel Down"],["1_231_chup","tv(231) - Channel Up"],["1_231_voldwn","tv(231) - Volume Down"],
+	["1_231_volup","tv(231) - Volume Up"],["1_231_mute","tv(231) - Mute"],["1_231_menu","tv(231) - Menu"],["1_231_inp","tv(231) - Input"],["1_231_info","tv(231) - Info"],
+	["1_231_left","tv(231) - Left"],["1_231_up","tv(231) - Up"],["1_231_right","tv(231) - Right"],["1_231_ok","tv(231) - OK"],["1_231_down","tv(231) - Down"],
+	["1_231_back","tv(231) - Back"],["6_546_pwr","receiver(546) - Power"],["6_546_voldwn","receiver(546) - Volume Down"],["6_546_volup","receiver(546) - Volume Up"],
+	["6_546_mute","receiver(546) - Mute"],["6_546_menu","receiver(546) - Menu"],["6_546_info","receiver(546) - Info"],["6_546_left","receiver(546) - Left"],
+	["6_546_up","receiver(546) - Up"],["6_546_right","receiver(546) - Right"],["6_546_ok","receiver(546) - OK"],["6_546_down","receiver(546) - Down"],["6_546_back","receiver(546) - Back"]
+]
+```
+
+###  Shelly Sense Coap Description
+
+```
+{
+	"blk":[{	"I":1, "D":"sensors"}],
+	"sen":[
+		{	"I":11, "D":"motion", "T":"S", "R":"0/1", "L":1},
+		{	"I":22, "D":"charger", "T":"S", "R":"0/1", "L":1},
+		{	"I":33, "D":"temperature", "T":"T", "R":"-40/125", "L":1},
+		{	"I":44, "D":"humidity", "T":"H", "R":"0/100", "L":1},
+		{	"I":66, "D":"lux", "T":"L", "R":"0/1", "L":1},
+		{	"I":77, "D":"battery", "T":"H", "R":"0/100", "L":1}
+	 ]
+}
+```
 
 
 # Shelly Plug FW 1.6
@@ -1336,7 +1338,9 @@ illumination:  dark, twilight, bright
 	"wifi_sta": {	"connected": true, "ssid": "SSID", "ip": "192.168.0.100", "rssi": -68 },
 	"cloud": {	"enabled": true, "connected": true },
 	"mqtt": {	"connected": false },
-	"time": "19:11", "unixtime": 1583262717, "serial": 30214, "has_update": true, "mac": "000000000000", "motion": true, "charger": false, "tmp": {	"value": 24.389915, "is_valid": true, "units": "C" },
+	"time": "19:11", "unixtime": 1583262717, "serial": 30214, "has_update": true, "mac": "000000000000",
+	"motion": true, "charger": false,
+	"tmp": {	"value": 24.389915, "is_valid": true, "units": "C" },
 	"hum": {	"value": 42.28691, "is_valid": true },
 	"lux": {	"value": 0, "is_valid": true },
 	"bat": {	"value": 99 },
