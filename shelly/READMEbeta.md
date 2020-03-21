@@ -23,8 +23,8 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 **If you want to use the version released with openHAB 2.5 final**
 The official distro releases could be installed as usual using PaperUI:Addons:Bindings:Shelly. This version works 
 
-**Make sure you updated to the 2.5.1-2 core and 2.5.2 Addon releases.**
-IMPORTANT: Version numbers of openHAB Core and Addons are different. Core has a frozen status on 2.5.1-2, whereas monthly updates are provided to the Addons, currently 2.5.2
+**Make sure you updated to the 2.5.1-2 core and 2.5.2 or newer Addon releases.**
+IMPORTANT: Version numbers of openHAB Core and Addons are different. Core has a frozen status on 2.5.1-2, whereas monthly updates are provided to the Addons, currently 2.5.4
 
 If you want to use the SNAPSHOT/DEV build you can **NOT** install it using PaperUI. 
 Make sure that the release version is not installed: PaperUI:Configuration:Bundles, check that Shelly is not installed, uninstall if so. 
@@ -32,11 +32,11 @@ Make sure that the release version is not installed: PaperUI:Configuration:Bundl
 
 ### Install DEV/SNAPSHOT build of the binding
 If you want to use the regular SNAPSHOT release
-download the [jar from the central location](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.2-SNAPSHOT/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar).
+download the [jar from the central location](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.4-SNAPSHOT/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar).
 
 **OR**
 
-If you want to use the* latest DEV version* download the [jar from my myfiles repo in GitHub](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar?raw=true).
+If you want to use the* latest DEV version* download the [jar from my myfiles repo in GitHub](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar?raw=true).
 
 Usually the DEV version is newer than the SNAPSHOT release.
 
@@ -51,7 +51,7 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 - [element-connector-2.0.0.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
 
 **Shelly Binding**
-- [org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar?raw=true) 
+- [org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar?raw=true) 
 -
 ### Installation
 
@@ -59,14 +59,14 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 - copy californium-core-2.0.0.jar to OH's addons folder
 - copy element-connector-2.0.0.jar to OH's addons folder
 - Start OH, wait until fully initialized(!)
-- copy org.openhab.binding.shelly-2.5.2-SNAPSHOT.jar to OH's addons folder
+- copy org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar to OH's addons folder
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
 ```
 246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
 247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
-248 │ Installed │  80 │ 2.5.0.201912112158     │ openHAB Add-ons :: Bundles :: Shelly Binding
+248 │ Installed │  80 │ 2.5.4.202003212158     │ openHAB Add-ons :: Bundles :: Shelly Binding
 ```
 ## Updating DEV version
 
