@@ -4,28 +4,29 @@ This Binding integrated Shelly devices.
 
 ## Supported Devices
 
-|Thing               |Type                                                    |
-|--------------------|--------------------------------------------------------|
-| shelly1            | Shelly Single Relay Switch                             |
-| shelly1pm          | Shelly Single Relay Switch with integrated Power Meter |
-| shellyem           | Shelly EM with integrated Power Meters                 |
-| shellyem3          | Shelly EM3 with 3 integrated Power Meter               |
-| shelly2-relay      | Shelly Double Relay Switch in relay mode               |
-| shelly2-roller     | Shelly2 in Roller Mode                                 |
-| shelly25-relay     | Shelly 2.5 in Relay Switch                             |
-| shelly25-roller    | Shelly 2.5 in Roller Mode                              |
-| shelly4pro         | Shelly 4x Relay Switch                                 |
-| shellydimmer       | Shelly Dimmer                                          |
-| shellyplugs        | Shelly Plug-S                                          |
-| shellyplug         | Shelly Plug                                            |
-| shellyrgbw2        | Shelly RGB Controller                                  |
-| shellybulb         | Shelly Bulb in Color or White Mode                     |
-| shellybulbduo      | Shelly Duo (White Mode)                                |
-| shellyht           | Shelly Sensor (temp+humidity)                          |
-| shellyflood        | Shelly Flood Sensor                                    |
-| shellysmoke        | Shelly Smoke Sensor                                    |
-| shellysense        | Shelly Motion and IR Controller                        |
-| shellydevice       | A password protected Shelly device or an unknown type  |
+| Thing Type         | Model                                                  | Vendor ID |
+|--------------------|--------------------------------------------------------|-----------|
+| shelly1            | Shelly Single Relay Switch                             | SHSW-1    |
+| shelly1pm          | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
+| shelly2-relay      | Shelly Double Relay Switch in relay mode               | SHSW-21   |
+| shelly2-roller     | Shelly2 in Roller Mode                                 | SHSW-21   |
+| shelly25-relay     | Shelly 2.5 in Relay Switch                             | SHSW-25   |
+| shelly25-roller    | Shelly 2.5 in Roller Mode                              | SHSW-25   |
+| shelly4pro         | Shelly 4x Relay Switch                                 | SHSW-44   |
+| shellydimmer       | Shelly Dimmer                                          | SHDM-1    |
+| shellyplug         | Shelly Plug                                            | SHPLG2-1  |
+| shellyplugs        | Shelly Plug-S                                          | SHPLG-S   |
+| shellyem           | Shelly EM with integrated Power Meters                 | SHEM      |
+| shellyem3          | Shelly EM3 with 3 integrated Power Meter               | SHEM-3    |
+| shellyrgbw2        | Shelly RGB Controller                                  | SHRGBW2   |
+| shellybulb         | Shelly Bulb in Color or White Mode                     | SHBLB-1   |
+| shellybulbduo      | Shelly Duo (White Mode)                                | SHBDUO-1  |
+| shellyht           | Shelly Sensor (temp+humidity)                          | SHHT-1    |
+| shellyflood        | Shelly Flood Sensor                                    | |
+| shellysmoke        | Shelly Smoke Sensor                                    | |
+| shellydw           | Shelly Door/Window                                     | SHDW-1    |
+| shellysense        | Shelly Motion and IR Controller                        | SHSEN-1   |
+| shellydevice       | A password protected Shelly device or an unknown type  |           |
 
 ## Firmware
 
@@ -153,9 +154,10 @@ end
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to device)                 |
-|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to device)                 |
-|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to device)                 |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to to temp/hum addon)      |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to to temp/hum addon)      |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to to temp/hum addon)      |
+|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
 
 ### Shelly 1PM (thing-type: shelly1pm)
 
@@ -170,9 +172,10 @@ end
 |          |lastPower3   |Number   |yes      |Energy consumption in Watts for a round minute, 3 minutes ago                    |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart) |
 |          |timestamp    |String   |yes      |Timestamp of the last measurement                                                |
-|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to device)                 |
-|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to device)                 |
-|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to device)                 |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to to temp/hum addon)      |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to to temp/hum addon)      |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to to temp/hum addon)      |
+|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
 
 ### Shelly EM (thing-type: shellyem)
 
@@ -428,13 +431,15 @@ The current firmware doesn't support the timestamp report for the meters.
 In this case "n/a" is returned.
 Maybe an upcoming firmware release adds this attribute, then the correct value is returned;
 
-### Shelly HT (thing-type: shellyht)
+### Shelly H&T (thing-type: shellyht)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Temperature, unit is reported by tempUnit                              |
 |          |humidity     |Number   |yes      |Relative humidity in %                                                 |
-|          |last_update  |String   |yes      |Timestamp of the last update (values read by the binding)              |
+|          |charger      |Number   |yes      |ON: USB charging cable is                                              |
+|          |wakeupReason |String   |yes      |Last reason for a device wake-up (battery, button, periodic, poweron, sensor or alarm) |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |voltage      |Number   |yes      |Voltage of the battery                                                 |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
@@ -445,7 +450,23 @@ Maybe an upcoming firmware release adds this attribute, then the correct value i
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Temperature, unit is reported by tempUnit                              |
 |          |flood        |Switch   |yes      |ON: Flooding condition detected, OFF: no flooding                      |
-|          |last_update  |String   |yes      |Timestamp of the last update (values read by the binding)              |
+|          |wakeupReason |String   |yes      |Last reason for a device wake-up (battery, button, periodic, poweron, sensor or alarm) |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
+|battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
+|          |voltage      |Number   |yes      |Voltage of the battery                                                 |
+|          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
+
+### Shelly Door/Window (thing type: shellydw)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+|sensors   |state        |Contact  |yes      |OPEN: Contact is open, CLOSED: Contact is closed                       |
+|          |lux          |Number   |yes      |Brightness in Lux                                                      |
+|          |illumination |String   |yes      |Current illumination: dark/twilight/bright                             |
+|          |vibration    |Switch   |yes      |ON: Vibration detected                                                 |
+|          |wakeupReason |String   |yes      |Last reason for a device wake-up (battery, button, periodic, poweron, sensor or alarm) |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
+|          |lastError    |String   |yes      |Last device error.                                                     |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |voltage      |Number   |yes      |Voltage of the battery                                                 |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
@@ -465,7 +486,7 @@ Maybe an upcoming firmware release adds this attribute, then the correct value i
 |          |humidity     |Number   |yes      |Relative humidity in %                                                 |
 |          |lux          |Number   |yes      |Brightness in Lux                                                      |
 |          |motion       |Switch   |yes      |ON: Motion detected, OFF: No motion (check also motionTimer)           |
-|          |last_update  |String   |yes      |Timestamp of the last update (values read by the binding)              |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
 
