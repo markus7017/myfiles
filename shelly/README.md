@@ -119,6 +119,7 @@ Every device has a channel group `device` with the following channels:
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |device    |uptime       |Number   |yes      |Number of seconds since the device was powered up                                |
 |          |wifiSignal   |Number   |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
+|          |innerTemp    |Number   |yes      |Internal device temperature (when provided by the device)                        |
 |          |alarm        |Trigger  |yes      |Most recent alarm for health check                                               |
 
 
