@@ -45,6 +45,11 @@ They periodically announce their presence, which is used by the binding to find 
 
 Sometimes you need to run the manual discovery multiple times until you see all your devices.
 
+### Dynamic creation of channels
+
+The Shelly series of devices has many combinations of relays, meters (different versions), sensors etc. For this the binding creates various channels dynamically based on the status information provided by the device at initialization time. 
+If a channel is missing make sure the thing was discovered correctly and is ONLINE. If a channel is missing delete the thing and re-discover it.
+
 ### Important for battery power devices
 
 Make sure to wake-up battery powered devices (press the button inside the device), so that they show up on the network.
@@ -127,20 +132,24 @@ Every device has a channel group `device` with the following channels:
 
 The accumulated channels are only available for devices with more than 1 meter. accumulatedReturned only for the EM and EM3.
 
-### Alarm Events
+### Events / Alarms
 
 The binding provides health monitoring functions for the device.
 When an alarm condition is detected the channel alarm gets triggered and provides one of the following alarm types:
 
 |Event Type|Description|
 |------------|-----------------------------------------------------------------------------------------------------------------|
-|WEAK_SIGNAL |An alarm is triggered when RSSI is < -80, which indicates an unstable connection.                                |
+|POWERON     |Device was powered on.                                                                                           |
+|BUTTON      |Button was pressed, e.g. to wakeup the device.                                                                   |
 |RESTARTED   |The device has been restarted. This could be an indicator for a firmware problem.                                |
+|WEAK_SIGNAL |An alarm is triggered when RSSI is < -80, which indicates an unstable connection.                                |
 |OVER_TEMP   |The device is over heating, check installation and housing.                                                      |
 |OVER_LOAD   |An over load condition has been detected, e.g. from the roller motor.                                            |
 |OVER_POWER  |Maximum allowed power was exceeded. The relay was turned off.                                                    |
 |LOAD_ERROR  |Device reported a load problem.                                                                                  |
-|LOW_BATTERY |Device reported a load problem.                                                                                  |
+|BATTERY     |Device reported a low battery condition.                                                                         |
+|ALARM       |Alarm condition was detected, check status                                                                       |
+
 
 A new alarm will be triggered on a new condition or every 5 minutes if the condition persists.
 
