@@ -22,7 +22,7 @@ This Binding integrated Shelly devices.
 | shellybulb         | Shelly Bulb in Color or White Mode                     | SHBLB-1   |
 | shellybulbduo      | Shelly Duo (White Mode)                                | SHBDUO-1  |
 | shellyht           | Shelly Sensor (temp+humidity)                          | SHHT-1    |
-| shellyflood        | Shelly Flood Sensor                                    | |
+| shellyflood        | Shelly Flood Sensor                                    | SHWT-1    |
 | shellysmoke        | Shelly Smoke Sensor                                    | |
 | shellydw           | Shelly Door/Window                                     | SHDW-1    |
 | shellysense        | Shelly Motion and IR Controller                        | SHSEN-1   |
@@ -115,13 +115,17 @@ The binding has the following configuration options:
 
 Every device has a channel group `device` with the following channels:
 
-|Group     |Channel      |Type     |read-only|Desciption                                                                       |
-|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
-|device    |uptime       |Number   |yes      |Number of seconds since the device was powered up                                |
-|          |wifiSignal   |Number   |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
-|          |innerTemp    |Number   |yes      |Internal device temperature (when provided by the device)                        |
-|          |alarm        |Trigger  |yes      |Most recent alarm for health check                                               |
+|Group     |Channel            |Type    |read-only|Desciption                                                                       |
+|----------|-------------------|--------|---------|---------------------------------------------------------------------------------|
+|device    |uptime             |Number  |yes      |Number of seconds since the device was powered up                                |
+|          |wifiSignal         |Number  |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
+|          |innerTemp          |Number  |yes      |Internal device temperature (when provided by the device)                        |
+|          |alarm              |Trigger |yes      |Most recent alarm for health check                                               |
+|          |accumulatedWatts   |Number  |yes      |Accumulated power in W of the device (including all meters)                      |
+|          |accumulatedTotal   |Number  |yes      |Accumulated total power in kw/h of the device (including all meters)             |
+|          |accumulatedReturned|Number  |yes      |Accumulated returned power in kw/h of the device (including all meters)          |
 
+The accumulated channels are only available for devices with more than 1 meter. accumulatedReturned only for the EM and EM3.
 
 ### Alarm Events
 
@@ -465,6 +469,19 @@ Maybe an upcoming firmware release adds this attribute, then the correct value i
 |          |lux          |Number   |yes      |Brightness in Lux                                                      |
 |          |illumination |String   |yes      |Current illumination: dark/twilight/bright                             |
 |          |vibration    |Switch   |yes      |ON: Vibration detected                                                 |
+|          |wakeupReason |String   |yes      |Last reason for a device wake-up (battery, button, periodic, poweron, sensor or alarm) |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
+|          |lastError    |String   |yes      |Last device error.                                                     |
+|battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
+|          |voltage      |Number   |yes      |Voltage of the battery                                                 |
+|          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
+
+### Shelly Smoke(thing type: shellysmoke)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+|sensors   |temperature  |Number   |yes      |Temperature, unit is reported by tempUnit                              |
+|          |smoke        |Number   |yes      |ON: Smoke detected                                                     |
 |          |wakeupReason |String   |yes      |Last reason for a device wake-up (battery, button, periodic, poweron, sensor or alarm) |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |          |lastError    |String   |yes      |Last device error.                                                     |
