@@ -140,6 +140,7 @@ When an alarm condition is detected the channel alarm gets triggered and provide
 |Event Type|Description|
 |------------|-----------------------------------------------------------------------------------------------------------------|
 |POWERON     |Device was powered on.                                                                                           |
+|PERIODIC    |Periodic wakeup.                                                                                                 |
 |BUTTON      |Button was pressed, e.g. to wakeup the device.                                                                   |
 |RESTARTED   |The device has been restarted. This could be an indicator for a firmware problem.                                |
 |WEAK_SIGNAL |An alarm is triggered when RSSI is < -80, which indicates an unstable connection.                                |
@@ -148,6 +149,7 @@ When an alarm condition is detected the channel alarm gets triggered and provide
 |OVER_POWER  |Maximum allowed power was exceeded. The relay was turned off.                                                    |
 |LOAD_ERROR  |Device reported a load problem.                                                                                  |
 |BATTERY     |Device reported a low battery condition.                                                                         |
+|SENSOR      |Wake-up due to updated sensor data.                                                                              |
 |ALARM       |Alarm condition was detected, check status                                                                       |
 
 
