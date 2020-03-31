@@ -55,6 +55,7 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 -
 ### Installation
 
+### New installation
 - Stop OH
 - copy californium-core-2.0.0.jar to OH's addons folder
 - copy element-connector-2.0.0.jar to OH's addons folder
@@ -73,10 +74,11 @@ If everything was install correct a "bundle:list" output show be similar to this
 Channel definitions are subject to change with any alpha or beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
 - **remove all shelly entries from paperui**
+- delete the existing binding jar from the addons folder, wait until OH unloaded the binding (check the OH log)
+- run "bundle:list | grep Shelly" and make sure that the binding is gone
+- otherwise run "bundle:uninstall <bundle id as listed from above (1st column)>"
 - stop OH ("openhab-cli stop"), wait until everything is stopped (could take some time)
-- run "openhab-cli clean-cache"
-  You might skip this step, but it has the risk to have left-overs in the cache
-- copy jar into addons (set correct permission)
+- copy binding jar into addons (set correct permission)
 - start oh2 service ("openhab-cli start")
 - **re-discover things** (delete all Shelly Things from PaperUI:Configuration:Things)
 - the channel/item linkage should be restored automatically
