@@ -38,6 +38,11 @@ The binding displays a WARNING in the log if the firmware is older.
 It also informs you when an update is available.
 Use the device' web ui or the Shelly App to perform the update.
 
+## Other resources
+
+Check the following resources for additional information
+
+
 ## Discovery
 
 The binding uses mDNS to discover the Shelly devices.
