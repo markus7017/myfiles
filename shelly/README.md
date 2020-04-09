@@ -130,6 +130,7 @@ Every device has a channel group `device` with the following channels:
 |device    |uptime             |Number  |yes      |Number of seconds since the device was powered up                                |
 |          |wifiSignal         |Number  |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
 |          |innerTemp          |Number  |yes      |Internal device temperature (when provided by the device)                        |
+|          |wakeupReason       |String  |yes      |Sensors only: Last wake-up reason (POWERON/PERIODIC/BUTTON/BATTERY/ALARM)        |
 |          |alarm              |Trigger |yes      |Most recent alarm for health check                                               |
 |          |accumulatedWatts   |Number  |yes      |Accumulated power in W of the device (including all meters)                      |
 |          |accumulatedTotal   |Number  |yes      |Accumulated total power in kw/h of the device (including all meters)             |
@@ -142,20 +143,27 @@ The accumulated channels are only available for devices with more than 1 meter. 
 The binding provides health monitoring functions for the device.
 When an alarm condition is detected the channel alarm gets triggered and provides one of the following alarm types:
 
+### Non-battery powerd devices
+
 |Event Type|Description|
 |------------|-----------------------------------------------------------------------------------------------------------------|
-|POWERON     |Device was powered on.                                                                                           |
-|PERIODIC    |Periodic wakeup.                                                                                                 |
-|BUTTON      |Button was pressed, e.g. to wakeup the device.                                                                   |
 |RESTARTED   |The device has been restarted. This could be an indicator for a firmware problem.                                |
 |WEAK_SIGNAL |An alarm is triggered when RSSI is < -80, which indicates an unstable connection.                                |
 |OVER_TEMP   |The device is over heating, check installation and housing.                                                      |
 |OVER_LOAD   |An over load condition has been detected, e.g. from the roller motor.                                            |
 |OVER_POWER  |Maximum allowed power was exceeded. The relay was turned off.                                                    |
-|LOAD_ERROR  |Device reported a load problem.                                                                                  |
-|BATTERY     |Device reported a low battery condition.                                                                         |
+|LOAD_ERROR  |Device reported a load problem, so far Dimmer only.                                                              |
+
+### Sensors
+
+|Event Type|Description|
+|------------|-----------------------------------------------------------------------------------------------------------------|
+|POWERON     |Device was powered on.                                                                                           |
+|PERIODIC    |Periodic wakeup.                                                                                                 |
+|BUTTON      |Button was pressed, e.g. to wakeup the device.                                                                   |
 |SENSOR      |Wake-up due to updated sensor data.                                                                              |
-|ALARM       |Alarm condition was detected, check status                                                                       |
+|ALARM       |Alarm condition was detected, check status, could be OPENED for the DW, flood alarm, smoke alarm                 |
+|BATTERY     |Device reported an update to the battery status.                                                                 |
 
 
 A new alarm will be triggered on a new condition or every 5 minutes if the condition persists.
