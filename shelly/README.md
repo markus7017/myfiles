@@ -323,8 +323,6 @@ For this the binding aggregates the power consumption of both relays and include
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                                 |
 |          |lastDirection|String   |yes      |Last direction: open or close                                                              |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                       |
-|          |calibrating  |Switch   |yes      |ON: Roller is in calibration mode, OFF: normal mode (no calibration)                       |
-|          |positioning  |Switch   |yes      |ON: Roller is positioning/moving                                                           |
 |          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP                 |
 |meter     |             |         |         |See group meter1 for Shelly 2                                                              |
 
