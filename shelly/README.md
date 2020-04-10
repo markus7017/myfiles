@@ -418,6 +418,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |Group     |Channel      |Type     |read-only|Desciption                                                             |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |control   |power        |Switch   |r/w      |Switch light ON/OFF                                                    |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
@@ -437,10 +438,11 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 
 |Group     |Channel      |Type     |read-only|Desciption                                                             |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
-|control   |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
+|control   |input        |Switch   |yes      |State of Input                                                         |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
-|          |input        |Switch   |yes      |State of Input                                                         |
 |channel1  |power        |Switch   |r/w      |Channel 1: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 1: Brightness: 0..100                                          |
 |channel2  |power        |Switch   |r/w      |Channel 2: Turn channel on/off                                         |
