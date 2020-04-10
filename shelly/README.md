@@ -440,6 +440,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |control   |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
+|          |input        |Switch   |yes      |State of Input                                                         |
 |channel1  |power        |Switch   |r/w      |Channel 1: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 1: Brightness: 0..100                                          |
 |channel2  |power        |Switch   |r/w      |Channel 2: Turn channel on/off                                         |
@@ -448,10 +449,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |brightness   |Dimmer   |r/w      |Channel 3: Brightness: 0..100                                          |
 |channel4  |power        |Switch   |r/w      |Channel 4: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 4: Brightness: 0..100                                          |
-|meter1    |currentWatts |Number   |yes      |Channel 1: Current power consumption in Watts                          |
-|meter2    |currentWatts |Number   |yes      |Channel 2: Current power consumption in Watts                          |
-|meter3    |currentWatts |Number   |yes      |Channel 3: Current power consumption in Watts                          |
-|meter4    |currentWatts |Number   |yes      |Channel 4: Current power consumption in Watts                          |
+|meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                     |
 
 Please note that the settings of channel group color are only valid in color mode and vice versa for white mode.
 The current firmware doesn't support the timestamp report for the meters.
