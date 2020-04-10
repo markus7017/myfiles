@@ -439,18 +439,30 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |Group     |Channel      |Type     |read-only|Desciption                                                             |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |control   |input        |Switch   |yes      |State of Input                                                         |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|channel1  |power        |Switch   |r/w      |Channel 1: Turn channel on/off                                         |
+|          |brightness   |Dimmer   |r/w      |Channel 1: Brightness: 0..100                                          |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
-|channel1  |power        |Switch   |r/w      |Channel 1: Turn channel on/off                                         |
-|          |brightness   |Dimmer   |r/w      |Channel 1: Brightness: 0..100                                          |
 |channel2  |power        |Switch   |r/w      |Channel 2: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 2: Brightness: 0..100                                          |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
+|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |channel3  |power        |Switch   |r/w      |Channel 3: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 3: Brightness: 0..100                                          |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
+|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |channel4  |power        |Switch   |r/w      |Channel 4: Turn channel on/off                                         |
 |          |brightness   |Dimmer   |r/w      |Channel 4: Brightness: 0..100                                          |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)   |
+|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                     |
 
 Please note that the settings of channel group color are only valid in color mode and vice versa for white mode.
