@@ -121,6 +121,29 @@
 }
 ```
 
+with 2 external temp sensors
+```
+{"blk":[
+	{"I":0,"D":"Relay0"},
+	{"I":1,"D":"Sensors"}
+],
+"sen":[
+	{"I":111,"T":"P","D":"Power","R":"0/3500","L":0},
+	{"I":112,"T":"S","D":"State","R":"0/1","L":0},
+	{"I":113,"T":"T","D":"Temperature C","R":"-40/300","L":0},{
+	"I":114,"T":"T","D":"Temperature F","R":"-40/300","L":0},
+	{"I":115,"T":"S","D":"Overtemp","R":"0/1","L":0},
+	{"I":118,"T":"S","D":"Input","R":"0(off)/1(on)/2(longpush)","L":0},
+	{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
+	{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
+	{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
+	{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0},
+	{"I":119,"T":"T","D":"External temperature C","R":"-55/125","L":1},
+	{"I":129,"T":"T","D":"External temperature C","R":"-55/125","L":1}
+	]
+}
+```
+
 ## Shelly2
  
 ### /settings
@@ -437,7 +460,8 @@
 	"sntp":{	"server":"time.google.com","enabled":true},
 	"login":{	"enabled":false,"unprotected":false,"username":"admin","password":"admin"}, "pin_code":"","name":"","fw":"20200306-150856/v1.6.0-rc6@43056d58","discoverable":true,
 	"build_info":{	"build_id":"20200306-150856/v1.6.0-rc6@43056d58","build_timestamp":"2020-03-06T15:08:56Z","build_version":"1.0"},
-	"cloud":{	"enabled":false,"connected":false}, "timezone":"Europe/Berlin","lat":49.864700,"lng":8.625460,"tzautodetect":true,"tz_utc_offset":3600,"tz_dst":false,"tz_dst_auto":true,"time":"22:55","unixtime":1583621752,
+	"cloud":{	"enabled":false,"connected":false}, "timezone":"Europe/Berlin","lat":49.864700,"lng":8.625460,"tzautodetect":true,
+	"tz_utc_offset":3600,"tz_dst":false,"tz_dst_auto":true,"time":"22:55","unixtime":1583621752,
 	"hwinfo":{	"hw_revision":"prod-2018-12","batch_id":6},"lat":49.864700,"lng":8.625460,
 	"relays": [
 		{	"name":null,"ison":false,"has_timer":false,"overpower":false,
@@ -906,7 +930,7 @@ Firmware Version 1.5.2
 	"blk": [
 		{	"I": 0,"D": "RGBW2"} ],
 	"sen": [
-		{	"I": 118,			"T": "S","D": "Input","R": "0/1","L": 0},
+		{	"I": 118,"T": "S","D": "Input","R": "0/1","L": 0},
 		{	"I": 111,"T": "S","D": "Red","R": "0/255","L": 0},
 		{	"I": 121,"T": "S","D": "Green","R": "0/255","L": 0},
 		{	"I": 131,"T": "S","D": "Blue","R": "0/255","L": 0},
@@ -1140,13 +1164,15 @@ output when door in OPEN state:
 ### Shelly DW CoAP Desc
 
 ```
-{
-	"blk":[
-		{	"I":1, "D":"sensors"} ],
-	"sen":[
-		{	"I":66, "D":"lux", "T":"L", "R":"0/100000", "L":1},
-		{	"I":55, "D":"State", "T":"S", "R":"0/1", "L":1},
-		{	"I":77, "D":"battery", "T":"B", "R":"0/100", "L":1}
+{	“blk”:[
+		{	“I”:1, “D”:“sensors”}
+	],
+	“sen”:[
+		{“I”:66, “D”:“lux”, “T”:“L”, “R”:“0/100000”, “L”:1},
+		{“I”:55, “D”:“State”, “T”:“S”, “R”:“0/1”, “L”:1},
+		{“I”:77, “D”:“battery”, “T”:“B”, “R”:“0/100”, “L”:1},
+		{“I”:88, “D”:“tilt”, “T”:“S”, “R”:“0/180”, “L”:1},
+		{“I”:99, “D”:“vibration”, “T”:“S”, “R”:“0/1”, “L”:1}
 	]
 }
 ```
