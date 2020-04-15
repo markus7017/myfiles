@@ -3,19 +3,43 @@
     <!-- defined a console append -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%.15thread] %-5level %logger{50}:%line - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%.15thread] %-5level %c{-3}:%line - %msg%n</pattern>
         </encoder>
     </appender>
 
     <!-- Another appender that logs into a file -->
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
         <file>${user.home}/openhab.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%-36.36logger{36}:%-5line] - %msg%ex{10}%n</pattern>
+            <!-- pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %-40.40logger{40}:%-5line | %msg%ex{10}%n</pattern -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %c{-3}:%-5line | %msg%ex{10}%n</pattern>
         </encoder>
     </appender>
 
+    <root level="WARN">
+        <appender-ref ref="LOGFILE" />
+        <appender-ref ref="STDOUT" />
+    </root>
 
+
+    <appender name="EVENTFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.home}/events.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- weekly rollover and archiving -->
+            <fileNamePattern>${openhab.logdir:-userdata/logs}/events-%d{yyyy-ww}.log.zip</fileNamePattern>
+            <!-- maximum number of archive files to keep -->
+            <maxHistory>26</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="smarthome.event" level="INFO" additivity="false">
+        <appender-ref ref="EVENTFILE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+ 
     <!-- http://felix.apache.org/documentation/subprojects/apache-felix-logback.html -->
     <!-- TRACE DEBUG INFO WARN ERROR OFF -->
 
@@ -43,14 +67,9 @@
     <!-- Ignore warnings given by ServletContainerInitializerScanner -->
     <logger name="org.ops4j.pax.web.utils" level="ERROR" />
 
-    <root level="WARN">
-        <appender-ref ref="FILE" />
-        <appender-ref ref="STDOUT" />
-    </root>
-
     <logger name="org.eclipse.smarthome" level="INFO" />
     <logger name="org.openhab.core" level="INFO" />
-    <logger name="javax.jmdns" level="WARN" />
+    <logger name="javax.jmdns" level="ERROR" />
 
 
     <logger name="org.openhab.binding.shelly" level="DEBUG"/>
@@ -58,6 +77,7 @@
     <logger name="org.openhab.binding.rachio" level="DEBUG" />
     <logger name="org.openhab.binding.magentatv" level="DEBUG" />
     <logger name="org.openhab.binding.appletv" level="DEBUG" />
+    <logger name="org.openhab.binding.fsinternetradio" level="TRACE"/>
 
     <logger name="org.eclipse.smarthome.io" level="WARN" />
     <logger name="openhab.core.io" level="WARN" />
