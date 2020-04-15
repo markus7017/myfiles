@@ -1121,22 +1121,24 @@ Firmware Version 1.5.2
 ### Shelly DW /settings
 
 ```
-{
-	“device”:{“type”:“SHDW-1”,“mac”:“XXXXXXXXX”,“hostname”:“shellydw-F3BXXX”,“sleep_mode”:true},
-	“wifi_ap”:{“enabled”:false,“ssid”:“shellydw-F3XXX”,“key”:""},
-	“wifi_sta”:{“enabled”:true,“ssid”:“XXXXXXXXX”,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
-	“wifi_sta1”:{“enabled”:false,“ssid”:null,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
-	“mqtt”: {“enable”:false,“server”:“192.168.33.3:1883”,“user”:"",“id”:“shellydw-F3B7F5”,“reconnect_timeout_max”:60.000000,“reconnect_timeout_min”:2.000000,“clean_session”:true,“keep_alive”:60,“max_qos”:0,“retain”:false,“update_period”:30},
-	“sntp”: {“server”:“time.google.com”},“login”:{“enabled”:false,“unprotected”:false,“username”:“xxxxx”,“password”:“XXXXX”},“pin_code”:“xxxx”,“name”:"",
-	“fw”:“20191216-090511/v1.5.7@c30657ba”,“build_info”:{“build_id”:“20191216-090511/v1.5.7@c30657ba”,“build_timestamp”:“2019-12-16T09:05:11Z”,“build_version”:“1.0”},
-	“cloud”:{“enabled”:true,“connected”:true},“timezone”:“Europe/Amsterdam”,“lat”:XX.XXXXX,“lng”:X.XXXXX,“tzautodetect”:true,“time”:“12:29”,
-	“dark_threshold”:100,
-	“twilight_threshold”:300,
-	“sleep_mode”:{“period”:6,“unit”:“h”},
-	“led_status_disable”:true,
-	“report_url”:"",
-	 “dark_url”:"", 
-	 “twilight_url”:""
+{	"device":{"type":"SHDW-1","mac":"98F4ABF3B8A1","hostname":"shellydw-F3B8A1","sleep_mode":true},
+	"wifi_ap":{"enabled":false,"ssid":"shellydw-F3B8A1","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"Headquarter","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydw-F3B8A1","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":false,"unprotected":false,"username":"admin"},"pin_code":"",
+	"name":"","fw":"20200408-085810/v1.6.5@b075f0bf","discoverable":false,
+	"build_info":{"build_id":"20200408-085810/v1.6.5@b075f0bf","build_timestamp":"2020-04-08T08:58:10Z","build_version":"1.0"},
+	"cloud":{"enabled":true,"connected":true},"timezone":"Europe/Vienna","lat":500.000000,"lng":500.000000,"tzautodetect":true,"tz_utc_offset":0,"tz_dst":false,"tz_dst_auto":true,"time":"","unixtime":0,
+	"dark_threshold":100,"twilight_threshold":300,
+	"sleep_mode":{"period":6,"unit":"h"},
+	"led_status_disable":false,
+	"dark_url":"http://192.168.1.3:8080/shelly/event/shellydw-f3b8a1/sensordata",
+	"twilight_url":"http://192.168.1.3:8080/shelly/event/shellydw-f3b8a1/sensordata",
+	"close_url":null,"vibration_url":null,
+	"tilt_enabled":false,
+	"tilt_calibrated":true,"vibration_enabled":false,"reverse_open_close":false
 }
 ```
 
