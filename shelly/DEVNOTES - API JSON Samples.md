@@ -664,24 +664,27 @@ Shelly EM3 /settings
 ### Shelly Dimmer /settings
 
 ```
-{	"device":{		"type":"SHDM-1","mac":"XXXXXXXXXXXX","hostname":"shellydimmer-XXXXXX", "num_outputs":1,"num_meters":1},
-	"wifi_ap":{		"enabled":false,"ssid":"shellydimmer-XXXXXX","key":""},
-	"wifi_sta":{	"enabled":true,"ssid":"iot-wlan","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
-	"wifi_sta1":{	"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
-	"mqtt": {		"enable":false,"server":"10.0.0.1:1883","user":"","id":"shellydimmer-4200A0","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"will_topic":"shellies/shellydimmer-4200A0/online","will_message":"false","max_qos":0,"retain":false,"update_period":30},
-	"sntp": {		"server":"time.google.com"},"login":{	"enabled":false,"unprotected":false,"username":"XXXXXX","password":"XXXXXX"},"pin_code":"lFTBFP","coiot_execute_enable":false,"name":"",
-	"fw":"20191018-133016/master@a8aed1ac",
-	"build_info": {	"build_id":"20191018-133016/master@a8aed1ac","build_timestamp":"2019-10-18T13:30:16Z","build_version":"1.0"},
-	"cloud":{	"enabled":true,"connected":true},"timezone":"Europe/Berlin","lat":45.252491,"lng":7.779092,"tzautodetect":false,"time":"06:57",
-	"hwinfo":{	"hw_revision":"dev-prototype","batch_id":0},"mode":"white","pulse_mode":2,
-	"calibrated":false,"transition":2000,"fade_rate":1,
+{	"device":{"type":"SHDM-1","mac":"CC50E3F3A0D7","hostname":"shellydimmer-F3A0D7","num_outputs":1,"num_meters":1},
+	"wifi_ap":{"enabled":false,"ssid":"shellydimmer-F3A0D7","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydimmer-F3A0D7","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},
+	"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"","name":"",
+	"fw":"20200309-104554/v1.6.0@43056d58","factory_reset_from_switch":true,"discoverable":true,
+	build_info":{"build_id":"20200309-104554/v1.6.0@43056d58","build_timestamp":"2020-03-09T10:45:54Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"09:06","unixtime":1587114385,"hwinfo":{"hw_revision":"dev-prototype","batch_id":0},
+	"mode":"white","pulse_mode":0,
+	"calibrated":false,
+	"transition":1000,
+	"fade_rate":3,
+	"min_brightness":0,
 	"lights":[
-		{	"name":"","ison":false,
-			"default_state":"off","auto_on":0.00,"auto_off":0.00,
-			"btn1_on_url":"","btn1_off_url":"","btn2_on_url":"","btn2_off_url":"","out_on_url":"","out_off_url":"",
-			"schedule":false,"schedule_rules":[],"btn_type":"edge","swap_inputs":0}
-	 ],
-	"night_mode":{	"enabled":0, "start_time":"21:00", "end_time":"00:00", "brightness":10}
+		{"name":"","ison":false,"default_state":"off","auto_on":0.00,"auto_off":0.00,"btn1_on_url":"","btn1_off_url":"","btn1_longpush_url":"","btn1_shortpush_url":"","btn2_on_url":"","btn2_off_url":"","btn2_longpush_url":"","btn2_shortpush_url":"","out_on_url":"","out_off_url":"","schedule":false,"schedule_rules":[],"btn_type":"one_button","btn_debounce":80,"swap_inputs":0}
+	],
+	"night_mode":{"enabled":0, "start_time":"00:00", "end_time":"00:00", "brightness":0}
 }
 ```
 
