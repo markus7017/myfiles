@@ -1148,18 +1148,16 @@ output when door in OPEN state:
 
 ```
 {
-	“wifi_sta”:{“connected”:true,“ssid”:“XXXXXXX”,“ip”:“192.168.1.135”,“rssi”:-59},
-	“cloud”:{“enabled”:true,“connected”:true},
-	“mqtt”:{“connected”:false},“time”:“12:24”,“serial”:4,“has_update”:false,“mac”:“XXXXXXXXX”,
-	
+	“wifi_sta”:{“connected”:true,“ssid”:“IoT”,“ip”:“10.1.1.1i”:-55}, “cloud”:{“enabled”:true,“connected”:true},
+	“mqtt”:{“connected”:false},“time”:"",“unixtime”:0,“serial”:3,“has_update”:false,“mac”:“98F4ABF3BCEB”,
 	“is_valid”:true,
-	“lux”:{“value”:30, “illumination”: “dark”, “is_valid”:true},
+	“lux”:{“value”:11, “illumination”: “dark”, “is_valid”:true},
+	“accel”:{“tilt”:-1, “vibration”:0},
 	“sensor”:{“state”:“open”, “is_valid”:true},
-	“bat”:{“value”:100,“voltage”:6.38},
+	“bat”:{“value”:100,“voltage”:5.96},
 	“act_reasons”:[“button”],
-	
-	“update”:{“status”:“idle”,“has_update”:false,“new_version”:“20191216-090511/v1.5.7@c30657ba”,“old_version”:“20191216-090511/v1.5.7@c30657ba”},
-	“ram_total”:50592,“ram_free”:39700,“fs_size”:233681,“fs_free”:162648,“uptime”:19
+	“update”:{“status”:“idle”,“has_update”:false,“new_version”:“20200408-085810/v1.6.5@b075f0bf”,“old_version”:“20200408-085810/v1.6.5@b075f0bf”},
+	“ram_total”:50240,“ram_free”:38916,“fs_size”:233681,“fs_free”:154867,“uptime”:97
 }
 ```
 
