@@ -889,6 +889,34 @@ Firmware Version 1.5.2
 		 P[2021]: ToState, Range=0/1
 ```
 
+## Shelly Vintage
+
+### Shelly Vintage /settings
+
+{
+	"device":{"type":"SHVIN-1","mac":"ECFABC6EE918","hostname":"ShellyVintage-6EE918","num_outputs":1},
+	"wifi_ap":{"enabled":false,"ssid":"ShellyVintage-6EE918","key":""},"wifi_sta":{"enabled":true,"ssid":"IoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":true,"server":"mqtt.lan:1883","user":"fab_33","id":"ShellyVintage-6EE918","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},
+	"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"",
+	"name":"","fw":"20200309-103920/v1.6.0@43056d58","discoverable":true,"build_info":{"build_id":"20200309-103920/v1.6.0@43056d58","build_timestamp":"2020-03-09T10:39:20Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Paris","lat":46.580200,"lng":0.340380,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"14:28","unixtime":1587824908,"hwinfo":{"hw_revision":"prod-2019-12","batch_id":0},
+	"mode":"white","transition":5000,
+	"lights":[{"ison":true,"brightness":18,"default_state":"last","auto_on":0.00,"auto_off":0.00,"schedule":false,"out_on_url":"","out_off_url":"","schedule_rules":[]}]
+	,"night_mode":{"enabled":false, "start_time":"00:00", "end_time":"00:00", "brightness":0}
+}
+and /settings : 
+{
+	"wifi_sta":{"connected":true,"ssid":"IoT","ip":"192.168.1.1","rssi":-45},
+	"cloud":{"enabled":false,"connected":false},"mqtt":{"connected":true},
+	"time":"14:26","unixtime":1587824789,"serial":1,"has_update":false,"mac":"ECFABC6EE918",
+	"lights":[{"ison":true,"has_timer":false,"timer_remaining":0,"brightness":100}],
+	"meters":[{"power":6.00,"is_valid":"true","timestamp":1587824789,"counters":[6.000, 6.000, 6.000],"total":84}],
+	"update":{"status":"idle","has_update":false,"new_version":"20200309-103920/v1.6.0@43056d58","old_version":"20200309-103920/v1.6.0@43056d58"},
+	"ram_total":50544,"ram_free":39680,"fs_size":233681,"fs_free":164154,"uptime":900
+}
+
 ## Shelly RGBW2 FW 1.5
 
 ### Shelly RGW2 /settiings in color mode
