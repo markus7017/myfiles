@@ -407,8 +407,7 @@ The Dimmer should be calibrated using the Shelly App.
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
-|control   |power        |Switch   |r/w      |Switch light ON/OFF                                                    |
-|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF; in sec            |
+|control   |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF; in sec            |
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON: in sec            |
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |white     |             |         |         |Color settings: only valid in WHITE mode                               |
@@ -425,8 +424,7 @@ The Dimmer should be calibrated using the Shelly App.
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
-|control   |power        |Switch   |r/w      |Switch light ON/OFF                                                    |
-|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF; in sec            |
+|control   |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF; in sec            |
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON: in sec            |
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |white     |             |         |         |Color settings: only valid in WHITE mode                               |
