@@ -872,23 +872,6 @@ Firmware Version 1.5.2
 ```
 
 
-```
-	id=0: Relay0
-	id=1: Relay1
-	id=2: Device
- Adding 5 sensor definitions
-	 id 112: State, Type=S, Range=0/1, Links=0
-	 id 122: State, Type=S, Range=0/1, Links=1
-	 id 111: Power, Type=W, Range=0/2300, Links=0
-	 id 121: Power, Type=W, Range=0/2300, Links=1
-	 id 113: Position, Type=S, Range=0/100, Links=2
-   Device has 2 actors
-	 id=211: Switch, Links=0
-		 P[2011]: ToState, Range=0/1
-	 id=221: Switch, Links=1
-		 P[2021]: ToState, Range=0/1
-```
-
 ## Shelly Vintage
 
 ### Shelly Vintage /settings
@@ -916,6 +899,23 @@ and /settings :
 	"update":{"status":"idle","has_update":false,"new_version":"20200309-103920/v1.6.0@43056d58","old_version":"20200309-103920/v1.6.0@43056d58"},
 	"ram_total":50544,"ram_free":39680,"fs_size":233681,"fs_free":164154,"uptime":900
 }
+
+### Shelly Vintage CoAP description
+
+{	"blk":[
+		{"I":0,"D":"Channel0"}
+	],
+	"sen":[
+		{"I":121,"T":"S","D":"State","R":"0/1","L":0},
+		{"I":111,"T":"S","D":"Brightness","R":"0/100","L":0},
+		{"I":141,"T":"P","D":"Power","R":"0/6","L":0},
+		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
+		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
+		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
+		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0}
+	]
+} 
+
 
 ## Shelly RGBW2 FW 1.5
 
