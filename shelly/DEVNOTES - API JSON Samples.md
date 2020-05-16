@@ -1247,17 +1247,19 @@ illumination:  dark, twilight, bright
 ### Shelly Sense /status
 
 ```
-{
-	"wifi_sta":{	"connected":true,"ssid":"iot-wlan","ip":"10.0.0.2","rssi":-69},
-	"cloud":{	"enabled":true,"connected":true},
-	"mqtt":{	"connected":false}, "time":"19:32","serial":4768,"has_update":false,"mac":"XXXXXXXXXXXX",
-	"motion":false,
-	"charger":true"
-	"tmp":{	"value":24.249284,"is_valid":true,"units":"C"},
-	"hum":{	"value":44.250477,"is_valid":true}, "lux":{	"value":12.987013,"is_valid":true}, "bat":{	"value":40},
-	"update":{	"status":"idle","has_update":false,"new_version":"20190821-095017/v1.5.2@4148d2b7","old_version":"20190821-095017/v1.5.2@4148d2b7"},
-	"ram_total":51112,"ram_free":26848,"fs_size":83081,"fs_free":26857,"uptime":1823498}
+{	"wifi_sta":{"connected":true,"ssid":"NickyGhz","ip":"10.0.0.1","rssi":-61},"
+	cloud":{"enabled":true,"connected":true},"mqtt":{"connected":false},
+	"time":"11:31","unixtime":1589455864,"serial":33,"has_update":false,"mac":"D436394B3FA4",
+	"motion":false,"charger":false,
+	"tmp":{"value":26.109139,"is_valid":true,"units":"C"},
+	"hum":{"value":76.739057,"is_valid":true},
+	"lux":{"value":40.259740,"is_valid":true},
+	"bat":{"value":100},
+	"update":{"status":"idle","has_update":false,"new_version":"20200309-104151/v1.6.0@43056d58","old_version":"20200309-104151/v1.6.0@43056d58"},
+	"ram_total":48020,"ram_free":23956,"fs_size":83081,"fs_free":21837,"uptime":2928
+}
 ```
+
 
 ### Shelly Sense /ir/list
 
