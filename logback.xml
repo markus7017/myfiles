@@ -70,7 +70,8 @@
     <logger name="org.eclipse.smarthome" level="INFO" />
     <logger name="org.openhab.core" level="INFO" />
     <logger name="javax.jmdns" level="ERROR" />
-
+    <logger name="org.jupnporg.jupnp" level="ERROR" />
+    <logger name="org.jupnp" level="ERROR" />
 
     <logger name="org.openhab.binding.shelly" level="DEBUG"/>
     <logger name="org.openhab.binding.carnet" level="DEBUG" />
