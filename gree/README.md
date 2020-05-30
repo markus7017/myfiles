@@ -76,7 +76,8 @@ Switch AirconTurbo                  { channel="gree:airconditioner:a1234561:turb
 Switch AirconLight                  { channel="gree:airconditioner:a1234561:light" }
 Number AirconTemp "Temperature [%.1f °C]" {channel="gree:airconditioner:a1234561:temperature" }
 Number AirconTempSet                { channel="gree:airconditioner:a1234561:temperature" }
-Number AirconSwingVertical          { channel="gree:airconditioner:a1234561:swingvertical" }
+Number AirconSwingVertical          { channel="gree:airconditioner:a1234561:swingUpDown" }
+Number AirconSwingHorizontal        { channel="gree:airconditioner:a1234561:swingLeftRight" }
 Number AirconFanSpeed               { channel="gree:airconditioner:a1234561:windspeed" }
 Switch AirconAir                    { channel="gree:airconditioner:a1234561:air" }
 Switch AirconDry                    { channel="gree:airconditioner:a1234561:dry" }
@@ -100,7 +101,8 @@ Frame label="Fan Speed"
 }
 Frame label="Fan-Swing Direction"
 {
-   Switch item=AirconSwingVertical label="Direction" mappings=[0="Off", 1="Full", 2="Up", 3="Mid-up", 4="Mid", 5="Mid-low", 6="Down"] icon=flow
+   Switch item=AirconSwingVertical label="Direction V" mappings=[0="Off", 1="Full", 2="Up", 3="Mid-up", 4="Mid", 5="Mid-low", 6="Down"] icon=flow
+   Switch item=AirconSwingHorizontal label="Direction H" mappings=[0="Off", 1="Full", 2="Left", 3="Mid-left", 4="Mid", 5="Mid-right", 6="Right"] icon=flow
 }
 Frame label="Options"
 {
@@ -130,7 +132,7 @@ Group Gree_Modechannel                 "Gree"        { ga="Thermostat" } // Gree
 
 Rule:
 ```
-rule "Translate Mode from GA 2"
+rule "Mode changed"
 when
         Item GreeAirConditioner_Mode changed
 then        
