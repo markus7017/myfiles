@@ -44,8 +44,10 @@ The following channels are supported for fans:
 | air           | Switch    | Set on/off the Air Conditioner's Air function if applicable to the Air Conditioner model          |
 | dry           | Switch    | Set on/off the Air Conditioner's Dry function if applicable to the Air Conditioner model          |
 | health        | Switch    | Set on/off the Air Conditioner's Health function if applicable to the Air Conditioner model       |
-| turbo         | Switch    | Set on/off the Air Conditioner's Turbo mode.                                                      |
-| swingvertical | Number    | Sets the vertical swing action on the Air Conditioner                                             |
+| turbo         | Switch    | Set on/off the Air Conditioner's Turbo Mode.                                                      |
+| quiet         | Number    | Set Quiet Mode (0-2).                                                                             |
+| swingUpDown   | Number    | Sets the vertical (up..down) swing action on the Air Conditioner                                  |
+| swingLeftRight| Number    | Sets the horizontal (left..right) swing action on the Air Conditioner                             |
 | windspeed     | Number    | Sets the fan speed on the Air conditioner Auto:0, Low:1, MidLow:2, Mid:3, MidHigh:4, High:5       |
 |               |           | The number of speeds depends on the Air Conditioner model.                                        |
 | powersave     | Switch    | Set on/off the Air Conditioner's Power Saving function if applicable to the Air Conditioner model |
