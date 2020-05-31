@@ -2,7 +2,7 @@
 
 This binding integrates GREE Air Conditioners.
 
-Note : The GREE Air Conditioner must already be setup on the WiFi network and must have a fixed IP Address.
+Note: The GREE Air Conditioner must already be setup on the WiFi network and must have a fixed IP Address.
 
 ## Supported Things
 
@@ -23,6 +23,12 @@ Fans can be manually created in the *PaperUI* or *HABmin*, or by placing a *.thi
 
 
 ## Thing Configuration
+
+| Channel Name     | Type       | Description                                                                                   |
+|------------------|------------|-----------------------------------------------------------------------------------------------|
+| ipAddress        | IP Address | IP address of the unit.                                                                       |
+| broadcastAddress | IP Address | Broadcast address being used for discovery, usually derived from the IP interface address.    |
+| refresh          | Integer    | Refresh interval in seconds for polling the device status.                                    |
 
 The Air Conditioner's IP address is mandantory, all other parameters are optional. 
 If the broadcast is not set (default) it will be derived from openHAB's network setting (PaperUI:Configuration:System:Network Settings). 
@@ -46,8 +52,10 @@ The following channels are supported for fans:
 | health        | Switch    | Set on/off the Air Conditioner's Health function if applicable to the Air Conditioner model       |
 | turbo         | Switch    | Set on/off the Air Conditioner's Turbo Mode.                                                      |
 | quiet         | Number    | Set Quiet Mode (0-2).                                                                             |
-| swingUpDown   | Number    | Sets the vertical (up..down) swing action on the Air Conditioner                                  |
+| swingUpDown   | Number    | Sets the vertical (up..down) swing action on the Air Conditioner,                                 |
+|               |           | Full Swing: 1, Up: 2, MidUp: 3, Mid: 4, Mid Down: 5, Down : 6                                     |
 | swingLeftRight| Number    | Sets the horizontal (left..right) swing action on the Air Conditioner                             |
+|               |           | Full Swing: 1, Left: 2, Mid Left: 3, Mid: 4, Mid Right: 5, Right : 6                              |
 | windspeed     | Number    | Sets the fan speed on the Air conditioner Auto:0, Low:1, MidLow:2, Mid:3, MidHigh:4, High:5       |
 |               |           | The number of speeds depends on the Air Conditioner model.                                        |
 | powersave     | Switch    | Set on/off the Air Conditioner's Power Saving function if applicable to the Air Conditioner model |
@@ -59,15 +67,13 @@ When changing the mode the air conditioner will be turned on (unless is off is s
 
 ## Full Example
 
-### Generic
-
-Things:
+**Things**
 
 ```
 Thing gree:airconditioner:a1234561 [ ipAddress="192.168.1.111", refresh=2 ]
 ```
 
-Items:
+**Items**
 
 ```
 Switch AirconPower                  { channel="gree:airconditioner:a1234561:power" }
@@ -85,7 +91,7 @@ Switch AirconHealth                 { channel="gree:airconditioner:a1234561:heal
 Switch AirconPowerSaving            { channel="gree:airconditioner:a1234561:powersave" }
 ```
 
-Sitemap:
+**Sitemap**
 
 This is an example of how to set up your sitemap.
 
@@ -115,22 +121,23 @@ Frame label="Options"
 }
 ```
 
-### Google Home Assistant
+**Example**
 
 This example shows who to make the GREE Air Conditioner controllable by Google HA (A/C mode + temperature)
 
-Items:
+**Items**
+
 
 ```
-Group Gree_Modechannel                 "Gree"        { ga="Thermostat" } // Gree bindinggal
-// GREE A/C
-    Switch   GreeAirConditioner_Power   "Aircon"              {channel="gree:airconditioner:a1234561:power", ga="Switch"}
-    Number   GreeAirConditioner_Mode    "Aircon Mode"         {channel="gree:airconditioner:a1234561:mode", ga="thermostatMode"}
-    Number   GreeAirConditioner_Temp    "Aircon Temperature"  {channel="gree:airconditioner:a1234561:temperature}
-    Switch   GreeAirConditioner_Lightl  "Light"               {channel="gree:airconditioner:a1234561:light"}
+Group Gree_Modechannel              "Gree"                { ga="Thermostat" } // allows mapping for Google Home Assistent
+Switch   GreeAirConditioner_Power   "Aircon"              {channel="gree:airconditioner:a1234561:power", ga="Switch"}
+Number   GreeAirConditioner_Mode    "Aircon Mode"         {channel="gree:airconditioner:a1234561:mode", ga="thermostatMode"}
+Number   GreeAirConditioner_Temp    "Aircon Temperature"  {channel="gree:airconditioner:a1234561:temperature}
+Switch   GreeAirConditioner_Lightl  "Light"               {channel="gree:airconditioner:a1234561:light"}
 ```
 
-Rule:
+**Rules**
+
 ```
 rule "Mode changed"
 when
