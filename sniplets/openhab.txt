@@ -1,0 +1,19 @@
+## Rules
+
+### secToTimeStr
+
+Number  VU_Dauer    "Dauer [%s]"             		( VUPLUS )	{ http="<[http://192.168.1.6:80/web/getcurrent:3000:REGEX(.*?<e2eventduration>(.*?)</e2eventduration>.*)]" }
+String  VU_Duration_converted    "Dauer1 [%s]" 		( VUPLUS 
+This rule is set:
+
+rule "Dauer"
+when
+		Item   VU_Dauer changed
+then
+		val totalSecs = (VU_Dauer.state as Number).intValue
+		val min = (totalSecs / 60) % 60
+		val hrs = (totalSecs / (60*60)) % 24
+		val txt = (VU_Dauer)
+		VU_Duration_converted.postUpdate(String::format("%02d:%02d",  hrs, min))
+		logWarn("hilfe", "" +totalSecs)		
+end
