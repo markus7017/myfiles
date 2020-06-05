@@ -97,9 +97,9 @@ testing to determine the current state.                                         
 |        |playMode       |String   |Current play mode - this info is not reliable                             |
 |program |title          |String   |Title of the running program or video being played                        |
 |        |text           |String   |Some description (as reported by the receiver, could be empty)            |
-|        |start          |Time when the program started                                                       |
-|        |duration       |Number   |Remaining time in seconds, usually not updated for TV program             | 
-|        |position       | Position within a movie (0 for regular programs).                       |
+|        |start          |DateTime |Time when the program started                                             |
+|        |position       |Number   |Position in minutes within a movie.                                       |
+|        |duration       |Number   |Remaining time in minutes, usually not updated for TV program             | 
 
 Channels receiving event information when changing the channel or playing a video.
 
