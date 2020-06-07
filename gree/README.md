@@ -42,20 +42,18 @@ The following channels are supported for fans:
 |---------------|-----------|---------------------------------------------------------------------------------------------------|
 | power         | Switch    | Power on/off the Air Conditioner                                                                  |
 | mode          | String    | Sets the operating mode of the Air Conditioner                                                    |
-|               |           | Mode can be one of auto/cool/eco/dry/fan/turboheat or on/off                                      |
-|               |           | You could also send "0".."4", which will be send transparent to the device:                       |
-|               |           | those map to: "0"=Auto, "1"=Cool, "2"=Dry, "3"=Fan only, "4"=heat                                 | 
+|               |           | Mode can be one of auto/cool/eco/dry/fan/turbo/heat or on/off                                     |
 |               |           | Check the Air Conditioner's operating manual for supported modes.                                 |
 | temperature   | Number    | Sets the desired room temperature                                                                 |
 | air           | Switch    | Set on/off the Air Conditioner's Air function if applicable to the Air Conditioner model          |
 | dry           | Switch    | Set on/off the Air Conditioner's Dry function if applicable to the Air Conditioner model          |
 | health        | Switch    | Set on/off the Air Conditioner's Health function if applicable to the Air Conditioner model       |
 | turbo         | Switch    | Set on/off the Air Conditioner's Turbo Mode.                                                      |
-| quiet         | Number    | Set Quiet Mode (0-2).                                                                             |
+| quiet         | Number    | Set Quiet Mode: off/auto/quiet                                                                    |
 | swingUpDown   | Number    | Sets the vertical (up..down) swing action on the Air Conditioner,                                 |
-|               |           | OFF: 0, Full Swing: 1, Up: 2, MidUp: 3, Mid: 4, Mid Down: 5, Down : 6                                     |
+|               |           | OFF: 0, Full Swing: 1, Up: 2, MidUp: 3, Mid: 4, Mid Down: 5, Down : 6                             |
 | swingLeftRight| Number    | Sets the horizontal (left..right) swing action on the Air Conditioner                             |
-|               |           | OFF: 0, Full Swing: 1, Left: 2, Mid Left: 3, Mid: 4, Mid Right: 5, Right : 6                              |
+|               |           | OFF: 0, Full Swing: 1, Left: 2, Mid Left: 3, Mid: 4, Mid Right: 5, Right : 6                      |
 | windspeed     | Number    | Sets the fan speed on the Air conditioner Auto:0, Low:1, MidLow:2, Mid:3, MidHigh:4, High:5       |
 |               |           | The number of speeds depends on the Air Conditioner model.                                        |
 | powersave     | Switch    | Set on/off the Air Conditioner's Power Saving function if applicable to the Air Conditioner model |
