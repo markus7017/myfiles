@@ -1046,6 +1046,130 @@ and /settings :
 ```
 
 
+## Shelly Gas, FW 1.7.0 (SHGS-1)
+
+### /shelly
+```
+{	"type":"SHGS-1","mac":"XXXXXXXXXXXX","auth":true,"fw":"20200601-123447/v1.7.0@d7961837","longid":1,"num_inputs":0, "num_outputs":0}
+```
+
+### /settings
+
+```
+{	"device":{"type":"SHGS-1", "mac":"50029178B51F", "hostname":"shellygas-XXXXXXXXXXXX",
+	"num_inputs":0, "num_outputs":0},
+	"wifi_ap":{"enabled":false,"ssid":"shellygas-XXXXXXXXXXXX","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"xxx", "ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt":{"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellygas-50029178B51F","reconnect_timeout_max":60.000000, "reconnect_timeout_min":2.000000, "clean_session":true, "keep_alive":60, "max_qos":0, "retain":false, "update_period":30},
+	"coiot":{ "update_period":15},
+	"sntp":{"server":"192.168.6.137","enabled":true},
+	"login":{"enabled":true,"unprotected":false,"username":"openhab"},
+	"pin_code":"","name":"","fw":"20200601-123447/v1.7.0@d7961837","discoverable":true,
+	"build_info":{"build_id":"20200601-123447/v1.7.0@d7961837","build_timestamp":"2020-06-01T12:34:47Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":500.000000,"lng":500.000000,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"","unixtime":0,
+	"hwinfo":{"hw_revision":"prod-2020-04-09","batch_id":1},
+	
+	"set_volume":11,
+	"alarm_off_url":null,
+	"alarm_mild_url":null,
+	"alarm_heavy_url":null
+}
+```
+
+### /status
+
+```
+{	"wifi_sta":{"connected":true,"ssid":"IoT","ip":"192.168.1.1"","rssi":-87},
+	"cloud":{"enabled":false,"connected":false},
+	"mqtt":{"connected":false},
+	"time":"","unixtime":0,"serial":1,"has_update":false,"mac":"XXXXXXXXXXXX",
+
+	"gas_sensor":{"sensor_state":"normal","self_test_state":"not_completed","alarm_state":"none"},
+	"concentration":{"ppm":0,"is_valid":true},
+
+	"update":{"status":"idle","has_update":false,"new_version":"20200601-123447/v1.7.0@d7961837","old_version":"20200601-123447/v1.7.0@d7961837"},
+	"ram_total":50528,"ram_free":39676,"ram_lwm":33440,"fs_size":233681,"fs_free":134787,"uptime":171646
+}
+```
+
+### CoaAP Description
+
+```
+{	"blk":[{"I":0,"D":"Device"}],
+	"sen":[
+		{"I":118,"T":"S","D":"Sensor state","R":"unknown/warmup/normal/fault","L":0},
+		{"I":119,"T":"S","D":"Alarm state","R":"unknown/none/mild/heavy/test","L":0},
+		{"I":120,"T":"S","D":"Self-test state","R":"not_completed/completed/running/pending","L":0},
+		{"I":122,"T":"S","D":"Concentration (ppm)","R":"0-65535","L":0}
+	]
+}
+
+{"G":[[0,118,"normal"],[0,119,"none"],[0,120,"not_completed"],[0,122,0]]}
+```
+
+## Shelly Button (SHBTN-1) FW 1.7
+
+### /shelly
+```
+{"type":"SHBTN-1","mac":"XXXXXXXXXXXX","auth":true,"fw":"20200601-123213/v1.7.0@d7961837","longid":1,"sleep_mode":true}
+```
+
+### /settings
+
+```
+{	"device":{"type":"SHBTN-1","mac":"XXXXXXXXXXXX","hostname":"shellybutton1-XXXXXXXXXXXX","sleep_mode":true},
+	"wifi_ap":{"enabled":false,"ssid":"shellybutton1-A4CF12F44E99","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"IoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellybutton1-A4CF12F44E99","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":true,"unprotected":false,"username":"openhab"},"pin_code":"",
+	"name":"","fw":"20200601-123213/v1.7.0@d7961837","discoverable":true,"build_info":{"build_id":"20200601-123213/v1.7.0@d7961837","build_timestamp":"2020-06-01T12:32:13Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":500.000000,"lng":500.000000,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"","unixtime":0,
+	"hwinfo":{"hw_revision":"prod-2020-04","batch_id":1},
+	"sleep_mode":{"period":12,"unit":"h"},
+	"led_status_disable":false,
+	"longpush_duration_ms":{"max":800},"multipush_time_between_pushes_ms":{"max":500},
+	"remain_awake":0,
+	"inputs":[
+		{"shortpush_url":"","double_shortpush_url":"","triple_shortpush_url":"","longpush_url":""}
+	]
+}
+```
+
+### /status
+
+```
+{	"wifi_sta":{"connected":true,"ssid":"IoT","ip":"192.168.1.1","rssi":-63},
+	"cloud":{"enabled":false,"connected":false},"mqtt":{"connected":false},
+	"time":"","unixtime":0,"serial":1,"has_update":false,"mac":"XXXXXXXXXXXX",
+	"inputs":[
+		{"input":0,"event":"S","event_cnt":1}
+	], 
+	"is_valid":true,
+	"bat":{"value":100,"voltage":4.06},
+	"charger":true,
+	"act_reasons":["ext_power"],
+	"connect_retries":0,
+	"update":{"status":"idle","has_update":false,"new_version":"20200601-123213/v1.7.0@d7961837","old_version":"20200601-123213/v1.7.0@d7961837"},
+	"ram_total":50312,"ram_free":39496,"ram_lwm":34576,"fs_size":233681,"fs_free":162648,"uptime":308
+}
+```
+
+### Coap Message
+
+```
+{	"blk":[{"I":1, "D":"sensors"}],
+	"sen":[
+		{"I":77, "D":"battery", "T":"B", "R":"0/100", "L":1}
+		{"I":118,"T":"S","D":"Input","R":"0","L":1},
+		{"I":119,"T":"S","D":"Input event","R":"S/SS/SSS/L","L":1},
+		{"I":120,"T":"S","D":"Input event counter","R":"U16","L":1}
+	]
+}
+```
 
 ## Shelly H&T FW 1.6
 
