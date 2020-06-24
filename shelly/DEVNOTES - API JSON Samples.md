@@ -2,6 +2,10 @@
 
 ## Shelly1
 
+### Shelly1: /settings
+{"device":{"type":"SHSW-1","mac":"CC50E325A73E","hostname":"shelly1-25A73E","num_outputs":1},"wifi_ap":{"enabled":false,"ssid":"shelly1-25A73E","key":""},"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.6.7:1883","user":"openhab","id":"shelly1-25A73E","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"openhab","password":"bluebird"},"pin_code":"","name":"","fw":"20200320-123430/v1.6.2@514044b4","factory_reset_from_switch":true,"discoverable":true,"build_info":{"build_id":"20200320-123430/v1.6.2@514044b4","build_timestamp":"2020-03-20T12:34:30Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"07:29","unixtime":1592897395,"hwinfo":{"hw_revision":"prod-2018-08", "batch_id":2},"mode" :"relay","longpush_time":800,"relays":[{"name":null,"ison":false,"has_timer":false,"default_state":"off","btn_type":"edge","btn_reverse":1,"auto_on":0.00,"auto_off":0.00,"power":0.00,"btn_on_url":null,"btn_off_url":null,"out_on_url":null,"out_off_url":null,"longpush_url":null,"shortpush_url":null,"schedule":false,"schedule_rules":[]}],"ext_sensors":{},"ext_temperature":[],"ext_humidity":[]}
+
+
 ### Shelly1: /status/relay/0
 
 ```
@@ -453,7 +457,7 @@ with 2 external temp sensors
 ```
 {	"device":{	"type":"SHSW-44","mac":"90E202CC7D7A","hostname":"shelly4pro-CC7D7A","num_outputs":4, "num_meters":4, "num_rollers":0},
 	"wifi_ap":{	"enabled":false,"ssid":"shelly4pro-CC7D7A","key":""},
-	"wifi_sta":{	"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta":{	"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"wifi_sta1":{	"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"mqtt": {	"enable":false,"server":"192.168.33.3:1883","user":"","id":"shelly4pro-CC7D7A","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
 	"coiot": {	"update_period":15},
@@ -485,7 +489,7 @@ with 2 external temp sensors
 
 ```
 {
-	"wifi_sta":{	"connected":true,"ssid":"TurtlePineHouse","ip":"192.168.6.86","rssi":-56},
+	"wifi_sta":{	"connected":true,"ssid":"ShellyIoT","ip":"192.168.6.86","rssi":-56},
 	"cloud":{	"enabled":false,"connected":false},
 	"mqtt":{	"connected":false},"time":"23:01","unixtime":1583622115,"serial":1,"has_update":true,"mac":"90E202CC7D7A",
 	"relays": [
@@ -666,7 +670,7 @@ Shelly EM3 /settings
 ```
 {	"device":{"type":"SHDM-1","mac":"CC50E3F3A0D7","hostname":"shellydimmer-F3A0D7","num_outputs":1,"num_meters":1},
 	"wifi_ap":{"enabled":false,"ssid":"shellydimmer-F3A0D7","key":""},
-	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydimmer-F3A0D7","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
 	"coiot": {"update_period":15},
@@ -699,7 +703,8 @@ Shelly EM3 /settings
 	"lights":[
 		{	"ison":true,"mode":"white","brightness":100}],
 	"meters":[
-		{	"power":22.83, "is_valid":true, "timestamp":1568986518,"counters":[8.305, 3.153, 8.892],"total":782}], "inputs":[
+		{	"power":22.83, "is_valid":true, "timestamp":1568986518,"counters":[8.305, 3.153, 8.892],"total":782}],
+	"inputs":[
 		{	"input":0},
 		{	"input":0}],
 	"tmp":{	"tC":56.73,"tF":134.11, "is_valid":"true"}, "overtemperature":false, "loaderror":false, "overload":false
@@ -725,6 +730,86 @@ Shelly EM3 /settings
 		{	"I": 214,"T": "S","D": "Energy counter total [W-min]", "L": 0}
 	]
 }
+```
+
+## Shelly Dimmer2
+
+### /shelly
+
+```
+{"type":"SHDM-2","mac":"XXXXXXXXXXXX","auth":false,"fw":"20200528-111028/1026-new-device-dimmer-l@98d7122e","longid":1,"num_outputs":1,"num_meters":1}
+```
+
+### /settings
+
+```
+{"device":{"type":"SHDM-2","mac":"XXXXXXXXXXXX","hostname":"shellydimmer2-E0980695A794","num_outputs":1,"num_meters":1},"wifi_ap":{"enabled":false,"ssid":"shellydimmer2-XXXXXXXXXXXX","key":""},"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydimmer2-E0980695A794","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"admin"},"pin_code":"","name":"","fw":"20200528-111028/1026-new-device-dimmer-l@98d7122e","discoverable":true,"build_info":{"build_id":"20200528-111028/1026-new-device-dimmer-l@98d7122e","build_timestamp":"2020-05-28T11:10:28Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"07:45","unixtime":1592984713,"hwinfo":{"hw_revision":"dev-prototype","batch_id":0},"mode":"white","pulse_mode":1,"calibrated":false,"transition":1000,"fade_rate":3,"min_brightness":0,"lights":[{"name":"","ison":false,"default_state":"off","auto_on":0.00,"auto_off":0.00,"btn1_on_url":"","btn1_off_url":"","btn1_longpush_url":"","btn1_shortpush_url":"","btn2_on_url":"","btn2_off_url":"","btn2_longpush_url":"","btn2_shortpush_url":"","out_on_url":"","out_off_url":"","schedule":false,"schedule_rules":[],"btn_type":"one_button","btn_debounce":80,"swap_inputs":0}],"night_mode":{"enabled":false, "start_time":"00:00", "end_time":"00:00", "brightness":0},"warm_up": {"enabled":0, "brightness":100, "time":50}}
+```
+
+### /status
+
+```
+{	"wifi_sta":{"connected":true,"ssid":"ShellyIoT","ip":"192.168.6.66","rssi":-52},"cloud":{"enabled":false,"connected":false},
+	"mqtt":{"connected":false},"time":"07:45","unixtime":1592984739,"serial":1,"has_update":true,"mac":"XXXXXXXXXXXX",
+	"lights":[
+		{"ison":false,"has_timer":false,"timer_started":0,"timer_duration":0,"timer_remaining":0,"mode":"white","brightness":40}],
+	"meters":[{"power":0.00, "is_valid":true, "timestamp":1592984739,"counters":[0.000, 0.000, 0.000],"total":0}],
+	"inputs":[
+		{"input":0,"event":"","event_cnt":0},
+		{"input":0,"event":"","event_cnt":0}],
+	"tmp":{"tC":42.86,"tF":109.14, "is_valid":true},
+	"calib_progress":0,"calib_status":0,"wire_mode":1,"loaderror":0,"overtemperature":false,"overload":false,
+	"update":{"status":"pending","has_update":true,"new_version":"20200615-133340/v1.7.2@e39e9c86","old_version":"20200528-111028/1026-new-device-dimmer-l@98d7122e"},"ram_total":47968,"ram_free":36880,"fs_size":233681,"fs_free":124747,"uptime":199}
+```
+
+## Shelly ix3
+
+### /shelly
+
+```
+{"type":"SHIX3-1","mac":"XXXXXXXXXXXX","auth":true,"fw":"20200601-123434/v1.7.0@d7961837","longid":1,"num_inputs":3, "num_outputs":0}
+```
+
+### /settings
+
+```
+{"device":{"type":"SHIX3-1","mac":"XXXXXXXXXXXX","hostname":"shellyix3-XXXXXXXXXXXX","num_inputs":3, "num_outputs":0},"wifi_ap":{"enabled":false,"ssid":"shellyix3-XXXXXXXXXXXX","key":""},"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyix3-A4CF12F47388","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":true,"unprotected":false,"username":"openhab"},"pin_code":"","name":"","fw":"20200601-123434/v1.7.0@d7961837","factory_reset_from_switch":true,"discoverable":true,"build_info":{"build_id":"20200601-123434/v1.7.0@d7961837","build_timestamp":"2020-06-01T12:34:34Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"22:21","unixtime":1592950863,"hwinfo":{"hw_revision":"prod-2020-04-21", "batch_id":1},"longpush_duration_ms":{"min":800, "max":3000},"multipush_time_between_pushes_ms":{"max":500},"inputs":[{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null}]}
+```
+
+### /status
+
+```
+{	"wifi_sta":{"connected":true,"ssid":"ShellyIoT","ip":"192.168.1.1","rssi":-47},"cloud":{"enabled":false,"connected":false},"mqtt":{"connected":false},"time":"22:26","unixtime":1592951206,"serial":1,"has_update":false,"mac":"A4CF12F47388",
+	"inputs":[
+		{"input":0,"event":"","event_cnt":0},
+		{"input":0,"event":"","event_cnt":0},
+		{"input":0,"event":"","event_cnt":0}
+	],
+	"update":{"status":"idle","has_update":false,"new_version":"20200601-123434/v1.7.0@d7961837","old_version":"20200601-123434/v1.7.0@d7961837"},"ram_total":50296,"ram_free":38880,"ram_lwm":30152,"fs_size":233681,"fs_free":155369,"uptime":1749}
+```
+
+### CoAP Description
+
+```
+{	"blk":[{"I":0,"D":"Device"}],
+	"sen":[
+		{"I":118,"T":"S","D":"Input","R":"0/1","L":0},
+		{"I":128,"T":"S","D":"Input","R":"0/1","L":0},
+		{"I":138,"T":"S","D":"Input","R":"0/1","L":0},
+		{"I":119,"T":"S","D":"Input event","R":"S/L/SS/SSS/SL/LS","L":0},
+		{"I":129,"T":"S","D":"Input event","R":"S/L/SS/SSS/SL/LS","L":0},
+		{"I":139,"T":"S","D":"Input event","R":"S/L/SS/SSS/SL/LS","L":0},
+		{"I":120,"T":"S","D":"Input event counter","R":"U16","L":0},
+		{"I":130,"T":"S","D":"Input event counter","R":"U16","L":0},
+		{"I":140,"T":"S","D":"Input event counter","R":"U16","L":0}
+	]
+}
+```
+
+### CoAP Messahe
+
+```
+{"G":[[0,118,0],[0,128,0],[0,138,0],[0,119,""],[0,129,""],[0,139,""],[0,120,0],[0,130,0],[0,140,0]]}
 ```
 
 ## Shelly Bulb
@@ -1111,12 +1196,12 @@ and /settings :
 
 ## Shelly Button (SHBTN-1) FW 1.7
 
-### /shelly
+### Shelly Button /shelly
 ```
 {"type":"SHBTN-1","mac":"XXXXXXXXXXXX","auth":true,"fw":"20200601-123213/v1.7.0@d7961837","longid":1,"sleep_mode":true}
 ```
 
-### /settings
+### Shelly Button /settings
 
 ```
 {	"device":{"type":"SHBTN-1","mac":"XXXXXXXXXXXX","hostname":"shellybutton1-XXXXXXXXXXXX","sleep_mode":true},
@@ -1139,7 +1224,7 @@ and /settings :
 }
 ```
 
-### /status
+### Shelly Button /status
 
 ```
 {	"wifi_sta":{"connected":true,"ssid":"IoT","ip":"192.168.1.1","rssi":-63},
@@ -1158,7 +1243,7 @@ and /settings :
 }
 ```
 
-### Coap Message
+### Shelly Button CoAP Description
 
 ```
 {	"blk":[{"I":1, "D":"sensors"}],
@@ -1171,6 +1256,12 @@ and /settings :
 }
 ```
 
+### Shelly Button CoAP Message
+
+```
+"G":[[0,77,100],[0,118,0],[0,119,"S"],[0,120,3]]}
+```
+
 ## Shelly H&T FW 1.6
 
 ### H&T /settings
@@ -1179,7 +1270,7 @@ and /settings :
 {	"device":{"type":"SHHT-1","mac":"84F3EBE01AD9","hostname":"shellyht-E01AD9",
 			"sleep_mode":true},
 	"wifi_ap":{"enabled":false,"ssid":"shellyht-E01AD9","key":""},
-	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
 	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyht-E01AD9","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
 	"coiot": {"update_period":15},
@@ -1200,7 +1291,7 @@ and /settings :
 
 ```
 {
-	"wifi_sta":{"connected":true,"ssid":"TurtlePineHouse","ip":"192.168.6.88","rssi":-59},
+	"wifi_sta":{"connected":true,"ssid":"ShellyIoT","ip":"192.168.6.88","rssi":-59},
 	"cloud":{"enabled":false,"connected":false},
 	"mqtt":{"connected":false},
 	"time":"","unixtime":0,"serial":1,"has_update":false,"mac":"84F3EBE01AD9",
