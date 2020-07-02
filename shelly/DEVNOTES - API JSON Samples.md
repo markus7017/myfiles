@@ -743,7 +743,13 @@ Shelly EM3 /settings
 ### /settings
 
 ```
-{"device":{"type":"SHDM-2","mac":"XXXXXXXXXXXX","hostname":"shellydimmer2-E0980695A794","num_outputs":1,"num_meters":1},"wifi_ap":{"enabled":false,"ssid":"shellydimmer2-XXXXXXXXXXXX","key":""},"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydimmer2-E0980695A794","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":false,"unprotected":false,"username":"admin"},"pin_code":"","name":"","fw":"20200528-111028/1026-new-device-dimmer-l@98d7122e","discoverable":true,"build_info":{"build_id":"20200528-111028/1026-new-device-dimmer-l@98d7122e","build_timestamp":"2020-05-28T11:10:28Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"07:45","unixtime":1592984713,"hwinfo":{"hw_revision":"dev-prototype","batch_id":0},"mode":"white","pulse_mode":1,"calibrated":false,"transition":1000,"fade_rate":3,"min_brightness":0,"lights":[{"name":"","ison":false,"default_state":"off","auto_on":0.00,"auto_off":0.00,"btn1_on_url":"","btn1_off_url":"","btn1_longpush_url":"","btn1_shortpush_url":"","btn2_on_url":"","btn2_off_url":"","btn2_longpush_url":"","btn2_shortpush_url":"","out_on_url":"","out_off_url":"","schedule":false,"schedule_rules":[],"btn_type":"one_button","btn_debounce":80,"swap_inputs":0}],"night_mode":{"enabled":false, "start_time":"00:00", "end_time":"00:00", "brightness":0},"warm_up": {"enabled":0, "brightness":100, "time":50}}
+{	"device":{"type":"SHDM-2","mac":"XXXXXXXXXXXX","hostname":"shellydimmer2-E0980695A794","num_outputs":1,"num_meters":1},
+	"wifi_ap":{"enabled":false,"ssid":"shellydimmer2-XXXXXXXXXXXX","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydimmer2-E0980695A794","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":false,"unprotected":false,"username":"admin"},"pin_code":"","name":"","fw":"20200528-111028/1026-new-device-dimmer-l@98d7122e","discoverable":true,"build_info":{"build_id":"20200528-111028/1026-new-device-dimmer-l@98d7122e","build_timestamp":"2020-05-28T11:10:28Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"07:45","unixtime":1592984713,"hwinfo":{"hw_revision":"dev-prototype","batch_id":0},"mode":"white","pulse_mode":1,"calibrated":false,"transition":1000,"fade_rate":3,"min_brightness":0,"lights":[{"name":"","ison":false,"default_state":"off","auto_on":0.00,"auto_off":0.00,"btn1_on_url":"","btn1_off_url":"","btn1_longpush_url":"","btn1_shortpush_url":"","btn2_on_url":"","btn2_off_url":"","btn2_longpush_url":"","btn2_shortpush_url":"","out_on_url":"","out_off_url":"","schedule":false,"schedule_rules":[],"btn_type":"one_button","btn_debounce":80,"swap_inputs":0}],"night_mode":{"enabled":false, "start_time":"00:00", "end_time":"00:00", "brightness":0},"warm_up": {"enabled":0, "brightness":100, "time":50}}
 ```
 
 ### /status
@@ -760,6 +766,25 @@ Shelly EM3 /settings
 	"tmp":{"tC":42.86,"tF":109.14, "is_valid":true},
 	"calib_progress":0,"calib_status":0,"wire_mode":1,"loaderror":0,"overtemperature":false,"overload":false,
 	"update":{"status":"pending","has_update":true,"new_version":"20200615-133340/v1.7.2@e39e9c86","old_version":"20200528-111028/1026-new-device-dimmer-l@98d7122e"},"ram_total":47968,"ram_free":36880,"fs_size":233681,"fs_free":124747,"uptime":199}
+```
+
+### Dimmer 2 CoAP Description
+
+```
+{	"blk":[{"I":0,"D":"Dimmer"}],
+	"sen":[
+		{"I":111,"T":"S","D":"Brightness","R":"0/100","L":0},
+		{"I":121,"T":"S","D":"State","R":"0/1","L":0},
+		{"I":131,"T":"S","D":"Input","R":"0(off)/1(on)/2(longpush)","L":0},
+		{"I":141,"T":"S","D":"Input","R":"0(off)/1(on)/2(longpush)","L":0},
+		{"I":211,"T":"S","D":"Energy counter 0 [W-min]","L":0},
+		{"I":212,"T":"S","D":"Energy counter 1 [W-min]","L":0},
+		{"I":213,"T":"S","D":"Energy counter 2 [W-min]","L":0},
+		{"I":214,"T":"S","D":"Energy counter total [W-min]","L":0},
+		{"I":311,"T":"T","D":"Temperature C","R":"-40/300","L":0},
+		{"I":312,"T":"T","D":"Temperature F","R":"-40/300","L":0},
+		{"I":313,"T":"S","D":"Overtemp","R":"0/1","L":0}]
+	}
 ```
 
 ## Shelly ix3
@@ -1001,6 +1026,37 @@ and /settings :
 	]
 } 
 
+## Shelly Vintage 
+
+### /Shelly
+
+```
+{"type":"SHVIN-1","mac":"98F4ABD0FFE7","auth":false,"fw":"20191216-140157/???","num_outputs":1}
+```
+
+### /settings
+
+```
+{	"device":{"type":"SHVIN-1","mac":"XXXXXXXXXXXX","hostname":"ShellyVintage-XXXXXX","num_outputs":1},
+	"wifi_ap":{"enabled":false,"ssid":"ShellyVintage-D0FFE7","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"ShellyVintage-D0FFE7","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"sntp": {"server":"time.google.com"},"login":{"enabled":false,"unprotected":false,"username":"admin","password":"admin"},
+	"pin_code":"","name":"","fw":"20191216-140157/???","build_info":{"build_id":"20191216-140157/???","build_timestamp":"2019-12-16T14:01:57Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"10:02","hwinfo":{"hw_revision":"prod-2019-12","batch_id":0},"mode":"white","transition":1000,"lights":[{"ison":false,"brightness":50,"default_state":"on","auto_on":0.00,"auto_off":0.00,"schedule":false,"schedule_rules":[]}],"night_mode":{"enabled":0, "start_time":"00:00", "end_time":"00:00", "brightness":0}}
+```
+
+### CoAP Description
+
+```
+
+```
+
+### CoAP Message
+
+```
+
+```
 
 ## Shelly RGBW2 FW 1.5
 
