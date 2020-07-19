@@ -1498,6 +1498,53 @@ illumination:  dark, twilight, bright
 ```
 
 
+## Shelly Door Window 2
+
+### /shelly, FW 1.8 beta
+
+{"type":"SHDW-2","mac":"XXXXXXXXXXXX","auth":false,"fw":"20200612-144015/master@a3eeb1a1+","longid":1,"sleep_mode":true}
+
+### /settings, FW 1.8 beta
+
+{	"device":{"type":"SHDW-2","mac":"XXXXXXXXXXXX","hostname":"shellydw2-XXXXXXXXXXXX","sleep_mode":true},
+	"wifi_ap":{"enabled":false,"ssid":"shellydw2-XXXXXXXXXXXX","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellydw2-A4CF12F42DE5","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},
+	"login":{"enabled":false,"unprotected":false,"username":"admin"},"pin_code":"","name":null,
+	"fw":"20200612-144015/master@a3eeb1a1+",
+	"discoverable":true,
+	"build_info":{"build_id":"20200612-144015/master@a3eeb1a1+","build_timestamp":"2020-06-12T14:40:15Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":500.000000,"lng":500.000000,"tzautodetect":true,"tz_utc_offset":0,"tz_dst":false,"tz_dst_auto":true,"time":"","unixtime":0,
+	"dark_threshold":100,"twilight_threshold":300,"sleep_mode":{"period":6,"unit":"h"},
+	"led_status_disable":true,
+	"dark_url":null,"twilight_url":null,"close_url":null,"vibration_url":null,"tilt_enabled":false,"tilt_calibrated":false,
+	"vibration_enabled":true,"reverse_open_close":false,
+	"sensors":{"temperature_threshold":1.0,"temperature_unit":"C"},
+	"temp_over_url":null, "temp_over_value":0.0, "temp_over_onetime":true,"temp_under_url":null, "temp_under_value":0.0, "temp_under_onetime":true,"temperature_offset":0.0
+}
+
+## Shelly DW 2 Coap Description, FW 1.8 Beta
+
+{	"blk":[
+		{"I":1,"D":"sensor_0"},
+		{"I":2,"D":"device"}],
+	"sen":[
+		{"I":3108,"T":"S","D":"dwIsOpened","R":["0/1","-1"],"L":1},
+		{"I":3109,"T":"S","D":"tilt","U":"deg","R":["0/180","-1"],"L":1},
+		{"I":6110,"T":"A","D":"vibration","R":["0/1","-1"],"L":1},
+		{"I":3106,"T":"L","D":"luminosity","U":"lux","R":["U32","-1"],"L":1},
+		{"I":3110,"T":"S","D":"luminosityLevel","R":["dark/twilight/bright","unknown"],"L":1},
+		{"I":3101,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":1},
+		{"I":3102,"T":"T","D":"extTemp","U":"F","R":["-67/257","999"],"L":1},
+		{"I":3115,"T":"S","D":"sensorError","R":"0/1","L":1},
+		{"I":3111,"T":"B","D":"battery","R":["0/100","-1"],"L":2},
+		{"I":9102,"T":"EV","D":"wakeupEvent","R":["battery/button/periodic/poweron/sensor/alarm","unknown"],"L":2}
+	]
+}
+
 ## Shelly Sense
 
 ### Shelly Sense: /settings
@@ -1512,7 +1559,12 @@ illumination:  dark, twilight, bright
 	"login":{	"enabled":false,"unprotected":false,"username":"admin","password":"admin"},"pin_code":"bS^Mtq",
 	"coiot_execute_enable":true,"name":"","fw":"20190821-095017/v1.5.2@4148d2b7",
 	"build_info": {	"build_id":"20190821-095017/v1.5.2@4148d2b7","build_timestamp":"2019-08-21T09:50:17Z","build_version":"1.0"},
-	"cloud": {	"enabled":true,"connected":true},"timezone":"Europe/Berlin","lat":51.394344,"lng":8.571319,"tzautodetect":false,"time":"19:32","light_sensor":"NOA1305","schedule":false,"schedule_rules":[],"sensors":{	"motion_duration":20,"motion_led":false,"temperature_unit":"C"}}
+	"cloud": {	"enabled":true,"connected":true},
+	"timezone":"Europe/Berlin","lat":51.394344,"lng":8.571319,"tzautodetect":false,"time":"19:32",
+	"light_sensor":"NOA1305",
+	"schedule":false,"schedule_rules":[],
+	"sensors":{	"motion_duration":20,"motion_led":false,"temperature_unit":"C"}
+}
 ```
 
 ### Shelly Sense /status
