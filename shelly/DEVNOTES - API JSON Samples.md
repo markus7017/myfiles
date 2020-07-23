@@ -590,7 +590,7 @@ with 2 external temp sensors
 }
 ```
 
-Shelly EM3 /settings
+Shelly 3EM /settings
 
 ```
 {	"device":{	"type":"SHEM-3","mac":"XXXXXXXXXXXX","hostname":"shellyem3-XXXXXX","num_outputs":1, "num_meters": 0, "num_emeters":3},
@@ -618,7 +618,7 @@ Shelly EM3 /settings
 }
 ```
 
-### Shelly EM3 /status
+### Shelly 3EM /status
 
 ```
 {
@@ -1545,7 +1545,13 @@ illumination:  dark, twilight, bright
 	]
 }
 
-## Shelly Sense
+### Shelly DW2 CoAP message, FW 1.8 beta
+
+```
+{"G":[[0,3108,1],[0,3109,-1],[0,6110,0],[0,3106,5],[0,3110,"dark"],,[0,3101,28.20],[0,3102,82.76],[0,3115,0],[0,3111,93],[0,9102,["poweron"]]]}
+```
+
+# Shelly Sense
 
 ### Shelly Sense: /settings
 
