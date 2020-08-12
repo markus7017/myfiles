@@ -196,7 +196,7 @@ Every device has a channel group `device` with the following channels:
 |          |accumulatedWatts   |Number  |yes      |Accumulated power in W of the device (including all meters)                      |
 |          |accumulatedTotal   |Number  |yes      |Accumulated total power in kw/h of the device (including all meters)             |
 |          |accumulatedReturned|Number  |yes      |Accumulated returned power in kw/h of the device (including all meters)          |
-|          |heartBeat        |DateTime  |yes      |Timestamp of the last successful device communication                            |
+|          |heartBeat          |DateTime|yes      |Timestamp of the last successful device communication                            |
 |          |updateAvailable    |Switch  |yes      |ON: A firmware update is available (use Shelly App to perform update)            |
 
 Availability of  channels is depending on the device type.
