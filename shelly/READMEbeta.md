@@ -32,11 +32,11 @@ Make sure that the release version is not installed: PaperUI:Configuration:Bundl
 
 ### Install DEV/SNAPSHOT build of the binding
 If you want to use the regular SNAPSHOT release
-download the [jar from the central location](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.4-SNAPSHOT/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar).
+download the [jar from the central location](https://openhab.jfrog.io/openhab/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/2.5.8-SNAPSHOT/org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar).
 
 **OR**
 
-If you want to use the* latest DEV version* download the [jar from my myfiles repo in GitHub](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar?raw=true).
+If you want to use the* latest DEV version* download the [jar from my myfiles repo in GitHub](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar?raw=true).
 
 Usually the DEV version is newer than the SNAPSHOT release.
 
@@ -51,7 +51,7 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 - [element-connector-2.0.0.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
 
 **Shelly Binding**
-- [org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar?raw=true) 
+- [org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar?raw=true) 
 -
 ### Installation
 
@@ -60,14 +60,14 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 - copy californium-core-2.0.0.jar to OH's addons folder
 - copy element-connector-2.0.0.jar to OH's addons folder
 - Start OH, wait until fully initialized(!)
-- copy org.openhab.binding.shelly-2.5.4-SNAPSHOT.jar to OH's addons folder
+- copy org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar to OH's addons folder
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
 ```
 246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
 247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
-248 │ Installed │  80 │ 2.5.4.202003212158     │ openHAB Add-ons :: Bundles :: Shelly Binding
+248 │ Installed │  80 │ 2.5.8.202008212158     │ openHAB Add-ons :: Bundles :: Shelly Binding
 ```
 ## Updating DEV version
 
