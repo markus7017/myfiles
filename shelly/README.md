@@ -65,13 +65,20 @@ Sometimes you need to run the manual discovery multiple times until you see all 
 
 ## Firmware
 
-To utilize all features the binding requires firmware version 1.5.7 or newer, version 1.6+ is strongly recommended.
-Support for CoIoT/CoAP requires version 1.6 or newer. Version 1.7 is recommended for all devices.
+The binding requires firmware version 1.7.0 or newer to enable all features.
+Some of the features are enabled dynamically or are not available depending on device type and firmware release.
+The Web UI of the Shelly device displays the current firmware version under Settings:Firmware and shows an update option when a newer version is available.
 
-Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices).
-The Web UI of the Shelly device displays the current firmware version under Settings:Firmware and shows an update option when a newer version is available. The binding displays a WARNING in the log if the firmware is older.
+|Version|Notes                                                                                             |
+|-------|--------------------------------------------------------------------------------------------------|
+|1.5.7  |Minimum supported version. Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices). The binding displays a WARNING in the log if the firmware is older.|
+|1.6.x  |First stable CoIoT implementation. AutoCoIoT is enabled when firmware version >= 1.6 is detected. |
+|1.7.x  |Add additional status update values, fixes various issues                                         |
+|1.8.0  |Brings CoIoT version 2, which fixes a lot issues and gaps of version 1.                           |
 
-The current firmware version is reported in the thing properties and a dedicated channel (device#updateAvailable) indicates the availability of a newer firmware. Use the device's Web UI or the Shelly App to perform the update.
+The current firmware version is reported in the Thing Properties. A dedicated channel (device#updateAvailable) indicates the availability of a newer firmware. Use the device's Web UI or the Shelly App to perform the update.
+
+Once you have updated the device **you should delete and re-discover** the openHAB Thing. Battery powered devices need to wake up by pressing the button. This makes sure that the Thing is correctly initialized and all supported channels are created. openHAB will kill the item linkage. At a minimum you should restart the binding on the openHAB console if you don't want to re-discover the things.
 
 ### Password Protected Devices
 
@@ -249,14 +256,17 @@ This could be a switch connected to the SW input of the relay or the Button 1.
 
 The following trigger types are sent:
 
-|Event Type        |Description                                                                                                    |
-|------------------|---------------------------------------------------------------------------------------------------------------|
-|SHORT_PRESSED     |The button was pressed once for a short time                                                                   |
-|DOUBLE_PRESSED    |The button was pressed twice with short delay                                                                  |
-|PRESSED           |The button was pressed three times with short delay                                                            |
-|LONG_PRESSED      |The button was pressed for a longer timetime                                                                   |
+|Event Type         |Description                                                                                                    |
+|-------------------|---------------------------------------------------------------------------------------------------------------|
+|SHORT_PRESSED      |The button was pressed once for a short time                                                                   |
+|DOUBLE_PRESSED     |The button was pressed twice with short delay                                                                  |
+|TRIPLE_PRESSED     |The button was pressed three times with short delay                                                            |
+|LONG_PRESSED       |The button was pressed for a longer time                                                                       |
+|SHORT_LONG_PRESSED |A short followed by a long button push                                                                         |
+|LONG_SHORT_PRESSED |A long followed by a short button push                                                                         |
  
- Check the channel definitions for the various devices. 
+Check the channel definitions for the various devices to see if the device supports those events.
+You could use the Shelly App to set the timing for those events. 
 
 ### Alarms
 
@@ -530,7 +540,7 @@ The Dimmer should be calibrated using the Shelly App.
 |status    |input1       |Switch   |yes      |State of Input 1                                                       |
 |          |input2       |Switch   |yes      |State of Input 2                                                       |
 |          |input3       |Switch   |yes      |State of Input 3                                                       |
-|          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, PRESSED or LONG_PRESSED  |
+|          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, TRIPLE_PRESSED, LONG_PRESSED, SHORT_LONG_PRESSED or LONG_SHORT_PRESSED  |
 |          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                        |
 |          |eventCount   |Number   |yes      |Number of button events                                                |
 
@@ -640,7 +650,7 @@ The Dimmer should be calibrated using the Shelly App.
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
-|meter     |currentWatts |Number   |yes      |Current power consumption in Watts (all channels)                                   |
+|meter     |currentWatts |Number   |yes      |Current power consumption in Watts (all channels)                      |
 
 Please note that the settings of channel group color are only valid in color mode and vice versa for white mode.
 The current firmware doesn't support the timestamp report for the meters. 

@@ -48,7 +48,7 @@
 
 ## Shelly 1PM
 
-### Shelly 1PM - /settings
+### Shelly 1PM, FW 1.5.6 - /settings
 
 ```
 {	"device":	{	"type": "SHSW-PM", "mac": "XXXXXXXX", "hostname": "shelly1pm-XXXXXX", "num_outputs": 1, "num_meters": 1},
@@ -78,7 +78,20 @@
 }
 ```
 
-### Shelly 1PM /status
+### Shelly 1PM with Addon, FW 1.6.1 /settings
+
+```
+{"device":{"type":"SHSW-PM","mac":"8CAAB505FCF4","hostname":"shelly1pm-8CAAB505FCF4","num_outputs":1,"num_meters":1},"wifi_ap":{"enabled":false,"ssid":"shelly1pm-8CAAB505FCF4","key":""},"wifi_sta":{"enabled":true,"ssid":"TurtlePineHouse","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":"TurtlePineHouse2","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shelly1pm-8CAAB505FCF4","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"192.168.6.137","enabled":true},"login":{"enabled":true,"unprotected":false,"username":"openhab","password":"bluebird"},"pin_code":"","name":"","fw":"20200312-124223/v1.6.1@112262fd","factory_reset_from_switch":true,"discoverable":true,"build_info":{"build_id":"20200312-124223/v1.6.1@112262fd","build_timestamp":"2020-03-12T12:42:23Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":500.000000,"lng":500.000000,"tzautodetect":false,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":false,"time":"14:38","unixtime":1597588687,"hwinfo":{"hw_revision":"prod-191219", "batch_id":1},"max_power":3500,"power_correction":1.00,"mode" :"relay","longpush_time":800,"relays":[{"name":null,"ison":true,"has_timer":false,"default_state":"last","btn_type":"toggle","btn_reverse":0,"auto_on":0.00,"auto_off":0.00,"btn_on_url":null,"btn_off_url":null,"out_on_url":null,"out_off_url":null,"longpush_url":null,"shortpush_url":null,"schedule":false,"schedule_rules":[],"max_power":3500}],"meters":[{"power":224.53,"is_valid":true,"timestamp":1597588687,"counters":[0.000, 0.000, 0.000],"total":0}],"ext_sensors":{"temperature_unit":"C"},"ext_temperature":[{"overtemp_threshold_tC":4.0,"overtemp_threshold_tF":39.2,"undertemp_threshold_tC":30.0,"undertemp_threshold_tF":86.0,"overtemp_act":"disabled","undertemp_act":"disabled"},{"overtemp_threshold_tC":0.0,"overtemp_threshold_tF":32.0,"undertemp_threshold_tC":0.0,"undertemp_threshold_tF":32.0,"overtemp_act":"disabled","undertemp_act":"disabled"}],"ext_humidity":[]}
+```
+
+```
+"ext_temperature":[
+	{"overtemp_threshold_tC":4.0,"overtemp_threshold_tF":39.2,"undertemp_threshold_tC":30.0,"undertemp_threshold_tF":86.0,"overtemp_act":"disabled","undertemp_act":"disabled"},
+	{"overtemp_threshold_tC":0.0,"overtemp_threshold_tF":32.0,"undertemp_threshold_tC":0.0,"undertemp_threshold_tF":32.0,"overtemp_act":"disabled","undertemp_act":"disabled"}
+]
+```
+
+## Shelly 1PM /status
 
 ```
 {
@@ -798,7 +811,22 @@ Shelly 3EM /settings
 ### /settings
 
 ```
-{"device":{"type":"SHIX3-1","mac":"XXXXXXXXXXXX","hostname":"shellyix3-XXXXXXXXXXXX","num_inputs":3, "num_outputs":0},"wifi_ap":{"enabled":false,"ssid":"shellyix3-XXXXXXXXXXXX","key":""},"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyix3-A4CF12F47388","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":true,"unprotected":false,"username":"openhab"},"pin_code":"","name":"","fw":"20200601-123434/v1.7.0@d7961837","factory_reset_from_switch":true,"discoverable":true,"build_info":{"build_id":"20200601-123434/v1.7.0@d7961837","build_timestamp":"2020-06-01T12:34:34Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"22:21","unixtime":1592950863,"hwinfo":{"hw_revision":"prod-2020-04-21", "batch_id":1},"longpush_duration_ms":{"min":800, "max":3000},"multipush_time_between_pushes_ms":{"max":500},"inputs":[{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null}]}
+{	"device":{"type":"SHIX3-1","mac":"XXXXXXXXXXXX","hostname":"shellyix3-XXXXXXXXXXXX","num_inputs":3, "num_outputs":0},
+	"wifi_ap":{"enabled":false,"ssid":"shellyix3-XXXXXXXXXXXX","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"ShellyIoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellyix3-A4CF12F47388","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15},"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":true,"unprotected":false,"username":"openhab"},"pin_code":"","name":"",
+	"fw":"20200601-123434/v1.7.0@d7961837","factory_reset_from_switch":true,"discoverable":true,"build_info":{"build_id":"20200601-123434/v1.7.0@d7961837","build_timestamp":"2020-06-01T12:34:34Z","build_version":"1.0"},
+	"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":50.110901,"lng":8.682130,"tzautodetect":true,"tz_utc_offset":7200,"tz_dst":true,"tz_dst_auto":true,"time":"22:21","unixtime":1592950863,"hwinfo":{"hw_revision":"prod-2020-04-21", "batch_id":1},
+	"longpush_duration_ms":{"min":800, "max":3000},"multipush_time_between_pushes_ms":{"max":500},
+	"inputs":[
+		{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},
+		{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null},
+		{"name":null,"btn_type":"momentary","btn_reverse":0,"btn_on_url":null,"btn_off_url":null,"shortpush_url":null,"longpush_url":null,"double_shortpush_url":null,"triple_shortpush_url":null,"shortpush_longpush_url":null,"longpush_shortpush_url":null}
+	]
+}
 ```
 
 ### /status
@@ -1249,6 +1277,24 @@ and /settings :
 
 {"G":[[0,118,"normal"],[0,119,"none"],[0,120,"not_completed"],[0,122,0]]}
 ```
+
+### CoAP Description 1.8
+{
+	"blk":[
+		{"I":1,"D":"sensor_0"},
+		{"I":2,"D":"valve_0"},
+		{"I":3,"D":"device"}
+	],
+	"sen":[
+		{"I":9103,"T":"EVC","D":"cfgChanged","R":"U16","L":3},
+		{"I":3113,"T":"S","D":"sensorOp","R":["warmup/normal/fault","unknown"],"L":1},
+		{"I":3114,"T":"S","D":"selfTest","R":"not_completed/completed/running/pending","L":1},
+		{"I":6108,"T":"A","D":"gas","R":["none/mild/heavy/test","unknown"],"L":1},
+		{"I":3107,"T":"C","D":"concentration","U":"ppm","R":["U16","-1"],"L":1},
+		{"I":1105,"T":"S","D":"valve","R":["closed/opened/not_connected/failure/closing/opening/checking","unknown"],"L":2}
+	]
+}
+
 
 ## Shelly Button (SHBTN-1) FW 1.7
 
