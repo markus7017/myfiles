@@ -1,4 +1,3 @@
-
 # Shelly Binding (org.openhab.binding.shelly)
 
 This openHAB 2 Binding implements control for the Shelly series of devices.
@@ -157,5 +156,4 @@ once basic discovery is implemented the coapDiscription in the Thing properties 
 Create a new Issue here: https://github.com/openhab/openhab-addons/issues
 Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
 You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
-
 
