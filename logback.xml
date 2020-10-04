@@ -1,86 +1,88 @@
 <configuration scan="true" scanPeriod="30 seconds">
 
-    <!-- defined a console append -->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%.15thread] %-5level %c{-3}:%line - %msg%n</pattern>
-        </encoder>
-    </appender>
 
-    <!-- Another appender that logs into a file -->
-    <appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
-        <file>${user.home}/openhab.log</file>
-        <encoder>
-            <!-- pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %-40.40logger{40}:%-5line | %msg%ex{10}%n</pattern -->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %c{-3}:%-5line | %msg%ex{10}%n</pattern>
-        </encoder>
-    </appender>
+	<!-- defined a console append -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%.15thread] %-5level %c{-3}:%line - %msg%n</pattern>
+		</encoder>
+	</appender>
 
-    <root level="WARN">
-        <appender-ref ref="LOGFILE" />
-        <appender-ref ref="STDOUT" />
-    </root>
+	<!-- Another appender that logs into a file -->
+	<appender name="LOGFILE" class="ch.qos.logback.core.FileAppender">
+		<file>${user.home}/openhab.log</file>
+		<encoder>
+			<!-- pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %-40.40logger{40}:%-5line | %msg%ex{10}%n</pattern -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %c{-3}:%-5line | %msg%ex{10}%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="WARN">
+		<appender-ref ref="LOGFILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
 
 
-    <appender name="EVENTFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${user.home}/events.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- weekly rollover and archiving -->
-            <fileNamePattern>${openhab.logdir:-userdata/logs}/events-%d{yyyy-ww}.log.zip</fileNamePattern>
-            <!-- maximum number of archive files to keep -->
-            <maxHistory>26</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
-        </encoder>
-    </appender>
+	<appender name="EVENTFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${user.home}/events.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- weekly rollover and archiving -->
+			<fileNamePattern>${openhab.logdir:-userdata/logs}/events-%d{yyyy-ww}.log.zip</fileNamePattern>
+			<!-- maximum number of archive files to keep -->
+			<maxHistory>26</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+		</encoder>
+	</appender>
 
-    <logger name="smarthome.event" level="INFO" additivity="false">
-        <appender-ref ref="EVENTFILE" />
-        <appender-ref ref="STDOUT" />
-    </logger>
- 
-    <!-- http://felix.apache.org/documentation/subprojects/apache-felix-logback.html -->
-    <!-- TRACE DEBUG INFO WARN ERROR OFF -->
+	<logger name="smarthome.event" level="INFO" additivity="false">
+		<appender-ref ref="EVENTFILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
 
-    <!-- log all Framework events -->
-    <!-- <logger name="Events.Framework" level="TRACE" /> -->
+	<!-- http://felix.apache.org/documentation/subprojects/apache-felix-logback.html -->
+	<!-- TRACE DEBUG INFO WARN ERROR OFF -->
 
-    <!-- log all Bundle events -->
-    <!-- <logger name="Events.Bundle" level="TRACE" /> -->
+	<!-- log all Framework events -->
+	<!-- <logger name="Events.Framework" level="TRACE" /> -->
 
-    <!-- log all Service events -->
-    <!-- <logger name="Events.Service" level="TRACE" /> -->
+	<!-- log all Bundle events -->
+	<!-- <logger name="Events.Bundle" level="TRACE" /> -->
 
-    <!-- any log events originating from bundles that used the original LogService logging API -->
-    <logger name="LogService" level="WARN" />
+	<!-- log all Service events -->
+	<!-- <logger name="Events.Service" level="TRACE" /> -->
 
-    <!-- log WARN Framework service events of bundles whose BSN starts with `org.eclipse.osgi` (guess who that is?) -->
-    <!-- <logger name="Events.Service.org.eclipse.osgi" level="WARN" /> -->
+	<!-- any log events originating from bundles that used the original LogService logging API -->
+	<logger name="LogService" level="WARN" />
 
-    <!-- turn OFF legacy Log Service records from bundles whose BSN starts with `org.baz` -->
-    <!-- <logger name="LogService.org.baz" level="OFF" /> -->
+	<!-- log WARN Framework service events of bundles whose BSN starts with `org.eclipse.osgi` (guess who that is?) -->
+	<!-- <logger name="Events.Service.org.eclipse.osgi" level="WARN" /> -->
 
-    <!-- log DEBUG from any log API using a logger name starting with `org.my.foo` -->
-    <!-- <logger name="org.my.foo" level="DEBUG" /> -->
+	<!-- turn OFF legacy Log Service records from bundles whose BSN starts with `org.baz` -->
+	<!-- <logger name="LogService.org.baz" level="OFF" /> -->
 
-    <!-- Ignore warnings given by ServletContainerInitializerScanner -->
-    <logger name="org.ops4j.pax.web.utils" level="ERROR" />
+	<!-- log DEBUG from any log API using a logger name starting with `org.my.foo` -->
+	<!-- <logger name="org.my.foo" level="DEBUG" /> -->
+
+	<!-- Ignore warnings given by ServletContainerInitializerScanner -->
+	<logger name="org.ops4j.pax.web.utils" level="ERROR" />
+	<logger name="org.openhab.core" level="INFO" />
+	<logger name="openhab.core.io" level="WARN" />
+
+	<logger name="javax.jmdns" level="ERROR" />
+	<logger name="org.jupnporg.jupnp" level="ERROR" />
+	<logger name="org.jupnp" level="ERROR" />
+
+	<logger name="org.openhab.binding.shelly" level="DEBUG" />
+	<logger name="org.openhab.binding.magentatv" level="DEBUG" />
+	<logger name="org.openhab.binding.gree" level="DEBUG" />
+	<logger name="org.openhab.binding.carnet" level="DEBUG" />
+	<logger name="org.openhab.binding.rachio" level="DEBUG" />
+	<logger name="org.openhab.binding.appletv" level="DEBUG" />
+	<logger name="org.openhab.binding.fsinternetradio" level="TRACE" />
 
     <logger name="org.eclipse.smarthome" level="INFO" />
-    <logger name="org.openhab.core" level="INFO" />
-    <logger name="javax.jmdns" level="ERROR" />
-    <logger name="org.jupnporg.jupnp" level="ERROR" />
-    <logger name="org.jupnp" level="ERROR" />
-
-    <logger name="org.openhab.binding.shelly" level="DEBUG"/>
-    <logger name="org.openhab.binding.carnet" level="DEBUG" />
-    <logger name="org.openhab.binding.rachio" level="DEBUG" />
-    <logger name="org.openhab.binding.magentatv" level="DEBUG" />
-    <logger name="org.openhab.binding.appletv" level="DEBUG" />
-    <logger name="org.openhab.binding.fsinternetradio" level="TRACE"/>
-
     <logger name="org.eclipse.smarthome.io" level="WARN" />
-    <logger name="openhab.core.io" level="WARN" />
 
 </configuration>
