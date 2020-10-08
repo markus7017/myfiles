@@ -1,0 +1,32 @@
+{
+   "tripDataList":{
+      "tripData":[
+         {
+            "tripType":"longTerm",
+            "tripID":685971455,
+            "averageElectricEngineConsumption":138,
+            "averageFuelConsumption":56,
+            "averageSpeed":58,
+            "mileage":6013,
+            "startMileage":17,
+            "traveltime":6226,
+            "timestamp":"2020-10-08T04:42:28Z",
+            "reportReason":"clamp15off",
+            "overallMileage":6031
+         },
+         {
+            "tripType":"longTerm",
+            "tripID":759523279,
+            "averageElectricEngineConsumption":118,
+            "averageFuelConsumption":63,
+            "averageSpeed":60,
+            "mileage":5484,
+            "startMileage":18,
+            "traveltime":5528,
+            "timestamp":"2020-09-17T10:56:30Z",
+            "reportReason":"clamp15off",
+            "overallMileage":5501
+         }
+      ]
+   }
+}

@@ -1,0 +1,62 @@
+{
+	"destinations":{
+		"destination":[
+			{
+				"destinationName":null,
+				"immediateDestination":false,
+				"sendToVehicle":false,
+				"id":"3853059352",
+				"href":null,
+				"address":{
+					"addressType":"32",
+					"city":"Plauen",
+					"country":"DE",
+					"street":"Hammerstraße 55",
+					"zipCode":"08523"
+				},
+				"destinationSource":"Unknown",
+				"geoCoordinate":{
+					"latitude":"50.498084",
+					"longitude":"12.145352"
+				},
+				"POIContact":{
+					"lastName":"Hammerstraße 55",
+					"phoneData":[
+						{
+							"phoneType":"2"
+						}
+					]
+				},
+				"fetchStatus":"FetchDeactivated"
+			},
+			{
+				"destinationName":null,
+				"immediateDestination":false,
+				"sendToVehicle":false,
+				"id":"3853059351",
+				"href":null,
+				"address":{
+					"addressType":"32",
+					"city":"Schnaittach",
+					"country":"DE",
+					"street":"Siechenberg 14",
+					"zipCode":"91220"
+				},
+				"destinationSource":"Unknown",
+				"geoCoordinate":{
+					"latitude":"49.55492",
+					"longitude":"11.33977"
+				},
+				"POIContact":{
+					"lastName":"Siechenberg 14",
+					"phoneData":[
+						{
+							"phoneType":"2"
+						}
+					]
+				},
+				"fetchStatus":"FetchDeactivated"
+			}
+		]
+	}
+}
