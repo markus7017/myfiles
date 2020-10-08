@@ -9,10 +9,10 @@
 				"href":null,
 				"address":{
 					"addressType":"32",
-					"city":"Plauen",
+					"city":"Remagen",
 					"country":"DE",
-					"street":"Hammerstraße 55",
-					"zipCode":"08523"
+					"street":"Hauptstraße 1",
+					"zipCode":"53424"
 				},
 				"destinationSource":"Unknown",
 				"geoCoordinate":{
@@ -20,7 +20,7 @@
 					"longitude":"12.145352"
 				},
 				"POIContact":{
-					"lastName":"Hammerstraße 55",
+					"lastName":"Hauptstraße 1",
 					"phoneData":[
 						{
 							"phoneType":"2"
@@ -37,18 +37,18 @@
 				"href":null,
 				"address":{
 					"addressType":"32",
-					"city":"Schnaittach",
+					"city":"Bonn",
 					"country":"DE",
-					"street":"Siechenberg 14",
-					"zipCode":"91220"
+					"street":"Bahnhofstraße 10",
+					"zipCode":"53173"
 				},
 				"destinationSource":"Unknown",
 				"geoCoordinate":{
-					"latitude":"49.55492",
-					"longitude":"11.33977"
+					"latitude":"46.56392",
+					"longitude":"12.34324"
 				},
 				"POIContact":{
-					"lastName":"Siechenberg 14",
+					"lastName":"Bahnhofstraße 10",
 					"phoneData":[
 						{
 							"phoneType":"2"
