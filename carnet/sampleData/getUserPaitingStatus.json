@@ -1,0 +1,9 @@
+{
+	"pairingInfo":{
+		"pairingStatus":"PAIRINGCOMPLETE",
+		"xmlns":"http://www.vw.com/mbb/usermanagement",
+		"userId":"XXXXXXXXXXXXXXX",
+		"pairingCode":XXXXXX,
+		"vehicle":"XXXXXXXXXXXX"
+	}
+}
