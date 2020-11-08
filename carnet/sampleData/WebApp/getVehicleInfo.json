@@ -1,0 +1,14 @@
+{
+"url":"https://api.my.audi.com/smns/v1/navigation/v1/vehicles",
+   "vehicles":[
+      {
+         "type":"EXISTING",
+         "favorite":false,
+         "vin":"WAUZZZF21LN0XXXXX",
+         "commissionNumber":"182HSE10XXXXX",
+         "shortName":"Audi A6 Avant",
+         "imageUrl":"//mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSY8SIDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlBXg2fJp2x_viZl9L44VPmNTDwgp-rS_ioEnePnRnG37n3m4HNp548m9ZuUbvv8vMPC8nCy7JMjseOrnE5naPEobOTq_6_Iz8Jilrfz48sSubd_tHC3aZn8-5Mq04jADj-Fm-59mS4Neaa6Y08jq5XJFfKbfTwYe10cdFdNP9d4S0bqQJHbB8LPMqRvTGXh6Ob0C6hK1dvmunn18f4yGjN1WiykMPLkKJqLpsb-_OZ3qtP_WfP7ZmnarWAaemlkCOwUF7xYppMdf_VzMVKItU3aVgce7qkC6UqhT7TlXgbr-jZztgUqMaxl4nk5aP5_75S4fMfvPe5MTXRk-aX5ZzMBT-X-31rGebTdPzGDIciq-yandmu7FwNNt-_xJGm9j6WJmQftPWw0bbW7dMgf6TYrzdUlfcsupwFN7pFsfauznLHRk4CnOffVCe6lq9n2ed8f1mPz4trwR-c7A4_Cugy_7bEZqbDaLauSjf0wPouVCGFhBccAAJJifAQl-OyDBkcQAJkEyDiBiPojPeIqZgYFlAwMDUwRIBwMfX2lRTkFiUWKuXnlmSkkGAKCwl5kYAgAA?wid=600",
+         "nickName":"Audi Markus"
+      }
+   ]
+}

@@ -1,0 +1,49 @@
+{
+"url":"https://userinfo.my.audi.com/bpt/v1",
+
+   "data":{
+      "favoritePartner":{
+         "id":"UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==",
+         "kvpsid":"36668",
+         "kvpsSyncId":"36668",
+         "countryCode":"DE",
+         "name":"Audi Zentrum Koblenz GmbH",
+         "services":[
+            "after-sales",
+            "otv",
+            "sales",
+            "service",
+            "service-r8",
+            "usedcars"
+         ],
+         "serviceAppointment":"SLI",
+         "phone":"+49 261 808040",
+         "fax":"+49 261 8080442",
+         "email":"azk-anfragen@loehrgruppe.de",
+         "vcardUrl":"https://cache-dealersearch.audi.com/vcard/download?app=audi-deu&kvpsid=36668",
+         "website":"https://www.audi-zentrum-koblenz.audi",
+         "openingsHtml":"<p><strong>Showroom</strong><br />Montag - Freitag: 08:00 - 18:00 Uhr<br />Samstag: 09:00 - 13:00 Uhr<br />Sonntag: 10:00 - 16:00 Uhr (keine Beratung, kein Verkauf)<br /><br /><strong>Werkstatt</strong><br />Montag - Freitag: 07:00 - 17:00 Uhr<br />Samstag: 08:30 - 12:30 Uhr<br />Sonntag: nicht geöffnet<br /><br /><strong>Verkauf</strong><br />Montag - Freitag: 08:30 - 18:00 Uhr<br />Samstag: 09:00 - 13:00 Uhr<br />Sonntag: 10:00 - 16:00 Uhr (schauoffen, keine Beratung, kein Verkauf)<br /></p><p>Bitte beachten Sie, dass außerhalb der gesetzlichen Öffnungszeiten keine Beratung, kein Verkauf und keine Probefahrt erfolgen kann.</p>",
+         "address":{
+            "street":"Andernacher Straße 205",
+            "zip":"56070",
+            "city":"Koblenz",
+            "display":[
+               "Andernacher Straße 205 ",
+               "56070 Koblenz"
+            ]
+         },
+         "lat":50.37857959999999,
+         "lng":7.582756900000049,
+         "staticMapImageUrls":{
+            "XS":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/XS/de",
+            "XS2x":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/XS2x/de",
+            "S":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/S/de",
+            "S2x":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/S2x/de",
+            "M":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/M/de",
+            "M2x":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/M2x/de",
+            "L":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/L/de",
+            "L2x":"https://userinfo.my.audi.com/bpt/v1/staticMapImage/UGFydG5lcjp7InRlbmFudCI6IkRFIiwia3Zwc2lkIjoiMzY2NjgifQ==/L2x/de"
+         }
+      }
+   }
+}

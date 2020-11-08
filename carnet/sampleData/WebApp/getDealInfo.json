@@ -1,0 +1,24 @@
+{
+"url":"https://userinfo.my.audi.com/bvh/v1",
+"method":"POST",
+"body":"{"query":"\nquery VehicleDetails($id: String!, $country: String!, $language: String!) {\n  vehicle(id: $id, country: $country, language: $language) {\n    mobileNetworkOperatorDetails(country: $country, language: $language) {\n      portalURL\n      termsConditionsURL\n    }\n    personalDetails {\n      nickname\n      numberPlate\n      registrationDate\n      distanceTravelled\n      readingUnit\n      purchasePrice\n      purchasePriceCurrency\n      remarkToEquip\n    }\n  }\n}\n","variables":{"id":"VmVoaWNsZTpXQVVaWlpGMjFMTjA0NjQ0OQ==","country":"DE","language":"de"}}"
+
+   "data":{
+      "vehicle":{
+         "mobileNetworkOperatorDetails":{
+            "portalURL":"https://auto-redirect.cubictelecom.com/audi",
+            "termsConditionsURL":"https://audi.cubictelecom.com/de/termsAndConditions"
+         },
+         "personalDetails":{
+            "nickname":"Audi Markus",
+            "numberPlate":null,
+            "registrationDate":null,
+            "distanceTravelled":null,
+            "readingUnit":null,
+            "purchasePrice":null,
+            "purchasePriceCurrency":null,
+            "remarkToEquip":null
+         }
+      }
+   }
+}

@@ -1,0 +1,42 @@
+{
+   "iat":1604759580,
+   "access_token":"xxx",
+   "access_token_expires":"1604763179",
+   "id_token":{
+      "at_hash":"xxx",
+      "sub":"xxxxxxx-6b7b-41c8-addf-3518d48c1183",
+      "email_verified":true,
+      "iss":"https://identity.vwgroup.io",
+      "jtt":"id_token",
+      "nonce":"XXXXXXXeOgCdl7pRxEKK_e-XIDw75qbB8gbBMHzQ7I",
+      "lee":[
+         "AUDI"
+      ],
+      "aud":"c7c15e7f-135c-4bd3-9875-63838616509f@apps_vw-dilab_com",
+      "acr":"https://identity.vwgroup.io/assurance/loa-2",
+      "updated_at":1604752596226,
+      "aat":"identitykit",
+      "exp":1604756196,
+      "iat":1604752596,
+      "jti":"d6fca915-3d5b-40e2-b8d5-a755809c3960",
+      "email":"markus@me.com"
+   },
+   "userinfo":{
+      "sub":"XXXXXXXX-6b7b-41c8-addf-3518d48c1183",
+      "name":"Markus",
+      "given_name":"Markus",
+      "family_name":"Audi",
+      "nickname":"markus7017",
+      "email":"markus@me.com",
+      "email_verified":true,
+      "birthdate":"1909-01-30",
+      "address":{
+         "street_address":"Hauptstrasse 45\nppenHAB",
+         "locality":"Berlin",
+         "postal_code":"12345",
+         "country":"DE",
+         "formatted":"Markus Audi\nHauptstraße 1\nopenHAB\n12345 Berlin\nGermany"
+      },
+      "updated_at":1597594352
+   }
+}

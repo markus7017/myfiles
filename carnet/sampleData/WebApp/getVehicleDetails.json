@@ -1,0 +1,1578 @@
+{
+   "data":{
+      "userVehicles":[
+         {
+            "csid":"cd20a2c119404e69b3c6ce53eXXXXXX",
+            "vin":"WAUZZZF21LXXXXXXX",
+            "owner":false,
+            "type":"EXISTING",
+            "devicePlatform":"MBB",
+            "mbbConnect":true,
+            "userRole":{
+               "role":"PRIMARY_USER"
+            },
+            "vehicle":{
+               "core":{
+                  "commissionNumber":"182HSE1XXXXXX",
+                  "modelYear":2020,
+                  "exteriorColorId":"F4F4"
+               },
+               "classification":{
+                  "driveTrain":"MHEV",
+                  "modelRange":"a6"
+               },
+               "media":{
+                  "shortName":"Audi A6 Avant",
+                  "longName":"Audi A6 Avant sport 50 TDI quattro tiptronic",
+                  "exteriorColor":"Vesuvgrau Metallic",
+                  "interiorColor":"schwarz-schwarz-felsgrau/schwarz-schwarz/schwarz/mondsilber"
+               },
+               "renderPictures":[
+                  {
+                     "mediaType":"MYAPN1NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSY8SIDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlBXg2cwvFaYVwO3KmR2zvTgiddqaSTdmMvBsubyr18z_5f7DC04-2qsYGJ8sFZfKwBP0wsZjO5v1zMzlWov_-EvHyGmsusrAo3XvvbheYKXr39WCh1UNzv8OnOpqysBjsevGYW3lyLT-D__nxU5Kit-VvnI_A4-xYF37X45Zn0IV5Lr0V2srPPuV_p2B5wKvhf3GqcaBJp2epxL5F3H-j7gex8BTy8p3_OyHC5F12seZtDV-nXfYbP-ZgceyJ1R2S2nOioIr146v0bQUSa5VmM7AY6uR8mbX9uL3_w9915uqeXLq0U9V9Qw8sTO6exZcunTqy8VjLbsq_l1lPKZ4i4FHWyi3JSbOvZtnsWl9lXOhmN6bf38ZePZ2bc3ue7JqEUtM3WtFn8PmXxoYbRl4Nm05ZZUxS3Cput_7r7YuHJceCGxiYeC5VzWtY29CwGyvf8qvFuw4_9lSZi0v0G_-nUvafxhlHY394ufU_yvVPJstgYEVGAdMEkCC-T2Q4JUDEhyTGcAkKHb2g4gGEJ_xOTMDA8sGoOoIBhDg4ystyilILErM1SvPTCnJAAAkvulcGAIAAA"
+                  },
+                  {
+                     "mediaType":"MYAPN2NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSYsZKBuSAvnRGoIIWJMzM3MT1VH8jnZ-RONNNNrSjRzUvNzWcHyvLwdKSy7d37NJhjYd_efev0VgtXRG_by8Aj8-PxG9fFSod3RJcrfpv48FZJVdcEBp61CZWvdpja94Z1HU--yqYdLN042YmBx8OhflWiwN6rdrl99xdrPs1bse3zLgYeReVSL5ugpJTZ91P6d8rVMh9p3A1UWzNz-8eo1OIJ6TFTD4aqWiVK9GQDHdH67q7C3Y3cv4WeCOxdkb3kt9P5hFgGngf5_CtZ_W-L9ktHNXR6cy7SaJF9ysBTcM-4XUDm25RJJ4Sub5xUa1tXeGce0L2bUk999mm1rDyusdvyx8JWzRnzZBl4Zm73vzjv2iP21C2vyu1Yq58WGCl8Y-B55fjr45_274pbuOcdu73iz-45Z7WWMrCCwqoXRDAACf5HQILLigFMwgQhJLMCMwMDywYQAyzEx1dalFOQWJSYq1eemVKSAQDUFarkwAEAAA"
+                  },
+                  {
+                     "mediaType":"MYAPN3NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSYcSkDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlOXj0dFbOG3HjwXZU-KnH51T3OkUFvJ4LgNPRgNzY2bFxvd3eeM7A5cFH-m0XJfBwHMu7MX8_1vTf6xZuDLBfJKXfbxZoCoDD8_Ear-62d-375zJLGl_73xhzKYIoOjhD7PS9-VmHpLZYMe48WRnhB-vqSIDT9kqRsU5iUv5Hy2ZcS8p4F3grlfPZBh4Vi6ccLEzZIVwI2vOvzccDgzNXi-KGHiifmaU_dI9oKUpkaVYHLZlhcCcM3oMPIq-H2bm3lq4OSr3ZHrj44CJxYdyNzDwNDK0ueZOt3LUqHRM2Bu_2eRc4aHDDDysaSq2r9g9Xt3dcJPP7pfgDbb_0Y8ZeL5KJxs_rm-b8kdYy7yyZVmM7J4Npgw8u8tNQ0qbKvTPWZxVei4e--b__N2-DDx6i3uXG7Ylel7crlkn5H3ihITBnF8MrMBwZWkBEsyPgQR3EZDgaGIAk0CCsRgU7PNBfMbzzECVGxgYmCIYQICPr7QopyCxKDFXrzwzpSQDAFXTJtDsAQAA"
+                  },
+                  {
+                     "mediaType":"MYAPN5NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSYcSkDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlOXjUX6wSj92yVPvSYHBjMkv2rcIetc6M_D8DSz7f6dpxo_zLp9FeM1Y7XjC59kz8PRNjZrwvDXkG2uN9N9ZK4oiSkLfrmTgMTix_eXsh99_Wl6T5K-4H7bf3_LePwaeFRv5ZSx0Xzx6vqboUe5jpm3z7gd9YuDpnr_u6wbefbvdt0QZMJfsY33c06PCwLPuVcG11TfPLf1u0biicn9520_DkzsYeBySZ8aJrJTMvaD09v_ilM4lIn-zhBl4lHl-Sec8fcF4Scbgk6_THP4lzrcFGHgm3rB-MMk_rpX10EyRaTsmubqz5h9j4Pn0lyHU5PhmqbqgyBmKRjFPlbmyFzHwJE6-ULqTrUA27GbnCWnx0KVaLUuaGHim_Tzzizu7REKRc5H31hvh676tELFj4NFs1raYbXD2t5E2p33NhazSS-vY7zOwAsOVxQ1IMG8EEtyvgATHGgYwCSQYC0DBPh_EZ7zKDFS5gYGBKYIBBPj4SotyChKLEnP1yjNTSjIAwmvVeewBAAA"
+                  },
+                  {
+                     "mediaType":"MYAPN6NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSY8SIDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlBXgqV0i7FP74-pXY0H-hXt7-ZuFN9xkZeAxux3_tuBz75cJHkfKnl15c_TOgXeSDDyOfFtrbl96yXNuUv1z4eN7_Ko_zPzKwCMYMNVpo5rNOnuu-q_bri144bq7ppCB51msaLn5y7-Zd3WUZFYmTCq_cXDdDwYe-TMqG2vsbXZeFNq0eqvmJEGvUu07DDwhjEHiH-r6ApcfC2DmStu6TPrgm2kMPAGs1qFPKwyllz8w2mDTu2LznO8Nuxh4vHYV1UfvvuZTxTS76M_DqxP33VDYycDD4XLm8aFj33UmKNg6nBD_8ETMz-kiA8_yk_dF9rCqSZy_Kff6Z6_kXUkrzh0MPEcnXmBY8JSlWPi_dHhj031Gu-WM5xh4Mnom6O28OL0rJ2fGtONfon8GcbnJM_AIvJ45cdruTXczvCbkupZmvlJhkwOGA8edAyV3tT8sPP_svMQ8NRErL7VNNxh4JLxzn1z7y-8rI_316JqqmR5ZgVtCGViBccBkACSYzwIJfgYgwbEKQoJipwpEtID4jK-YGRhYNgBVRzCAAB9faVFOQWJRYq5eeWZKSQYACgkh1hgCAAA"
+                  },
+                  {
+                     "mediaType":"MYAPN8NB",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSY8SIDc0FeOiNQQQoTZ2ZuYnqqPpDPz8idaKabWlGim5eam88OlBXg2fJp2x_viZl9L44VPmNTDwgp-rS_ioEnePnRnG37n3m4HNp548m9ZuUbvv8vMPC8nCy7JMjseOrnE5naPEobOTq_6_Iz8Jilrfz48sSubd_tHC3aZn8-5Mq04jADj-Fm-59mS4Neaa6Y08jq5XJFfKbfTwYe10cdFdNP9d4S0bqQJHbB8LPMqRvTGXh6Ob0C6hK1dvmunn18f4yGjN1WiykMPLkKJqLpsb-_OZ3qtP_WfP7ZmnarWAaemlkCOwUF7xYppMdf_VzMVKItU3aVgce7qkC6UqhT7TlXgbr-jZztgUqMaxl4nk5aP5_75S4fMfvPe5MTXRk-aX5ZzMBT-X-31rGebTdPzGDIciq-yandmu7FwNNt-_xJGm9j6WJmQftPWw0bbW7dMgf6TYrzdUlfcsupwFN7pFsfauznLHRk4CnOffVCe6lq9n2ed8f1mPz4trwR-c7A4_Cugy_7bEZqbDaLauSjf0wPouVCGFhBccAAJJifAQl-OyDBkcQAJkEyDiBiPojPeIqZgYFlAwMDUwRIBwMfX2lRTkFiUWKuXnlmSkkGAKCwl5kYAgAA"
+                  },
+                  {
+                     "mediaType":"MYAPI1",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSY2ZqBtaS0KCmfEagkgIkrMzcxPVU_qyA1nZ-JLT0nPykxhzvRTDczr0Q3LzU3nx2oSoEj1NRz7pv-A7da9rB_fh4hqDUz3b6YgSdUZnNAEHuG4TXJgIjltdM0fx9NdGbkyb2yvzq2Nu7r_KYY3QPPHf8-eZTJxcjDyXg39t9p7apwbSVF-3tvSsxUhf4z8mx-Yru8IrfMdlH5x68ues83Hvou8pORp5cxkmvG1Kwl2hX79lmcnaPy--JNI0YeH7nEC5c3--_N03d2EGe_a_hr8XlDRp7DqcFqZcuP6sVemXGI35nx1OYEsSZGnhef53O2HF76v3yrsHBNicf3Y2p9yxh5hB8lnF01nTHj8e1ZBw9ujd1m8cvxOiNPVHxd-Iulq7x9p-3187I3UXrtMYmHkeeZLxdrzI4w8Sb54iP_t2YeSbo9pZyR51yy2PaJ_8pmcPfPz3u-zuiYo_21SYw8ZT73xRrq9qx5P6tx2z7j9QattdKpjDzGke01C25uVXvzel-fYtXca-dkdHkZee68MtnXH9XJvuHY3sU8u3dOcTrd9p6R56y_1udtkq9XXr-97NHb-ieR35uiWRl54hcJ_Dsn94hlV44_2526N1MezjrYyMiz2MrVp2RXyuG1-2XtuK6W3FjfceYmIw-74ZYXR1TC-DMtI3Uv8990-uI6S4KRZ9pSY5O-gm9tb8165qSrW3reub5yIiPPCvYd3FbzBTbYJy3N6q3L-yrFItnCyCMT8O3CRxGZLQWe6QKG6435tar8bzDylCe-ODEtNODdw94IrWlyYU0vmD9fYeSZ2nvxhtjkUBfdDT4ZmZ9712nbaOcy8ljZsCbkbmS4Ot9M__nhtbNt4herPwSaELxk3lbZy8cXrDtx-um0veq7n0auYOSZLpvz4Kas-5RI31f7N5x4ZKu26pcHI8_9JIPFj9Ny35Xc5DyyLpQpdpJhAjA9rD93xTlR6K8ll43w_22n7W8tf2xcysgjvk1WUuym0fML9r0ibMLHn1191qsJDLNLoTYzf4UF8xdN6ROde8D44uy6NEZWUFpnABKMJUCCC8RijYGQMBkIyazAzMDAwQBigIX4-EqLcgoSixJz9cozU0oyAPX_Nq2CAwAA"
+                  },
+                  {
+                     "mediaType":"MYAPI2",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSYWZWBtaS0KCmfEagkgIkrMzcxPVU_qyA1nZ-JLT0nPykxhzvRTDczr0Q3LzU3nx2oSp4j1NRz7pv-A7da9rB_fh4hqDUz3b6YgUc3rNB84YvgXT9sfVjWv2dZkBF5-g0jj9Jqs8Xz5RtzzFP9JWruXK4oSzi5h5GnodH2mUvb_eX1c51cdn04NH27U0wmI0_Idokt8vkVRz50LfisdyM69HG6SBwjz_HuVQKypZN3Kfu_3Zr0WU0mR8opg5EnuM025PmZ9uNH55VyME874BS4o-IqI88hg42yATm2hSkhSn0rXro879t62IyRx_lU5RLDupmswZtO19vdUPp0aPLqA4w8X2_bO1nlKpxtXRziaLw_fPFyrkpHRp6NqaqyRxfFN3qG-d34t_XIaUkDufeMPGbnfAVOHdZSYJAv7PU3_sX58mC8PSPPBskVnCq-h_rUTk2UyZSoZNVzirzHyDNN3i_JteldaY0_M1_l-3186x4t3M7I8_vk7OA5G2JuCbFXhOhdf_Y8ynpzOyOPcYr9ChmByy3SRl-n3tWxPGazdPp0Rh7_H0VRRxfKvvhjf5uTf8aXA5ZOPtnAcCh9vEP621EnNq884a1-3qYXIvd8YeSZblX87kp2bdKmxZ4OYpKLDrOsipVk5JE8xj-7-p7cQwaDEzWH9zRWnQ1W8mfkya_kWLdd6h7Pr3hLrazrtuu6SuItGXky4rvmPq6s_zxZIezoMTfHe0b1i60YeazfKui_3ZI941LJNRvjGtVZoVVvgWqzTzBeUXk1KUxiVcxsrbe3li5njz_EyLPDN8i2cRdz9QUnP-YmtsMv_kw1AYZO6I2iU92_DrLebFrCarXRUkdtMocTI0_cuvQ5m-KFXjWJGfZe1Bd3zqoPlGXkuVg7ZyKH_LeHU_zdTEXVXn_7vTygiJEn_lKozcxfYcH8RVP6ROceML44uy6NkUd7zcRi-R-m7a2ZRWtsmhjeHDN6voiRZ31QzZWd934_zzYsXX7kUS_n6ldLExhZQamaAUgwvgUSXCAW61UICZOBkMwKzAwMHAwgBliIj6-0KKcgsSgxV688M6UkAwC8rz5PbAMAAA"
+                  },
+                  {
+                     "mediaType":"MYAPI4",
+                     "url":"https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIhBPNonK7EsUS8zXy84tSgzMSezKjEpJ9V63QXONcHX33oyMTBUFDAwMDAC1TJFO635LP6DjSPkAVSYiZ2BtaS0KCmfEagkgIkrMzcxPVU_qyA1nZ-JLT0nPykxhzvRTDczr0Q3LzU3nx2oSogj1NRz7pv-A7da9rB_fh4hqDUz3b6YgWdbhErAISOTK_df8bWvX1v94tJ2aUlGnjXv8wXu-kxpW996LlUmS6idn_lhISPPXQO7Ptlt76xm-53ex6wqJcXUuVCPkYeduV-J9-8C-XVp-08xbije49UTcJiRJ0fi_Av70oBvbGVtvUXH18r_4a92ZOS53iKk-HPHrlu2oTV5yy7lyB97XiYFFF2XOHlBUo76yh_H5f6_912XNfcZ0ITdrGHGNuzr4u5rSsdcdt9c4KkQMJORp0hgXoyrV_W25duY7dOW_D1c7_z3BiPPois8VzqXfD3b9WXXvt6Fh9_sPhI0m5GHd79e_gTLZe841fqVLv70DvmkWSnCyHNxn-v63X-Vj4tKLJ58x5XryN5d7kcYeWQWWJ9xEm5-VXLQU5df975KiGCOJVA0kuVk1Y65r_f1_Tt_9rJM16vs4GBGHj6flaxPZx1427TZYGfzfta1IWujHBh5VBnzTrwJSsiZFbZR7pXX9egomUfJjDxzu3R-c7-MLUu_224dtP7txpk3HNYysoLijQFIMK4DElwgFus0CAmTgZDMCswMDBwMIAZYiI-vtCinILEoMVevPDOlJAMAb3-0nE4CAAA"
+                  }
+               ],
+               "hifa":{
+                  "factoryPickupDateFrom":null,
+                  "factoryPickupDateTill":null,
+                  "fbDestination":"DEU420   B"
+               },
+               "pdw":{
+                  "pdwVehicle":false
+               },
+               "equipments":[
+                  {
+                     "code":"LMOTDV8",
+                     "name":"6-Zyl.Turbodieselmotor 3,0 L/210 KW V6, TDI Common-Rail Grundmotor ist: T7V/T2P",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PONLEL3",
+                     "name":"Audi connect Navigation & Infotainment",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"ESCRFK2",
+                     "name":"AdBlue-Tank",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LNNNFZ1",
+                     "name":"Sicherheitsgurte",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LHAGGH1",
+                     "name":"quattro mit selbstsperrendem Mittendifferenzial",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PKOMGB1",
+                     "name":"LTE-Unterstützung für Audi phone box",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"EAPPGS5",
+                     "name":"Bedientasten in Glasoptik schwarz mit haptischem Feedback inkl. erweiterter Aluminiumoptik",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Dekorelemente",
+                     "subCategoryName":"Dekorelemente",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LCPDIW3",
+                     "name":"Audi connect Notruf &amp; Service inkl. Fahrzeugsteuerung",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/f472d25e-e22d-4a4f-85bc-3f13b86962f0.jpg",
+                     "standard":true
+                  },
+                  {
+                     "code":"ECPBIU1",
+                     "name":"Audi smartphone interface",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/c26f7f8d-9b8f-4bfd-81b8-84cbf22555c5.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LCPAIT3",
+                     "name":"Audi connect Navigation &amp; Infotainment",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/77e0824c-e1e8-4ad2-bfb6-1ef5356c521e.jpg",
+                     "standard":true
+                  },
+                  {
+                     "code":"PRAOI8T",
+                     "name":"MMI Navigation plus mit MMI touch response",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.MMI_Navigation",
+                     "subCategoryName":"Navigation",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PKSUKA6",
+                     "name":"Umgebungskameras",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LKUHKK3",
+                     "name":"Kältemittel R1234yf",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"IKARK8D",
+                     "name":"Variant/Avant",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"ESIBN2R",
+                     "name":"Leder Valcona mit S-Prägung",
+                     "categoryId":"Material",
+                     "categoryName":"Material",
+                     "subCategoryId":"Material.Material",
+                     "subCategoryName":"Material",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"G   PCC",
+                     "name":"Assistenzpaket Tour",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"G   PCZ",
+                     "name":"Umgebungskameras",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"G   PNQ",
+                     "name":"MMI Navigation plus mit MMI touch response inkl. Audi virtual cockpit plus",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.MMI_Navigation",
+                     "subCategoryName":"Navigation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/9bb285a6-435a-44f9-8df5-968d39c170a9.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"G   PQD",
+                     "name":"S line Exterieurpaket",
+                     "categoryId":"Linien_Pakete",
+                     "categoryName":"Linien & Pakete",
+                     "subCategoryId":"Linien_Pakete.S_line",
+                     "subCategoryName":"S line",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/876999bb-f7c7-4d32-8d4d-e0fc888ac442.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"PKASQK1",
+                     "name":"Multifunktionskamera",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"ESCTQL5",
+                     "name":"Privacy-Verglasung (Scheiben abgedunkelt)",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Verglasung",
+                     "subCategoryName":"Verglasung",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"EALGQE1",
+                     "name":"Ablagepaket",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Ablage_Transport",
+                     "subCategoryName":"Ablage & Transport",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"G   PX6",
+                     "name":"Matrix-LED-Scheinwerfer",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Scheinwerfer",
+                     "subCategoryName":"Scheinwerfer",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/559a78c5-a82a-4f49-9d8a-3f1177ac2a59.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"ELCPQQ2",
+                     "name":"Kontur-Ambiente-Lichtpaket (mehrfarbig regelbar)",
+                     "categoryId":"Licht",
+                     "categoryName":"Licht",
+                     "subCategoryId":"Licht.Licht",
+                     "subCategoryName":"Licht",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"EKMPQR9",
+                     "name":"kamerabasierende Verkehrszeichenerkennung",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LLENQZ7",
+                     "name":"Progressivlenkung",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LESSUF7",
+                     "name":"Audi music interface",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Entertainment",
+                     "subCategoryName":"Entertainment",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LINSU5A",
+                     "name":"Instrumenteneinsatz",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.MMI_Navigation",
+                     "subCategoryName":"Navigation",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LVOSQ1D",
+                     "name":"Sportsitze vorn",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitze",
+                     "subCategoryName":"Sitze",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PFHWVF1",
+                     "name":"Pedalerie und Fußstütze in Edelstahl",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Interieur_Design",
+                     "subCategoryName":"Interieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LZTRVH2",
+                     "name":"48-Volt-Bordnetz",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LFGSVL1",
+                     "name":"Fußgängerschutzmaßnahmen, erweitert",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PEILVT5",
+                     "name":"Einstiegleisten mit Aluminiumeinlage vorn und hinten, beleuchtet",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Einstiegsleisten",
+                     "subCategoryName":"Einstiegsleisten",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"G   WQS",
+                     "name":"S line Sportpaket",
+                     "categoryId":"Linien_Pakete",
+                     "categoryName":"Linien & Pakete",
+                     "subCategoryId":"Linien_Pakete.S_line",
+                     "subCategoryName":"S line",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/80853254-f5b6-4a04-8ffe-729685536a77.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"G   WDC",
+                     "name":"Businesspaket",
+                     "categoryId":"Linien_Pakete",
+                     "categoryName":"Linien & Pakete",
+                     "subCategoryId":"Linien_Pakete.Ausstattungspakete",
+                     "subCategoryName":"Ausstattungspakete",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/e2944d78-ec21-4a87-88f3-fee06ab77fe3.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LASY0K4",
+                     "name":"Mild-Hybrid",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EKBV0M5",
+                     "name":"Kraftstoffbehälter (73 l)",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PSZU0NB",
+                     "name":"S line-Emblem auf den vorderen Kotflügeln",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LZFM0TD",
+                     "name":"Fußmatten vorn und hinten",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Fussmatten",
+                     "subCategoryName":"Fußmatten",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LAER0P0",
+                     "name":"Abgasendrohre",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LHIA0N1",
+                     "name":"ohne Allradlenkung",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PDAE1BE",
+                     "name":"Sportfahrwerk",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LBAH1KF",
+                     "name":"Scheibenbremsen hinten",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EABR1PR",
+                     "name":"Radschrauben mit Diebstahlsicherung und Radlöseerkennung",
+                     "categoryId":"Raeder_Reifen",
+                     "categoryName":"Räder & Reifen",
+                     "subCategoryId":"Raeder_Reifen.Zubehoer",
+                     "subCategoryName":"Zubehör",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LFFW1P0",
+                     "name":"Federung Standard",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSGK1I0",
+                     "name":"Sitzbelegungserkennung",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LRER1G8",
+                     "name":"Reifenreparaturset",
+                     "categoryId":"Raeder_Reifen",
+                     "categoryName":"Räder & Reifen",
+                     "subCategoryId":"Raeder_Reifen.Zubehoer",
+                     "subCategoryName":"Zubehör",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LBOW1S2",
+                     "name":"Bordwerkzeug",
+                     "categoryId":"Raeder_Reifen",
+                     "categoryName":"Räder & Reifen",
+                     "subCategoryId":"Raeder_Reifen.Zubehoer",
+                     "subCategoryName":"Zubehör",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LVBK1T3",
+                     "name":"Verbandmaterial, Warndreieck und Warnwesten",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LLSS2C5",
+                     "name":"Sicherheitslenksäule",
+                     "categoryId":"Lenkraeder_Bedienelemente",
+                     "categoryName":"Lenkräder & Bedienelemente",
+                     "subCategoryId":"Lenkraeder_Bedienelemente.Bedienelemente",
+                     "subCategoryName":"Bedienelemente",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LBAV1ZA",
+                     "name":"Scheibenbremsen vorn",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LATA1X1",
+                     "name":"quattro",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LCHA2H9",
+                     "name":"Audi drive select",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PSFS2K7",
+                     "name":"Stoßfänger S line",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"ELRA2PF",
+                     "name":"Sportkontur-Lederlenkrad mit Multifunktion und Schaltwippen, unten abgeflacht",
+                     "categoryId":"Lenkraeder_Bedienelemente",
+                     "categoryName":"Lenkräder & Bedienelemente",
+                     "subCategoryId":"Lenkraeder_Bedienelemente.Lenkraeder",
+                     "subCategoryName":"Lenkräder",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/3723390a-fdc6-49c7-9c1a-486d32f45d7b.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LFRI2V5",
+                     "name":"ohne Air Quality Paket",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Klimatisierung",
+                     "subCategoryName":"Klimatisierung",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LZKV3B3",
+                     "name":"Kindersitzbefestigung ISOFIX und\nTop Tether für die äußeren Fondsitze",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"ETYZ2Z7",
+                     "name":"Entfall Leistungs-/Technologie-Schriftzug",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"EDEI3FU",
+                     "name":"Panorama-Glasdach",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Dachsysteme",
+                     "subCategoryName":"Dachsysteme",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/3017e152-9585-4193-847f-47eed2e79623.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LLBH3GD",
+                     "name":"Ladeboden",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Ablage_Transport",
+                     "subCategoryName":"Ablage & Transport",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LKSI3G0",
+                     "name":"ohne Kindersitzverankerung vorn (ISOFIX)",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSIE3L3",
+                     "name":"Vordersitze manuell einstellbar",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EDAR3S2",
+                     "name":"Dachreling schwarz",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"ESIH4A4",
+                     "name":"Sitzheizung vorn und hinten",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LHIS3NT",
+                     "name":"Fondsitze 2+1 Sitzer",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitze_im_Fond",
+                     "subCategoryName":"Sitze im Fond",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LKMS4D0",
+                     "name":"ohne Sitzbelüftung/Massagefunktion",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSDH4E7",
+                     "name":"Gepäckraumklappe, elektrisch öffnend und schließend",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Schliesssysteme",
+                     "subCategoryName":"Schließsysteme",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EWSS4GR",
+                     "name":"Frontscheibe in Klimakomfort-/Akustikverglasung, drahtlos beheizbar",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Verglasung",
+                     "subCategoryName":"Verglasung",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LAIB4UF",
+                     "name":"Deaktivierungsschalter für Beifahrer-Airbag",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSAB4X3",
+                     "name":"Seitenairbags vorn inklusive Kopfairbagsystem",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PIRS4L6",
+                     "name":"Innenspiegel automatisch abblendend, rahmenlos",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Spiegel",
+                     "subCategoryName":"Spiegel",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LSSH4KC",
+                     "name":"Wärmeschutzverglasung seitlich und hinten",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Verglasung",
+                     "subCategoryName":"Verglasung",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EZIE4ZD",
+                     "name":"Optikpaket schwarz",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/5ad1ad51-f166-4f10-831c-3a7b8b59f81a.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"PHES5J4",
+                     "name":"Heckspoiler in Wagenfarbe",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LLAC5K5",
+                     "name":"Transportschutzfolie mit zusätzlichen Transportschutzmaßnahmen",
+                     "categoryId":"Weitere",
+                     "categoryName":"Weitere",
+                     "subCategoryId":"Weitere.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EEIH5TG",
+                     "name":"Dekoreinlagen Aluminium matt gebürstet dunkel",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Dekorelemente",
+                     "subCategoryName":"Dekorelemente",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/bb8a2553-f4c2-4a7d-b4fc-2610a9e12506.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LSON5XC",
+                     "name":"Sonnenblenden mit Make-up-Spiegel, beleuchtet, auf Fahrer- und Beifahrerseite",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Verglasung",
+                     "subCategoryName":"Verglasung",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LKOV5ZF",
+                     "name":"Kopfstützen vorn",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LASL5SL",
+                     "name":"Außenspiegel links, asphärisch",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Spiegel",
+                     "subCategoryName":"Spiegel",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"ERAD52Y",
+                     "name":"Aluminium-Gussräder Audi Sport im 5-V-Speichen-Stern-Design, Titanoptik matt, glanzgedreht, Größe 8,5 J x 20, mit Reifen 255/40 R 20",
+                     "categoryId":"Raeder_Reifen",
+                     "categoryName":"Räder & Reifen",
+                     "subCategoryId":"Raeder_Reifen.Felgen",
+                     "subCategoryName":"Felgen",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LMAS6E3",
+                     "name":"Mittelarmlehne vorn",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LBBO6FA",
+                     "name":"Außenspiegelgehäuse in Wagenfarbe lackiert",
+                     "categoryId":"Exterieur_Design",
+                     "categoryName":"Exterieur Design",
+                     "subCategoryId":"Exterieur_Design.Exterieur_Design",
+                     "subCategoryName":"Exterieur Design",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LAWV6K8",
+                     "name":"Audi pre sense front",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PHIM6NQ",
+                     "name":"Dachhimmel in Stoff schwarz",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Dach_Verdeckhimmel",
+                     "subCategoryName":"Dachhimmel",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"EFIT6RB",
+                     "name":"Instrumententafel und Türverkleidung, zweiteilig, ein-/mehrfarbig",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Dekorelemente",
+                     "subCategoryName":"Dekorelemente",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PSRH6I6",
+                     "name":"adaptiver Fahrassistent mit Notfallassistent",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PDFO6F7",
+                     "name":"Embleme",
+                     "categoryId":"Lenkraeder_Bedienelemente",
+                     "categoryName":"Lenkräder & Bedienelemente",
+                     "subCategoryId":"Lenkraeder_Bedienelemente.Weitere",
+                     "subCategoryName":"Weitere",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LKBB6SS",
+                     "name":"Gepäckraumbodenbelag",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Ablage_Transport",
+                     "subCategoryName":"Ablage & Transport",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LASR6TS",
+                     "name":"Außenspiegel rechts, asphärisch",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Spiegel",
+                     "subCategoryName":"Spiegel",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"EASE6XK",
+                     "name":"Außenspiegel elektrisch einstell-, beheiz- und anklappbar, beidseitig automatisch abblendend",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Spiegel",
+                     "subCategoryName":"Spiegel",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LWSA7E6",
+                     "name":"elektrische Luftzusatzheizung",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Klimatisierung",
+                     "subCategoryName":"Klimatisierung",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSAG7F9",
+                     "name":"Schalt-/Wählhebelknauf",
+                     "categoryId":"Lenkraeder_Bedienelemente",
+                     "categoryName":"Lenkräder & Bedienelemente",
+                     "subCategoryId":"Lenkraeder_Bedienelemente.Bedienelemente",
+                     "subCategoryName":"Bedienelemente",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LGWA6Y2",
+                     "name":"Geschwindigkeitsbegrenzungsanlage",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Fahrdynamik_Bremsen",
+                     "subCategoryName":"Fahrdynamik & Bremsen",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LLUM7HA",
+                     "name":"ohne Belederung",
+                     "categoryId":"Interieur_Design",
+                     "categoryName":"Interieur Design",
+                     "subCategoryId":"Interieur_Design.Stoff_und_Lederpakete",
+                     "subCategoryName":"Stoff- & Lederpakete",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LRDK7K1",
+                     "name":"Reifendruck-Kontrollanzeige",
+                     "categoryId":"Raeder_Reifen",
+                     "categoryName":"Räder & Reifen",
+                     "subCategoryId":"Raeder_Reifen.Zubehoer",
+                     "subCategoryName":"Zubehör",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LSNA7L8",
+                     "name":"Start-Stop-System",
+                     "categoryId":"Technik_Sicherheit",
+                     "categoryName":"Technik & Sicherheit",
+                     "subCategoryId":"Technik_Sicherheit.Technik_Sicherheit",
+                     "subCategoryName":"Technik & Sicherheit",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LLOR7P1",
+                     "name":"4-Wege-Lendenwirbelstütze für die Vordersitze",
+                     "categoryId":"Sitze",
+                     "categoryName":"Sitze",
+                     "subCategoryId":"Sitze.Sitzkomfort",
+                     "subCategoryName":"Sitzkomfort",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"LESI7W1",
+                     "name":"Audi pre sense basic",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PNAV7UG",
+                     "name":"MMI Navigation plus mit MMI touch response",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.MMI_Navigation",
+                     "subCategoryName":"Navigation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/3dd8c542-892f-4171-aca9-04f41a71c46b.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"PLIA8G4",
+                     "name":"Matrix LED-Scheinwerfer",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Scheinwerfer",
+                     "subCategoryName":"Scheinwerfer",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/559a78c5-a82a-4f49-9d8a-3f1177ac2a59.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"LHSW8IT",
+                     "name":"LED-Scheinwerfer",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Scheinwerfer",
+                     "subCategoryName":"Scheinwerfer",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/637d6846-6ddc-4abf-af2f-56eea479ddef.jpg",
+                     "standard":true
+                  },
+                  {
+                     "code":"LFLS8K4",
+                     "name":"Tagfahrlicht",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Licht_Aussen",
+                     "subCategoryName":"Außenlicht",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PSBR8SP",
+                     "name":"LED-Heckleuchten mit dynamischem Blinklicht",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Licht_Aussen",
+                     "subCategoryName":"Außenlicht",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PGRA8T5",
+                     "name":"adaptiver Geschwindigkeitsassistent mit Geschwindigkeitsbegrenzer, Effizienz-, Ausweich- und Abbiegeassistent",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PHKA9AQ",
+                     "name":"4-Zonen-Komfortklimaautomatik",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Klimatisierung",
+                     "subCategoryName":"Klimatisierung",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/b6e3bcd2-4420-4227-8c22-fa18d72a10c6.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"PSWR8X1",
+                     "name":"Scheinwerfer-Reinigungsanlage",
+                     "categoryId":"Scheinwerfer",
+                     "categoryName":"Licht außen",
+                     "subCategoryId":"Scheinwerfer.Licht_Aussen",
+                     "subCategoryName":"Außenlicht",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"LRAU9JA",
+                     "name":"Nichtraucherpaket",
+                     "categoryId":"Komfort",
+                     "categoryName":"Komfort",
+                     "subCategoryId":"Komfort.Ablage_Transport",
+                     "subCategoryName":"Ablage & Transport",
+                     "teaserImage":null,
+                     "standard":true
+                  },
+                  {
+                     "code":"PSWZ9PF",
+                     "name":"adaptive Scheibenwischer mit integrierten Waschdüsen",
+                     "categoryId":"Dachsysteme_Verglasung",
+                     "categoryName":"Dachsysteme & Verglasung",
+                     "subCategoryId":"Dachsysteme_Verglasung.Verglasung",
+                     "subCategoryName":"Verglasung",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/e2944d78-ec21-4a87-88f3-fee06ab77fe3.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"PMFA9S9",
+                     "name":"Audi virtual cockpit plus",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.MMI_Navigation",
+                     "subCategoryName":"Navigation",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PEPH9X0",
+                     "name":"Einparkhilfe plus mit Umgebungsanzeige",
+                     "categoryId":"Assistenzsysteme",
+                     "categoryName":"Assistenzsysteme",
+                     "subCategoryId":"Assistenzsysteme.Assistenzsysteme",
+                     "subCategoryName":"Assistenzsysteme",
+                     "teaserImage":null,
+                     "standard":false
+                  },
+                  {
+                     "code":"PVTV9ZE",
+                     "name":"Audi phone box",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Kommunikation",
+                     "subCategoryName":"Kommunikation",
+                     "teaserImage":"https://mediaservice.audi.com/media/cdb/data/72434670-7ef9-4075-a6ab-1aa3739dfc47.jpg",
+                     "standard":false
+                  },
+                  {
+                     "code":"ELSE9VD",
+                     "name":"Audi sound system",
+                     "categoryId":"Infotainment",
+                     "categoryName":"Infotainment",
+                     "subCategoryId":"Infotainment.Entertainment",
+                     "subCategoryName":"Entertainment",
+                     "teaserImage":null,
+                     "standard":false
+                  }
+               ],
+               "techSpecs":[
+                  {
+                     "key":"tank-capacity",
+                     "name":"Tankinhalt, ca.",
+                     "value":"63",
+                     "unit":"l",
+                     "groupId":"volumes",
+                     "groupName":"Volumen"
+                  },
+                  {
+                     "key":"trailer-weight-limit-unbraked",
+                     "name":"ungebremst",
+                     "value":"750",
+                     "unit":"kg",
+                     "groupId":"trailer-weight-limit",
+                     "groupName":"Zul. Anhängerlast"
+                  },
+                  {
+                     "key":"max-output-kw",
+                     "name":"Max. Leistung (kW)",
+                     "value":"210,00",
+                     "unit":"kW",
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"nox-combined",
+                     "name":"NOx-Emissionen",
+                     "value":"60,5",
+                     "unit":"mg/km",
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"luggage-compartment-capacity",
+                     "name":"Gepäckraumvolumen",
+                     "value":"565/1680",
+                     "unit":"l",
+                     "groupId":"volumes",
+                     "groupName":"Volumen"
+                  },
+                  {
+                     "key":"power-level",
+                     "name":"Leistungsniveau",
+                     "value":"50",
+                     "unit":null,
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"top-speed",
+                     "name":"Höchstgeschwindigkeit",
+                     "value":"250",
+                     "unit":"km/h",
+                     "groupId":"performance-data",
+                     "groupName":"Fahrleistung"
+                  },
+                  {
+                     "key":"consumption-extra-urban",
+                     "name":"außerorts",
+                     "value":"5,4",
+                     "unit":"l/100 km",
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"front-axle",
+                     "name":"Vorderachse",
+                     "value":"5-Lenker-Vorderachse; Rohrstabilisator",
+                     "unit":null,
+                     "groupId":"suspension",
+                     "groupName":"Fahrwerk"
+                  },
+                  {
+                     "key":"clutch",
+                     "name":"Kupplung",
+                     "value":"Hydraulischer Drehmomentwandler mit Überbrückungskupplung",
+                     "unit":null,
+                     "groupId":"driveline",
+                     "groupName":"Kraftübertragung"
+                  },
+                  {
+                     "key":"consumption-combined",
+                     "name":"kombiniert",
+                     "value":"5,7",
+                     "unit":"l/100 km",
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"gearbox",
+                     "name":"Getriebeart",
+                     "value":"8-Gang tiptronic",
+                     "unit":null,
+                     "groupId":"driveline",
+                     "groupName":"Kraftübertragung"
+                  },
+                  {
+                     "key":"trailer-weight-limit-gradient8",
+                     "name":"bei 8% Steigung",
+                     "value":"2000",
+                     "unit":"kg",
+                     "groupId":"trailer-weight-limit",
+                     "groupName":"Zul. Anhängerlast"
+                  },
+                  {
+                     "key":"gross-weight-limit",
+                     "name":"Zul. Gesamtgewicht",
+                     "value":"2560",
+                     "unit":"kg",
+                     "groupId":"weights",
+                     "groupName":"Gewicht"
+                  },
+                  {
+                     "key":"transmission-type",
+                     "name":"Antriebsart",
+                     "value":"Allradantrieb quattro",
+                     "unit":null,
+                     "groupId":"driveline",
+                     "groupName":"Kraftübertragung"
+                  },
+                  {
+                     "key":"engine-management",
+                     "name":"Motormanagement",
+                     "value":"Elektronisch Diesel",
+                     "unit":null,
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"max-output",
+                     "name":"Max. Leistung",
+                     "value":"210 kW (286 PS) bei 3500-4000 min -1",
+                     "unit":null,
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"max-output-ps",
+                     "name":"Max. Leistung (PS)",
+                     "value":"286",
+                     "unit":"PS",
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"roof-load-limit",
+                     "name":"Zul. Dachlast/Stützlast",
+                     "value":"100/95",
+                     "unit":"kg",
+                     "groupId":"weights",
+                     "groupName":"Gewicht"
+                  },
+                  {
+                     "key":"trailer-weight-limit-gradient12",
+                     "name":"bei 12% Steigung",
+                     "value":"2000",
+                     "unit":"kg",
+                     "groupId":"trailer-weight-limit",
+                     "groupName":"Zul. Anhängerlast"
+                  },
+                  {
+                     "key":"rear-axle",
+                     "name":"Hinterachse",
+                     "value":"5-Lenker-Hinterachse; Rohrstabilisator",
+                     "unit":null,
+                     "groupId":"suspension",
+                     "groupName":"Fahrwerk"
+                  },
+                  {
+                     "key":"unladen-weight",
+                     "name":"Leergewicht",
+                     "value":"1965",
+                     "unit":"kg",
+                     "groupId":"weights",
+                     "groupName":"Gewicht"
+                  },
+                  {
+                     "key":"acceleration",
+                     "name":"Beschleunigung 0-100 km/h",
+                     "value":"5,7",
+                     "unit":"s",
+                     "groupId":"performance-data",
+                     "groupName":"Fahrleistung"
+                  },
+                  {
+                     "key":"carbon-dioxide-emissions",
+                     "name":"CO₂-Emissionen",
+                     "value":"150",
+                     "unit":"g/km",
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"emission-class",
+                     "name":"Emissionsklasse",
+                     "value":"Euro 6d-TEMP-EVAP-ISC",
+                     "unit":null,
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"brakes",
+                     "name":"Bremssystem",
+                     "value":"2-Kreis Bremssystem mit Schwarz/Weiß-Aufteilung für VA/HA; ESC/ABS/EBV; Bremskraftverstärker, hydraulischer Bremsassistent; vorn: Aluminium-Festsattel, Bremsscheibe innenbelüftet; hinten: Faustsattel mit integrierter elektr. Parkbremse, Bremsscheibe innenbelüftet",
+                     "unit":null,
+                     "groupId":"brake-system",
+                     "groupName":"Bremssystem"
+                  },
+                  {
+                     "key":"displacement",
+                     "name":"Hubraum (ccm)",
+                     "value":"2967",
+                     "unit":"ccm",
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"emission-control-system",
+                     "name":"Abgasreinigungssystem",
+                     "value":"Oxydationskatalysator, Dieselpartikelfilter, Abgasrückführung, SCR-Katalysator",
+                     "unit":null,
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"consumption-urban",
+                     "name":"innerorts",
+                     "value":"6,4",
+                     "unit":"l/100 km",
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"engine-type",
+                     "name":"Motorbauart",
+                     "value":"V6-Zylinder-Dieselmotor mit Common-Rail-Einspritzsystem und Abgasturboaufladung, Mild Hybrid Electric Vehicle (MHEV)",
+                     "unit":null,
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"max-torque",
+                     "name":"Max. Drehmoment",
+                     "value":"620/2250 - 3000",
+                     "unit":"Nm/min -1",
+                     "groupId":"engine",
+                     "groupName":"Motor"
+                  },
+                  {
+                     "key":"fuel-type",
+                     "name":"Kraftstoffart",
+                     "value":"Diesel schwefelfrei",
+                     "unit":null,
+                     "groupId":"consumption",
+                     "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                  },
+                  {
+                     "key":"steering",
+                     "name":"Lenkung",
+                     "value":"Elektromechanische Lenkung mit geschwindigkeitsabhängiger Servounterstützung; Wendekreis ca. 12,1 m",
+                     "unit":null,
+                     "groupId":"steering",
+                     "groupName":"Lenkung"
+                  },
+                  {
+                     "key":"efficiency-class",
+                     "name":"Effizienzklasse",
+                     "value":"A",
+                     "unit":null,
+                     "groupId":"efficiency",
+                     "groupName":"Effizienz"
+                  }
+               ],
+               "consumption":{
+                  "wltps":[
+                     {
+                        "attributeGroup":"INTERPOLATIONS|CONSUMPTION|SUSTAINING",
+                        "attributes":[
+                           {
+                              "attributeId":"DIESEL|COMBINED",
+                              "scaleUnit":"l/100km",
+                              "value":"7,4"
+                           },
+                           {
+                              "attributeId":"DIESEL|EXTRA_HIGH",
+                              "scaleUnit":"l/100km",
+                              "value":"7,0"
+                           },
+                           {
+                              "attributeId":"DIESEL|HIGH",
+                              "scaleUnit":"l/100km",
+                              "value":"6,3"
+                           },
+                           {
+                              "attributeId":"DIESEL|LOW",
+                              "scaleUnit":"l/100km",
+                              "value":"10,5"
+                           },
+                           {
+                              "attributeId":"DIESEL|MEDIUM",
+                              "scaleUnit":"l/100km",
+                              "value":"7,6"
+                           }
+                        ]
+                     },
+                     {
+                        "attributeGroup":"NEDC|CONSUMPTION|SUSTAINING",
+                        "attributes":[
+                           {
+                              "attributeId":"DIESEL|COMBINED",
+                              "scaleUnit":"l/100km",
+                              "value":"5,9"
+                           },
+                           {
+                              "attributeId":"DIESEL|EXTRAURBAN",
+                              "scaleUnit":"l/100km",
+                              "value":"5,6"
+                           },
+                           {
+                              "attributeId":"DIESEL|URBAN",
+                              "scaleUnit":"l/100km",
+                              "value":"6,5"
+                           }
+                        ]
+                     },
+                     {
+                        "attributeGroup":"ENERGY_EFFICIENCY",
+                        "attributes":[
+                           {
+                              "attributeId":"CLASS_NEDC",
+                              "scaleUnit":null,
+                              "value":"B"
+                           }
+                        ]
+                     },
+                     {
+                        "attributeGroup":"NEDC|CO2|SUSTAINING",
+                        "attributes":[
+                           {
+                              "attributeId":"DIESEL|COMBINED",
+                              "scaleUnit":"g/km",
+                              "value":"155"
+                           }
+                        ]
+                     },
+                     {
+                        "attributeGroup":"INTERPOLATIONS|CO2|SUSTAINING",
+                        "attributes":[
+                           {
+                              "attributeId":"DIESEL|COMBINED",
+                              "scaleUnit":"g/km",
+                              "value":"192"
+                           }
+                        ]
+                     }
+                  ],
+                  "technicalSpecifications":[
+                     {
+                        "key":"emission-class",
+                        "name":"Emissionsklasse",
+                        "value":"Euro 6d-TEMP-EVAP-ISC",
+                        "unit":null,
+                        "groupId":"consumption",
+                        "groupName":"Verbrauchs- und Emissionswerte nach WLTP/NEFZ"
+                     },
+                     {
+                        "key":"efficiency-class",
+                        "name":"Effizienzklasse",
+                        "value":"B",
+                        "unit":null,
+                        "groupId":"efficiency",
+                        "groupName":"Effizienz"
+                     }
+                  ]
+               }
+            }
+         }
+      ]
+   }
+}

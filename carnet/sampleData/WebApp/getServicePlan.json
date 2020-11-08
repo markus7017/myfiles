@@ -1,0 +1,72 @@
+{
+"url":"https://userinfo.my.audi.com/bvh/v1",
+"method":"POST",
+"body":"{"query":"\n  query getRecommendedMaintenanceTasks($country: String!, $language: String!, $id: String!, $vin: String) {\n    vehicle(country: $country, language: $language, id: $id, vin: $vin) {\n      recommendedMaintenanceTasks(country: $country, language: $language) {\n        timeUnit\n        odometerUnit\n        tasks {\n          odometerInitial\n          odometerRepeated\n          timeInitial\n          timeRepeated\n          description\n        }\n      }\n    }\n  }\n","variables":{"id":"VmVoaWNsZTpXQVVaWlpGMjFMTjA0XXXXXXXX","country":"DE","language":"de"}}",
+
+   "data":{
+      "vehicle":{
+         "recommendedMaintenanceTasks":{
+            "timeUnit":"YEAR",
+            "odometerUnit":"KM",
+            "tasks":[
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":15000,
+                  "timeInitial":null,
+                  "timeRepeated":null,
+                  "description":"Reduktionsmittel (AdBlue®): Nachfüllen; nur auf Kundenwunsch"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":60000,
+                  "timeInitial":null,
+                  "timeRepeated":null,
+                  "description":"Kraftstofffilter: ersetzen"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":60000,
+                  "timeInitial":null,
+                  "timeRepeated":null,
+                  "description":"Luftfilter: Filtereinsatz ersetzen, Gehäuse reinigen"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":60000,
+                  "timeInitial":null,
+                  "timeRepeated":2,
+                  "description":"Staub- und Pollenfilter: ersetzen"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":60000,
+                  "timeInitial":null,
+                  "timeRepeated":2,
+                  "description":"Wasserabläufe Panorama-Schiebedach: prüfen"
+               },
+               {
+                  "odometerInitial":210000,
+                  "odometerRepeated":30000,
+                  "timeInitial":null,
+                  "timeRepeated":null,
+                  "description":"Dieselpartikelfilter: Aschebeladung auslesen"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":null,
+                  "timeInitial":null,
+                  "timeRepeated":2,
+                  "description":"Bremsflüssigkeit: ersetzen"
+               },
+               {
+                  "odometerInitial":null,
+                  "odometerRepeated":null,
+                  "timeInitial":null,
+                  "timeRepeated":7,
+                  "description":"Connected Gateway: Batterie für Notstrombetrieb ersetzen"
+               }
+            ]
+         }
+      }
+   }
+}

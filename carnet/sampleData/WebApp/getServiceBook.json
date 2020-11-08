@@ -1,0 +1,60 @@
+{
+"url":"https://userinfo.my.audi.com/bvh/v1",
+"method":"POST",
+"body":"{"query":"\n  query VehicleSchedules($country: String!, $language: String!, $vin: String!, $id: String!) {\n    serviceBook(country: $country, language: $language, vin: $vin, id: $id) {\n      schedules {\n        serviceDocumentId\n        jobNumber\n        jobDescription\n        odometerValue\n        odometerUnit\n        serviceDate\n        tasks {\n          description\n          quantity\n          quantityUnit\n        }\n        dealer {\n          name\n          address {\n            street\n            houseNumber\n            zipCode\n            city\n            country\n          }\n          authorizedServicePartner\n        }\n        mobilityGuarantee\n        additionalNote\n      }\n    }\n  }\n","variables":{"id":"VmVoaWNsZTpXQVVaWlpGMjFMTjA0XXXXXXX","country":"DE","language":"de","vin":""}}"
+
+   "data":{
+      "serviceBook":{
+         "schedules":[
+            {
+               "serviceDocumentId":"4931XXXX",
+               "jobNumber":"002653-00",
+               "jobDescription":"Eintragung der Werkstatt",
+               "odometerValue":6307,
+               "odometerUnit":"KM",
+               "serviceDate":"2020-03-04T00:00:00Z",
+               "tasks":[
+                  
+               ],
+               "dealer":{
+                  "name":"AZ Koblenz",
+                  "address":{
+                     "street":"Andernacher Straße 205",
+                     "houseNumber":"",
+                     "zipCode":"56070",
+                     "city":"Koblenz",
+                     "country":"DEU"
+                  },
+                  "authorizedServicePartner":true
+               },
+               "mobilityGuarantee":false,
+               "additionalNote":"AKTION 91X4 durchgeführt"
+            },
+            {
+               "serviceDocumentId":"4505XXXX",
+               "jobNumber":"916667-00",
+               "jobDescription":"Übergabe-Inspektion",
+               "odometerValue":4,
+               "odometerUnit":"KM",
+               "serviceDate":"2019-12-05T00:00:00Z",
+               "tasks":[
+                  
+               ],
+               "dealer":{
+                  "name":"AZ Koblenz",
+                  "address":{
+                     "street":"Andernacher Straße 205",
+                     "houseNumber":"",
+                     "zipCode":"56070",
+                     "city":"Koblenz",
+                     "country":"DEU"
+                  },
+                  "authorizedServicePartner":true
+               },
+               "mobilityGuarantee":true,
+               "additionalNote":""
+            }
+         ]
+      }
+   }
+}
