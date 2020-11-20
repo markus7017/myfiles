@@ -1,0 +1,11 @@
+{
+   "action":{
+      "type":"startClimatisation",
+      "actionId":148952684,
+      "actionState":"queued",
+      "settings":{
+         "climatisationWithoutHVpower":true,
+         "heaterSource":"electric"
+      }
+   }
+}
