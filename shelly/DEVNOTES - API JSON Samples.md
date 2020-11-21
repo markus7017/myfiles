@@ -1968,6 +1968,120 @@ illumination:  dark, twilight, bright
 }
 ```
 
+## Shelly UNI
+
+### /shelly
+
+```
+{"type":"SHUNI-1","mac":"483FDA82BEDD","auth":false,"fw":"20201007-085802/v1.8.5@5fbcbaa3","longid":1,"num_outputs":2}
+```
+
+### /settings 
+
+```
+{
+{
+   "device":{ "type":"SHUNI-1", "mac":"483FDA82BEDD", "hostname":"shellyuni-483FDA82BEDD", "num_outputs":2 },
+   "wifi_ap":{ "enabled":false, "ssid":"shellyuni-483FDA82BEDD", "key":"" },
+   "wifi_sta":{ "enabled":true, "ssid":"TurtlePineHouse", "ipv4_method":"dhcp", "ip":null, "gw":null, "mask":null, "dns":null },
+   "wifi_sta1":{ "enabled":false, "ssid":null, "ipv4_method":"dhcp", "ip":null, "gw":null, "mask":null, "dns":null },
+   "mqtt":{ "enable":false, "server":"192.168.33.3:1883", "user":"", "id":"shellyuni-483FDA82BEDD", "reconnect_timeout_max":60.000000, "reconnect_timeout_min":2.000000, "clean_session":true, "keep_alive":60, "max_qos":0, "retain":false, "update_period":30 },
+   "coiot":{ "update_period":15 },
+   "sntp":{ "server":"time.google.com", "enabled":true },
+   "login":{ "enabled":false, "unprotected":false, "username":"admin" }, "pin_code":"",
+   "name":"shelly-uni-testbed", "fw":"20201120-112906/v1.9.0-rc3@0890b23e", "factory_reset_from_switch":true, "discoverable":true,
+   "build_info":{ "build_id":"20201120-112906/v1.9.0-rc3@0890b23e", "build_timestamp":"2020-11-20T11:29:06Z", "build_version":"1.0" },
+   "cloud":{ "enabled":false,"connected":false },
+   "timezone":"Europe/Berlin", "lat":50.110901, "lng":8.682130, "tzautodetect":true, "tz_utc_offset":3600, "tz_dst":false, "tz_dst_auto":true, "time":"19:24", "unixtime":1605986669,
+   "actions":{ "active":false, "names":[	"out_on_url","out_off_url","btn_on_url","btn_off_url","longpush_url","shortpush_url","out_on_url","out_off_url","btn_on_url","btn_off_url","longpush_url",
+      			"shortpush_url","adc_over_url","adc_under_url","ext_temp_over_url","ext_temp_under_url","ext_temp_over_url","ext_temp_under_url","ext_temp_over_url",
+      			"ext_temp_under_url","ext_temp_over_url","ext_temp_under_url","ext_temp_over_url","ext_temp_under_url","ext_hum_over_url","ext_hum_under_url"
+      ]
+    },
+   "hwinfo":{ "hw_revision":"prod-202008", "batch_id":0},
+   "mode":"relay",
+   "longpush_time":800,
+   "relays":[
+      {	"name":null,"appliance_type":"General","ison":false,"has_timer":false,"default_state":"off","btn_type":"toggle","btn_reverse":0,"auto_on":0.00,"auto_off":0.00,
+      	"schedule":false,"schedule_rules":[]},
+      {"name":null,"appliance_type":"General","ison":false,"has_timer":false,"default_state":"off","btn_type":"toggle","btn_reverse":0,"auto_on":0.00,"auto_off":0.00, "schedule":false,"schedule_rules":[]}
+   ],
+   "adcs":[
+      {	"range":30,"relay_actions":[
+            { "over_threshold":0, "over_act":"disabled", "under_threshold":0, "under_act":"disabled"},
+            { "over_threshold":0, "over_act":"disabled", "under_threshold":0, "under_act":"disabled"}
+        ]
+      }
+   ],
+   "ext_sensors":{ },
+   "ext_temperature":{ },
+   "ext_humidity":{
+   }
+}
+```
+
+### /status
+
+```
+{
+	"wifi_sta":{"connected":true,"ssid":"openHAB","ip":"192.168.1.1","rssi":-57},
+	"cloud":{"enabled":false,"connected":false},"mqtt":{"connected":false},"time":"19:37",
+	"unixtime":1605987466,"serial":1,"has_update":true,"mac":"483FDA82BEDD",
+	"cfg_changed_cnt":0,"actions_stats":{"skipped":0},
+	"relays":[
+		{"ison":false,"has_timer":false,"timer_started":0,"timer_duration":0,"timer_remaining":0,"source":"input"},
+		{"ison":false,"has_timer":false,"timer_started":0,"timer_duration":0,"timer_remaining":0,"source":"input"}
+	],
+	"inputs":[
+		{"input":0},
+		{"input":0}
+	],
+	"adcs":[
+		{"voltage":0.00}
+	],
+	"ext_sensors":{},
+	"ext_temperature":{},
+	"ext_humidity":{},
+	"update":{"status":"pending","has_update":true,"new_version":"20200826-111450/1206-production-ShellyUNI@a80ee1fc+","old_version":"20201120-112906/v1.9.0-rc3@0890b23e"},
+	"ram_total":49944,"ram_free":37244,"fs_size":233681,"fs_free":140811,"uptime":1055
+}
+```
+
+### Coap Description
+
+```
+{
+	"blk":[
+		{"I":1,"D":"relay_0"},
+		{"I":2,"D":"relay_1"},
+		{"I":3,"D":"adc_0"},
+		{"I":4,"D":"sensor_0"},
+		{"I":5,"D":"sensor_1"},
+		{"I":6,"D":"sensor_2"},
+		{"I":7,"D":"sensor_3"},
+		{"I":8,"D":"sensor_4"},
+		{"I":9,"D":"device"}
+	],
+	"sen":[
+		{"I":9103,"T":"EVC","D":"cfgChanged","R":"U16","L":9},
+		{"I":1101,"T":"S","D":"output","R":"0/1","L":1},
+		{"I":1201,"T":"S","D":"output","R":"0/1","L":2},
+		{"I":2101,"T":"S","D":"input","R":"0/1","L":1},
+		{"I":2102,"T":"EV","D":"inputEvent","R":["S/L",""],"L":1},
+		{"I":2103,"T":"EVC","D":"inputEventCnt","R":"U16","L":1},
+		{"I":2201,"T":"S","D":"input","R":"0/1","L":2},
+		{"I":2202,"T":"EV","D":"inputEvent","R":["S/L",""],"L":2},
+		{"I":2203,"T":"EVC","D":"inputEventCnt","R":"U16","L":2},
+		{"I":3118,"T":"V","D":"adc","U":"V","R":["0/30","-1"],"L":3},
+		{"I":3101,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":4},
+		{"I":3201,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":5},
+		{"I":3301,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":6},
+		{"I":3401,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":7},
+		{"I":3501,"T":"T","D":"extTemp","U":"C","R":["-55/125","999"],"L":8},{
+		"I":3103,"T":"H","D":"humidity","R":["0/100","999"],"L":4}
+	]
+}
+```
 
 ## Firmware Listing
 
