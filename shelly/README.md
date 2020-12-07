@@ -18,7 +18,8 @@ The binding gets in sync with the next status refresh.
 
 | Thing Type         | Model                                                  | Vendor ID |
 |--------------------|--------------------------------------------------------|-----------|
-| shelly1            | Shelly Single Relay Switch                             | SHSW-1    |
+| shelly1            | Shelly 1 Single Relay Switch                           | SHSW-1    |
+| shelly1l           | Shelly 1L Single Relay Switch                          | SHSW-L    |
 | shelly1pm          | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
 | shelly2-relay      | Shelly Double Relay Switch in relay mode               | SHSW-21   |
 | shelly2-roller     | Shelly2 in Roller Mode                                 | SHSW-21   |
@@ -28,9 +29,9 @@ The binding gets in sync with the next status refresh.
 | shellydimmer       | Shelly Dimmer                                          | SHDM-1    |
 | shellydimmer2      | Shelly Dimmer2                                         | SHDM-2    |
 | shellyix3          | Shelly ix3                                             | SHIX3-1   |
+| shellyuni          | Shelly UNI                                             | SHUNI-1   |
 | shellyplug         | Shelly Plug                                            | SHPLG2-1  |
 | shellyplugs        | Shelly Plug-S                                          | SHPLG-S   |
-| shellyplugu1       | Shelly Plug US                                         | SHPLG-U1  |
 | shellyem           | Shelly EM with integrated Power Meters                 | SHEM      |
 | shellyem3          | Shelly 3EM with 3 integrated Power Meter               | SHEM-3    |
 | shellyrgbw2        | Shelly RGB Controller                                  | SHRGBW2   |
@@ -179,6 +180,27 @@ This can be achieved by
 When the IP address changes for a device you need to delete the Thing and then re-discover the device.
 In this case channel linkage gets lost and you need to re-link the channels/items.
 
+### Log optimization
+
+The binding provides channels (e.g. heartBeat, currentWatts), which might cause a log of log output, especially when having multiple dozen Shellys.
+
+openHAB has an integrated feature to filter the event log.
+This mechanism doesn't filter the event, but the log output (items still receive the updates).
+
+A configuration is added as a new section to `openhab2-userdata/etc/org.ops4j.pax.logging.cfg`
+
+Based on this you could use the following config:
+
+```
+# custom filtering rules
+log4j2.appender.event.filter.uselessevents.type = RegexFilter
+log4j2.appender.event.filter.uselessevents.regex = .*(heartBeat|LastUpdate|lastUpdate|LetzteAktualisierung|Uptime|Laufzeit|ZuletztGesehen).*
+log4j2.appender.event.filter.uselessevents.onMatch = DENY
+log4j2.appender.event.filter.uselessevents.onMisMatch = NEUTRAL
+```
+
+This filters events for items heartBeat, lastUpdate, LetzteAktualisierung, Uptime, Laufzeit, ZuletztGesehen. Replace those strings with the items you want to filter. Use a list of items to reduce logging.
+Please note: Once events are filtered they are “lost”, you can’t find them later.
 
 ## Thing Configuration
 
@@ -326,7 +348,7 @@ end
 
 Depending on the device type and firmware release channels might be not available or  
 
-### Shelly 1 (thing-type: shelly1)
+### Shelly 1, 1L (thing-type: shelly1, shelly1l)
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
@@ -337,6 +359,7 @@ Depending on the device type and firmware release channels might be not availabl
 |          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
 |          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
 |          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
+
 
 ### Shelly 1PM (thing-type: shelly1pm)
 
@@ -499,7 +522,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |meter3    |             |         |         |See group meter1 for Shelly 2                                                    |
 |meter4    |             |         |         |See group meter1 for Shelly 2                                                    |
 
-### Shelly Plug, Plug-S, Plug US (thing-type: shellyplug, shellyplugs, shellyplugu1)
+### Shelly Plug-S (thing-type: shellyplugs)
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
@@ -554,6 +577,35 @@ The Dimmer should be calibrated using the Shelly App.
 |          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, TRIPLE_PRESSED, LONG_PRESSED, SHORT_LONG_PRESSED or LONG_SHORT_PRESSED  |
 |          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                        |
 |          |eventCount   |Number   |yes      |Number of button events                                                |
+
+### Shelly UNI - Low voltage sensor/actor: shellyuni)
+
+|Group     |Channel      |Type     |read-only|Description                                                                      |
+|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
+|relay1    |output       |Switch   |r/w      |Relay #1: Controls the relay's output channel (on/off)                           |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|relay2    |output       |Switch   |r/w      |Relay #2: Controls the relay's output channel (on/off)                           |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
+|          |autoOn       |Number   |r/w      |Relay #2: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #2: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #2: ON: An auto-on/off timer is active                                     |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)         |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
+|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
+|          |voltage      |Number   |yes      |ADCS voltage                                                                     |
+|status    |input1       |Switch   |yes      |State of Input 1                                                                 |
+|          |input2       |Switch   |yes      |State of Input 2                                                                 |
+|          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, TRIPLE_PRESSED, LONG_PRESSED, SHORT_LONG_PRESSED or LONG_SHORT_PRESSED  |
+|          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                                  |
+|          |eventCount   |Number   |yes      |Number of button events                                                          |
 
 ### Shelly Bulb (thing-type: shellybulb)
 
