@@ -348,24 +348,52 @@ end
 
 Depending on the device type and firmware release channels might be not available or  
 
-### Shelly 1, 1L (thing-type: shelly1, shelly1l)
+### Shelly 1(thing-type: shelly1)
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
+|          |eventCount   |String   |yes      |Event counter for                                                                |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
 |sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)         |
 |          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
 |          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
 |          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
 
+### Shelly 1L (thing-type: shelly1l)
+
+|Group     |Channel      |Type     |read-only|Description                                                                      |
+|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
+|relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |input1       |Switch   |yes      |ON: Input/Button for input 1 is powered, see general notes on channels           |
+|          |button1      |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent1   |String   |yes      |Last event type (S/SS/SSS/L) for input 1                                         |
+|          |eventCount1  |String   |yes      |Event counter for input 1                                                        |
+|          |input2       |Switch   |yes      |ON: Input/Button for channel 2 is powered, see general notes on channels         |
+|          |button2      |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent2   |String   |yes      |Last event type (S/SS/SSS/L) for input 2                                         |
+|          |eventCount2  |String   |yes      |Event counter for input 2                                                        |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)         |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
+|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
 
 ### Shelly 1PM (thing-type: shelly1pm)
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
@@ -385,9 +413,14 @@ Depending on the device type and firmware release channels might be not availabl
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
+|          |eventCount   |String   |yes      |Event counter for                                                                |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
 |meter1    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
@@ -409,9 +442,14 @@ The thing id is derived from the service name, so that's the reason why the thin
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
+|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
+|          |eventCount   |String   |yes      |Event counter for                                                                |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
 |meter1    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |returnedKWH  |Number   |yes      |Total returned energy, kw/h                                                      |
@@ -443,6 +481,7 @@ The thing id is derived from the service name, so that's the reason why the thin
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay1    |output       |Switch   |r/w      |Relay #1: Controls the relay's output channel (on/off)                           |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
@@ -450,6 +489,7 @@ The thing id is derived from the service name, so that's the reason why the thin
 |          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
 |relay2    |output       |Switch   |r/w      |Relay #2: Controls the relay's output channel (on/off)                           |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |autoOn       |Number   |r/w      |Relay #2: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #2: Sets a  timer to turn the device OFF after every ON command; in seconds|
@@ -529,17 +569,23 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |relay     |             |         |         |See group relay1 for Shelly 2                                                    |
 |meter     |             |         |         |See group meter1 for Shelly 2                                                    |
 
-### Shelly Dimmer (thing-type: shellydimmer)
+### Shelly Dimmer 1 + 2 (thing-type: shellydimmer, shellydimmer2)
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |brightness   |Dimmer   |r/w      |Currently selected brightness.                                                   |
-|          |input1       |Switch   |yes      |State of Input 1 (S1)                                                            |
-|          |input2       |Switch   |yes      |State of Input 2 (S2)                                                            |
-|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds          |
-|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds          |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
 |          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |input1       |Switch   |yes      |ON: Input/Button for input 1 is powered, see general notes on channels           |
+|          |button1      |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent1   |String   |yes      |Last event type (S/SS/SSS/L) for input 1                                         |
+|          |eventCount1  |String   |yes      |Event counter for input 1                                                        |
+|          |input2       |Switch   |yes      |ON: Input/Button for channel 2 is powered, see general notes on channels         |
+|          |button2      |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
+|          |lastEvent2   |String   |yes      |Last event type (S/SS/SSS/L) for input 2                                         |
+|          |eventCount2  |String   |yes      |Event counter for input 2                                                        |
+|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
+|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |lastPower1   |Number   |yes      |Energy consumption in Watts for a round minute, 1 minute  ago                    |
 |          |lastPower2   |Number   |yes      |Energy consumption in Watts for a round minute, 2 minutes ago                    |
@@ -547,23 +593,6 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
-### Shelly Dimmer2 (thing-type: shellydimmer2)
-
-|Group     |Channel      |Type     |read-only|Description                                                                      |
-|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
-|relay     |brightness   |Dimmer   |r/w      |Currently selected brightness.                                                   |
-|          |input1       |Switch   |yes      |State of Input 1 (S1)                                                            |
-|          |input2       |Switch   |yes      |State of Input 2 (S2)                                                            |
-|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds          |
-|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds          |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
-|meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
-|          |lastPower1   |Number   |yes      |Energy consumption in Watts for a round minute, 1 minute  ago                    |
-|          |lastPower2   |Number   |yes      |Energy consumption in Watts for a round minute, 2 minutes ago                    |
-|          |lastPower3   |Number   |yes      |Energy consumption in Watts for a round minute, 3 minutes ago                    |
-|          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
-|          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 The Dimmer should be calibrated using the Shelly App.
 
@@ -582,20 +611,8 @@ The Dimmer should be calibrated using the Shelly App.
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
-|relay1    |output       |Switch   |r/w      |Relay #1: Controls the relay's output channel (on/off)                           |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
-|          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
-|          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
-|relay2    |output       |Switch   |r/w      |Relay #2: Controls the relay's output channel (on/off)                           |
-|          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
-|          |autoOn       |Number   |r/w      |Relay #2: Sets a  timer to turn the device ON after every OFF command; in seconds|
-|          |autoOff      |Number   |r/w      |Relay #2: Sets a  timer to turn the device OFF after every ON command; in seconds|
-|          |timerActive  |Switch   |yes      |Relay #2: ON: An auto-on/off timer is active                                     |
-|          |button       |Trigger  |yes      |Event trigger with payload SHORT_PRESSED or LONG_PRESSED (FW 1.5.6+)             |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|relay1    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels            |
+|relay2    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels            |
 |sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)         |
 |          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
 |          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
