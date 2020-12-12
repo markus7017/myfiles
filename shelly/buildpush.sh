@@ -1,6 +1,13 @@
+echo Update formatting
+mvn spotless:apply
+if [ $? -ne 0 ]
+then
+	exit
+fi
+
 echo Build Version 2
 mvn clean install
-if [ $? -neq 0 ]
+if [ $? -ne 0 ]
 then
 	exit
 fi
@@ -17,7 +24,7 @@ cp -R ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/
 ~/Dev/myfiles/convert_v2_v3.sh 
 echo Build Version 3
 mvn clean install
-if [ $? -neq 0 ]
+if [ $? -ne 0 ]
 then
 	exit
 fi
