@@ -33,4 +33,4 @@ echo Pushing updates
 cd ~/Dev/myfiles
 ./push.sh
 
-cd ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shell
+cd ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly
