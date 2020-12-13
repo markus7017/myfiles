@@ -9,6 +9,7 @@ echo Build Version 2
 mvn clean install
 if [ $? -ne 0 ]
 then
+	echo Build version 2 failed
 	exit
 fi
 cp target/org.openhab.binding.shelly-2.5.11-SNAPSHOT.jar ~/Dev/myfiles/shelly/
@@ -27,6 +28,7 @@ echo Build Version 3
 mvn clean install
 if [ $? -ne 0 ]
 then
+	echo Build version 3 failed
 	exit
 fi
 cp target/org.openhab.binding.shelly-3.0.0-SNAPSHOT.jar ~/Dev/myfiles/shelly/
