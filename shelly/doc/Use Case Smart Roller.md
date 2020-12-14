@@ -1,7 +1,8 @@
 # Smartify Roller Shutters with openHAB and Shelly
 
-**Shelly 2.5 in Roller Mode**
-![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)  ![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png)
+![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png) **How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
+
+![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png)
 
 ## Use Case
 
