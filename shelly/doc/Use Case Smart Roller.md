@@ -118,9 +118,11 @@ For safety reasons you might consider:
 This feature makes sure that the Shelly stops the motor after a certain time even the motor doesn't stop by itself. 
 Start the roller, measure the number of seconds until the shutter stops.
 Maybe add 2-3 seconds for safe and set the values for both directions in the UI
+
 ![](images/uiroller_wt.png)
 
 - Obstacle 
+
 ![](images/uiroller_obs1.png)   ![](images/uiroller_obs2.png)      ![](images/uiroller_obs3.png)
 
 and there are some more options:
