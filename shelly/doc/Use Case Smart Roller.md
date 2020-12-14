@@ -1,6 +1,7 @@
 # Smartify Roller Shutters with openHAB and Shelly
 
-![Shelly 2.5 in Roller Mode](https://shop.shelly.cloud/image/cache/catalog/shelly_25/shelly25_x1_ce_ul-80x80.jpg =120x120)
+**Shelly 2.5 in Roller Mode**
+![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)  ![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png)
 
 ## Use Case
 
@@ -104,6 +105,8 @@ No worries, openHAB will restore you channel/item linkings.
 
 ### Shelly setup - General
 
+![](images/uiroller_1.png)   ![](images/uiroller_2.png)   ![](images/uiroller_3.png)   ![](images/uiroller_4.png)   
+
 There are some settings required to prepare you Shelly for this use case.
 - Open the Web UI simply by launching 'http://&lt;shelly ip&gt; in the browser, this opens the device's UI
 - Go to Settings:DEVICE TYPE and select Roller-Shutter
@@ -111,7 +114,6 @@ There are some settings required to prepare you Shelly for this use case.
 - INPUT BUTTONS MODE: This depend on your installed button, if you only have a single one use "One button", if you have 2 buttons or one with 2 positions select "One button"
 - POSITIONING CONTROLS: Enable them to have the controls in the App (UP/STOP/DOWN + relative positions), this helps during installation
 
-![](images/uiroller_1.png)   ![](images/uiroller_2.png)   ![](images/uiroller_3.png)   ![](images/uiroller_4.png)   
 
 For safety reasons you might consider:
 - OPEN/CLOSE WORKING TIME
