@@ -111,18 +111,20 @@ There are some settings required to prepare you Shelly for this use case.
 - INPUT BUTTONS MODE: This depend on your installed button, if you only have a single one use "One button", if you have 2 buttons or one with 2 positions select "One button"
 - POSITIONING CONTROLS: Enable them to have the controls in the App (UP/STOP/DOWN + relative positions), this helps during installation
 
-![](images/uiroller_1.PNG)   ![](images/uiroller_2.PNG)   ![](images/uiroller_3.PNG)   ![](images/uiroller_4.PNG)   ![](images/uiroller_5.PNG)   ![](images/uiroller_6.PNG)
+![](images/uiroller_1.png)   ![](images/uiroller_2.png)   ![](images/uiroller_3.png)   ![](images/uiroller_4.png)   
 
 For safety reasons you might consider:
 - OPEN/CLOSE WORKING TIME
 This feature makes sure that the Shelly stops the motor after a certain time even the motor doesn't stop by itself. 
 Start the roller, measure the number of seconds until the shutter stops.
 Maybe add 2-3 seconds for safe and set the values for both directions in the UI
+![](images/uiroller_wt.png)
+
+- Obstacle 
+![](images/uiroller_obs1.png)   ![](images/uiroller_obs2.png)      ![](images/uiroller_obs3.png)
 
 and there are some more options:
 - SWAP INPUTS and REVERSE DIRECTIONS - you could flip operation mode for open/close, this could help in non-standard operations, but could also indicate a wiring problen
-
-![](images/uiroller_7.PNG)   ![](images/uiroller_8.PNG)   ![](images/uiroller_9.PNG)
 
 It also makes sense to give the device a name. Go to Settings:DEVICE NAME and select a symbolic name.
 This name will also discovered by the binding and added as a suffix to the thing name in the Inbox.
@@ -134,6 +136,8 @@ With version 1.9 Alterco introduced an interesting feature called Favorites.
 Those allow to store up to 4 pre-defined positions in the device, e.g. 15%, 50%, 65%, 98%.
 Once defined you have kind of a short-cut to bring the roller to that position and those favorites are also supported by the binding (see below).
 
+![](images/uiroller_fav1.png)   ![](images/uiroller_fav2.png)
+   
 To use this feature open the device's Web UI and click on Favorites(+) button.
 You could now specify 4 percentage values between 0% (closed) and 100% (open).
 Enter the values and try using the button line above the roller control and main UI buttons.
@@ -148,6 +152,8 @@ Important: If you want to password protect your Shellys (strong recommendation) 
 - Set User Id and Password, save
 - Remove all Shellys from the Inbox (if any)
 - and restart the Discovery
+
+![](images/uiroller_rlogin.png) 
 
 Now all Shellys should pop up with the correct device names and types.
 The binding also adds some information to the Thing Name making the identification easier.
