@@ -38,8 +38,8 @@ To prepare this use case you need to upgrade to firmware 1.9.2 (or newer) and pe
 openHAB is the perfect foundation to combine manual and automated control of the roller.
 The Shelly binding is available for openHAB 3.0, but still supports version 2.5 (you should at least have 2.5.9).
 Nevertheless you need to switch to the so called DEV build to benefit from bug fixes and improvements.
-This version is currently NOT part of the openHAB 3.0 distribution, a PR has been initiated
-and it will not become part of the 2.5.x distribution, because this only receives bug fixes and the use case utilizes new features in the binding.
+**This version is currently NOT part of the openHAB 3.0 distribution, a PR has been initiated
+and it will not become part of the 2.5.x distribution, because this only receives bug fixes and the use case utilizes new features in the binding.**
 
 ## Implementation
 
@@ -53,6 +53,8 @@ It's strongly recommended to get on one of the pretty stable openHAB releases
 - Older versions might worked, but are not covered here.
 
 Refer to the documentation how to upgrade to the current version and where you should watch for necessary adaptions.
+By the way: There is a good README for the binding, RTFM if you know what I mean :-)
+Latest version is always available [here](https://github.com/markus7017/myfiles/blob/master/shelly/README.md) as part of the DEV build (see below).
 
 Ideally the upgrade could be performed on a Raspberry with
 ```
@@ -148,18 +150,31 @@ The binding also adds some information to the Thing Name making the identificati
 
 Once you added the device from the Inbox the binding will initialize the device and dynamically create channels depending on the available device/firmware features.
 This takes about 5-10 seconds.
-During that time the thing is working, but you might miss channels in the UI - that's normal, try to reload the page after 10sec and boom all there
+During that time the thing is working, but you might miss channels in the UI - that's normal, try to reload the page after 10sec and boom all there.
+Go to the channel overview and links the channels you want to use, refer to the README to get more details on channels, type and values.
 
 The only thing to configure are the positioning favorite ids for the roller UP and DOWN commands.
 Edit the thing configuration and select the ids in the corresponding entry fields.
 Value 0 means: no favorite, value 1-4 select the position as defined in the Shelly App.
 There is also a dedicated channel (roller#rollerFav), which accepts this ids and triggers the roller moving to the position (% value) as defined for the matching favorites id.
 
+### Automation
+
+Beside manual operation the binding provide various options to control the roller from within openHAB rules.
+For example
+- link channel roller#control and use 'sendCommand(&lt;item&gt;, UP)' to open the shutter or 'sendCommand(&lt;item&gt;, DOWN)' to close it.
+- select a position by sending a number value of 100..0 to channel 'roller#rollerpos'
+- or use the defined favorites by sending favorite id to channel 'roller#rollerFav'
+- you might set a auto-timer, e.g. one the roller is opened close it again after xx minutes by sending a value to the 'roller#autoOn' or 'roller#autoOff' channels
+- you could also get the position of the roller from 'roller#control' (by linking a Number item) or the last status from 'roller#state'.
+Please note that the device only provides update after the roller stops, not during movement so it's not possible to get position updates while the roller is moving.
+
 ## Extending the Use Case
 
 There are two valuable options, which even extend and improve the user experience.
 
 - Button-1
+
 Using the described setup you could add a Button-1 to trigger rules, e.g.
 - 1xshort: open roller
 - 2xshort: go to 25% (because disturbs enjoying your morning coffee with your wife)
@@ -176,3 +191,15 @@ This allows to provide a scene to the user, which does a lot of complex stuff un
 Be welcome to contribute your ideas to the community, this is what creates the difference between openHAB/Shelly setup compared to rollers with button control.
 
 ### Resources
+
+There is a bunch of ressources you could browse around openHAB, Shelly or the binding
+- Current builds of the binding:
+Latest **DEV** build: [2.5.11](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.11-SNAPSHOT.jar?raw=true) - [3.0.0](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.0-SNAPSHOT.jar?raw=true) - [README](https://github.com/markus7017/myfiles/blob/master/shelly/README.md) -  [Installation](https://github.com/markus7017/myfiles/blob/master/shelly/READMEbeta.md) - [Bugs/Features](https://github.com/openhab/openhab-addons/issues?q=is%3Aissue+is%3Aopen+%5Bshelly%5D) - [Firmware Index](https://repo.shelly.cloud/files/firmware/?fbclid=IwAR0Kz6bjMGoq_HYU85QAdl8b-xh7E3IPa4ENKjqsvmMAYQ6QGC8ODvqPzUs) - [Firmware Archive](http://archive.shelly-faq.de) - [API Doc](https://shelly-api-docs.shelly.cloud/?fbclid=IwAR23ukCi_3aBSTPRHYUIcpr0pLi0vcyL0fF0PnJQdFvkkc8_Zo5LkAcli_A#http-server)
+Note: The binding version included in the final OH 3.0 distro is significantly older than the DEV build. I can't make it in-time to bring in the PR in advance to the feature freeze for 3.0 - sorry for that, but always a matter of (spare time).
+- [Shelly 2.5 product page](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/)
+- [Shelly Support Group (English)](https://www.facebook.com/groups/ShellyIoTCommunitySupport)
+
+
+
+and the [openHAB Community thread specifically for the binding](https://community.openhab.org/t/shelly-binding/56862/1701)
+
