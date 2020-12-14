@@ -2,7 +2,7 @@
 
 ## Use Case
 
-![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png) **How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
+![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png) **How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
 
 ![](images/oh_image1.png)   ![](images/oh_image2.png)   ![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)
 
