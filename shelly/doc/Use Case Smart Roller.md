@@ -1,10 +1,11 @@
 # Smartify Roller Shutters with openHAB and Shelly
 
-![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png) **How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
-
-![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png)
+![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png 150x150)
 
 ## Use Case
+
+![**How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)
+![](https://www.openhab.org/assets/img/empty.d86defdd.png)   ![https://www.openhab.org/assets/img/empty.d86defdd.png]()
 
 More and more people have rollers, which are equipped with a motor and button control improving your convince when operating the shutter.
 
