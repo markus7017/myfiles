@@ -111,6 +111,8 @@ There are some settings required to prepare you Shelly for this use case.
 - INPUT BUTTONS MODE: This depend on your installed button, if you only have a single one use "One button", if you have 2 buttons or one with 2 positions select "One button"
 - POSITIONING CONTROLS: Enable them to have the controls in the App (UP/STOP/DOWN + relative positions), this helps during installation
 
+![](images/uiroller_1.PNG)   ![](images/uiroller_2.PNG)   ![](images/uiroller_3.PNG)   ![](images/uiroller_4.PNG)   ![](images/uiroller_5.PNG)   ![](images/uiroller_6.PNG)
+
 For safety reasons you might consider:
 - OPEN/CLOSE WORKING TIME
 This feature makes sure that the Shelly stops the motor after a certain time even the motor doesn't stop by itself. 
@@ -119,6 +121,8 @@ Maybe add 2-3 seconds for safe and set the values for both directions in the UI
 
 and there are some more options:
 - SWAP INPUTS and REVERSE DIRECTIONS - you could flip operation mode for open/close, this could help in non-standard operations, but could also indicate a wiring problen
+
+![](images/uiroller_7.PNG)   ![](images/uiroller_8.PNG)   ![](images/uiroller_9.PNG)
 
 It also makes sense to give the device a name. Go to Settings:DEVICE NAME and select a symbolic name.
 This name will also discovered by the binding and added as a suffix to the thing name in the Inbox.
@@ -158,16 +162,26 @@ Edit the thing configuration and select the ids in the corresponding entry field
 Value 0 means: no favorite, value 1-4 select the position as defined in the Shelly App.
 There is also a dedicated channel (roller#rollerFav), which accepts this ids and triggers the roller moving to the position (% value) as defined for the matching favorites id.
 
+### Device events
+
+As you might know the binding supports the Alterco Shelly CoIoT protocol. 
+The device supports so called I/O URL Actions, which are kind of a callback to an application for certain events.
+Whenever possible you should prefer CoIoT events, because they are triggered near realtime and provide way more information compared to the Action URLs.
+The binding uses those CoIoT updates as triggers, but also to update the channel data.
+Refer to the [README](README.md) for more information on CoIoT.
+
 ### Automation
 
 Beside manual operation the binding provide various options to control the roller from within openHAB rules.
 For example
 - link channel roller#control and use 'sendCommand(&lt;item&gt;, UP)' to open the shutter or 'sendCommand(&lt;item&gt;, DOWN)' to close it.
+- get status updates from roller operations by observing channel 'roller#state' and 'roller#stopReason', those report an updated status once the operation is completed
 - select a position by sending a number value of 100..0 to channel 'roller#rollerpos'
 - or use the defined favorites by sending favorite id to channel 'roller#rollerFav'
 - you might set a auto-timer, e.g. one the roller is opened close it again after xx minutes by sending a value to the 'roller#autoOn' or 'roller#autoOff' channels
 - you could also get the position of the roller from 'roller#control' (by linking a Number item) or the last status from 'roller#state'.
 Please note that the device only provides update after the roller stops, not during movement so it's not possible to get position updates while the roller is moving.
+- of course you could time-triggered rules, trigger the shutter depending on sunrise/sunset within openHAB, but also directly on the device
 
 ## Extending the Use Case
 
