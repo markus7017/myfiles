@@ -1,6 +1,6 @@
 # Smartify Roller Shutters with openHAB and Shelly
 
-![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png =150x150)
+![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png =150x150x)
 
 ## Use Case
 
