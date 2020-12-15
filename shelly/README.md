@@ -1,11 +1,11 @@
 
 # Shelly Binding
 
-This Binding integrates [Alterco Shelly devices](https://shelly.cloud).
+This Binding integrates [Shelly devices](https://shelly.cloud) devloped by Alterco.
+![](https://shop.shelly.cloud/image/cache/catalog/shelly_1/s1_x1-80x80.jpg)  ![](https://shop.shelly.cloud/image/cache/catalog/shelly_dimmer2/shelly_dimmer2_x1-80x80.jpg)  ![](https://shop.shelly.cloud/image/cache/catalog/shelly_vintage/shelly_vintage_A60-80x80.jpg)   ![](https://shop.shelly.cloud/image/cache/catalog/shelly_plug_s/s_plug_s_x1-80x80.jpg)   ![](https://shop.shelly.cloud/image/cache/catalog/shelly_button1/shelly_button1_x1-80x80.jpg)   ![](https://shop.shelly.cloud/image/cache/catalog/shelly_gas/shelly_gas_eu-80x80.jpg)   ![](https://shop.shelly.cloud/image/cache/catalog/shelly_ht/s_ht_x1-80x80.jpg)
 
 Alterco provides a rich set of smart home devices. All of them are WiFi enabled (2,4GHz, IPv4 only) and provide a documented API. 
-The binding is officially acknowledged by Alterco and openHAB is listed as a reference.
-Alterco directly supports this project.
+The binding is officially acknowledged by Alterco and openHAB is listed as a reference and directly supports the openHAB community.
 
 The binding controls the devices independently from the Alterco Shelly Cloud (in fact it can be disabled).
 The binding co-exists with Shelly App for Smartphones, Shelly Web App, Shelly Cloud, mqqt and other 3rd party Apps.
@@ -13,6 +13,8 @@ The binding co-exists with Shelly App for Smartphones, Shelly Web App, Shelly Cl
 The binding focuses on reporting the device status and device control.
 Initial setup and device configuration has to be performed using the Shelly Apps.
 The binding gets in sync with the next status refresh.
+
+Refer to [Advanced Users](doc/AdvancedUsers.md) for more information on openHAB Shelly integration, e.g. firmware upgrade, network communication or log filtering.
 
 ## Supported Devices
 
@@ -64,6 +66,22 @@ This mode also overrules event settings in the thing configuration.
 Disabling this feature allows granular control, which event types will be used. This is also required when the Shelly devices are not located on the same IP subnet (e.g. using a VPN).
 In this case autoCoIoT should be disabled, CoIoT events will not work, because the underlying CoAP protocol is based on Multicast IP, which usually doesn't passes a VPN or routed network.
 
+## Firmware
+
+The binding requires firmware version 1.7.0 or newer to enable all features, version 1.9.2 is recommended.
+Some of the features are enabled dynamically or are not available depending on device type and firmware release.
+The Web UI of the Shelly device displays the current firmware version under Settings:Firmware and shows an update option when a newer version is available.
+
+The current firmware version is reported in the Thing Properties.
+A dedicated channel (device#updateAvailable) indicates the availability of a newer firmware. Use the device's Web UI or the Shelly App to perform the update.
+
+Check [Advanced Users](doc/AdvancedUsers.md) for information how to upgrade your device.
+
+Once you have updated the device **you should delete and re-discover** the openHAB Thing.
+Battery powered devices need to wake up by pressing the button.
+This makes sure that the Thing is correctly initialized and all supported channels are created. openHAB will kill the item linkage.
+At a minimum you should restart the binding on the openHAB console if you don't want to re-discover the things.
+
 ## Discovery
 
 In general devices need to be powered to be discovered by the binding.
@@ -71,27 +89,6 @@ The binding uses mDNS to discover the Shelly devices.
 They periodically announce their presence, which is used by the binding to find them on the local network.
 
 Sometimes you need to run the manual discovery multiple times until you see all your devices.
-
-## Firmware
-
-The binding requires firmware version 1.7.0 or newer to enable all features.
-Some of the features are enabled dynamically or are not available depending on device type and firmware release.
-The Web UI of the Shelly device displays the current firmware version under Settings:Firmware and shows an update option when a newer version is available.
-
-|Version|Notes                                                                                             |
-|-------|--------------------------------------------------------------------------------------------------|
-|1.5.7  |Minimum supported version. Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices). The binding displays a WARNING in the log if the firmware is older.|
-|1.6.x  |First stable CoIoT implementation. AutoCoIoT is enabled when firmware version >= 1.6 is detected. |
-|1.7.x  |Add additional status update values, fixes various issues                                         |
-|1.8.0  |Brings CoIoT version 2, which fixes a lot issues and gaps of version 1.                           |
-
-The current firmware version is reported in the Thing Properties.
-A dedicated channel (device#updateAvailable) indicates the availability of a newer firmware. Use the device's Web UI or the Shelly App to perform the update.
-
-Once you have updated the device **you should delete and re-discover** the openHAB Thing.
-Battery powered devices need to wake up by pressing the button.
-This makes sure that the Thing is correctly initialized and all supported channels are created. openHAB will kill the item linkage.
-At a minimum you should restart the binding on the openHAB console if you don't want to re-discover the things.
 
 ### Password Protected Devices
 
@@ -102,6 +99,14 @@ If you have multiple devices protected by the same credentials it's recommended 
 In this case the binding could directly access the device to retrieve the required information using those credentials.
 Otherwise a thing of type shellyprotected is created in the Inbox and you could set the credentials while adding the thing. In this case the credentials are persisted as part of the thing configuration. 
 
+### Dynamic creation of channels
+
+The Shelly series of devices has many combinations of relays, meters (different versions), sensors etc. 
+For this the binding creates various channels dynamically based on the status information provided by the device at initialization time. 
+If a channel is missing make sure the thing was discovered correctly and is ONLINE.
+If a channel is missing delete the thing and re-discover it.
+Creation of those channels takes about 5-10sec, maybe you need to reload the page to update the browser status.
+
 ### Important for battery powered devices
 
 Make sure to wake up battery powered devices, so that they show up on the network.
@@ -109,10 +114,13 @@ The device has a push button inside. Open the case, press that button and the LE
 Wait a moment and then start the discovery. The device should show up in the Inbox and can be added.
 Sometimes you need to run the discovery multiple times.
 
-### Dynamic creation of channels
+### Roller Favorites
 
-The Shelly series of devices has many combinations of relays, meters (different versions), sensors etc. For this the binding creates various channels dynamically based on the status information provided by the device at initialization time. 
-If a channel is missing make sure the thing was discovered correctly and is ONLINE. If a channel is missing delete the thing and re-discover it.
+Firmware 1.9.2 for Shelly 2.5 in roller mode supports so called favorites for positions.
+You could use the Shelly App to setup 4 different positions (percentage) and assign id 1-4.
+The channel 'roller#rollerFav' allows to select those from openHAB and the roller moves to the desired position.
+In the thing configuration you could also configure an id when the 'roller#control' channel receives UP or DOWN.
+Values 1-4 are selecting the corresponding favorite id in the Shelly App, 0 means no favorite.
 
 ### Thing Status
 
@@ -151,57 +159,6 @@ Once the timer expires the device switches to OFFFLINE and the bindings starts t
 
 You could also create a rule to catch those status changes or device alarms (see rule examples).
 
-## Trouble Shooting
-
-### Network Settings
-
-Shelly devices do only support IPv4. 
-This implies that the openHAB host system has IPv4 bound to the network interface.
-The binding is only able to discover devices on the local subnet. 
-Add things manually with the given IP if you have a routed network in between or using a VPN connection.
-
-The binding enables CoIoT protocol by default if the device is running firmware 1.6 or newer.
-CoIoT is based on CoAP and uses a UDP based signaling using IP Multicast (224.0.1.187, port 5683).
-Again if the device is not on the same local IP subnet you need special router/switch configurations to utilized CoAP via IP Multicast.
-Otherwise disable the Auto-CoIoT feature in the binding config (not the thing config), disable CoIoT events in the thing configuration and enable sensors events (http callback).
-Nevertheless in this setup the binding can communicate the device, but you are loosing the benefits of CoIoT.
-
-Refer to openHAB's general documentation when running openHAB in a docker container. Enabling mDNS discovery has additional setup requirements.  
-
-### Re-discover when IP address has changed
- 
-Important: The IP address should not be changed after the device is added to openHAB.
-
-This can be achieved by
-
-- assigning a static IP address (recommended for battery powered devices) or
-- using DHCP and setup the router to always assign the same IP address to the device
-
-When the IP address changes for a device you need to delete the Thing and then re-discover the device.
-In this case channel linkage gets lost and you need to re-link the channels/items.
-
-### Log optimization
-
-The binding provides channels (e.g. heartBeat, currentWatts), which might cause a log of log output, especially when having multiple dozen Shellys.
-
-openHAB has an integrated feature to filter the event log.
-This mechanism doesn't filter the event, but the log output (items still receive the updates).
-
-A configuration is added as a new section to `openhab2-userdata/etc/org.ops4j.pax.logging.cfg`
-
-Based on this you could use the following config:
-
-```
-# custom filtering rules
-log4j2.appender.event.filter.uselessevents.type = RegexFilter
-log4j2.appender.event.filter.uselessevents.regex = .*(heartBeat|LastUpdate|lastUpdate|LetzteAktualisierung|Uptime|Laufzeit|ZuletztGesehen).*
-log4j2.appender.event.filter.uselessevents.onMatch = DENY
-log4j2.appender.event.filter.uselessevents.onMisMatch = NEUTRAL
-```
-
-This filters events for items heartBeat, lastUpdate, LetzteAktualisierung, Uptime, Laufzeit, ZuletztGesehen. Replace those strings with the items you want to filter. Use a list of items to reduce logging.
-Please note: Once events are filtered they are “lost”, you can’t find them later.
-
 ## Thing Configuration
 
 |Parameter         |Description                                                   |Mandatory|Default                                           |
@@ -209,6 +166,7 @@ Please note: Once events are filtered they are “lost”, you can’t find them
 |deviceIp          |IP address of the Shelly device                               |    yes  |none                                              |
 |userId            |The user id used for HTTP authentication                      |    no   |none                                              |
 |password          |Password for HTTP authentication*                             |    no   |none                                              |
+|brightnessAutoOn  |true: Output will be activated when brightness > 0 is set     |    no   |true                                              |
 |lowBattery        |Threshold for battery level. Set alert when level is below.   |    no   |20 (=20%), only for battery powered devices       |
 |updateInterval    |Interval for the background status check in seconds.          |    no   |1h for battery powered devices, 60s for all others|
 |eventsButton      |true: register event "trigger when a button is pushed"        |    no   |false                                             |
@@ -216,6 +174,9 @@ Please note: Once events are filtered they are “lost”, you can’t find them
 |eventsSwitch      |true: register event "trigger of switching the relay output"  |    no   |true                                              |
 |eventsSensorReport|true: register event "posted updated sensor data"             |    no   |true for sensor devices                           |
 |eventsCoIoT       |true: Listen for CoIoT/COAP events                            |    no   |true for battery devices, false for others        |
+|eventsRoller      |true: register event "trigger" when the roller updates status |    no   |true for roller devices                           |
+|favoriteUP        |0-4: Favorite id for UP (see Roller Favorites)                |    no   |0 = no favorite id                                |
+|favoriteDOWN      |0-4: Favorite id for DOWN (see Roller Favorites)              |    no   |0 = no favorite id                                |
 
 
 ### General Notes
@@ -335,14 +296,7 @@ A new alarm will be triggered on a new condition or every 5 minutes if the condi
 |TEMP_OVER   |Above "temperature over" threshold                                                                               |
 
 
-```
-rule "Shelly Alarm"
-when
-    Channel "shelly:shelly1:XXXXXX:device#alarm" triggered
-then
-    logInfo("Shelly", "n alarm condition was detected:" + receivedEvent.toString())
-end
-```
+Refer to section Full Example:.rules for examples how to catch alarm triggers in openHAB rules
 
 ## Channels
 
@@ -507,10 +461,11 @@ The thing id is derived from the service name, so that's the reason why the thin
 |----------|-------------|---------|---------|--------------------------------------------------------------------------------------|
 |roller    |control      |Rollershutter|r/w  |can be open (0%), stop, or close (100%); could also handle ON (open) and OFF (close)  |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                            |
+|          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP            |
 |          |rollerpos    |Number   |r/w      |Roller position: 100%=open...0%=closed; gets updated when the roller stops, see Notes |
+|          |rollerFav    |Number   |r/w      |Select roller position favorite (1-4, 0=no), see Notes                                |
 |          |state        |String   |yes      |Roller state: open/close/stop                                                         |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                  |
-|          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP            |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                                    |
 |          |lastPower1   |Number   |yes      |Accumulated energy consumption in Watts for the full last minute                      |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart)      |
@@ -521,6 +476,8 @@ The roller positioning calibration has to be performed using the Shelly App befo
 ### Shelly 2.5 - relay mode (thing-type:shelly25-relay) 
 
 The Shelly 2.5 includes 2 meters, one for each channel.
+Firmware 1.9.2 or newer is required to use the roller position favorites, which are defined in the Shelly App.
+
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
@@ -594,7 +551,11 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 
-The Dimmer should be calibrated using the Shelly App.
+Note: The Dimmer should be calibrated using the Shelly App.
+
+Use the thing configuration option brightnessAutoOn you could decide if the light is turned on when a brightness > 0 is set.
+true:  Brightness will be set and device output is powered = light turns on with the new brightness
+false: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
 
 ### Shelly ix3 (thing-type: shellyix3)
 
@@ -704,6 +665,10 @@ The Dimmer should be calibrated using the Shelly App.
 |          |effect       |Number   |r/w      |Puts the light into effect mode: 0..3)                                 |
 |          |             |         |         |0=No effect, 1=Meteor Shower, 2=Gradual Change, 3=Flash                |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                     |
+
+Use the thing configuration option brightnessAutoOn you could decide if the light is turned on when a brightness > 0 is set.
+true:  Brightness will be set and device output is powered = light turns on with the new brightness
+false: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
 
 ### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-white)
 
@@ -893,7 +858,128 @@ Number Shelly_Power     "Bath Room Light Power"                {channel="shelly:
 
 ### shelly.rules
 
-reading colors from color picker:
+#### Catch alarms
+
+```
+rule "Monitor Shelly Restartt"
+when
+    Channel "shelly:shelly2-relay:XXXXXX:device#alarm" triggered OVERTEMP
+then
+        logInfo("Shelly1", "Device is getting to hot!!")
+end
+```
+
+#### Trigger scene with Button-1
+
+```
+rule "Button-1 SHORT_PRESSED"
+when
+    Channel "shelly:shellybutton1:d8f15bXXXXXX:status#button" triggered SHORT_PRESSED
+then
+    logInfo("Button", "Shelly Button reported SHORT_PRESSED")
+    if (MyTV.state != OFF) {
+        logInfo("Button", "   switch TV OFF")
+        sendCommand(MyTV, "OFF")
+    } else {
+        logInfo("Button", "   switch TV to ON")
+        sendCommand(MyTV, ON)
+    }
+end
+
+rule "Button-1 TRIPLE_PRESSED"
+when
+    Channel "shelly:shellybutton1:d8f15bXXXXXX:status#button" triggered TRIPLE_PRESSED
+then
+    logInfo("Button", "Shelly Button reported TRIPLE_PRESSED")
+end
+```
+
+#### Observe battery status
+
+pre-requisites:
+
+- Install Send Mail Action
+- Define a group called gBatteries
+Group   gBattery        "Batterien"         <battery>       (All)
+- Link battery channel for all you Shelly battery powered devices
+- Add battery items to group gBattery
+
+```
+val String mailTo     = "alarm@openhab.me"
+
+/* ------------- Battery Monitor ----------- */
+
+rule "Battery Monitor"
+when
+    System started or
+    Time cron "0 0 10 * * ?"
+then
+    logInfo("BatteryMon", "Check Battery state")
+
+    if (! gBattery.allMembers.filter([state < lowBatteryThreshold]).empty) {
+        message = "Battery levels:\n"
+
+        var report = gBattery.allMembers.filter([ state instanceof DecimalType ]).sortBy([ state instanceof DecimalType ]).map[ 
+        name + ": " + state.format("%d%%\n") ]
+        message = message + report
+
+        message = message + "\nBattery Level:\n"
+        gBattery?.allMembers.forEach([sw|
+            message = message + sw.name + ": " + state.format("%d%%\n")
+        ])
+
+        sendMail(mailTo, "Home: LOW Battery Alert!", message)
+    }
+    logInfo("BatteryMon", "Batteries checked.")
+end
+```
+
+#### Control CCT LED stripes
+
+Usage & Requirements:
+- 4 Items per thing required. Example:
+    Group gCCT_LED        "All CCT LEDs"
+    Dimmer    LED1_brightness     "Brightness"    (gCCT_LED)
+    Dimmer    LED1_temperature    "Temperature"   (gCCT_LED)
+    Dimmer    LED1_cw         "cold white Channel"
+    Dimmer    LED1_ww         "warm white Channel"
+- Items "LED1" and "LED1_temperature" are proxy items and to be used in sitemaps. Both have to be a member of group "gCCT_LED"
+- Items "LED1_cw" and "LED_ww" are litems linked to thing channel. Not required in sitemaps. Do NOT include in this group
+- Prefix: needs to be constant per Thing.
+
+```
+val String strSuffixSeparator = "_"             //Separator: 1 unique separator
+val String strSuffixBrightness = "brightness"           //Suffix: at your choice
+val String strSuffixTemperature = "temperature"         //Suffix: at your choice
+
+rule "CCT_LED"
+when
+    Member of gCCT_LED changed
+then
+    logInfo("CCT_LED", "Item '{}' received command {}",triggeringItem.name,triggeringItem.state)
+    var Number iNewCwState     //New value for cold white channel
+    var Number iNewWwState     //New value for warm white channel
+    val String strThing = triggeringItem.name.toString.split(strSuffixSeparator).get(0)     //Get Name of "Thing", i.e. LED1 or LED2 or...
+    val String strType = triggeringItem.name.toString.split(strSuffixSeparator).get(1)      //Get Type (brightness oder temperature)
+
+    if ((strType == strSuffixBrightness) && (triggeringItem.state as Number) == 0) {        //no math required. just switch off
+        iNewCwState = 0
+        iNewWwState = 0
+    }
+    else {
+        var iBrightness = gCCT_LED.members.findFirst[ t | t.name == strThing+strSuffixSeparator+strSuffixBrightness ].state as Number
+        var iColor = gCCT_LED.members.findFirst[ t | t.name == strThing+strSuffixSeparator+strSuffixTemperature ].state as Number
+        logInfo("CCT_LED", "Setting 'Brightness' to {} and 'White Color' to {}",iBrightness,iColor)
+        iNewWwState = Math::round ((iColor / 100 * iBrightness).intValue)
+        iNewCwState = iBrightness - iNewWwState
+    }
+    logInfo("CCT_LED", "Changing channel 'Cold White' to {} and 'Warm White' to {}",iNewCwState,iNewWwState)
+    sendCommand(strThing + "_cw", iNewCwState.toString)
+    sendCommand(strThing + "_ww", iNewWwState.toString)
+end
+```
+
+#### Reading colors from Color Picker:
 
 ```
 import org.openhab.core.library.types.*
