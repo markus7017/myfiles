@@ -1,8 +1,10 @@
 # Smartify Roller Shutters with openHAB and Shelly
 
-## Use Case
+![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png)
 
-![](https://shelly.cloud/wp-content/uploads/2020/03/know_base.png) **How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
+**How openHAB andShelly 2.5 provide an enhance experience when controlling rollers**
+
+## Use Case
 
 ![](images/oh_image1.png)   ![](images/oh_image2.png)   ![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)
 
@@ -77,19 +79,7 @@ Nevertheless, a lot of issues has been fixed in between as well as new features 
 It's recommended to upgrade your roller device to 1.9.2 or newer.
 1.9 brings roller position favorites, which are used by this use case (older version works, but you can't use that feature).
 
-There are 3 options available to perform the upgrade
-- The Shelly App usually detects when a new version becomes available and offers to do the upgrade within the UI (Web or App)
-- Alterco provides the [Shelly Firmware Archive Link Generator](http://archive.shelly-faq.de).
-This can be used to generate the upgrade link, which could be easily used to perform the upgrade on the cli-level having an Internet connection on that terminal (Shelly device doesn't require an Internet acces).
-You specify the device's IP and device model SHSW-25 and the page will generate you the link for the firmware download using the OTA of the device.
-Then you run "curl -s [-u user:password] &gt;generated link&gt;" from the terminal.
-This should show a JSON result, make sure that it shows "status:updating".
-Wait 15sec and access the device's Web UI, go to Settings:Firmware Upgrade and make sure than the new version was installed successful.
-- Manual download and installation of the firmware
-Manually pick the download link from the [Shelly Firmware Repository](https://api.shelly.cloud/files/firmware) and get the release or beta link.
-Once you downloaded the file you need to copy it to an http server. 
-Open the following url http://&lt;shelly ip&gt;/ota?url=http://&lt;web server&gt;/&lt;path&gt;/&lt;zip-file&gt;
-Again, make sure that the file is downloaded and installed properly.
+See bindings [README](../README.md) for more information how to upgrade the firmware.
 
 #### Shelly Binding
 
