@@ -6,7 +6,7 @@
 
 ## Use Case
 
-![](images/oh_image1.png)   ![](images/oh_image2.png)   ![](https://shelly.cloud/wp-content/uploads/2020/06/Shelly_2.5.png)
+![](images/oh_image1.png)   ![](images/oh_image2.png)   ![](https://shelly.cloud/wp-content/uploads/2020/06/shelly25.jpg)
 
 More and more people have rollers, which are equipped with a motor and button control improving your convince when operating the shutter.
 
@@ -218,7 +218,7 @@ There is a bunch of ressources you could browse around openHAB, Shelly or the bi
 Latest **DEV** build: [2.5.11](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.11-SNAPSHOT.jar?raw=true) - [3.0.0](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.0-SNAPSHOT.jar?raw=true) - [README](https://github.com/markus7017/myfiles/blob/master/shelly/README.md) -  [Installation](https://github.com/markus7017/myfiles/blob/master/shelly/READMEbeta.md) - [Bugs/Features](https://github.com/openhab/openhab-addons/issues?q=is%3Aissue+is%3Aopen+%5Bshelly%5D) - [Firmware Index](https://repo.shelly.cloud/files/firmware/?fbclid=IwAR0Kz6bjMGoq_HYU85QAdl8b-xh7E3IPa4ENKjqsvmMAYQ6QGC8ODvqPzUs) - [Firmware Archive](http://archive.shelly-faq.de) - [API Doc](https://shelly-api-docs.shelly.cloud/?fbclid=IwAR23ukCi_3aBSTPRHYUIcpr0pLi0vcyL0fF0PnJQdFvkkc8_Zo5LkAcli_A#http-server)
 Note: The binding version included in the final OH 3.0 distro is significantly older than the DEV build. I can't make it in-time to bring in the PR in advance to the feature freeze for 3.0 - sorry for that, but always a matter of (spare time).
 - [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly) with the DEV build stuff and more information around Shelly - this is nothing official!!
-- [Shelly 2.5 product page](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/)
+- [Shelly 2.5 product page](https://shelly.cloud/knowledge-base/devices/shelly-25/)
 - [Shelly Support Group (English)](https://www.facebook.com/groups/ShellyIoTCommunitySupport)
 
 and the [openHAB Community thread specifically for the binding](https://community.openhab.org/t/shelly-binding/56862/1701)
