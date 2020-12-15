@@ -1,3 +1,9 @@
+echo Updating documentation
+cp ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/README.md ~/Dev/openhab-3/git/openhab-addons/bundles/org.openhab.binding.shelly/
+cp -R ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/doc/ ~/Dev/openhab-3/git/openhab-addons/bundles/org.openhab.binding.shelly/doc/
+cp ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/README.md ~/Dev/myfiles/shelly/
+cp -R ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/doc/ ~/Dev/myfiles/shelly/doc/
+
 echo Update formatting
 mvn spotless:apply
 if [ $? -ne 0 ]
@@ -16,7 +22,6 @@ cp target/org.openhab.binding.shelly-2.5.*-SNAPSHOT.jar ~/Dev/myfiles/shelly/
 
 echo Copy code to V3, update Shelly from v2 to v3
 cd ~/Dev/openhab-3/git/openhab-addons/bundles/org.openhab.binding.shelly
-cp ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/README.md .
 rm -rf src/main/java/
 mkdir src/main/java
 cp -R ~/Dev/openhab-2-5-x/git/openhab-addons/bundles/org.openhab.binding.shelly/src/main/java/ src/main/java/

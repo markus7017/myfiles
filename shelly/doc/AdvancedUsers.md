@@ -6,10 +6,10 @@ This section provides information for advanced use cases.
 
 There are additional resources available providing more information on Shelly devices and how to integrate those into openHAB:
 
-- [Shelly homepage](shelly.cloud)
+- [Shelly Homepage](https://shelly.cloud)
 - [Shelly Support Group (English)](https://www.facebook.com/groups/ShellyIoTCommunitySupport)
 - [Firmware Archive](http://archive.shelly-faq.de)
-- [API Doc](https://shelly-api-docs.shelly.cloud/?fbclid=IwAR23ukCi_3aBSTPRHYUIcpr0pLi0vcyL0fF0PnJQdFvkkc8_Zo5LkAcli_A#http-server)
+- [API Documentation](https://shelly-api-docs.shelly.cloud/?fbclid=IwAR23ukCi_3aBSTPRHYUIcpr0pLi0vcyL0fF0PnJQdFvkkc8_Zo5LkAcli_A#http-server)
 
 and the [openHAB Community thread specifically for the binding](https://community.openhab.org/t/shelly-binding) - any feedback welcome here.
 You could also [report a bug or request a feature](https://github.com/openhab/openhab-addons/issues?q=is%3Aissue+is%3Aopen+%5Bshelly%5D) for the Shelly Binding.
