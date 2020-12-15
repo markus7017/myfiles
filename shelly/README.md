@@ -181,11 +181,6 @@ You could also create a rule to catch those status changes or device alarms (see
 
 ### General Notes
 
-- channels `input` and `input1`/`input2` get only updated with firmware 1.5.6+.
-- channel button: Short push and long push events require firmware version 1.5.6+.
-- Use the channel `rollerpos` only if you need the inverted roller position, otherwise use the `control` channel with item type `Number`
-- The different devices have different types of power meters, which are mapped in different sets of channels.
-
 Every device has a channel group `device` with the following channels:
 
 |Group     |Channel            |Type    |read-only|Description                                                                      |
@@ -193,7 +188,7 @@ Every device has a channel group `device` with the following channels:
 |device    |deviceName         |String  |yes      |Device name as configured in the Shelly App                                      |
 |          |uptime             |Number  |yes      |Number of seconds since the device was powered up                                |
 |          |wifiSignal         |Number  |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
-|          |innerTemp          |Number  |yes      |Internal device temperature (when provided by the device)                        |
+|          |innernalTemp       |Number  |yes      |Internal device temperature (when provided by the device)                        |
 |          |selfTest           |String  |yes      |Result from device self-test (pending/not_completed/running/completed/unknown)   |
 |          |alarm              |Trigger |yes      |Self-Test result not_completed/completed/running/pending                         |
 |          |accumulatedWatts   |Number  |yes      |Accumulated power in W of the device (including all meters)                      |
@@ -228,7 +223,7 @@ The following event types could be registered when enabled in the thing configur
 |------------------|---------------------------------------------------------------------------------------------------------------|
 |eventsButton      |This event is triggered when the device is in button mode. The device reports the ON/OFF status oh the button. |
 |eventsSwitch      |This event reports the status of the relay output. This could change by the button or API calls.               |
-|eventsPush        |The device reports the short/longpush events when in  button mode momentary, momentary_on_release or detached. |
+|eventsPush        |The device reports the short/longpush events when in  button mode momentary, momentary_on_release, one_button or two_button |
 |eventsSensorReport|Sensor devices (like H&T) provide sensor updates when this action URL is enabled.                              |
 
 Important: The binding defaults to CoIoT when firmware 1.6 or newer is detected.
@@ -466,6 +461,7 @@ The thing id is derived from the service name, so that's the reason why the thin
 |          |rollerFav    |Number   |r/w      |Select roller position favorite (1-4, 0=no), see Notes                                |
 |          |state        |String   |yes      |Roller state: open/close/stop                                                         |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                  |
+|          |safety       |Switch   |yes      |Indicates status of the Safety Switch, ON=problem detected, powered off               |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                                    |
 |          |lastPower1   |Number   |yes      |Accumulated energy consumption in Watts for the full last minute                      |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart)      |
@@ -499,8 +495,10 @@ For this the binding aggregates the power consumption of both relays and include
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                           |
 |          |state        |String   |yes      |Roller state: open/close/stop                                                        |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                 |
+|          |safety       |Switch   |yes      |Indicates status of the Safety Switch, ON=problem detected, powered off               |
 |          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP           |
-|meter     |             |         |         |See group meter1 for Shelly 2                                                        |
+|meter1    |             |         |         |See group meter1 for Shelly 2                                                        |
+|meter2    |             |         |         |See group meter1 for Shelly 2                                                        |
 
 The roller positioning calibration has to be performed using the Shelly App before the position can be set in percent. 
 
