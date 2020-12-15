@@ -114,13 +114,19 @@ Maybe add 2-3 seconds for safe and set the values for both directions in the UI
 
 ![](images/uiroller_wt.png)
 
-- Obstacle 
+- OBSTACLE DETECTION under Safety in the Web UI
+Shelly 2.5 has an integrated detection on roller obstacles based on measuring the motor power.
+The detection needs to be enabled, "While Moving" cover open and close.
+Action Stop makes most sense, you should manually verify the problem.
 
 ![](images/uiroller_obs1.png)   ![](images/uiroller_obs2.png)      ![](images/uiroller_obs3.png)
 
 and there are some more options:
-- SWAP INPUTS and REVERSE DIRECTIONS - you could flip operation mode for open/close, this could help in non-standard operations, but could also indicate a wiring problen
+- MAX POWER PROTECTION
+A roller should never consume high power - in this case you could assume an electrical problem.
+Therefore you could configure the Shelly to turn off power when exceeding a certain limit (e.g.250W - value depend on your roller motor).
 
+- SWAP INPUTS and REVERSE DIRECTIONS - you could flip operation mode for open/close, this could help in non-standard operations, but could also indicate a wiring problen
 It also makes sense to give the device a name. Go to Settings:DEVICE NAME and select a symbolic name.
 This name will also discovered by the binding and added as a suffix to the thing name in the Inbox.
 It simplifies to identify the roller when you have a ton of Shelly things (believe me).
