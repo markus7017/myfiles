@@ -17,7 +17,7 @@ You could also [report a bug or request a feature](https://github.com/openhab/op
 ## Firmware Upgrade
 
 The Shelly App usually displays the installed firmware and also provide the function to upgrade the device with new firmware.
-However, if this doesn't work (sometimes there are issues) you you use the [Shelly Firmware Archi Link Generator](http://archive.shelly-faq.de), which provides download links to current, but also archived firmware files for all devices. 
+However, if this doesn't work (sometimes there are issues) you could use the [Shelly Firmware Archi Link Generator](http://archive.shelly-faq.de), which provides download links to current, but also archived firmware files for all devices. 
 
 |Version|Notes                                                                                             |
 |-------|--------------------------------------------------------------------------------------------------|
@@ -31,7 +31,7 @@ However, if this doesn't work (sometimes there are issues) you you use the [Shel
 There are 3 options available to perform the upgrade
 - The Shelly App usually detects when a new version becomes available and offers to do the upgrade within the UI (Web or App)
 - Alterco provides the [Shelly Firmware Archive Link Generator](http://archive.shelly-faq.de).
-This can be used to generate the upgrade link, which could be easily used to perform the upgrade on the cli-level having an Internet connection on that terminal (Shelly device doesn't require an Internet acces).
+This can be used to generate the upgrade link, which could be easily used to perform the upgrade on the cli-level having an Internet connection on that terminal (Shelly device doesn't require an Internet access).
 You specify the device's IP and device model SHSW-25 and the page will generate you the link for the firmware download using the OTA of the device.
 Then you run "curl -s [-u user:password] &gt;generated link&gt;" from the terminal.
 This should show a JSON result, make sure that it shows "status:updating".
@@ -73,7 +73,7 @@ In this case channel linkage gets lost and you need to re-link the channels/item
 
 ## Log optimization
 
-The binding provides channels (e.g. heartBeat, currentWatts), which might cause a log of log output, especially when having multiple dozen Shellys.
+The binding provides channels (e.g. heartBeat, currentWatts), which might cause a lot of log output, especially when having multiple dozen Shellys.
 
 openHAB has an integrated feature to filter the event log.
 This mechanism doesn't filter the event, but the log output (items still receive the updates).
