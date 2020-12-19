@@ -29,18 +29,33 @@ However, if this doesn't work (sometimes there are issues) you could use the [Sh
 
 
 There are 3 options available to perform the upgrade
-- The Shelly App usually detects when a new version becomes available and offers to do the upgrade within the UI (Web or App)
-- [Shelly Firmware Archive Link Generator](http://archive.shelly-faq.de) provided by the community (not official, but works like charm).
-This can be used to generate the upgrade link, which could be easily used to perform the upgrade on the cli-level having an Internet connection on that terminal (Shelly device doesn't require an Internet access).
+
+### Using Shelly Web UI or Smartphone App
+
+The Apps usually detect when a new version becomes available and offers to do the upgrade to the latest release or beta version.
+
+### Trigger device update
+ 
+The [Shelly Firmware Archive Link Generator](http://archive.shelly-faq.de) is provided by the community (not official, but works like charm).
+This can be used to generate the update link, which could be easily used to perform the upgrade on the cli-level having an Internet connection on that terminal (Shelly device doesn't require an Internet access).
+
 You specify the device's IP and device model SHSW-25 and the page will generate you the link for the firmware download using the OTA of the device.
-Then you run "curl -s [-u user:password] &gt;generated link&gt;" from the terminal.
+
+Then you run 
+```
+curl -s [-u user:password] <generated link>
+```
+from the command line.
+
 This should show a JSON result, make sure that it shows "status:updating".
 Wait 15sec and access the device's Web UI, go to Settings:Firmware Upgrade and make sure than the new version was installed successful.
-- Manual download and installation of the firmware
-Manually pick the download link from the [Shelly Firmware Repository](https://api.shelly.cloud/files/firmware) and get the release or beta link.
-Once you downloaded the file you need to copy it to an http server. 
-Open the following url http://&lt;shelly ip&gt;/ota?url=http://&lt;web server&gt;/&lt;path&gt;/&lt;zip-file&gt;
-Again, make sure that the file is downloaded and installed properly.
+
+### Manual download and installation of the firmware
+
+- Manually pick the download link from the [Shelly Firmware Repository](https://api.shelly.cloud/files/firmware) and get the release or beta link.
+- Once you downloaded the file you need to copy it to an http server. 
+- Open the following url http://&lt;shelly ip&gt;/ota?url=http://&lt;web server&gt;/&lt;path&gt;/&lt;zip-file&gt;
+- Again, make sure that the file is downloaded and installed properly.
 
 ## Trouble Shooting
 
