@@ -95,6 +95,6 @@ You could help to integrate and support new vehicle models. In general the follo
 - Market (EU/US/CN)
 - features like electrical car, pre-header
 
-In general CarNet is also available for Volkswagen and Skode vehicles. However, the APIs are similar, but login handling, http headers 
+In general CarNet is also available for Volkswagen and Skoda vehicles. However, the APIs are similar, but login handling, http headers 
 and some of the API calls are different. Currently I focus on Audi, everything else is postponed.
 
