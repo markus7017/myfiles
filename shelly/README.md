@@ -7,17 +7,17 @@ Allterco provides a rich set of smart home devices. All of them are WiFi enabled
 The binding is officially acknowledged by Allterco and openHAB is listed as a reference and directly supports the openHAB community.
 
 The binding controls the devices independently from the Allterco Shelly Cloud (in fact it can be disabled).
-The binding co-exists with Shelly App for Smartphones, Shelly Web App, Shelly Cloud, mqqt and other 3rd party Apps.
+The binding co-exists with Shelly App for Smartphones, Shelly Web UI, Shelly Cloud, MQQT and other 3rd party Apps.
 
 The binding focuses on reporting the device status and device control.
-Initial setup and device configuration has to be performed using the Shelly Apps (Web or Smartphone App).
+Initial setup and device configuration has to be performed using the Shelly Apps (Web UI or Smartphone App).
 The binding gets in sync with the next status refresh.
 
 Refer to [Advanced Users](doc/AdvancedUsers.md) for more information on openHAB Shelly integration, e.g. firmware update, network communication or log filtering.
 
 ## Supported Devices
 
-| Thing Type         | Model                                                  | Vendor ID |
+| thing-type         | Model                                                  | Vendor ID |
 |--------------------|--------------------------------------------------------|-----------|
 | shelly1            | Shelly 1 Single Relay Switch                           | SHSW-1    |
 | shelly1l           | Shelly 1L Single Relay Switch                          | SHSW-L    |
@@ -120,10 +120,10 @@ Sometimes you need to run the discovery multiple times.
 ### Roller Favorites
 
 Firmware 1.9.2 for Shelly 2.5 in roller mode supports so called favorites for positions.
-You could use the Shelly App to setup 4 different positions (percentage) and assign id 1-4.
-The channel 'roller#rollerFav' allows to select those from openHAB and the roller moves to the desired position.
-In the Thing configuration you could also configure an id when the 'roller#control' channel receives UP or DOWN.
-Values 1-4 are selecting the corresponding favorite id in the Shelly App, 0 means no favorite.
+You could use the Shelly Web UI to setup 4 different positions (percentage) and assign id 1-4.
+The channel `roller#rollerFav` allows to select those from openHAB and the roller moves to the desired position.
+In the Thing configuration you could also configure an id when the `roller#control` channel receives UP or DOWN.
+Values 1-4 are selecting the corresponding favorite id in the Shelly Web UI, 0 means no favorite.
 
 ### Thing Status
 
@@ -188,7 +188,7 @@ Every device has a channel group `device` with the following channels:
 
 |Group     |Channel            |Type    |read-only|Description                                                                      |
 |----------|-------------------|--------|---------|---------------------------------------------------------------------------------|
-|device    |deviceName         |String  |yes      |Device name as configured in the Shelly App                                      |
+|device    |deviceName         |String  |yes      |Device name as configured in the Shelly Web UI                                      |
 |          |uptime             |Number  |yes      |Number of seconds since the device was powered up                                |
 |          |wifiSignal         |Number  |yes      |WiFi signal strength (4=excellent, 3=good, 2=not string, 1=unreliable, 0=none)   |
 |          |internalTemp       |Number  |yes      |Internal device temperature (when provided by the device)                        |
@@ -260,7 +260,7 @@ The following trigger types are sent:
 |LONG_SHORT_PRESSED |A long followed by a short button push                                                                         |
  
 Check the channel definitions for the various devices to see if the device supports those events.
-You could use the Shelly App to set the timing for those events. 
+You could use the Shelly Web UI to set the timing for those events. 
 
 ### Alarms
 
@@ -305,7 +305,7 @@ Depending on the device type and firmware release channels might be not availabl
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
 |          |button       |Trigger  |yes      |Event trigger with payload, see SHORT_PRESSED or LONG_PRESSED                    |
 |          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
@@ -323,7 +323,7 @@ Depending on the device type and firmware release channels might be not availabl
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input1       |Switch   |yes      |ON: Input/Button for input 1 is powered, see general notes on channels           |
 |          |button1      |Trigger  |yes      |Event trigger, see section Button Events                                         |
 |          |lastEvent1   |String   |yes      |Last event type (S/SS/SSS/L) for input 1                                         |
@@ -345,10 +345,10 @@ Depending on the device type and firmware release channels might be not availabl
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                                         |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |lastPower1   |Number   |yes      |Energy consumption for a round minute, 1 minute  ago                   |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
@@ -363,7 +363,7 @@ Depending on the device type and firmware release channels might be not availabl
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                                         |
 |          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
@@ -392,7 +392,7 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |output       |Switch   |r/w      |Controls the relay's output channel (on/off)                                     |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see general notes on channels                       |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                                         |
 |          |lastEvent    |String   |yes      |Last event type (S/SS/SSS/L)                                                     |
@@ -431,21 +431,21 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay1    |output       |Switch   |r/w      |Relay #1: Controls the relay's output channel (on/off)                           |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |autoOn       |Number   |r/w      |Relay #1: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #1: Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |Relay #1: ON: An auto-on/off timer is active                                     |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                                         |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |relay2    |output       |Switch   |r/w      |Relay #2: Controls the relay's output channel (on/off)                           |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                       |
 |          |autoOn       |Number   |r/w      |Relay #2: Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Relay #2: Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |Relay #2: ON: An auto-on/off timer is active                                     |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                                         |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |lastPower1   |Number   |yes      |Energy consumption for a round minute, 1 minute  ago                             |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
@@ -468,14 +468,14 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart)      |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                     |
 
-The roller positioning calibration has to be performed using the Shelly App before the position can be set in percent.
+The roller positioning calibration has to be performed using the Shelly Web UI before the position can be set in percent.
 
 Refer to [Smartify Roller Shutters with openHAB and Shelly](doc/UseCaseSmartRoller.md) for more information on roller integration. 
 
 ### Shelly 2.5 - relay mode (thing-type:shelly25-relay) 
 
 The Shelly 2.5 includes 2 meters, one for each channel.
-Firmware 1.9.2 or newer is required to use the roller position favorites, which are defined in the Shelly App.
+Firmware 1.9.2 or newer is required to use the roller position favorites, which are defined in the Shelly Web UI.
 
 
 |Group     |Channel      |Type     |read-only|Description                                                                      |
@@ -498,12 +498,12 @@ For this the binding aggregates the power consumption of both relays and include
 |          |input        |Switch   |yes      |ON: Input/Button is powered, see General Notes on Channels                           |
 |          |state        |String   |yes      |Roller state: open/close/stop                                                        |
 |          |stopReason   |String   |yes      |Last stop reasons: normal, safety_switch or obstacle                                 |
-|          |safety       |Switch   |yes      |Indicates status of the Safety Switch, ON=problem detected, powered off               |
+|          |safety       |Switch   |yes      |Indicates status of the Safety Switch, ON=problem detected, powered off              |
 |          |event        |Trigger  |yes      |Roller event/trigger with payload ROLLER_OPEN / ROLLER_CLOSE / ROLLER_STOP           |
 |meter1    |             |         |         |See group meter1 for Shelly 2                                                        |
 |meter2    |             |         |         |See group meter1 for Shelly 2                                                        |
 
-The roller positioning calibration has to be performed using the Shelly App before the position can be set in percent. 
+The roller positioning calibration has to be performed using the Shelly Web UI before the position can be set in percent. 
 
 Refer to [Smartify Roller Shutters with openHAB and Shelly](doc/UseCaseSmartRoller.md) for more information on roller integration. 
 
@@ -534,7 +534,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |Group     |Channel      |Type     |read-only|Description                                                                      |
 |----------|-------------|---------|---------|---------------------------------------------------------------------------------|
 |relay     |brightness   |Dimmer   |r/w      |Currently selected brightness.                                                   |
-|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly App                |
+|          |outputName   |String   |yes      |Logical name of this relay output as configured in the Shelly Web UI                |
 |          |input1       |Switch   |yes      |ON: Input/Button for input 1 is powered, see general notes on channels           |
 |          |button1      |Trigger  |yes      |Event trigger, see section Button Events                                         |
 |          |lastEvent1   |String   |yes      |Last event type (S/SS/SSS/L) for input 1                                         |
@@ -552,11 +552,11 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 
-'Note: The Dimmer should be calibrated using the Shelly App.'
+`Note: The Dimmer should be calibrated using the Shelly Web UI.`
 
-Using the Thing configuration option 'brightnessAutoOn' you could decide if the light is turned on when a brightness > 0 is set.
-'true':  Brightness will be set and device output is powered = light turns on with the new brightness
-'false': Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
+Using the Thing configuration option `brightnessAutoOn` you could decide if the light is turned on when a brightness > 0 is set.
+`true`:  Brightness will be set and device output is powered = light turns on with the new brightness
+`false`: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
 
 ### Shelly ix3 (thing-type: shellyix3)
 
@@ -565,26 +565,26 @@ Using the Thing configuration option 'brightnessAutoOn' you could decide if the 
 |status    |input1       |Switch   |yes      |State of Input 1                                                       |
 |          |input2       |Switch   |yes      |State of Input 2                                                       |
 |          |input3       |Switch   |yes      |State of Input 3                                                       |
-|          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, TRIPLE_PRESSED, LONG_PRESSED, SHORT_LONG_PRESSED or LONG_SHORT_PRESSED  |
+|          |button       |Trigger  |yes      |Event trigger: Event trigger, see section Button Events                |
 |          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                        |
 |          |eventCount   |Number   |yes      |Number of button events                                                |
 
 ### Shelly UNI - Low voltage sensor/actor: shellyuni)
 
-|Group     |Channel      |Type     |read-only|Description                                                                      |
-|----------|-------------|---------|---------|---------------------------------------------------------------------------------|
-|relay1    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels            |
-|relay2    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels            |
-|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)         |
-|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)         |
-|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)         |
-|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                             |
-|          |voltage      |Number   |yes      |ADCS voltage                                                                     |
-|status    |input1       |Switch   |yes      |State of Input 1                                                                 |
-|          |input2       |Switch   |yes      |State of Input 2                                                                 |
-|          |button       |Trigger  |yes      |Event trigger: SHORT_PRESSED, DOUBLE_PRESSED, TRIPLE_PRESSED, LONG_PRESSED, SHORT_LONG_PRESSED or LONG_SHORT_PRESSED  |
-|          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                                  |
-|          |eventCount   |Number   |yes      |Number of button events                                                          |
+|Group     |Channel      |Type     |read-only|Description                                                                 |
+|----------|-------------|---------|---------|----------------------------------------------------------------------------|
+|relay1    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels       |
+|relay2    |             |         |         |See group relay1 for Shelly 2, no autoOn/autoOff/timerActive channels       |
+|sensors   |temperature1 |Number   |yes      |Temperature value of external sensor #1 (if connected to temp/hum addon)    |
+|          |temperature2 |Number   |yes      |Temperature value of external sensor #2 (if connected to temp/hum addon)    |
+|          |temperature3 |Number   |yes      |Temperature value of external sensor #3 (if connected to temp/hum addon)    |
+|          |humidity     |Number   |yes      |Humidity in percent (if connected to temp/hum addon)                        |
+|          |voltage      |Number   |yes      |ADCS voltage                                                                |
+|status    |input1       |Switch   |yes      |State of Input 1                                                            |
+|          |input2       |Switch   |yes      |State of Input 2                                                            |
+|          |button       |Trigger  |yes      |Event trigger, see section Button Events                                    |
+|          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                             |
+|          |eventCount   |Number   |yes      |Number of button events                                                     |
 
 ### Shelly Bulb (thing-type: shellybulb)
 
@@ -596,7 +596,7 @@ Using the Thing configuration option 'brightnessAutoOn' you could decide if the 
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON: in sec            |
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
 |color     |             |         |         |Color settings: only valid in COLOR mode                               |
-|          |hsb          |HSB      |r/w      |Represents the color picker (HSBType), control r/g/b, bight not white  |
+|          |hsb          |HSB      |r/w      |Represents the color picker (HSBType), control r/g/b, but not white    |
 |          |full         |String   |r/w      |Set Red / Green / Blue / Yellow / White mode and switch mode           |
 |          |             |         |r/w      |Valid settings: "red", "green", "blue", "yellow", "white" or "r,g,b,w" | 
 |          |red          |Dimmer   |r/w      |Red brightness: 0..100% or 0..255 (control only the red channel)       |
@@ -610,7 +610,12 @@ Using the Thing configuration option 'brightnessAutoOn' you could decide if the 
 |white     |             |         |         |Color settings: only valid in WHITE mode                               |
 |          |temperature  |Number   |r/w      |color temperature (K): 0..100% or 3000..6500                           |
 |          |brightness   |Dimmer   |         |Brightness: 0..100% or 0..100                                          |
- 
+
+Note: The openHAB color picker has only values for red/green/blue (RGB), not for white as supported by the RGBW2.
+Therere for the binding offers beside channel `hsb` also the `white` channel.
+Or control each color separately with channels `red`, `blue`, `green` (those are advanced channels).
+
+
 #### Shelly Duo (thing-type: shellybulbduo)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
@@ -663,9 +668,9 @@ Using the Thing configuration option 'brightnessAutoOn' you could decide if the 
 |          |             |         |         |0=No effect, 1=Meteor Shower, 2=Gradual Change, 3=Flash                |
 |meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                     |
 
-Using the Thing configuration option 'brightnessAutoOn' you could decide if the light is turned on when a brightness > 0 is set.
-'true':  Brightness will be set and device output is powered = light turns on with the new brightness
-'false': Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
+Using the Thing configuration option `brightnessAutoOn` you could decide if the light is turned on when a brightness > 0 is set.
+`true`:  Brightness will be set and device output is powered = light turns on with the new brightness
+`false`: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
 
 ### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-white)
 
@@ -687,7 +692,7 @@ Using the Thing configuration option 'brightnessAutoOn' you could decide if the 
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
-|channel4  |brightness   |Dimmer   |r/w      |Channel 5: Brightness: 0..100, control power state with ON/OFF         |
+|channel4  |brightness   |Dimmer   |r/w      |Channel 4: Brightness: 0..100, control power state with ON/OFF         |
 |          |button       |Trigger  |yes      |Event trigger, see section Button Events                               |
 |          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
 |          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
@@ -714,12 +719,14 @@ You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see exa
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Temperature, unit is reported by tempUnit                              |
 |          |humidity     |Number   |yes      |Relative humidity in %                                                 |
-|          |charger      |Number   |yes      |ON: USB charging cable is                                              |
+|          |charger      |Number   |yes      |ON: USB charging cable is connected external power supply activated.   |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-### Shelly Flood (thing type: shellyflood)
+`Please Note:` If you have connected an USB cable to the H&T, but channel charger is off make sure that "Use external power supply" settings is activated in the Shelly Web UI's device settings.
+
+### Shelly Flood (thing-type: shellyflood)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -729,7 +736,7 @@ You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see exa
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-### Shelly Door/Window (thing type: shellydw)
+### Shelly Door/Window (thing-type: shellydw, shellydw2)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -743,7 +750,7 @@ You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see exa
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-### Shelly Button 1 (thing type: shellybutton1)
+### Shelly Button 1 (thing-type: shellybutton1)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -755,9 +762,9 @@ You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see exa
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-You should calibrate the sensor using the Shelly App to get information on the tilt status.
+You should calibrate the sensor using the Shelly Web UI to get information on the tilt status.
 
-### Shelly Smoke(thing type: shellysmoke)
+### Shelly Smoke (thing-type: shellysmoke)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -768,7 +775,7 @@ You should calibrate the sensor using the Shelly App to get information on the t
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-### Shelly Smoke(thing type: shellygas)
+### Shelly Smoke(thing-type: shellysmoke)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -892,7 +899,7 @@ pre-requisites:
 
 - Install Send Mail Action
 - Define a group called gBatteries
-Group   gBattery        "Batterien"         <battery>       (All)
+'Group   gBattery        "Batterien"         <battery>       (All)'
 - Link battery channel for all your Shelly battery powered devices
 - Add battery items to group gBattery
 
@@ -930,13 +937,17 @@ end
 
 Usage & Requirements:
 - 4 Items per Thing required. Example:
-    Group gCCT_LED        "All CCT LEDs"
-    Dimmer    LED1_brightness     "Brightness"    (gCCT_LED)
-    Dimmer    LED1_temperature    "Temperature"   (gCCT_LED)
-    Dimmer    LED1_cw         "cold white Channel"
-    Dimmer    LED1_ww         "warm white Channel"
+
+```
+Group gCCT_LED        "All CCT LEDs"
+Dimmer    LED1_brightness     "Brightness"    (gCCT_LED)
+Dimmer    LED1_temperature    "Temperature"   (gCCT_LED)
+Dimmer    LED1_cw         "cold white Channel"
+Dimmer    LED1_ww         "warm white Channel"
+```
+
 - Items "LED1" and "LED1_temperature" are proxy items and to be used in sitemaps. Both have to be a member of group "gCCT_LED"
-- Items "LED1_cw" and "LED_ww" are litems linked to Thing channel. Not required in sitemaps. Do NOT include in this group
+- Items "LED1_cw" and "LED_ww" are items linked to Thing channel. Not required in sitemaps. Do NOT include in this group
 - Prefix: needs to be constant per Thing.
 
 ```

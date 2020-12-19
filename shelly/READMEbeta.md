@@ -91,10 +91,10 @@ List of Firmware Versions for the different devices could be found here: https:/
 
 You could install the firmware using curl
 ```
-curl -s http://&gt;device ip&gt;/ota?url=http://api.shelly.cloud/files/firmware/&lt;device type id&gt;_build.zip
+curl -s http://<device ip>/ota?url=http://api.shelly.cloud/files/firmware/&lt;device type id&gt;_build.zip
 
 Example for 1PM:
-curl -s http://&gt;device ip&gt;/ota?url=http://api.shelly.cloud/files/firmware/SHSW-PM_build.zip
+curl -s http://<device ip>/ota?url=http://api.shelly.cloud/files/firmware/SHSW-PM_build.zip
 ```
 
 * If you have multiple network interfaces you should check openHAB's default setting 
