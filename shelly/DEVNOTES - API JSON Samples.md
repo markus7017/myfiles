@@ -1009,6 +1009,88 @@ Firmware Version 1.5.2
 }
 ```
 
+## Shelly Duo Color Bulb (G10)
+
+### /shelly
+
+{"type":"SHCB-1","mac":"XXXXXXXXXXXX","auth":true,"fw":"20201202-135344/v1.9.3-rc3@50c6ab57","longid":1,"num_outputs":1}
+
+### /settings
+
+```
+{	"device":{"type":"SHCB-1","mac":"XXXXXXXXXXXX","hostname":"shellycolorbulb-XXXXXXXXXXXX","num_outputs":1},
+	"wifi_ap":{"enabled":false,"ssid":"shellycolorbulb-XXXXXXXXXXXX","key":""},
+	"wifi_sta":{"enabled":true,"ssid":"IoT","ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	"wifi_sta1":{"enabled":false,"ssid":null,"ipv4_method":"dhcp","ip":null,"gw":null,"mask":null,"dns":null},
+	mqtt": {"enable":false,"server":"192.168.33.3:1883","user":"","id":"shellycolorbulb-8CAAB555DB8B","reconnect_timeout_max":60.000000,"reconnect_timeout_min":2.000000,"clean_session":true,"keep_alive":60,"max_qos":0,"retain":false,"update_period":30},
+	"coiot": {"update_period":15,"execute_enable":false},
+	"sntp":{"server":"time.google.com","enabled":true},"login":{"enabled":true,"unprotected":false,"username":"openhab"},"pin_code":"",
+	"name":"testbed-duo-rgbw","fw":"20201202-135344/v1.9.3-rc3@50c6ab57","discoverable":true,"build_info":{"build_id":"20201202-135344/v1.9.3-rc3@50c6ab57","build_timestamp":"2020-12-02T13:53:44Z","build_version":"1.0"},"cloud":{"enabled":false,"connected":false},
+	"timezone":"Europe/Berlin","lat":49.865711,"lng":8.626040,"tzautodetect":true,"tz_utc_offset":3600,"tz_dst":false,"tz_dst_auto":true,"time":"21:41","unixtime":1608673290,
+	"actions":{"active":false,"names":["out_on_url","out_off_url"]},"hwinfo": {"hw_revision":"prod-102020","batch_id":0},"mode":"color",
+	"lights":[
+		{	"ison":true,
+			"red":255,"green":199,"blue":137,"white":0,"gain":90,"temp":4750,"brightness":100,"transition":1000,"effect":0,
+			"default_state":"on","auto_on":0.00,"auto_off":0.00,"schedule":false,"schedule_rules":[]}
+	],
+	"night_mode":{"enabled":false, "start_time":"00:00", "end_time":"00:00", "brightness":0}
+}
+```
+
+### /status
+
+```
+{	"wifi_sta":{"connected":true,"ssid":"TurtleIOB","ip":"192.168.6.177","rssi":-60}, "cloud":{"enabled":false,"connected":false},"mqtt":{"connected":false},
+	"time":"21:44","unixtime":1608673494,"serial":12,"has_update":true,"mac":"XXXXXXXXXXXX","cfg_changed_cnt":3,
+	"actions_stats":{"skipped":0},
+	"lights":[
+		{	"ison":true,"source":"http","has_timer":false,"timer_started":0,"timer_duration":0,"timer_remaining":0,
+			"mode":"color","red":255,"green":199,"blue":137,"white":0,"gain":90,"temp":4750,"brightness":100,"effect":0}
+	],
+	"meters":[
+		{"power":2.61,"is_valid":true,"timestamp":1608673494,"counters":[2.607, 2.607, 2.607],"total":34}],
+		"update":{"status":"pending","has_update":true,"new_version":"20201124-090732/v1.9.0@57ac4ad8","old_version":"20201202-135344/v1.9.3-rc3@50c6ab57","beta_version":"20201202-135344/v1.9.3-rc3@50c6ab57"},"ram_total":50808,"ram_free":38368,"fs_size":233681,"fs_free":156122,
+	"uptime":854
+}
+```
+
+### CoAP Description
+
+```
+{
+	"blk":[{"I":1,"D":"light_0"},{"I":2,"D":"device"}],
+	"sen":[
+		{"I":1101,"T":"S","D":"output","R":"0/1","L":1},
+		{"I":5105,"T":"S","D":"red","R":"0/255","L":1},
+		{"I":5106,"T":"S","D":"green","R":"0/255","L":1},
+		{"I":5107,"T":"S","D":"blue","R":"0/255","L":1},
+		{"I":5108,"T":"S","D":"white","R":"0/255","L":1},
+		{"I":5102,"T":"S","D":"gain","R":"0/100","L":1},
+		{"I":5101,"T":"S","D":"brightness","R":"0/100","L":1},
+		{"I":5103,"T":"S","D":"colorTemp","U":"K","R":"3000/6500","L":1},
+		{"I":9101,"T":"S","D":"mode","R":"color/white","L":1}
+	]
+}
+```
+
+
+### CoIoT status message
+
+```
+{"G":[
+	[0,1101,1],
+	[0,5105,140],
+	[0,5106,255],
+	[0,5107,238],
+	[0,5108,0],
+	[0,5102,90],
+	[0,5101,100],
+	[0,5103,4750],
+	[0,9101,"color"],
+	[0,4101,2.79],
+	[0,4103,29]]
+}
+```
 
 ## Shelly Vintage
 
