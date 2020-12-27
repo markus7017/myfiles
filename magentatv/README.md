@@ -130,7 +130,6 @@ Please note:
 - Channels receiving event information get updated when changing the channel or playing a video.
 There is no way to read the current status, therefore they don't get initialized on startup nor being updated in real-time.
 
-
 The player channel supports the following actions:
 
 |Channel |Command        |Description                       |
