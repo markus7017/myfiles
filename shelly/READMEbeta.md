@@ -31,6 +31,8 @@ Make sure that the release version is not installed: PaperUI:Configuration:Bundl
 
 ## Installing DEV build
 
+For general information check here: https://www.openhab.org/docs/configuration/addons.html#through-manually-provided-add-ons
+
 ### Download the following files
 
 **Californium 2.0 libraries**
