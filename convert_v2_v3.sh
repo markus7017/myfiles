@@ -8,4 +8,6 @@ find . -name *.java -exec sed -i '' -e "s/tec.uom.se.unit.Units/org.openhab.core
 find . -name *.java -exec sed -i '' -e "s/, SmartHomeUnits/, Units/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.eclipse.smarthome.core/org.openhab.core/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.eclipse.smarthome/org.openhab.core/g" {} \;
+find . -name *.java -exec sed -i '' -e "s/2010-2020/2010-2021/g" {} \;
+
 mvn spotless:apply
