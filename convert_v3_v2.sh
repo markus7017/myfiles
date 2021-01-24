@@ -1,3 +1,4 @@
+find . -name *.java -exec sed -i '' -e "s/2010-2021/2010-2020/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.openhab.core.thing./org.eclipse.smarthome.core.thing./g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.openhab.core.i18n./org.eclipse.smarthome.core.i18n./g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.openhab.core.library.unit./org.eclipse.smarthome.core.library.unit./g" {} \;
@@ -8,5 +9,4 @@ find . -name *.java -exec sed -i '' -e "s/org.openhab.core.config.discovery./org
 find . -name *.java -exec sed -i '' -e "s/org.openhab.core.io.net.http.HttpClientFactory/org.eclipse.smarthome.io.net.http.HttpClientFactory/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.openhab.core.library.unit.Units/org.openhab.core.library.unit.SmartHomeUnits/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/, Units./, SmartHomeUnits./g" {} \;
-find . -name *.java -exec sed -i '' -e "s/2010-2021/2010-2020/g" {} \;
 mvn spotless:apply
