@@ -21,7 +21,7 @@ The Shelly Manager simplifies the firmware upgrade.
 You could select between different versions using the drop down list on the overview page.
 Shelly Manager integrates 2 sources
 - Allterco official releases: production and beta release (like in the device UI)
-- Older firmware release from the firmware archive 
+- Older firmware release from the firmware archive - this service is provided by 
 
 All firmware releases are combined to the selection list.
 Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.
