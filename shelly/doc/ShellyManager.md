@@ -10,8 +10,38 @@ Mybe you need to change the port matching your setup.
 
 ## Overview
 
-Once you opened the Manager you'll an overview of all active things. 
+Once the Shelly Manager is opened an overview of all Shelly devices added as a Thing are displayed. 
 Things which are not discovered or still site in the Inbox will not be displayed.
+
+You'll see a bunch of technical details, which are not available as channels or in the Thing properties.
+This includes information on the device communication stability. 
+The statistic gives you are good overview if device communication is stable or a relevant number of timeouts need to be recovered.
+In this case you should verify the WiFi coverage or other options to improve stability.
+
+The following information is available
+|Column              |Description                                                                      |
+|--------------------|---------------------------------------------------------------------------------|
+|S                   |Thing Status - hover over the icon to see more details                           |
+|Name                |Device name - hover over the name to get more details                            |
+|WiFi Network        |SSID of the connected WiFi network                                               |
+|WiFi Signal         |WiFi signal strength, 0=none, 4=very good                                        |
+|Last Heartbeat      |Last time a response or an event was received from the device                    |
+|Action              |Drop down with some actions, see below                                           |
+|Firmware            |Current firmware release                                                         |
+|Update avail        |yes indicates that a firmware update is available                                |
+|Version             |List available firmware versions: prod, beta or archived                         |
+|Uptime              |Number of seconds since last device restart                                      |
+|Update Period       |Timeout for device refresh                                                       |
+|Alarms              |Number of alarms received from device                                            |
+|Last Alarm          |Type of last alarm (refer README.md for details)                                 |
+|Unexpected Restarts |Number of unexpected restarts, could indicate a firmware instability             |
+|Timeout Errors      |Number of API timeouts, could be an indication for an unstable connection        |
+|Timeouts recovered  |The binding does retries and timeouts and counts successful recoveries           |
+|Remaining Watchdog  |Number of seconds before device goes offline, each activity restarts the watchdog|
+|Battery Level       |Remaining capacity of the battery                                                |
+|Device internal Temp|Internal device temperature. Max is depending on device type.                    |
+
+The column S and Name display more information when hovering with the mouse over the entries.   
 
 ## Actions
 
