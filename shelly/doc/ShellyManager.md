@@ -45,6 +45,13 @@ The column S and Name display more information when hovering with the mouse over
 
 ## Actions
 
+The Shelly Manager provides the following actions when the Thing is ONLINE:
+
+|Action |Description                                                                       |
+|-------|----------------------------------------------------------------------------------|
+|Restart|Restart the device and reconnect to WiFi                                          |
+|Protect|Use binding's default credentials to protect device access with user and password |
+
 ## Firmware Upgrade
 
 The Shelly Manager simplifies the firmware upgrade.
