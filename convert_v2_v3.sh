@@ -9,5 +9,7 @@ find . -name *.java -exec sed -i '' -e "s/, SmartHomeUnits/, Units/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.eclipse.smarthome.core/org.openhab.core/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/org.eclipse.smarthome/org.openhab.core/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/2010-2020/2010-2021/g" {} \;
+find . -name *.java -exec sed -i '' -e "s/public V put(K key, @Nullable V value)/public @Nullable V put(K key, V value)/g" {} \;
+find . -name *.java -exec sed -i '' -e "s/public V putIfAbsent(K key, V value)/public @Nullable V putIfAbsent(K key, V value)/g" {} \;
 
 mvn spotless:apply
