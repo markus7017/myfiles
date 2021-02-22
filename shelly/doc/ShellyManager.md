@@ -58,37 +58,49 @@ The column S and Name display more information when hovering with the mouse over
 The Shelly Manager provides the following actions when the Thing is ONLINE. 
 They are available in the dropdown list in column Actions.
 
-![](images/manager/overview_actions.png)
 
 
-|Action          |Description                                                                      |
-|----------------|---------------------------------------------------------------------------------|
-|Reset Statistics|Resets device statistic and clear the last alarm                                 |
-|Restart         |Restart the device and reconnect to WiFi                                         |
-|Protect         |Use binding's default credentials to protect device access with user and password|
-|Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
-|Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
-|Reset           |Do a **firmware reset**; Attention: The device will loose it's configuration     |
+
+| |Action          |Description                                                                      |
+|-|----------------|---------------------------------------------------------------------------------| 
+|![](images/manager/overview_actions.png)||                                                          |
+| |Reset Statistics|Resets device statistic and clear the last alarm                                 |
+| |Restart         |Restart the device and reconnect to WiFi                                         |
+| |Protect         |Use binding's default credentials to protect device access with user and password|
+| |Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
+| |Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
+| |Reset           |Do a **firmware reset**; Attention: The device will loose it's configuration     |
 
 ## Firmware Update
 
 The Shelly Manager simplifies the firmware update.
 You could select between different versions using the drop down list on the overview page.
+
 Shelly Manager integrates different sources
 - Allterco official releases: production and beta release (like in the device UI)
 - Older firmware release from the firmware archive - this is a community service
-- You could specify any custom url providing the firmware image, which is acceable for the device using http
+- You could specify any custom url providing the firmware image (e.g. a local web server), which is accessable for the device using http
 
-|||
+| | |
 |-|-|
 |![](images/manager/overview_versions.png)|All firmware releases are combined to the selection list.<br/>
   Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.|
 
 The upgrade starts if you click "Perform Update".
 
-![](images/manager/fwupgrade.png
+![](images/manager/fwupgrade.png)
 
 The device will download the firmware file, installs the update and restarts the device.
 Depending on the device type this takes between 10 and 60 seconds.
-The binding will automatically recover the device with the next status check (default: every 60 seconds).
+The binding will automatically recover the device with the next status check (as usual).
 
+### Connection types
+
+You could choose between 3 different update types
+* Internet: This triggers the regular update, the device needs to be connected to the Internet
+* Use openHAB as a proxy: In this case the binding directs the device to request the firmware from the openHAB system.
+The binding will then download the firmware from the selected sources and passes thos transparently to the device.
+This provides a security benefit: The device doesn't require Internet access, only the openHAB host, which could be filtered centrally.
+* Custom URL: In this case you could specify 
+
+The binding manages the download request with the proper download url.
