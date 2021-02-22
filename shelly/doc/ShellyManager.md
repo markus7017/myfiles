@@ -13,6 +13,8 @@ Maybe you need to change the port matching your setup.
 Once the Shelly Manager is opened an overview of all Shelly devices added as a Thing are displayed. 
 Things which are not discovered or still site in the Inbox will not be displayed.
 
+![](images/manager/overview.png)
+
 You'll see a bunch of technical details, which are not available as channels or in the Thing properties.
 This includes information on the device communication stability. 
 The statistic gives you are good overview if device communication is stable or a relevant number of timeouts need to be recovered.
@@ -45,12 +47,19 @@ The following information is available
 |CoIoT Messages      |Number of received CoIoT messages, must be >= 2 to indicate CoIoT working        |
 |CoIoT Errors        |Number of CoIoT messages, which can't be processed. >0 indicates firmware issues |
 
-The column S and Name display more information when hovering with the mouse over the entries.   
+The column S and Name display more information when hovering with the mouse over the entries.
 
-## Actions
+![](images/manager/overview_devstatus.png)
+![](images/manager/overview_devsettings.png)
+
+
+### Actions
 
 The Shelly Manager provides the following actions when the Thing is ONLINE. 
 They are available in the dropdown list in column Actions.
+
+![](images/manager/overview_actions.png)
+
 
 |Action          |Description                                                                      |
 |----------------|---------------------------------------------------------------------------------|
@@ -63,14 +72,18 @@ They are available in the dropdown list in column Actions.
 
 The Shelly Manager simplifies the firmware update.
 You could select between different versions using the drop down list on the overview page.
-Shelly Manager integrates 2 sources
+Shelly Manager integrates different sources
 - Allterco official releases: production and beta release (like in the device UI)
 - Older firmware release from the firmware archive - this is a community service
+- You could specify any custom url providing the firmware image, which is acceable for the device using http
 
-All firmware releases are combined to the selection list.
-Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.
-This URL is displayed on the following page.
+|-|-|
+|![](images/manager/overview_versions.png)|All firmware releases are combined to the selection list.<br/>
+  Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.|
+
 The upgrade starts if you click "Perform Update".
+
+![](images/manager/overview_fwupgrade.png
 
 The device will download the firmware file, installs the update and restarts the device.
 Depending on the device type this takes between 10 and 60 seconds.
