@@ -58,18 +58,16 @@ The column S and Name display more information when hovering with the mouse over
 The Shelly Manager provides the following actions when the Thing is ONLINE. 
 They are available in the dropdown list in column Actions.
 
+|Action          |Description                                                                      |
+|----------------|---------------------------------------------------------------------------------| 
+|Reset Statistics|Resets device statistic and clear the last alarm                                 |
+|Restart         |Restart the device and reconnect to WiFi                                         |
+|Protect         |Use binding's default credentials to protect device access with user and password|
+|Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
+|Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
+|Reset           |Performs **firmware reset**; Attention: The device will loose it's configuration     |
 
-
-
-| |Action          |Description                                                                      |
-|-|----------------|---------------------------------------------------------------------------------| 
-|![](images/manager/overview_actions.png)||                                                          |
-| |Reset Statistics|Resets device statistic and clear the last alarm                                 |
-| |Restart         |Restart the device and reconnect to WiFi                                         |
-| |Protect         |Use binding's default credentials to protect device access with user and password|
-| |Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
-| |Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
-| |Reset           |Do a **firmware reset**; Attention: The device will loose it's configuration     |
+![](images/manager/overview_actions.png)
 
 ## Firmware Update
 
@@ -83,8 +81,7 @@ Shelly Manager integrates different sources
 
 | | |
 |-|-|
-|![](images/manager/overview_versions.png)|All firmware releases are combined to the selection list.<br/>
-  Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.|
+|![](images/manager/overview_versions.png)|All firmware releases are combined to the selection list.<br/>Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.|
 
 The upgrade starts if you click "Perform Update".
 
