@@ -66,7 +66,9 @@ They are available in the dropdown list in column Actions.
 |Reset Statistics|Resets device statistic and clear the last alarm                                 |
 |Restart         |Restart the device and reconnect to WiFi                                         |
 |Protect         |Use binding's default credentials to protect device access with user and password|
-|Reset           |Do a firmware reset. Attention: The device will loose it's configuration         |
+|Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
+|Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
+|Reset           |Do a **firmware reset**; Attention: The device will loose it's configuration     |
 
 ## Firmware Update
 
@@ -77,13 +79,14 @@ Shelly Manager integrates different sources
 - Older firmware release from the firmware archive - this is a community service
 - You could specify any custom url providing the firmware image, which is acceable for the device using http
 
+|||
 |-|-|
 |![](images/manager/overview_versions.png)|All firmware releases are combined to the selection list.<br/>
   Click on the version you want to install and Shelly Manager will generate the requested URL to trigger the firmware upgrade.|
 
 The upgrade starts if you click "Perform Update".
 
-![](images/manager/overview_fwupgrade.png
+![](images/manager/fwupgrade.png
 
 The device will download the firmware file, installs the update and restarts the device.
 Depending on the device type this takes between 10 and 60 seconds.
