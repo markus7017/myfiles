@@ -8,6 +8,12 @@ To open the Shelly Manage launch the following URL in your browser
 
 Maybe you need to change the port matching your setup.
 
+Shelly Manager makes you various device insights available to get an overview of your Shellys
+- Get a quick overview that all Shellys operate like expected, statistical data will help to identify issues
+- Have some basic setting actions integrated, which help to do an easy setup of new Shellys added to openHAB
+- Make firmware updates way easier - filter 'Update available' + integrated 2-click update
+- Provde a firmware download proxy, which allows to seperate your Shellys from the Internet (improved device security)
+
 ## Overview
 
 Once the Shelly Manager is opened an overview of all Shelly devices added as a Thing are displayed. 
@@ -52,20 +58,51 @@ The column S and Name display more information when hovering with the mouse over
 ![](images/manager/overview_devstatus.png)
 ![](images/manager/overview_devsettings.png)
 
+### Device Filters
+|Filter              |Description                                                                      |
+|--------------------|---------------------------------------------------------------------------------| 
+|All                 |Clear filter / display all devices                                               |
+|Online only         |Filter on devices with Thing Status = ONLINE                                     |
+|Inactive only       |Filter on devices, which are not initialized for in Thing Status = OFFLINE       |
+|Needs Attention     |Filter on devices, which need attention (setup/connectivity issues), see below   |
+|Update available    |Filter on devices having a new firmware version is available                     |
+|Unprotected         |Filter on devices, which are currently not password protected                    |
+
+Beside the Device Filter box you see a refresh button.
+At the bottom right you see number of displayed devices vs. number of total devices.
+A click triggers a background status update for all devices rather only the selected one when clicking of the refresh button in the device lines.
+
+Filter 'Needs Attention':
+This is a dynamic filter, which helps to identify devices having some kind of setup / connectivity or operation issues.
+The binding checks the following conditions
+- Thing status != ONLINE: Use the 'Inactive Only' filter to find those devices, check openhab.log
+- WIFISIGNAL: WiFi signal strength < 2 - this usually leads into connectivity problems, check positioning of portable devices or antenna direction.
+- LOWBATTERY: The remaining battery is < 20% (configuration in Thing Configuration), consider to replace the battery 
+Watch out for bigger number of timeout errors.
+- Device RESTARTED: Indicates a firmware problem / crash if this happens without a device reboot or firmware update (timestamp is included)
+- OVERTEMP / OVERLOAD / LOADERROR: There are problems with the physical installation of the device, check specifications, wiring, housing!
+- SENSORERROR: A sensor error / malfunction was detected, check product documentation
+- NO_COIOT_DISCOVERY: The CoIoT discovery has not been completed, check IP network configuration, re-discover the device
+- NO_COIOT_MULTICAST: The CoIoT discovery could be completed, but the device is not receiving CoIoT status updates.
+You might try to switch to CoIoT Peer mode, in this case the device doesn't use IP Multicast and sends updates directly to the openHAB host.
+
+The result of the check is shows in the Device Status Tooltip.
 
 ### Actions
 
 The Shelly Manager provides the following actions when the Thing is ONLINE. 
 They are available in the dropdown list in column Actions.
 
-|Action          |Description                                                                      |
-|----------------|---------------------------------------------------------------------------------| 
-|Reset Statistics|Resets device statistic and clear the last alarm                                 |
-|Restart         |Restart the device and reconnect to WiFi                                         |
-|Protect         |Use binding's default credentials to protect device access with user and password|
-|Enable Cloud    |Enable the Shelly Cloud connectivity                                             |
-|Disable Cloud   |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
-|Reset           |Performs **firmware reset**; Attention: The device will loose it's configuration     |
+|Action              |Description                                                                      |
+|--------------------|---------------------------------------------------------------------------------| 
+|Reset Statistics    |Resets device statistic and clear the last alarm                                 |
+|Restart             |Restart the device and reconnect to WiFi                                         |
+|Protect             |Use binding's default credentials to protect device access with user and password|
+|Set CoIoT Peer      |Disable CoIoT Multicast and set openHAB system as receiver for CoIoT updates     |
+|Set CoIoT Multicast |Disable CoIoT Multicast and set openHAB system as receiver for CoIoT updates     |
+|Enable Cloud        |Enable the Shelly Cloud connectivity                                             |
+|Disable Cloud       |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
+|Reset               |Performs **firmware reset**; Attention: The device will loose it's configuration |
 
 ![](images/manager/overview_actions.png)
 
@@ -77,7 +114,7 @@ You could select between different versions using the drop down list on the over
 Shelly Manager integrates different sources
 - Allterco official releases: production and beta release (like in the device UI)
 - Older firmware release from the firmware archive - this is a community service
-- You could specify any custom url providing the firmware image (e.g. a local web server), which is accessable for the device using http
+- You could specify any custom URL providing the firmware image (e.g. a local web server), which is accessible for the device using http
 
 | | |
 |-|-|
@@ -96,8 +133,8 @@ The binding will automatically recover the device with the next status check (as
 You could choose between 3 different update types
 * Internet: This triggers the regular update, the device needs to be connected to the Internet
 * Use openHAB as a proxy: In this case the binding directs the device to request the firmware from the openHAB system.
-The binding will then download the firmware from the selected sources and passes thos transparently to the device.
+The binding will then download the firmware from the selected sources and passes this transparently to the device.
 This provides a security benefit: The device doesn't require Internet access, only the openHAB host, which could be filtered centrally.
 * Custom URL: In this case you could specify 
 
-The binding manages the download request with the proper download url.
+The binding manages the download request with the proper download URL.
