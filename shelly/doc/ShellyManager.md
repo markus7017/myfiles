@@ -91,6 +91,38 @@ You might try to switch to CoIoT Peer mode, in this case the device doesn't use 
 
 The result is shown in the Device Status tooltip.
 
+### Device settings & status
+
+When hovering with the mouse over the status icon or the device name you'll get additional information settings and status.
+
+### Device Status
+
+|Status              |Description                                                                      |
+|--------------------|---------------------------------------------------------------------------------| 
+|Status              |Thing status, sub-status and description as you know it from openHAB             |
+|CoIoT Status        |CoIoT status: enabled or disabled                                                |
+|CoIoT Destination   |CoIoT Peer address (ip address:port) or Multicast                                |
+|Cloud Status        |Status of the Shelly Cloud connection: disabled, enabled, connected              |
+|MQTT Status         |MQTT Status: disabled, enabled, connected                                        |
+|Actions skipped     |Number of actions skipped by the device, usually 0                               |
+|Max Internal Temp   |Maximum internal temperature, check device specification for valid range         |
+
+### Device Settings
+
+|Setting             |Description                                                                      |
+|--------------------|---------------------------------------------------------------------------------| 
+|Shelly Device Name  |Device name according to device settings                                         |
+|Device Hardware Rev |Hardware revision of the device                                                  |
+|Device Type         |Device Type ID                                                                   |
+|Device Mode         |Selected mode for dual mode devices (relay/roller or white/color)                |
+|Firmware Version    |Current firmware version                                                         |
+|Network Name        |Network name of the device used for mDNS                                         |
+|MAC Address         |Unique hardware/network address of the device                                    |
+|Discoverable        |true: the device can be discovered using mDNS, false: device is hidden           |
+|WiFi Auto Recovery  |enabled: the device will automatically reboot when WiFi connect fails            |
+|Timezone            |Configured device zone (see device settings)                                     |
+|Time server         |Configured time server (use device UI to change)                                 |
+
 ### Actions
 
 The Shelly Manager provides the following actions when the Thing is ONLINE. 
@@ -105,7 +137,7 @@ They are available in the dropdown list in column Actions.
 |Set CoIoT Multicast |Disable CoIoT Multicast and set openHAB system as receiver for CoIoT updates     |
 |Enable Cloud        |Enable the Shelly Cloud connectivity                                             |
 |Disable Cloud       |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
-|Reset               |Performs **firmware reset**; Attention: The device will lose its configuration  |
+|Reset               |Performs **firmware reset**; Attention: The device will lose its configuration   |
 
 ![](images/manager/overview_actions.png)
 
