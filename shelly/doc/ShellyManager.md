@@ -137,9 +137,12 @@ They are available in the dropdown list in column Actions.
 |Set CoIoT Multicast  |Disable CoIoT Multicast and set openHAB system as receiver for CoIoT updates     |
 |Enable Cloud         |Enable the Shelly Cloud connectivity                                             |
 |Disable Cloud        |Disable the Shelly Cloud connectivity (takes about 15sec to become active)       |
+|Reconnect WiFi       |Sensor devices only: Clears the STA/AP list and reconnects to strongest AP       |
+|Enable WiFi Roaming  |The device will connect to the strongest AP when roadming is enabled             |
+|Disable WiFi Roaming |Disable Access Point Roaming, device will periodically search for better APs     |
 |Enable WiFi Recovery |Enables auto-restart if device detects persistent WiFi connectivity issues       |
 |Disable WiFi Recovery|Disables device auto-restart ion persistent WiFi connectivity issues             |
-|Reset                |Performs **firmware reset**; Attention: The device will lose its configuration   |
+|Factory Reset        |Performs a **factory reset**; Attention: The device will lose its configuration  |
 |Enable Device Debug  |Enables on-device debug log - activate only when requested by Allterco support   |
 |Get Debug Log        |Retrieve and display device debug output                                         |
 |Get Debug Log1       |Retrieve and display 2nd device debug output                                     |
