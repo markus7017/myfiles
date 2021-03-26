@@ -1,6 +1,6 @@
 # Shelly Binding (org.openhab.binding.shelly)
 
-This openHAB 2 Binding implements control for the Shelly series of devices.
+This Binding implements control for the Shelly series of devices.
 This includes sending commands to the devices as well as reading the device status and sensor data.
 
 Author: Markus Michels (markus7017)
@@ -19,21 +19,25 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 
 ## General Notes
 
-**If you want to use the version released with openHAB 2.5 final**
-The official distro releases could be installed as usual using PaperUI:Addons:Bindings:Shelly. This version works 
+**openHAB 2.5.x**: Version 2.5.x of the distribution doesn't receive updates anymore. You can continue to use the Shelly binding, but you have to switch to the DEV build.
 
-**Make sure you updated to the 2.5.1-2 core and 2.5.9 or newer Addon releases.**
-IMPORTANT: Version numbers of openHAB Core and Addons are different. Core has a frozen status on 2.5.1-2, whereas monthly updates are provided to the Addons, currently 2.5.11
+**openHAB 3.x**: OH 3.x is fully supported. 
 
-If you want to use the SNAPSHOT/DEV build you can **NOT** install it using PaperUI. 
-Make sure that the release version is not installed: PaperUI:Configuration:Bundles, check that Shelly is not installed, uninstall if so. 
-**You can NOT run the SNAPSHOT on top of the version you install with PaperUI.**
+Be ware that there are
+- the release distro package, which includes a stable version of the binding
+- the official SNAPSHOT release / milestone builds, which might include a newer binding version, but will never be as current as the DEV build
+- the DEV build: Latest features and bug fixes (from the myfiles repo)
+
+If you want to use the SNAPSHOT/DEV build you can **NOT** install it using the UI. 
+Make sure that the release version is not installed: Check that Shelly is not installed, uninstall if so. 
+
+There is no strict dependency on the OH base version, e.g. you could run binding 3.1-SNAPSNOT on top of openHAB 3.0.1.
+
+Use device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to perform and update.
 
 ## Installing DEV build
 
-For general information check here: https://www.openhab.org/docs/configuration/addons.html#through-manually-provided-add-ons
-
-### Download the following files
+Download the following files
 
 **Californium 2.0 libraries**
 You should skip the following 2 steps if you already have installed the Tradfi binding
@@ -41,8 +45,9 @@ You should skip the following 2 steps if you already have installed the Tradfi b
 - [element-connector-2.0.0.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
 
 **Shelly Binding**
-- Download the jar from my myfiles repo on GitHub [2.5.12](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.12-SNAPSHOT.jar?raw=true)
-or [3.0.0](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.0-SNAPSHOT.jar?raw=true) .
+
+- Download the jar from my myfiles repo on GitHub [2.5.13-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar?raw=true)
+or [3.1-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar?raw=true) .
 
 ### Installation
 
@@ -51,7 +56,7 @@ or [3.0.0](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.
 - copy californium-core-2.0.0.jar to OH's addons folder
 - copy element-connector-2.0.0.jar to OH's addons folder
 - Start OH, wait until fully initialized(!)
-- copy org.openhab.binding.shelly-2.5.8-SNAPSHOT.jar to OH's addons folder
+- copy org.openhab.binding.shelly-xxx-SNAPSHOT.jar to OH's addons folder
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
@@ -64,44 +69,20 @@ If everything was install correct a "bundle:list" output show be similar to this
 
 Channel definitions are subject to change with any alpha or beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
-- **remove all shelly entries from paperui**
+- **remove all Shelly things** (UI and .things)
 - delete the existing binding jar from the addons folder, wait until OH unloaded the binding (check the OH log)
 - run "bundle:list | grep Shelly" and make sure that the binding is gone
 - otherwise run "bundle:uninstall <bundle id as listed from above (1st column)>"
 - stop OH ("openhab-cli stop"), wait until everything is stopped (could take some time)
 - copy binding jar into addons (set correct permission)
-- start oh2 service ("openhab-cli start")
-- **re-discover things** (delete all Shelly Things from PaperUI:Configuration:Things)
+- start oh service ("openhab-cli start")
+- **re-discover things**
 - the channel/item linkage should be restored automatically
   verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
 
 If you hit a problem make sure to post a TRACE log (or send PM) so I could look into the details.
 
 ## Additional Notes
-
-### General
-
-* The binding is developed an tested on OH version 2.5. It may still run on 2.4, but I'm no longer testing this.
-
-* You should use firmware version 1.5.7 or never.  Consider to go to 1.6 when availavle, it has various fixes and features for CoIoT and other new features,
-It might be that the binding is working with older versions, but thos will no longer supported.
-If the device is connected to the Internet you could use the Shelly Apps to do the update.
-
-### Firmware 
-
-List of Firmware Versions for the different devices could be found here: https://api.shelly.cloud/files/firmware
-
-You could install the firmware using curl
-```
-curl -s http://<device ip>/ota?url=http://api.shelly.cloud/files/firmware/&lt;device type id&gt;_build.zip
-
-Example for 1PM:
-curl -s http://<device ip>/ota?url=http://api.shelly.cloud/files/firmware/SHSW-PM_build.zip
-```
-
-* If you have multiple network interfaces you should check openHAB's default setting 
-Open PaperUI and go to Configuration:System-:Network Settings and verify the selected interface. 
-- If the Shelly devices are not on the same network/subnet you could  add them manually with the given IP.
 
 ### Reporting a problem/bug
 
