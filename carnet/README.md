@@ -91,6 +91,7 @@ The following channels are available depending on the vehicle type:
 |              | climater                | Switch               | no      | Turn climater on/off                                                                  |
 |              | windowHeat              | Switch               | no      | Turn window heating on/off                                                            |
 |              | preHeater               | Switch               | no      | Turn pre-heating on/off                                                               |
+|              | ventilation             | Switch               | no      | Turn ventilation on/off                                                                  |
 | location     | position                | Location             | yes     | Last known Car location                                                               |
 |              | positionLastUpdate      | DateTime             | yes     | Time of last update for the vehicle position.                                         |
 |              | parkingPosition         | Location             | yes     | Last position where the vehicle was parked.                                           |
