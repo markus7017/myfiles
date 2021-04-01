@@ -75,17 +75,22 @@ The bridge thing doesn't have any channels.
 
 ### Device Thing - represents one Rachio Controller
 
-|Channel|Description|
-|:-----------|:----------------------------------------------------------------------------------------------------------------------|
-|name        |Device Name - name of the controller|
-|active      |ON: Device is active, OFF: Device is deactivated|
-|online      |ON: Controller is connected to the cloud. OFF: Controller is offline, check internet connection.|
-|paused      |OFF: Device is in normal run mode; ON: The device is in suspend mode, no schedule is executed|
-|stop        |ON: Stop watering for all zones (command), OFF: normal operation|
-|run         |ON: Start watering selected/all zones (defined in runZones)|
-|runZones    |Zones to run at a time - list, e.g: "1,3" = run zone 1 and 3; "" means: run all zones; Zones will be started by sending ON to the run channel|
-|scheduleName|Currently running schedule, if empty no schedule is running|
-|devEvent    |Receives a JSON-formatted message on each device event from the cloud (requires event callback).|
+|Channel      |Description                                                                                                            |
+|:------------|:----------------------------------------------------------------------------------------------------------------------|
+|name         |Device Name - name of the controller                                                                                   |
+|active       |ON: Device is active, OFF: Device is deactivated                                                                       |
+|online       |ON: Controller is connected to the cloud. OFF: Controller is offline, check Internet connection.                       |
+|paused       |OFF: Device is in normal run mode; ON: The device is in suspend mode, no schedule is executed                          |
+|stop         |ON: Stop watering for all zones (command), OFF: normal operation                                                       |
+|run          |ON: Start watering selected/all zones (defined in runZones)                                                            |
+|runZones     |Zones to run at a time - list, e.g: "1,3" = run zone 1 and 3; "" means: run all zones                                  |
+|scheduleName |Currently running schedule, if empty no schedule is running                                                            |
+|lastEvent    |Last event received from the cloud (requires configuration of event callback)                                          |
+|lastEventTime|Last event received from the cloud (requires configuration of event callback)                                          |
+|scheduleName |Current/last executed schedule: name                                                                                   |
+|scheduleInfo |Description of current/last executed schedule                                                                          |
+|scheduleStart|Schedule start time                                                                                                    |
+|scheduleStop |Schedule end time                                                                                                      |
 
 The are no additional configuration options on the device level.
 
