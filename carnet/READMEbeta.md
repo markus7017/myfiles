@@ -22,9 +22,12 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 If you want to use the* latest DEV version* download the [jar from my myfiles repo in GitHub](https://github.com/markus7017/myfiles/tree/master/carnet).
 Most important
 - [README](https://github.com/markus7017/myfiles/blob/master/carnet/README.md)
-- [binding jar](https://github.com/markus7017/myfiles/blob/master/carnet/org.openhab.binding.carnet-2.5.5-SNAPSHOT.jar?raw=true)
+- [binding jar](https://github.com/markus7017/myfiles/blob/master/carnet/org.openhab.binding.carnet-3.1.0-SNAPSHOT.jar?raw=true)
 
 ### Installation
+
+IMPORTANT: The binding does NO LONGER SUPPORT openHAB 2.5.x, you need to be on 3.0 or newer.
+The last 2.5 jar could be found [here](https://github.com/markus7017/myfiles/blob/master/carnet). This is Audi only, don't expect further updates.
 
 ### New installation
 - Stop OH
@@ -34,16 +37,14 @@ Most important
 If everything was install correct a "bundle:list" output show be similar to this:
 
 ```
-248 │ Installed │  80 │ 2.5.5.202009212158     │ openHAB Add-ons :: Bundles :: CarNet Binding
+248 │ Installed │  80 │ 3.1.0.202104212158     │ openHAB Add-ons :: Bundles :: CarNet Binding
 ```
-
-Don't worry about version 2.5.5 number, it runs on OH 2.5.x incl. 2.5.9
 
 ## Updating DEV version
 
-Channel definitions are subject to change with any beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
+Channel definitions are subject to change with any beta release. Please make sure to **delete all CarNet things before updating*** the binding and clean out the JSON DB:
 
-- **remove all CarNet things in PaperUI:Configuration:Things** (don't worry: the thing/item linkage will be restored when performing a re-discovery)
+- **remove all CarNet things in Main UI:Settings:Things** (don't worry: the thing/item linkage will be restored when performing a re-discovery)
 - stop OH
 - delete the existing binding jar from the addons folder, wait until OH unloaded the binding (check the OH log)
 - run "bundle:list | grep CarNet" and make sure that the binding is gone
@@ -59,16 +60,10 @@ If you hit a problem make sure to post a TRACE log (or send PM) so I could look 
 
 ## Additional Notes
 
-### General
-
-* The binding is developed an tested on OH version 2.5.8 and 2.5.9.
-
-* Different vehicle models or markets (EU/US/CN) while result in different channels and available control functions
-
 ### Reporting a problem/bug
 
 If you encounter a problem you could put the binding into DEBUG or TRACE mode.
-Check the [community thread](https://github.com/markus7017/myfiles/tree/master/carnetZ/ first - maybe others already solved the problem:.
+Check the [community thread](https://community.openhab.org/t/carnet-binding-implemented-myaudi-volkgswagen-vw-id-skoda-seat/92378) first - maybe others already solved the problem:.
 
 - open OH console (execute "openhab-cli console")
 - set the bindings's log level: "log:set DEBUG org.openhab.binding.carnet" or "log:set TRACE org.openhab.binding.carnet" for even more details
@@ -92,7 +87,7 @@ You might want to send me a PM to give me a heads-up that there is a new Issue, 
 You could help to integrate and support new vehicle models. In general the following information is a good start
 
 - Vehicle type, model (incl. year), check thing properties
-- Market (EU/US/CN)
+- Market (DE/CZ/ES/US)
 - features like electrical car, pre-header
 
 In general CarNet is also available for Volkswagen and Skoda vehicles. However, the APIs are similar, but login handling, http headers 
