@@ -1,0 +1,17 @@
+{
+   "honkAndFlashRequest":{
+      "lastUpdated":"2021-05-26T20:11:37Z",
+      "serviceDuration":15,
+      "userPosition":{
+         "latitude":59222078,
+         "longitude":18001326
+      },
+      "id":4937451,
+      "serviceOperationCode":"FLASH_ONLY",
+      "status":{
+         "statusCode":"REQUEST_IN_PROGRESS"
+      }
+   }
+}
+
+6837892

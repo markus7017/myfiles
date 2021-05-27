@@ -1,0 +1,15 @@
+{
+   "findCarResponse":{
+      "Position":{
+         "timestampCarSent":"2021-05-26T18:21:57",
+         "timestampTssReceived":"2021-05-26T16:22:03Z",
+         "carCoordinate":{
+            "latitude":50960512,
+            "longitude":6837892
+         },
+         "timestampCarSentUTC":"2021-05-26T16:22:04Z",
+         "timestampCarCaptured":"2021-05-26T18:21:57"
+      },
+      "parkingTimeUTC":"2021-05-26T16:21:54Z"
+   }
+}
