@@ -1,0 +1,15 @@
+{
+   "geofencingConfiguration":{
+      "debouncePostTime":"10",
+      "timeoutJobProcessing":"120",
+      "persistenceTimeHistoryEntries":"60",
+      "maximalNumberDefinitions":"10",
+      "timeoutJobDelivery":"100",
+      "fnsUserTypes":"PRIMARY_USER",
+      "reviewLocation":false,
+      "maximalNumberHistoryEntries":"100",
+      "spatialTolerance":"25",
+      "maximalNumberActiveDefinitions":"4",
+      "debouncePreTime":"10"
+   }
+}

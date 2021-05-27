@@ -1,0 +1,16 @@
+{
+   "speedAlertConfiguration":{
+      "minimumSpeedLimit":"0",
+      "debouncePostTime":"30",
+      "maximumSpeedLimit":"161",
+      "timeoutJobProcessing":"120",
+      "persistenceTimeHistoryEntries":"60",
+      "maximalNumberDefinitions":"10",
+      "timeoutJobDelivery":"100",
+      "fnsUserTypes":"PRIMARY_USER",
+      "reviewLocation":false,
+      "maximalNumberHistoryEntries":"100",
+      "maximalNumberActiveDefinitions":"2",
+      "debouncePreTime":"10"
+   }
+}

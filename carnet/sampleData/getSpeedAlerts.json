@@ -1,0 +1,54 @@
+{
+   "speedAlerts":{
+      "speedAlert":[
+         {
+            "id":"1548989",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135965",
+            "definitionName":"Benachrichtigung 50 km/h",
+            "occurenceDateTime":"2021-05-26T16:16:54Z",
+            "speedLimit":"50"
+         },
+         {
+            "id":"1548988",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135966",
+            "definitionName":"Benachrichtigung 30 km/h",
+            "occurenceDateTime":"2021-05-26T16:16:52Z",
+            "speedLimit":"30"
+         },
+         {
+            "id":"1548969",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135966",
+            "definitionName":"Benachrichtigung 30 km/h",
+            "occurenceDateTime":"2021-05-26T16:14:50Z",
+            "speedLimit":"30"
+         },
+         {
+            "id":"1548433",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135965",
+            "definitionName":"Benachrichtigung 50 km/h",
+            "occurenceDateTime":"2021-05-26T15:23:10Z",
+            "speedLimit":"50"
+         },
+         {
+            "id":"1548415",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135965",
+            "definitionName":"Benachrichtigung 50 km/h",
+            "occurenceDateTime":"2021-05-26T15:21:29Z",
+            "speedLimit":"50"
+         },
+         {
+            "id":"1548396",
+            "alertType":"START_EXCEEDING",
+            "definitionId":"135966",
+            "definitionName":"Benachrichtigung 30 km/h",
+            "occurenceDateTime":"2021-05-26T15:19:31Z",
+            "speedLimit":"30"
+         }
+      ]
+   }
+}

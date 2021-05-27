@@ -1,0 +1,27 @@
+{
+   "geofencingAlerts":{
+      "geofencingAlert":[
+         {
+            "id":"1776965",
+            "alertType":"ENTER_REDZONE",
+            "definitionId":"182818",
+            "definitionName":"Nach Hause",
+            "occurenceDateTime":"2021-05-26T16:18:18Z"
+         },
+         {
+            "id":"1775933",
+            "alertType":"EXIT_GREENZONE",
+            "definitionId":"182817",
+            "definitionName":"for_markus7017",
+            "occurenceDateTime":"2021-05-26T15:19:44Z"
+         },
+         {
+            "id":"1775899",
+            "alertType":"ENTER_REDZONE",
+            "definitionId":"182818",
+            "definitionName":"Nach Hause",
+            "occurenceDateTime":"2021-05-26T15:17:04Z"
+         }
+      ]
+   }
+}
