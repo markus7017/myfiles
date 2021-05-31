@@ -41,6 +41,17 @@ Once the account is online the binding can query all registered vehicles and cre
 
 The binding itself has no configuration options
 
+### API Throtteling
+Usually the vehicle sends frequent status updates to the CarNet backend.
+You have the option to request a forced update from the vehicle using the control#update channel.
+
+The CarNet API has an integrated throttling, which protects the 12V battery to get drained from frequent status refresh requests. 
+Once the limit is reached further API calls are rejected until the engine is started (which usually recharges the battery). 
+Therefore be careful by using the "Update Vehicle Status" channel, each time a request is send. 
+The channel general#rateLimit allows you to keep an eye on the remaining number of refreshes. 
+**This is not a daily limit!** 
+Therefore if your vehicle sits for a week you have apx. 7 requests per day (50 requests/7 days).
+
 ### Status Codes / Errors
 
 Some common error codes:
