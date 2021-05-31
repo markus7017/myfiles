@@ -1,10 +1,10 @@
 {
 	"vehicleData":{
-		"systemId":"MSG-IVWB2347-1602325255834-58484-ADE",
-		"requestId":"MSG-IVWB2347-1602325255834-58484-ADE",
+		"systemId":"MSG-IVWB2347-XXXXXXXXXX-58484-ADE",
+		"requestId":"MSG-IVWB2347-XXXXXXXXXX-58484-ADE",
 		"brand":"Audi",
 		"country":"DE",
-		"vin":"WAUZZZF21LN046449",
+		"vin":"XXXXXXXXXX",
 		"isConnect":true,
 		"isConnectSorglosReady":true,
 		"vehicleDevices":{
@@ -16,23 +16,23 @@
 					"embeddedSim":{
 						"identification":{
 							"type":"ICCID",
-							"content":"8942306000052908890"
+							"content":"XXXXXXXX"
 						},
-						"imei":"352989085367546",
+						"imei":"XXXX",
 						"mno":"cubic",
 						"mnoPortalURL":"https://auto-redirect.cubictelecom.com/audi"
 					}
 				},
 				{
 					"deviceType":"TELEMATICS",
-					"deviceId":"WAUZZZF21LN046449@19",
+					"deviceId":"XXXXXXXXXXXX@19",
 					"ecuGeneration":"cGW",
 					"embeddedSim":{
 						"identification":{
 							"type":"ICCID",
-							"content":"89314404000773043444"
+							"content":"XXXXXXXXXX"
 						},
-						"imei":"351617108914058",
+						"imei":"XXXXXXX",
 						"mno":"vodafone"
 					}
 				}

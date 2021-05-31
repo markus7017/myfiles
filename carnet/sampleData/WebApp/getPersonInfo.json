@@ -1,5 +1,5 @@
 {
-   "url":"https://customer-profile.apps.emea.vwapps.io/v3/customers/c3ab56e9-6b7b-41c8-addf-3518d48c1183/personalData"
+   "url":"https://customer-profile.apps.emea.vwapps.io/v3/customers/c3ab56e9-6b7b-41c8-addf-XXXXXXXXX/personalData"
 
    "firstName":"Markus",
    "lastName":"openHAB",
@@ -25,8 +25,8 @@
    ],
    "emailAddresses":[
       {
-         "uuid":"6999de9e-cd86-4bbe-95df-d9b067XXXXX",
-         "email":"markus@me.com",
+         "uuid":"6999de9e-cd86-4bbe-XXXX-d9b067XXXXX",
+         "email":"markus@openhab.com",
          "_updated":"2020-07-29T18:23:14.848Z"
       }
    ],
