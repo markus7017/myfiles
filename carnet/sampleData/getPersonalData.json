@@ -1,0 +1,33 @@
+{
+   "firstName":"Markus",
+   "lastName":"ipenHAB",
+   "salutation":"SALUTATION:MR",
+   "preferredContactChannel":"MARKETING_BLOCKADES:EMAIL",
+   "nickname":"markus7017",
+   "addresses":[
+      {
+         "country":"DE",
+         "usageType":"ADDRESS_USAGE_TYPE:HOME_ADDRESS",
+         "uuid":"XXXX-XXXX-XXXX-XXXX-XXXXXXXX",
+         "primary":true,
+         "name":"Markus openHAB",
+         "street":"Hauptstraße",
+         "housenumber":"1",
+         "addressAddition":"SmartHome",
+         "zipCode":"11111",
+         "city":"Berlikn",
+         "_updated":"2020-07-29T18:23:14.848Z",
+         "type":"ADDRESS_TYPE:v3.address.GermanAddress"
+      }
+   ],
+   "emailAddresses":[
+      {
+         "uuid":"XXXXXX-XXXX-XXXX-XXXX-XXXXXXXX",
+         "email":"markus@openhab.com",
+         "_updated":"2020-07-29T18:23:14.848Z"
+      }
+   ],
+   "preferredLanguages":[
+      "de"
+   ]
+}
