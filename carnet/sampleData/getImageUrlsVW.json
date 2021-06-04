@@ -1,0 +1,49 @@
+{
+   "service": "VILMA",
+   "imageUrls": [
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Right/c43b58342c7323142e368ad5023946a80d4c96904e04f42ce75b0ea28667c6d7.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Center/59fdebecb595019d04bd7738b9ddd64f3d3cfcdba7c898acfa670f701bb84ff3.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Side_Left/768647890971c1413de417ebd3b384ceafa825fd187910bbde147f8f3382f870.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Side_Right/d6e85c5b8af93770bf2696ecb2783991ba90282197c5c42ecd384f41e2bc27d4.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Back_Left/077d76e7ebb3e8abc3dc97228b9f07ed0ea1c0d37fd8030292336c9b7f3302e5.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Back_Right/63f40a450b4513f2c64c6a6e805c47dbe0e43b52f3425043831c24a8101bd010.png",
+      "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Left/e45d4e2071fd83640edfb7038eb970926d4d6e4751b66af0c3c1241b00ce2817.png"
+   ],
+   "images": [
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Right/c43b58342c7323142e368ad5023946a80d4c96904e04f42ce75b0ea28667c6d7.png",
+         "viewDirection": "front",
+         "angle": "right"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Center/59fdebecb595019d04bd7738b9ddd64f3d3cfcdba7c898acfa670f701bb84ff3.png",
+         "viewDirection": "front",
+         "angle": "center"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Side_Left/768647890971c1413de417ebd3b384ceafa825fd187910bbde147f8f3382f870.png",
+         "viewDirection": "side",
+         "angle": "left"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Side_Right/d6e85c5b8af93770bf2696ecb2783991ba90282197c5c42ecd384f41e2bc27d4.png",
+         "viewDirection": "side",
+         "angle": "right"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Back_Left/077d76e7ebb3e8abc3dc97228b9f07ed0ea1c0d37fd8030292336c9b7f3302e5.png",
+         "viewDirection": "back",
+         "angle": "left"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Back_Right/63f40a450b4513f2c64c6a6e805c47dbe0e43b52f3425043831c24a8101bd010.png",
+         "viewDirection": "back",
+         "angle": "right"
+      },
+      {
+         "url": "https://media.volkswagen.com/Vilma/V/CB5/2021/Front_Left/e45d4e2071fd83640edfb7038eb970926d4d6e4751b66af0c3c1241b00ce2817.png",
+         "viewDirection": "front",
+         "angle": "left"
+      }
+   ]
+}

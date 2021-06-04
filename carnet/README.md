@@ -18,6 +18,7 @@ Some verified vehicles:
 |Skoda     |Superb      |2020|Hybrid    |DE/CH |        |     |       |           |    |   |     |    |      |                                                       |
 |Volkswagen|Arteon      |2021|          |DE/   |        |     |       |           |    |   |     |    |      |                                                       |
 |Volkswagen|eGolf       |2020|Electrical|DE/DE |no      |yes  |n/a    |           |    |   |     |    |      |                                                       |
+|Volkswagen|eGolf       |2020|Electrical|DE/DE |yes     |yes  |n/a    |n/a        |    |yes*|    |    |      |*Flash only, no honk                                   |
 |Volkswagen|eUp         |    |Electrical|DE/DE |        |     |       |           |    |   |     |    |      |                                                       |
 |Volkswagen|Passat GTE  |2016|Hybrid    |DE/NL |        |     |n/a    |n/a        |    |n/a|     |    |      |                                                       |
 |Volkswagen|Passat Va   |2016|Diesel    |DE/NL |yes     |n/a  |n/a    |           |    |   |     |    |      |                                                       |
@@ -42,6 +43,7 @@ Once the account is online the binding can query all registered vehicles and cre
 The binding itself has no configuration options
 
 ### API Throtteling
+
 Usually the vehicle sends frequent status updates to the CarNet backend.
 You have the option to request a forced update from the vehicle using the control#update channel.
 
