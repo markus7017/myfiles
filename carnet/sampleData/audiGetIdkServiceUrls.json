@@ -1,0 +1,33 @@
+https://featureapps.audi.com/audi-env-config/0/config/myaudi/livem1/idk.json
+
+{
+  "customerProfileService": {
+    "baseUrl": "https://customer-profile.apps.emea.vwapps.io/v3",
+    "emea": {
+      "baseUrl": "https://customer-profile.apps.emea.vwapps.io/v3"
+    },
+    "ap": {
+      "baseUrl": "https://customer-profile.apps.ap.vwapps.io/v3"
+    },
+    "na": {
+      "baseUrl": "https://customer-profile.apps.na.vwapps.io/v3"
+    }
+  },
+  "consentService": {
+    "baseUrl": "https://consent.vwgroup.io",
+    "emea": {
+      "baseUrl": "https://consent.vwgroup.io"
+    },
+    "ap": {
+      "baseUrl": "https://consent.ap.vwgroup.io"
+    },
+    "na": {
+      "baseUrl": "https://consent.na.vwgroup.io"
+    }
+  },
+  "issuerRegionMapping": {
+    "emea": "https://identity.vwgroup.io",
+    "ap": "https://identity.ap.vwgroup.io",
+    "na": "https://identity.na.vwgroup.io"
+  }
+}
