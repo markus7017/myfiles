@@ -1,0 +1,18 @@
+{
+   "plug":{
+      "connectionState":"Connected",
+      "lockState":"Locked"
+   },
+   "charging":{
+      "state":"ReadyForCharging",
+      "remainingToCompleteInSeconds":0,
+      "chargingPowerInWatts":0.0,
+      "chargingRateInKilometersPerHour":0.0,
+      "chargingType":"Invalid",
+      "chargeMode":"MANUAL"
+   },
+   "battery":{
+      "cruisingRangeElectricInMeters":266000,
+      "stateOfChargeInPercent":80
+   }
+}

@@ -1,0 +1,5 @@
+{
+   "maxChargeCurrentAc":"Reduced",
+   "autoUnlockPlugWhenCharged":"Off",
+   "targetStateOfChargeInPercent":80
+}

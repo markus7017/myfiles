@@ -1,0 +1,21 @@
+{
+   "remainingTimeToReachTargetTemperatureInSeconds":0,
+   "state":"Off",
+   "trigger":"OFF",
+   "windowsHeatingStatuses":[
+      {
+         "windowLocation":"Front",
+         "state":"Off"
+      },
+      {
+         "windowLocation":"Rear",
+         "state":"Off"
+      }
+   ],
+   "seatHeatingSupport":{
+      "frontLeftAvailable":true,
+      "frontRightAvailable":true,
+      "rearLeftAvailable":false,
+      "rearRightAvailable":false
+   }
+}

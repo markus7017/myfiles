@@ -151,7 +151,7 @@
           "userDisablingAllowed": true
         },
         {
-          "id": "parkingBrake",
+          "id": "^Brake",
           "status": [
             1008
           ],
