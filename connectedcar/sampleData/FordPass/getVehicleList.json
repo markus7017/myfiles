@@ -1,0 +1,21 @@
+{
+   "vehicles":{
+      "$values":[
+         {
+            "vin":"XXXXXXXXXXXX",
+            "nickName":"",
+            "vehicleType":"2021 Explorer",
+            "color":"ATLAS BLUE/ARTISAN BLUE",
+            "modelName":"Explorer",
+            "modelCode":"VLTW",
+            "modelYear":"2021",
+            "tcuEnabled":1,
+            "make":"F",
+            "ngSdnManaged":1,
+            "vehicleAuthorizationIndicator":1
+         }
+      ]
+   },
+   "status":200,
+   "version":"1.0.0"
+}

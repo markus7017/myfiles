@@ -1,0 +1,10 @@
+{
+   "targetTemperatureInKelvin":294.15,
+   "temperatureConversionTableUsed":"CELSIUS_KELVIN",
+   "airConditioningAtUnlock":true,
+   "windowHeatingEnabled":false,
+   "zonesSettings":{
+      "frontLeftEnabled":false,
+      "frontRightEnabled":false
+   }
+}
