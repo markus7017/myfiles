@@ -1,0 +1,309 @@
+{
+   "vehiclestatus":{
+      "vin":"<redactded>",
+      "lockStatus":{
+         "value":"UNLOCKED",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "alarm":{
+         "value":"NOTSET",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "PrmtAlarmEvent":{
+         "value":"Null",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "odometer":{
+         "value":19484.0,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "fuel":{
+         "fuelLevel":41.30448,
+         "distanceToEmpty":324.9,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "gps":{
+         "latitude":"<redacted>",
+         "longitude":"<redacted>",
+         "gpsState":"UNSHIFTED",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "remoteStart":{
+         "remoteStartDuration":10,
+         "remoteStartTime":0,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "remoteStartStatus":{
+         "value":0,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "battery":{
+         "batteryHealth":{
+            "value":"STATUS_GOOD",
+            "timestamp":"08-03-2021 15:22:01"
+         },
+         "batteryStatusActual":{
+            "value":12,
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         }
+      },
+      "oil":{
+         "oilLife":"STATUS_GOOD",
+         "oilLifeActual":88,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "tirePressure":{
+         "value":"STATUS_GOOD",
+         "timestamp":"08-03-2021 15:22:01"
+      },
+      "authorization":"AUTHORIZED",
+      "TPMS":{
+         "tirePressureByLocation":{
+            "value":1,
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "tirePressureSystemStatus":{
+            "value":"Systm_Activ_Composite_Stat",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "dualRearWheel":{
+            "value":0,
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "leftFrontTireStatus":{
+            "value":"Normal",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "leftFrontTirePressure":{
+            "value":"245",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "rightFrontTireStatus":{
+            "value":"Normal",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "rightFrontTirePressure":{
+            "value":"244",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "outerLeftRearTireStatus":{
+            "value":"Normal",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "outerLeftRearTirePressure":{
+            "value":"252",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "outerRightRearTireStatus":{
+            "value":"Normal",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "outerRightRearTirePressure":{
+            "value":"254",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "innerLeftRearTireStatus":{
+            "value":"Not_Supported",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "innerLeftRearTirePressure":null,
+         "innerRightRearTireStatus":{
+            "value":"Not_Supported",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "innerRightRearTirePressure":null,
+         "recommendedFrontTirePressure":{
+            "value":35,
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "recommendedRearTirePressure":{
+            "value":30,
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         }
+      },
+      "firmwareUpgInProgress":{
+         "value":false,
+         "timestamp":"02-24-2021 13:19:54"
+      },
+      "deepSleepInProgress":{
+         "value":false,
+         "timestamp":"03-02-2021 11:24:20"
+      },
+      "ccsSettings":{
+         "timestamp":"06-14-2021 06:11:25",
+         "location":1,
+         "vehicleConnectivity":1,
+         "vehicleData":1,
+         "drivingCharacteristics":-1,
+         "contacts":-1
+      },
+      "lastRefresh":"08-03-2021 15:22:01",
+      "lastModifiedDate":"08-03-2021 15:22:19",
+      "serverTime":"08-03-2021 20:15:28",
+      "batteryFillLevel":{
+         "value":51.5,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "elVehDTE":{
+         "value":37.1,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "hybridModeStatus":{
+         "value":"AutoChargeDepleteMode",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "chargingStatus":{
+         "value":"NotReady",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "plugStatus":{
+         "value":0,
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "chargeStartTime":{
+         "value":"08-03-2021 17:22:00",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "chargeEndTime":{
+         "value":"08-03-2021 19:00:00",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "preCondStatusDsply":{
+         "value":"NotScheduled",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "chargerPowertype":{
+         "value":"EVSENotDetected",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "batteryPerfStatus":{
+         "value":"Oknomessagedisplayed",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "outandAbout":{
+         "value":"PwPckOffTqNotAvailable",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "batteryChargeStatus":null,
+      "dcFastChargeData":null,
+      "windowPosition":{
+         "driverWindowPosition":{
+            "value":"Fully_Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "passWindowPosition":{
+            "value":"Fully_Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "rearDriverWindowPos":{
+            "value":"Fully_Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "rearPassWindowPos":{
+            "value":"Fully_Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         }
+      },
+      "doorStatus":{
+         "rightRearDoor":{
+            "value":"Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "leftRearDoor":{
+            "value":"Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "driverDoor":{
+            "value":"Ajar",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "passengerDoor":{
+            "value":"Ajar",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "hoodDoor":{
+            "value":"Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "tailgateDoor":{
+            "value":"Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "innerTailgateDoor":{
+            "value":"Closed",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         }
+      },
+      "ignitionStatus":{
+         "value":"Off",
+         "status":"CURRENT",
+         "timestamp":"08-03-2021 15:22:19"
+      },
+      "batteryTracLowChargeThreshold":null,
+      "battTracLoSocDDsply":null,
+      "dieselSystemStatus":{
+         "exhaustFluidLevel":null,
+         "filterSoot":null,
+         "ureaRange":null,
+         "metricType":{
+            "value":"Active",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         },
+         "filterRegenerationStatus":{
+            "value":"DPF_Normal_Operation",
+            "status":"CURRENT",
+            "timestamp":"08-03-2021 15:22:19"
+         }
+      }
+   },
+   "version":"4.0.0",
+   "status":200
+}

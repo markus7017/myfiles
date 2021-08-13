@@ -1,0 +1,95 @@
+GET       /api/vehicles/manuals/{vin}/{country}/{locale}
+
+GET       /api/vehicles/{vin}/zonelighting/{commandId}/
+PUT       /api/vehicles/{vin}/zonelightingactivation/
+DELETE /api/vehicles/{vin}/zonelightingactivation/
+
+PU          /api/vehicles/{vin}/{zonetype}/zonelighting/
+DELETE /api/vehicles/{vin}/{zonetype}/zonelighting/
+
+GET       /api/vehicles/{vin}/trailerlightcheckactivation/{commandId}/
+PUT       /api/vehicles/{vin}/trailerlightcheckactivation
+DELETE /api/vehicles/{vin}/trailerlightcheckactivation
+
+PUT      /api/vehicles/v4/{vin}/statusrequest
+
+GET       geofence/v1/vehicles/{vin}/geofences
+PUT       geofence/v1/vehicles/{vin}/geofences/{fenceId}
+POST     geofence/v1/vehicles/{vin}/geofences
+DELETE geofence/v1/vehicles/{vin}/geofences/{fenceId}
+PUT       geofence/v1/vehicles/{vin}/pla/{periodicLocationAlertStatus}
+
+GET       /api/vpoi/chargestations/v3/all
+DELETE /api/vpoi/chargestations/v3/{locationId}
+GET       /api/vpoi/chargestations/v3/status/{correlationId}
+GET       /api/vpoi/chargestations/v3/saved
+PUT       /api/vpoi/chargestations/v3
+
+POST    /api/cevs/v1/chargelogs/delete
+POST    /api/cevs/v2/chargelogDetail/retrieve
+POST    /api/cevs/v1/chargelogs/retrieve
+POST    /api/cevs/v2/chargelogs/retrieve
+
+GET       /api/vpoi/chargestations/v3/plugstatus
+
+GET      /api/smartcharging/v1/vehicles/{vin}
+GET      /api/smartcharging/v1/vehicles/{vin}/forecast
+GET      /api/smartcharging/v1/vehicles/{vin}/status/{testID}
+GET      /api/smartcharging/v1/tariffs"
+POST   /api/smartcharging/v1/vehicles/{vin}
+
+GET prognostics/active/v1/vin/{VIN}
+GET prognostics/active/v2/vin/{VIN}
+
+POST servicehistory/v1/service-history
+DELETE servicehistory/v1/service-history/receipts/{receiptId}
+DELETE servicehistory/v1/service-history/{serviceId}
+PUT servicehistory/v1/service-history/{serviceId}
+GET servicehistory/v1/service-history/receipts/{id}
+GET servicehistory/v1/service-history
+GET servicehistory/v1/service-providers
+GET servicehistory/v1/service-types
+GET servicehistory/v1/service-history/receipts
+
+GET ownership-transfer/v1/statu
+
+GET identity/v1/accounts/username/{username}
+
+POST     servicemessagecenter/v3/messages
+
+POST    collisioncenters
+POST    collisiondetails
+GET      collisiondetails/
+GET      collisiondetails/{fnol-id}
+PUT     collisiondetails/{fnol-id}
+GET      collisiondetails/{fnol-id}/getreport
+PUT      collisiondetails/{fnol-id}/party/{party-id}
+POST   collisiondetails/{fnol-id}/party
+DELETE collisiondetails/{fnol-id}/party/{party-id}
+DELETE collisiondetails/{fnol-id}
+POST    collisiondetails/{fnol-id}/images/
+DELETE collisiondetails/{fnol-id}/images/{image-id}
+
+POST     tokenServlet/token/validate
+
+POST /api/cevs/v1/triplogs/exist
+POST /api/cevs/v1/triplogs/delet
+POST /api/cevs/v1/triplogs/retrieve
+PUT /api/cevs/v1/triplogs/restore
+
+GET /api/capability/v1/vehicles/{vin}
+DELETE users/vehicles/{vin}
+GET users/vehicles/{vin}/detail
+GET users/vehicles/
+POST users/vehicles
+PUT users/vehicles/{vin}/
+
+POST v1/VhRptSchedMaintDelete
+POST v1/activealertlist
+POST v1/VhRptSchedMaintQuery
+POST v1/VhRptSchedMaintUpdate
+
+VIN Lookup:
+/api/garage/mobile
+GET vinlookup
+GET vins/{vin}/detail
