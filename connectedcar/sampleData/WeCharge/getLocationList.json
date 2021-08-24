@@ -1,0 +1,22 @@
+{
+   "timestamp":"2021-08-14T18:51:04.908Z",
+   "result":{
+      "locations":[
+         {
+            "id":"4c85157c-4d82-471c-b5a0-XXXXXXXXXX",
+            "address":{
+               "city":"Köln",
+               "country":"DEU",
+	            "street":"Hauptstr. 1",
+    	        "zip":"40000"
+            },
+            "description":"TG P45",
+            "stations":[
+               {
+                  "id":"56fd477c-247a-4dfe-a0de-XXXXXXXXXX"
+               }
+            ]
+         }
+      ]
+   }
+}

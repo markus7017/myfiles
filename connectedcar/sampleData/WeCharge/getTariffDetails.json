@@ -1,0 +1,36 @@
+{
+"url" : "/charge-and-pay/v1/user/tariffs/"
+
+   "timestamp":"2021-08-18T15:44:59.944Z",
+   "result":{
+      "id":"706101bd-f452-4348-9d67-b426b53da14b",
+      "name":"We Charge Go",
+      "description":"lorem ipsum",
+      "code":"we_charge_go_id_excl",
+      "country_code":"DE",
+      "currency":"EUR",
+      "duration_months":12,
+      "automatic_renewal":false,
+      "promotion_text":"dolor sit amet",
+      "revision":3,
+      "tenant_id":"pkEp7dW3rzepQWc40Tg0",
+      "subscription_monthly_fee":0.0,
+      "sign_up_fee":0.0,
+      "charging_conditions":[
+         {
+            "country_code":"DE",
+            "currency":"EUR",
+            "transaction_fee":0.0
+         },
+         {
+            "country_code":"DE",
+            "currency":"EUR",
+            "cpo_code":"DE*ION",
+            "fixed_pricing_ac_price":0.55,
+            "fixed_pricing_dc_price":0.55,
+            "fixed_pricing_unit":"kWh",
+            "transaction_fee":0.0
+         }
+      ]
+   }
+}

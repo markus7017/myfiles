@@ -1,0 +1,35 @@
+{
+"url":"https://wecharge.apps.emea.vwapps.io/charge-and-pay/v1/user/rfidcards",
+   "timestamp":"2021-08-15T06:09:11.745Z",
+   "result":[
+      {
+         "id":"b921e938-05c3-4ee1-92e4-XXXXXXXXXX",
+         "created_at":"2020-06-18T14:14:47.601Z",
+         "label":"We Charge Wallbox Card",
+         "number":"VW-XXXXXXXX-XXXX-X",
+         "public_charging":false,
+         "status":"active",
+         "subscriber_id":"65199293-549a-485a-ae6a-XXXXXXXXXX",
+         "tenant_id":"pkEp7dW3rzepXXXXXX",
+         "tenant_name":"We Charge",
+         "updated_at":"2021-07-13T15:27:27.769Z",
+         "brand_id":4,
+         "design_template":1
+      },
+      {
+         "id":"5f51c4ad-17c4-4f95-a9af-XXXXXXXXXX",
+         "created_at":"2021-02-22T09:52:12.863Z",
+         "number":"VW-XXXXXXXX-XXXX-X",
+         "pairing_date":"2021-02-27T16:42:19.800Z",
+         "public_charging":true,
+         "status":"active",
+         "subscriber_id":"65199293-549a-485a-ae6a-XXXXXXXXXX",
+         "subscription_id":"e0769841-26af-44ab-b6aa-XXXXXXXXXX",
+         "tenant_id":"pkEp7dW3rzepXXXXXX",
+         "tenant_name":"We Charge",
+         "updated_at":"2021-02-27T16:42:20.058Z",
+         "brand_id":4,
+         "design_template":1
+      }
+   ]
+}

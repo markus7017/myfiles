@@ -1,0 +1,32 @@
+{
+   "timestamp":"2021-08-14T19:20:16.987Z",
+   "result":{
+      "connection_state":"connected",
+      "connectors":[
+         {
+            "availability":"available",
+            "id":"1"
+         }
+      ],
+      "id":"56fd477c-247a-4dfe-a0de-XXXXXXXX",
+      "last_contact":"2021-08-14T19:17:25.067Z",
+      "lifecycle_state":"activated",
+      "name":"ID Charger Connect",
+      "authorization_mode":"authorization_csms",
+      "model":"EVBOX_MGWB",
+      "last_connect":"2021-08-12T09:17:51.037Z",
+      "location":{
+         "id":"4c85157c-4d82-471c-b5a0-XXXXXXXX",
+         "address":{
+            "city":"Köln",
+            "country":"DEU",
+            "street":"Hauptstr. 1",
+            "zip":"40000"
+         },
+         "geo_location":{
+            
+         },
+         "description":"TG P45"
+      }
+   }
+}
