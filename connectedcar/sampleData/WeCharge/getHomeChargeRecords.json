@@ -1,0 +1,36 @@
+{
+   "timestamp":"2021-08-25T14:28:25.679Z",
+   "limit":1,
+   "offset":0,
+   "total_count":5,
+   "charging_records":[
+      {
+         "authentication_method":"private_card_owned",
+         "authorization_mode":"authorization_csms",
+         "charging_session_id":"5db8a284-48d4-42e8-8f3b-ae3230231946",
+         "connector_id":1.0,
+         "rfid_card_id":"b921e938-05c3-4ee1-92e4-2c5892438920",
+         "rfid_card_label":"We Charge Wallbox Card",
+         "rfid_card_serial_number":"VW-LDLFXDSY-STHQ-S",
+         "session_faulted":false,
+         "start_date_time":"2021-08-13T11:34:55.000Z",
+         "station_id":"56fd477c-247a-4dfe-a0de-4ab46c723283",
+         "station_name":"ID Charger Connect",
+         "station_serial_number":"2125A1G1ZT",
+         "stop_date_time":"2021-08-14T08:57:22.000Z",
+         "transaction_id":"0b5ae618-a774-48fb-90c1-82d9f2ebf189",
+         "station_model":"EVBOX_MGWB",
+         "location":{
+            "id":"4c85157c-4d82-471c-b5a0-dead93808d32",
+            "address":{
+               "city":"Düsseldorf",
+               "country":"DEU",
+               "street":"Röpkestr. 41",
+               "zip":"40235"
+            }
+         },
+         "current_station_name":"ID Charger Connect",
+         "created_at":"2021-08-14T08:57:25.393Z"
+      }
+   ]
+}
