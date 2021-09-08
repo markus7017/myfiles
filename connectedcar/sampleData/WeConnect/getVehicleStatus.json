@@ -1,202 +1,304 @@
- "data": {
-    "batteryStatus": {
-      "carCapturedTimestamp": "2021-06-25T14:01:35Z",
-      "currentSOC_pct": 52,
-      "cruisingRangeElectric_km": 221
-    },
-    "chargingStatus": {
-      "carCapturedTimestamp": "2021-06-25T14:01:35Z",
-      "remainingChargingTimeToComplete_min": 0,
-      "chargingState": "readyForCharging",
-      "chargeMode": "manual",
-      "chargePower_kW": 0,
-      "chargeRate_kmph": 0
-    },
-    "chargingSettings": {
-      "carCapturedTimestamp": "2021-06-25T23:06:41Z",
-      "maxChargeCurrentAC": "maximum",
-      "autoUnlockPlugWhenCharged": "permanent",
-      "targetSOC_pct": 90
-    },
-    "plugStatus": {
-      "carCapturedTimestamp": "2021-06-25T23:06:41Z",
-      "plugConnectionState": "disconnected",
-      "plugLockState": "unlocked"
-    },
-    "climatisationStatus": {
-      "carCapturedTimestamp": "2021-06-25T23:06:40Z",
-      "remainingClimatisationTime_min": 0,
-      "climatisationState": "off"
-    },
-    "climatisationSettings": {
-      "carCapturedTimestamp": "2021-06-25T23:06:47Z",
-      "targetTemperature_K": 295.15,
-      "targetTemperature_C": 22,
-      "climatisationWithoutExternalPower": true,
-      "climatizationAtUnlock": false,
-      "windowHeatingEnabled": false,
-      "zoneFrontLeftEnabled": false,
-      "zoneFrontRightEnabled": false
-    },
-    "climatisationTimer": {
-      "timers": [
-        {
-          "id": 1,
-          "enabled": false,
-          "singleTimer": {
-            "startDateTime": "1999-12-31T22:00:00Z"
-          }
-        },
-        {
-          "id": 2,
-          "enabled": false,
-          "singleTimer": {
-            "startDateTime": "1999-12-31T22:00:00Z"
-          }
-        }
-      ],
-      "carCapturedTimestamp": "2021-06-25T23:06:38.008Z",
-      "timeInCar": "2021-06-26T01:06:38+02:00"
-    },
-    "windowHeatingStatus": {
-      "carCapturedTimestamp": "2021-06-25T14:01:37Z",
-      "windowHeatingStatus": [
-        {
-          "windowLocation": "front",
-          "windowHeatingState": "off"
-        },
-        {
-          "windowLocation": "rear",
-          "windowHeatingState": "off"
-        }
-      ]
-    },
-    "rangeStatus": {
-      "carCapturedTimestamp": "2021-06-25T14:01:35Z",
-      "carType": "electric",
-      "primaryEngine": {
-        "type": "electric",
-        "currentSOC_pct": 52,
-        "remainingRange_km": 221
+{
+   "data":{
+      "batteryStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:53:58Z",
+         "currentSOC_pct":48,
+         "cruisingRangeElectric_km":217
       },
-      "totalRange_km": 221
-    },
-    "capabilityStatus": {
-      "capabilities": [
-        {
-          "id": "automation",
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "charging",
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "chargingStations",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "climatisation",
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "destinations",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "fuelStatus",
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "ignition",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "mapUpdate",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "measurements",
-          "status": [
-            1008
-          ],
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "onlineSpeech",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "^Brake",
-          "status": [
-            1008
-          ],
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "routing",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "state",
-          "status": [
-            1008
-          ],
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "trafficInformation",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        },
-        {
-          "id": "vehicleLights",
-          "status": [
-            1008
-          ],
-          "userDisablingAllowed": false
-        },
-        {
-          "id": "webRadio",
-          "status": [
-            1011
-          ],
-          "expirationDate": "2024-05-09T00:00:00Z",
-          "userDisablingAllowed": true
-        }
-      ]
-    }
-  },
-  "error": null
+      "chargingStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:53:58Z",
+         "remainingChargingTimeToComplete_min":0,
+         "chargingState":"readyForCharging",
+         "chargeMode":"manual",
+         "chargePower_kW":0,
+         "chargeRate_kmph":0
+      },
+      "chargingSettings":{
+         "carCapturedTimestamp":"2021-09-03T09:51:32Z",
+         "maxChargeCurrentAC":"maximum",
+         "autoUnlockPlugWhenCharged":"off",
+         "targetSOC_pct":100
+      },
+      "chargeMode":{
+         "preferredChargeMode":"manual",
+         "availableChargeModes":[
+            "invalid"
+         ]
+      },
+      "plugStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:54:00Z",
+         "plugConnectionState":"disconnected",
+         "plugLockState":"unlocked"
+      },
+      "climatisationStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:54:00Z",
+         "remainingClimatisationTime_min":0,
+         "climatisationState":"off"
+      },
+      "climatisationSettings":{
+         "carCapturedTimestamp":"2021-09-03T09:51:34Z",
+         "targetTemperature_K":295.15,
+         "targetTemperature_C":22,
+         "climatisationWithoutExternalPower":true,
+         "climatizationAtUnlock":true,
+         "windowHeatingEnabled":false,
+         "zoneFrontLeftEnabled":true,
+         "zoneFrontRightEnabled":true
+      },
+      "climatisationTimer":{
+         "timers":[
+            {
+               "id":1,
+               "enabled":false,
+               "singleTimer":{
+                  "startDateTime":"1999-12-31T22:00:00Z"
+               }
+            },
+            {
+               "id":2,
+               "enabled":false,
+               "singleTimer":{
+                  "startDateTime":"1999-12-31T22:00:00Z"
+               }
+            }
+         ],
+         "carCapturedTimestamp":"2021-09-03T09:51:29.847Z",
+         "timeInCar":"2021-09-03T11:51:30+02:00"
+      },
+      "windowHeatingStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:51:35Z",
+         "windowHeatingStatus":[
+            {
+               "windowLocation":"front",
+               "windowHeatingState":"off"
+            },
+            {
+               "windowLocation":"rear",
+               "windowHeatingState":"off"
+            }
+         ]
+      },
+      "rangeStatus":{
+         "carCapturedTimestamp":"2021-09-03T09:53:58Z",
+         "carType":"electric",
+         "primaryEngine":{
+            "type":"electric",
+            "currentSOC_pct":48,
+            "remainingRange_km":217
+         },
+         "totalRange_km":217
+      },
+      "capabilityStatus":{
+         "capabilities":[
+            {
+               "id":"automation",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"batteryColdWarning",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"cdisDigitalKey",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"charging",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"chargingStations",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"climatisation",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"dealerAppointment",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"destinations",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"fuelStatus",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"ignition",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"mapUpdate",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"measurements",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"onlineSpeech",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"parkingBrake",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"parkingInformation",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"parkingPosition",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"personalizationOnline",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"plugAndCharge",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"poiSearch",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"privateEmergencyCall",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"roadExperienceManagementLocalization",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"roadExperienceManagementLocalizationUpload",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"roadsideAssistant",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"routing",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"state",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"trafficInformation",
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            },
+            {
+               "id":"vehicleHealth",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"vehicleHealthInspection",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"vehicleHealthWarnings",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"vehicleLights",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"vehicleWakeUpTrigger",
+               "status":[
+                  1008
+               ],
+               "userDisablingAllowed":false
+            },
+            {
+               "id":"webRadio",
+               "status":[
+                  1001,
+                  1004
+               ],
+               "expirationDate":"2024-02-18T00:00:00Z",
+               "userDisablingAllowed":true
+            }
+         ]
+      },
+      "lvBatteryStatus":{
+         "batterySupport":"notAllowed"
+      }
+   },
+   "error":{
+      
+   }
 }
