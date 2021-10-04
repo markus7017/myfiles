@@ -1,0 +1,26 @@
+{
+   "timestamp":"2021-08-14T18:51:05.044Z",
+   "result":{
+      "total_count":1,
+      "offset":0,
+      "limit":25,
+      "stations":[
+         {
+            "connection_state":"connected",
+            "connectors":[
+               {
+                  "availability":"available",
+                  "id":"1"
+               }
+            ],
+            "id":"56fd477c-247a-4dfe-a0de-xxxxxxxxxx",
+            "last_contact":"2021-08-14T18:47:25.122Z",
+            "lifecycle_state":"activated",
+            "name":"ID Charger Connect",
+            "authorization_mode":"authorization_csms",
+            "model":"EVBOX_MGWB",
+            "last_connect":"2021-08-12T09:17:51.037Z"
+         }
+      ]
+   }
+}

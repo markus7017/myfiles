@@ -1,0 +1,26 @@
+{
+"url":"/charge-and-pay/v1/charging/records?limit=10&offset=0"
+
+   "timestamp":"2021-08-18T14:08:41.188Z",
+   "result":[
+      {
+         "id":"0cca959a-d1e1-49b2-8ef2-2181c43abe72",
+         "subscription_id":"e0769841-26af-44ab-b6aa-30675c65e2cb",
+         "location_evse_id":"DE*ION*E103603",
+         "location_name":"IONITY Dammer Berge West",
+         "location_address":"Rastanlage Dammer Berge West, A1,",
+         "location_connector_power_type":"DC",
+         "location_coordinates_latitude":"52.540755",
+         "location_coordinates_longitude":"8.112701",
+         "currency":"EUR",
+         "total_energy":32.149,
+         "total_price":17.682,
+         "total_time":1685,
+         "created_at":"2021-07-26T11:26:20.253Z",
+         "updated_at":"2021-07-26T11:26:20.883Z",
+         "end_date_time":"2021-07-26T11:26:15.000Z",
+         "start_date_time":"2021-07-26T10:58:10.000Z",
+         "timezone":"Europe/Berlin"
+      },
+   ]
+}

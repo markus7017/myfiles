@@ -1,7 +1,7 @@
-https://featureapps.audi.com/audi-env-config/0/config/myaudi/livem1/idk.json
-
 {
-  "customerProfileService": {
+"url" : "https://featureapps.audi.com/audi-env-config/0/config/myaudi/livem1/idk.json"
+
+"customerProfileService": {
     "baseUrl": "https://customer-profile.apps.emea.vwapps.io/v3",
     "emea": {
       "baseUrl": "https://customer-profile.apps.emea.vwapps.io/v3"

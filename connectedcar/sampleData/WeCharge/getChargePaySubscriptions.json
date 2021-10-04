@@ -1,0 +1,20 @@
+{
+   "timestamp":"2021-08-16T18:27:51.497Z",
+   "result":[
+      {
+         "created_at":"2021-02-22T09:52:11.869Z",
+         "automatic_renewal":false,
+         "end_date":"2022-02-22T09:52:10.898Z",
+         "id":"e0769841-26af-44ab-b6aa-XXXXXXXX",
+         "start_date":"2021-02-22T09:52:11.900Z",
+         "status":"active",
+         "subscriber_id":"65199293-549a-485a-ae6a-XXXXXXXXX",
+         "tariff_id":"706101bd-f452-4348-9d67-XXXXXXXX",
+         "tariff_name":"We Charge Go",
+         "updated_at":"2021-07-07T07:20:57.738Z",
+         "currency":"EUR",
+         "sign_up_fee":"0",
+         "monthly_fee":"0"
+      }
+   ]
+}

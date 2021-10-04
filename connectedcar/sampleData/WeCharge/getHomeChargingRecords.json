@@ -1,0 +1,67 @@
+{
+"url1":"https://wecharge.apps.emea.vwapps.io/home-charging/v1/charging/records?created_at_after=2020-01-01T00:00:00.000Z&created_at_before=2021-08-15T06:09:11.514Z&limit=25".
+"url2":"https://wecharge.apps.emea.vwapps.io/home-charging/v1/charging/records?created_at_after=2020-01-01T00:00:00.000Z&created_at_before=2021-08-15T06:16:28.795Z&limit=25&rfid_card_id=b921e938-05c3-4ee1-92e4-XXXXXXXXXX"
+
+   "timestamp":"2021-08-15T06:09:11.796Z",
+   "limit":25,
+   "offset":0,
+   "total_count":5,
+   "charging_records":[
+      {
+         "authentication_method":"private_card_owned",
+         "authorization_mode":"authorization_csms",
+         "charging_session_id":"5db8a284-48d4-42e8-8f3b-XXXXXXXXXX",
+         "connector_id":1.0,
+         "rfid_card_id":"b921e938-05c3-4ee1-92e4-XXXXXXXXXX",
+         "rfid_card_label":"We Charge Wallbox Card",
+         "rfid_card_serial_number":"VW-LDLFXDSY-STHQ-S",
+         "session_faulted":false,
+         "start_date_time":"2021-08-13T11:34:55.000Z",
+         "station_id":"56fd477c-247a-4dfe-a0de-XXXXXXXXXX",
+         "station_name":"ID Charger Connect",
+         "station_serial_number":"2125A1G1ZT",
+         "stop_date_time":"2021-08-14T08:57:22.000Z",
+         "transaction_id":"0b5ae618-a774-48fb-90c1-XXXXXXXXXX",
+         "station_model":"EVBOX_MGWB",
+         "location":{
+            "id":"4c85157c-4d82-471c-b5a0-XXXXXXXXXX",
+            "address":{
+               "city":"Düsseldorf",
+               "country":"DEU",
+               "street":"Röpkestr. 41",
+               "zip":"40235"
+            }
+         },
+         "current_station_name":"ID Charger Connect",
+         "created_at":"2021-08-14T08:57:25.393Z"
+      },
+      {
+         "authentication_method":"private_card_owned",
+         "authorization_mode":"authorization_csms",
+         "charging_session_id":"775e9a81-c593-4ca2-89f1-XXXXXXXXXX",
+         "connector_id":1.0,
+         "rfid_card_id":"b921e938-05c3-4ee1-92e4-XXXXXXXXXX",
+         "rfid_card_label":"We Charge Wallbox Card",
+         "rfid_card_serial_number":"VW-LDLFXDSY-STHQ-S",
+         "session_faulted":false,
+         "start_date_time":"2021-07-26T13:38:50.000Z",
+         "station_id":"56fd477c-247a-4dfe-a0de-XXXXXXXXXX",
+         "station_name":"ID Charger Connect",
+         "station_serial_number":"2125A1G1ZT",
+         "stop_date_time":"2021-07-27T11:02:53.000Z",
+         "transaction_id":"46fad026-5e4f-45d2-98f3-XXXXXXXXXX",
+         "station_model":"EVBOX_MGWB",
+         "location":{
+            "id":"4c85157c-4d82-471c-b5a0-XXXXXXXXXX",
+            "address":{
+               "city":"Düsseldorf",
+               "country":"DEU",
+               "street":"Röpkestr. 41",
+               "zip":"40235"
+            }
+         },
+         "current_station_name":"ID Charger Connect",
+         "created_at":"2021-07-27T11:02:55.704Z"
+      },
+   ]
+}
