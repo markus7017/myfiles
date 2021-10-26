@@ -14,24 +14,24 @@
             {
                "dealerData":{
                   "address":{
-                     "city":"Düsseldorf",
+                     "city":"Bonn",
                      "countryIsoCode":"DE",
                      "street":"Schloßstraße 39",
-                     "zipCode":"40477"
+                     "zipCode":"12345"
                   },
                   "communication":{
-                     "email":"info-rhein-ruhr@daimler.com",
-                     "fax":"+49 211 4401 851",
-                     "phone":"+49 211 4401 0",
-                     "website":"https://www.mercedes-benz-rhein-ruhr.de"
+                     "email":"infor@openhab.info",
+                     "fax":"+49 4401 851",
+                     "phone":"+49  4401 0",
+                     "website":"https://connectedcar.de"
                   },
                   "geoCoordinates":{
-                     "latitude":51.23999786376953,
-                     "longitude":6.790378093719482
+                     "latitude":11.23999786376953,
+                     "longitude":1.790378093719482
                   },
-                  "id":"GS0001223",
+                  "id":"GS0001999",
                   "legalName":"Mercedes-Benz AG",
-                  "nameAddition":"Niederlassung Rhein-Ruhr",
+                  "nameAddition":"Niederlassung Hawai",
                   "openingHours":{
                      "FRIDAY":{
                         "periods":[
@@ -94,7 +94,7 @@
                   },
                   "region":{
                      "region":"Nordrhein-Westfalen",
-                     "subRegion":"Düsseldorf, Stadt"
+                     "subRegion":"Bonn, Stadt"
                   },
                   "spokenLanguages":null
                },
