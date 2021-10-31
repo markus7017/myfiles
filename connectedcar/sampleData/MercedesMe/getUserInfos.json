@@ -1,0 +1,47 @@
+{
+   "accountCountryCode":"DE",
+   "accountIdentifier":"EMAIL_AND_MOBILE",
+   "accountVerified":true,
+   "address":{
+      "city":"Bonn",
+      "countryCode":"DE",
+      "houseNo":"27",
+      "street":"Exerzierhalle",
+      "zipCode":"53131"
+   },
+   "addressLines":[
+      "Exerzierhalle 27",
+      "53131 Bonn",
+      "Deutschland"
+   ],
+   "birthday":"1970-05-25",
+   "ciamId":"000f0c0e5XXXXXXXX",
+   "communicationPreference":{
+      "contactedByEmail":true,
+      "contactedByLetter":true,
+      "contactedByPhone":false,
+      "contactedBySms":false
+   },
+   "createdAt":"2015-12-22T09:50:51.657Z",
+   "createdBy":"MCMR",
+   "email":"example@mail.com",
+   "firstName":"Hans",
+   "isEmailVerified":true,
+   "isMobileVerified":true,
+   "lastName1":"Mueller",
+   "mobilePhoneNumber":"+491747XXXXXX",
+   "preferredLanguageCode":"de-DE",
+   "salutationCode":"MR",
+   "unitPreferences":{
+      "clockHours":"24h",
+      "consumptionCo":"l/100km",
+      "consumptionEv":"kWh/100km",
+      "consumptionGas":"kg/100km",
+      "speedDistance":"km/h, km",
+      "temperature":"Celsius",
+      "tirePressure":"kPa",
+      "userLengthUnit":"cm"
+   },
+   "updatedAt":"2020-07-23T16:03:17.129Z",
+   "userPinStatus":"SET"
+}
