@@ -896,7 +896,7 @@ You should calibrate the sensor using the Shelly App to get information on the t
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
-|          |targetTemp   |Number   |no       |Temperature in °C: 4=Low; 1..30=target temp;31=Hi                      |
+|          |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
 
