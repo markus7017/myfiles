@@ -59,7 +59,9 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellydw           | Shelly Door/Window                                     | SHDW-1    |
 | shellydw2          | Shelly Door/Window 2                                   | SHDW-2    |
 | shellybutton1      | Shelly Button 1                                        | SHBTN-1   |
+| shellybutton2      | Shelly Button 2                                        | SHBTN-2   |
 | shellysense        | Shelly Motion and IR Controller                        | SHSEN-1   |
+| shellytrv          | Shelly TRV                                             | SHTRV-01  |
 | shellydevice       | A password protected Shelly device or an unknown type  |           |
 
 ## Binding Configuration
@@ -207,6 +209,7 @@ Every device has a channel group `device` with the following channels:
 |          |internalTemp       |Number  |yes      |Internal device temperature (when provided by the device)                        |
 |          |selfTest           |String  |yes      |Result from device self-test (pending/not_completed/running/completed/unknown)   |
 |          |alarm              |Trigger |yes      |Self-Test result not_completed/completed/running/pending                         |
+|          |supplyVoltage      |Number  |yes      |Shelly 1PM, 1L, 2.5: Supply voltage (fixed or measured depending on device)      |
 |          |accumulatedWatts   |Number  |yes      |Accumulated power in W of the device (including all meters)                      |
 |          |accumulatedTotal   |Number  |yes      |Accumulated total power in kwh of the device (including all meters)              |
 |          |accumulatedReturned|Number  |yes      |Accumulated returned power in kwh of the device (including all meters)           |
@@ -401,12 +404,14 @@ In this case the is no real measurement based on power consumption, but the Shel
 |          |returnedKWH  |Number   |yes      |Total returned energy, kwh                                                       |
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |powerFactor  |Number   |yes      |Power Factor in percent                                                          |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 |meter2    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |returnedKWH  |Number   |yes      |Total returned energy, kwh                                                       |
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
+|          |powerFactor  |Number   |yes      |Power Factor in percent                                                          |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 ### Shelly 3EM (thing-type: shellyem3)
@@ -431,7 +436,7 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
 |          |current      |Number   |yes      |Current in A                                                                     |
-|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor in percent                                                          |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 |meter2    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
@@ -439,7 +444,7 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
 |          |current      |Number   |yes      |Current in A                                                                     |
-|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor in percent                                                          |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 |meter3    |currentWatts |Number   |yes      |Current power consumption in Watts                                               |
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
@@ -447,7 +452,7 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |reactiveWatts|Number   |yes      |Instantaneous reactive power, Watts                                              |
 |          |voltage      |Number   |yes      |RMS voltage, Volts                                                               |
 |          |current      |Number   |yes      |Current in A                                                                     |
-|          |powerFactor  |Number   |yes      |Power Factor                                                                     |
+|          |powerFactor  |Number   |yes      |Power Factor in percent                                                          |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 
@@ -833,7 +838,7 @@ You have a Motion controlling your light.
 You switch off the light and want to leave the room, but the motion sensor immediately switches light back on.
 Using 'sensorSleepTime' you could suppress motion events while leaving the room, e.g. for 5sec and the light doesn's switch on. 
 
-### Shelly Button 1 (thing-type: shellybutton1)
+### Shelly Button 1 or 2 (thing-type: shellybutton1 / shellybutton2)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -885,6 +890,16 @@ You should calibrate the sensor using the Shelly App to get information on the t
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
+
+### Shelly TRV (thing-type: shellytrv)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+|sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
+|          |targetTemp   |Number   |no       |Temperature in °C: 4=Low; 1..30=target temp;31=Hi                      |
+|battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
+|          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
+
 
 ## Full Example
 
