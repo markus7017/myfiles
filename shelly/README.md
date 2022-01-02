@@ -218,6 +218,7 @@ Every device has a channel group `device` with the following channels:
 |          |statusLed          |Switch  |r/w      |ON: Status LED is disabled, OFF: LED enabled                                     |
 |          |powerLed           |Switch  |r/w      |ON: Power LED is disabled, OFF: LED enabled                                      |
 |          |charger            |Switch  |yes      |ON: USB charging cable is connected external power supply activated.             |
+|          |calibrated         |Switch  |yes      |ON: Device/sensor is calibrated (if supported by device).                        |
 
 Availability of channels is depending on the device type.
 The binding detects many of those channels on-the-fly (when Thing changes to ONLINE state) and adjusts the Thing's channel structure.
@@ -838,6 +839,18 @@ You have a Motion controlling your light.
 You switch off the light and want to leave the room, but the motion sensor immediately switches light back on.
 Using 'sensorSleepTime' you could suppress motion events while leaving the room, e.g. for 5sec and the light doesn's switch on. 
 
+### Shelly TRV (thing-type: shellytrv)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+|sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
+|control   |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
+|          |position     |Dimmer   |no       |Set valve to manual mode (0..100%) disables auto-temp)                 |
+|battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
+|          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
+
+
 ### Shelly Button 1 or 2 (thing-type: shellybutton1 / shellybutton2)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
@@ -888,15 +901,6 @@ You should calibrate the sensor using the Shelly App to get information on the t
 |          |lux          |Number   |yes      |Brightness in Lux                                                      |
 |          |motion       |Switch   |yes      |ON: Motion detected, OFF: No motion (check also motionTime)            |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
-|battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
-|          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
-
-### Shelly TRV (thing-type: shellytrv)
-
-|Group     |Channel      |Type     |read-only|Description                                                            |
-|----------|-------------|---------|---------|-----------------------------------------------------------------------|
-|sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
-|          |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
 

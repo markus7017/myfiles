@@ -74,16 +74,16 @@
 	<logger name="org.jupnporg.jupnp" level="ERROR" />
 	<logger name="org.jupnp" level="ERROR" />
 
-    <logger name="org.openhab.binding.connectedcar" level="TRACE" />
-	<logger name="org.openhab.binding.shelly" level="DEBUG" />
-	<logger name="org.openhab.binding.magentatv" level="DEBUG" />
-	<logger name="org.openhab.binding.gree" level="DEBUG" />
-	<logger name="org.openhab.binding.carnet" level="DEBUG" />
-	<logger name="org.openhab.binding.rachio" level="DEBUG" />
-	<logger name="org.openhab.binding.appletv" level="DEBUG" />
-	<logger name="org.openhab.binding.fsinternetradio" level="TRACE" />
+		<Logger name="org.openhab.binding.connectedcar" level="TRACE" />
+		<Logger name="org.openhab.binding.shelly" level="DEBUG" />
+		<Logger name="org.openhab.binding.magentatv" level="DEBUG" />
+		<Logger name="org.openhab.binding.gree" level="DEBUG" />
+		<Logger name="org.openhab.binding.carnet" level="DEBUG" />
+		<Logger name="org.openhab.binding.rachio" level="DEBUG" />
+		<Logger name="org.openhab.binding.appletv" level="DEBUG" />
+		<Logger name="org.openhab.binding.fsinternetradio" level="TRACE" />
 
-    <logger name="org.eclipse.smarthome" level="INFO" />
-    <logger name="org.eclipse.smarthome.io" level="WARN" />
+    <Logger name="org.eclipse.smarthome" level="INFO" />
+    <Logger name="org.eclipse.smarthome.io" level="WARN" />
 
 </configuration>
