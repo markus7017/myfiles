@@ -2199,3 +2199,90 @@ URL:  https://api.shelly.cloud/files/firmware
 }
 ```
 
+## Shelly TRV
+
+### /status
+{
+  "wifi_sta": {
+    "connected": true,
+    "ssid": "Shelly",
+    "ip": "192.168.1.1",
+    "rssi": -60
+  },
+  "cloud": {
+    "enabled": false,
+    "connected": false
+  },
+  "mqtt": {
+    "connected": false
+  },
+  "time": "16:05",
+  "unixtime": 1639267551,
+  "serial": 0,
+  "has_update": false,
+  "mac": "84FD2772A600",
+  "cfg_changed_cnt": 0,
+  "actions_stats": {
+    "skipped": 0
+  },
+  "thermostats": [
+    {
+      "pos": 0,
+      "target_t": {
+        "enabled": true,
+        "value": 31,
+        "units": "C"
+      },
+      "tmp": {
+        "value": 29.2,
+        "units": "C",
+        "is_valid": true
+      }
+    }
+  ],
+  "calibrated": false,
+  "bat": {
+    "value": 100,
+    "voltage": 3.931
+  },
+  "charger": false,
+  "update": {
+    "status": "unknown",
+    "has_update": false,
+    "new_version": null,
+    "old_version": "20211210-150104/silabs_freertos@de76a21d",
+    "beta_version": null
+  },
+  "ram_total": 97280,
+  "ram_free": 22920,
+  "fs_size": 65536,
+  "fs_free": 59836,
+  "uptime": 57,
+  "fw_info": {
+    "device": "shellytrv-84FD2772A600",
+    "fw": "20211210-150104/silabs_freertos@de76a21d"
+  },
+  "ps_mode": 0,
+  "dbg_flags": 0
+}
+
+### Shelly TRV Coap
+
+{
+	"blk":[
+		{"I":1,"D":"sensor_0"},
+		{"I":2,"D":"device"}],
+	"sen":[
+		{"I":3101,"T":"T","D":"temp","U":"C","R":["-55/125","999"],"L":1},
+		{"I":3102,"T":"T","D":"temp","U":"F","R":["-67/257","999"],"L":1},
+		{"I":3103,"T":"T","D":"targetTemp","U":"C","R":["4/31","999"],"L":1},
+		{"I":3104,"T":"T","D":"targetTemp","U":"F","R":["39/88","999"],"L":1},
+		{"I":3115,"T":"S","D":"sensorError","R":"0/1","L":2},
+		{"I":3116,"T":"S","D":"valveError","R":"0/1","L":2},
+		{"I":3117,"T":"S","D":"mode","R":"0/5","L":2},
+		{"I":3118,"T":"S","D":"status","R":"0/1","L":2},
+		{"I":3111,"T":"B","D":"battery","R":["0/100","-1"],"L":2},
+		{"I":3121,"T":"S","D":"valvePos","U":"%","R":["0/100","-1"],"L":2},
+		{"I":9103,"T":"EVC","D":"cfgChanged","R":"U16","L":2}
+	]
+}
