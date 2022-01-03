@@ -841,6 +841,9 @@ Using 'sensorSleepTime' you could suppress motion events while leaving the room,
 
 ### Shelly TRV (thing-type: shellytrv)
 
+Note: You might need to reset the device for discovery. 
+While the device is in low power mode (usual operation) it will not respond to discovery requests
+
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
