@@ -103,8 +103,15 @@ Battery powered devices need to wake up by pressing the button, they will stay a
 
 The binding uses mDNS to discover the Shelly devices. 
 They periodically announce their presence, which is used by the binding to find them on the local network.
-
 Sometimes you need to run the manual discovery multiple times until you see all your devices.
+
+`Important`: 
+It's recommended to enable CoIoT in the device settings for faster response times (event driven rather than polling).
+Open the device's Web UI, section "COIOT settings" and select "Enable COCIOT".
+It's recommended to switch the Shelly devices to CoAP Unicast mode if you have only your openHAB system controlling the device.
+This allows routing the CoIoT/CoAP messages across multiple IP subnets without special network setup required.
+You could use Shelly Manager (doc/ShellyManager.md) to easily do the setup (configuring the openHAB host as CoAP peer address).
+Keep Multicast mode if you have multiple hosts, which should receive the CoAP updates.
 
 ### Password Protected Devices
 
@@ -152,7 +159,7 @@ The binding sets the following Thing status depending on the device status:
 | OFFLINE      | Communication with the device failed. Check the Thing status in the UI and openHAB's log for an indication of the error. Try restarting OH or deleting and re-discovering the Thing. You could also post to the community thread if the problem persists. |
 
 `Battery powered devices:` 
-If the device is in sleep mode and can't be reached by the binding, the Thing will change into UNKNOWN state.
+If the device is in sleep mode and can't be reached by the binding, the Thing will change into CONFIG_PENDING.
 Once the device wakes up, the Thing will perform initialization and the state will change to ONLINE.
 
 The first time a device is discovered and initialized successfully, the binding will be able to perform auto-initialization when OH is restarted.  Waking up the device triggers the event URL and/or CoIoT packet, which is processed by the binding and triggers initialization. Once a device is initialized, it is no longer necessary to manually wake it up after an openHAB restart unless you change the battery. In this case press the button and run the discovery again.
@@ -583,7 +590,7 @@ The Shelly 4Pro provides 4 relays and 4 power meters.
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
 
-`Note: The Dimmer should be calibrated using the Shelly App.`
+`Note: The Dimmer should be calibrated using the device Web UI or Shelly App.`
 
 Using the Thing configuration option `brightnessAutoOn` you could decide if the light is turned on when a brightness > 0 is set.
 `true`:  Brightness will be set and device output is powered = light turns on with the new brightness
@@ -815,10 +822,9 @@ You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see exa
 
 ### Shelly Motion (thing-type: shellymotion)
 
-Important: The Shelly Motion does only support CoIoT Unicast, which means you need to set the CoIoT peer address.
-
-- Use device WebUI, open COIOT settings, make sure CoIoT is enabled and enter the openHAB IP address or
-- Use [Shelly Manager](doc/ShellyManager.md, select Action 'Set CoIoT peer' and the Manager will sets the openHAB IP address as peer address
+Note: You might need to restart the device to enable the discovery mode for 3 minutes(use the Web UI). 
+As an alternativ you could press the reset button shortly (refer to the manual to locate the reset button).
+While the device is in low power mode (usual operation) it will not respond to discovery requests
 
 |Group     |Channel        |Type     |read-only|Description                                                          |
 |----------|---------------|---------|---------|---------------------------------------------------------------------|
@@ -841,8 +847,11 @@ Using 'sensorSleepTime' you could suppress motion events while leaving the room,
 
 ### Shelly TRV (thing-type: shellytrv)
 
-Note: You might need to reset the device for discovery. 
+Note: You might need to restart the device to enable the discovery mode for 3 minutes(use the Web UI). 
+As an alternativ you could press the reset button shortly (refer to the manual to locate the reset button).
 While the device is in low power mode (usual operation) it will not respond to discovery requests
+
+You should calibrate the valve using the device Web UI or Shelly App before starting to control it using openHAB.
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
@@ -866,7 +875,7 @@ While the device is in low power mode (usual operation) it will not respond to d
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-You should calibrate the sensor using the Shelly App to get information on the tilt status.
+You should calibrate the sensor using the device Web UI or Shelly App to get information on the tilt status.
 
 ### Shelly Smoke (thing-type: shellysmoke)
 
