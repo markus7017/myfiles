@@ -847,7 +847,7 @@ Using 'sensorSleepTime' you could suppress motion events while leaving the room,
 
 ### Shelly TRV (thing-type: shellytrv)
 
-Note: You might need to restart the device to enable the discovery mode for 3 minutes(use the Web UI). 
+Note: You might need to reboot the device to enable the discovery mode for 3 minutes(use the Web UI). 
 As an alternativ you could press the reset button shortly (refer to the manual to locate the reset button).
 While the device is in low power mode (usual operation) it will not respond to discovery requests
 
@@ -856,6 +856,7 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
+|          |valve        |String   |yes      |Valve status                                                           |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |control   |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
 |          |position     |Dimmer   |no       |Set valve to manual mode (0..100%) disables auto-temp)                 |
