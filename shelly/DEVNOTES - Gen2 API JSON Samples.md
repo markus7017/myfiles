@@ -1459,7 +1459,7 @@
 
 ```
 {
-	"name": null,
+	"name": "Test - Shelly Pro 2",
 	"id": "shellypro2-XXXXXXXXXXXX",
 	"mac": "XXXXXXXXXXXX",
 	"model": "SPSW-002XE16EU",
@@ -1536,7 +1536,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": null,
+				"name": "Test - Shelly Pro 2",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-144614/0.10.0-beta6-g15be642",
 				"eco_mode": false
