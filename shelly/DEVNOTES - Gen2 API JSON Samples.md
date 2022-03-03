@@ -820,12 +820,327 @@
 ### /rpc/Shelly.GetConfig
 
 ```
-
+{
+	"id": 1,
+	"src": "shellypro4pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {
+			"enable": false
+		},
+		"cloud": {
+			"enable": true,
+			"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+		},
+		"eth": {
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"input:0": {
+			"id": 0,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:1": {
+			"id": 1,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:2": {
+			"id": 2,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:3": {
+			"id": 3,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"mqtt": {
+			"enable": false,
+			"server": null,
+			"user": null,
+			"topic_prefix": null,
+			"rpc_ntf": true,
+			"status_ntf": false
+		},
+		"switch:0": {
+			"id": 0,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"switch:1": {
+			"id": 1,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"switch:2": {
+			"id": 2,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"switch:3": {
+			"id": 3,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"sys": {
+			"device": {
+				"name": "Test - 4Pro",
+				"mac": "XXXXXXXXXXXX",
+				"fw_id": "20220302-144124/0.10.0-beta6-g15be642",
+				"eco_mode": false
+			},
+			"location": {
+				"tz": "Europe/Berlin",
+				"lat": 0.00000,
+				"lon": 0.00000
+			},
+			"debug": {
+				"mqtt": {
+					"enable": false
+				},
+				"websocket": {
+					"enable": false
+				},
+				"udp": {
+					"addr": null
+				}
+			},
+			"ui_data": {},
+			"rpc_udp": {
+				"dst_addr": null,
+				"listen_port": null
+			},
+			"sntp": {
+				"server": "time.google.com"
+			},
+			"cfg_rev": 4
+		},
+		"ui": {
+			"idle_brightness": 30
+		},
+		"wifi": {
+			"ap": {
+				"ssid": "ShellyPro4PM-XXXXXXXXXXXX",
+				"is_open": true,
+				"enable": false
+			},
+			"sta": {
+				"ssid": "SSID",
+				"is_open": false,
+				"enable": true,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"sta1": {
+				"ssid": null,
+				"is_open": true,
+				"enable": false,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"roam": {
+				"rssi_thr": -80,
+				"interval": 60
+			}
+		}
+	}
+}
 ```
 
 ### /rpc/Shelly.GetStatus
 
 ```
+{
+	"id": 1,
+	"src": "shellypro4pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {},
+		"cloud": {
+			"connected": true
+		},
+		"eth": {
+			"ip": null
+		},
+		"input:0": {
+			"id": 0,
+			"state": false
+		},
+		"input:1": {
+			"id": 1,
+			"state": false
+		},
+		"input:2": {
+			"id": 2,
+			"state": false
+		},
+		"input:3": {
+			"id": 3,
+			"state": false
+		},
+		"mqtt": {
+			"connected": false
+		},
+		"switch:0": {
+			"id": 0,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 233.1,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646307959
+			},
+			"temperature": {
+				"tC": 26.6,
+				"tF": 80.0
+			}
+		},
+		"switch:1": {
+			"id": 1,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 233.1,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646307959
+			},
+			"temperature": {
+				"tC": 26.6,
+				"tF": 80.0
+			}
+		},
+		"switch:2": {
+			"id": 2,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 233.2,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646307958
+			},
+			"temperature": {
+				"tC": 26.6,
+				"tF": 80.0
+			}
+		},
+		"switch:3": {
+			"id": 3,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 233.2,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646307958
+			},
+			"temperature": {
+				"tC": 26.6,
+				"tF": 80.0
+			}
+		},
+		"sys": {
+			"mac": "XXXXXXXXXXXX",
+			"restart_required": false,
+			"time": "12:46",
+			"unixtime": 1646307960,
+			"uptime": 187,
+			"ram_size": 253196,
+			"ram_free": 137644,
+			"fs_size": 524288,
+			"fs_free": 282624,
+			"cfg_rev": 4,
+			"available_updates": {
+				"stable": {
+					"version": "0.9.3"
+				}
+			}
+		},
+		"ui": {},
+		"wifi": {
+			"sta_ip": "192.168.33.1",
+			"status": "got ip",
+			"ssid": "SSID",
+			"rssi": -58
+		}
+	}
+}
 ```
 
 ## Shelly plus i4
@@ -833,10 +1148,175 @@
 ### /rpc/Shelly.GetConfig
 
 ```
+{
+	"id": 1,
+	"src": "shellyplusi4-XXXXXXXXXXXX",
+	"result": {
+		"ble": {
+			"enable": false
+		},
+		"cloud": {
+			"enable": false,
+			"server": "iot.shelly.cloud:6012/jrpc"
+		},
+		"input:0": {
+			"id": 0,
+			"name": null,
+			"type": "switch",
+			"invert": false,
+			"factory_reset": true
+		},
+		"input:1": {
+			"id": 1,
+			"name": null,
+			"type": "switch",
+			"invert": false,
+			"factory_reset": true
+		},
+		"input:2": {
+			"id": 2,
+			"name": null,
+			"type": "switch",
+			"invert": false,
+			"factory_reset": true
+		},
+		"input:3": {
+			"id": 3,
+			"name": null,
+			"type": "switch",
+			"invert": false,
+			"factory_reset": true
+		},
+		"mqtt": {
+			"enable": false,
+			"server": null,
+			"user": null,
+			"topic_prefix": "shellyplusi4-XXXXXXXXXXXX",
+			"rpc_ntf": true,
+			"status_ntf": false
+		},
+		"sys": {
+			"device": {
+				"name": null,
+				"mac": "XXXXXXXXXXXX",
+				"fw_id": "20220302-145542/0.10.0-beta6-g15be642",
+				"eco_mode": false
+			},
+			"location": {
+				"tz": "Europe/Berlin",
+				"lat": 0.00000,
+				"lon": 0.00000
+			},
+			"debug": {
+				"mqtt": {
+					"enable": false
+				},
+				"websocket": {
+					"enable": false
+				},
+				"udp": {
+					"addr": null
+				}
+			},
+			"ui_data": {},
+			"rpc_udp": {
+				"dst_addr": null,
+				"listen_port": null
+			},
+			"sntp": {
+				"server": "time.google.com"
+			},
+			"cfg_rev": 5
+		},
+		"wifi": {
+			"ap": {
+				"ssid": "ShellyPlusI4-XXXXXXXXXXXX",
+				"is_open": true,
+				"enable": false
+			},
+			"sta": {
+				"ssid": "SSID",
+				"is_open": false,
+				"enable": true,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"sta1": {
+				"ssid": null,
+				"is_open": true,
+				"enable": false,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"roam": {
+				"rssi_thr": -80,
+				"interval": 60
+			}
+		}
+	}
+}
 ```
 
 ### /rpc/Shelly.GetStatus
 
 ```
+{
+	"id": 1,
+	"src": "shellyplusi4-XXXXXXXXXXXX",
+	"result": {
+		"ble": {},
+		"cloud": {
+			"connected": false
+		},
+		"input:0": {
+			"id": 0,
+			"state": false
+		},
+		"input:1": {
+			"id": 1,
+			"state": false
+		},
+		"input:2": {
+			"id": 2,
+			"state": false
+		},
+		"input:3": {
+			"id": 3,
+			"state": false
+		},
+		"mqtt": {
+			"connected": false
+		},
+		"sys": {
+			"mac": "XXXXXXXXXXXX",
+			"restart_required": false,
+			"time": "12:53",
+			"unixtime": 1646308417,
+			"uptime": 273,
+			"ram_size": 255548,
+			"ram_free": 159204,
+			"fs_size": 458752,
+			"fs_free": 225280,
+			"cfg_rev": 5,
+			"available_updates": {
+				"stable": {
+					"version": "i4prod1"
+				}
+			}
+		},
+		"wifi": {
+			"sta_ip": "192.168.33.1",
+			"status": "got ip",
+			"ssid": "SSID",
+			"rssi": -61
+		}
+	}
+}
 ```
 
