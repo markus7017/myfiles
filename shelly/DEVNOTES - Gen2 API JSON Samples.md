@@ -7,7 +7,18 @@
 #### /shelly
 
 ```
-
+{
+	"name": "Test - Shelly Plus 1",
+	"id": "shellyplus1-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSW-001X16EU",
+	"gen": 2,
+	"fw_id": "20220302-145102/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Plus1",
+	"auth_en": false,
+	"auth_domain": null
+}
 ```
 
 ##### /rpc/Shelly.GetConfig
@@ -51,7 +62,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": null,
+				"name": "Test - Shelly Plus 1",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-145102/0.10.0-beta6-g15be642",
 				"eco_mode": false
@@ -176,7 +187,18 @@
 #### /shelly
 
 ```
-
+{
+	"name": "Test - Shelly Plus 1PM",
+	"id": "shellyplus1pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSW-001P16EU",
+	"gen": 2,
+	"fw_id": "20220302-145236/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Plus1PM",
+	"auth_en": false,
+	"auth_domain": null
+}
 ```
 
 #### /rpc/Shelly.GetConfig
@@ -223,7 +245,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": null,
+				"name": "Test - Shelly Plus 1PM",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-145236/0.10.0-beta6-g15be642",
 				"eco_mode": false
@@ -355,12 +377,24 @@
 }
 ```
 
-### Shelly Plus 2PM (Relay Mode)
+### Shelly Plus 2PM (Relay/Switch Mode)
 
 #### /shelly
 
 ```
-
+{
+	"name": "Test - Shelly Plus 2PM",
+	"id": "shellyplus2pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSW-002P16EU",
+	"gen": 2,
+	"fw_id": "20220302-145415/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Plus2PM",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "switch"
+}
 ```
 
 #### /rpc/Shelly.GetConfig
@@ -427,7 +461,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": "Test - 2PM plus",
+				"name": "Test - Shelly Plus 2PM",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-145415/0.10.0-beta6-g15be642",
 				"eco_mode": true,
@@ -583,12 +617,24 @@
 }
 ```
 
-### Shelly Plus 2PM (Roller Mode)
+### Shelly Plus 2PM (Roller/Cover Mode)
 
 #### /shelly
 
 ```
-
+{
+	"name": "Test - Shelly Plus 2PM",
+	"id": "shellyplus2pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSW-002P16EU",
+	"gen": 2,
+	"fw_id": "20220302-145415/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Plus2PM",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "cover"
+}
 ```
 
 #### /rpc/Shelly.GetConfig
@@ -658,7 +704,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": "Test - 2PM plus",
+				"name": "Test - Shelly Plus 2PM",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-145415/0.10.0-beta6-g15be642",
 				"eco_mode": true,
@@ -798,7 +844,18 @@
 #### /shelly
 
 ```
-
+{
+	"name": "Test - Shelly Plus i4",
+	"id": "shellyplusi4-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSN-0024X",
+	"gen": 2,
+	"fw_id": "20220302-145542/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "PlusI4",
+	"auth_en": false,
+	"auth_domain": null
+}
 ```
 
 #### /rpc/Shelly.GetConfig
@@ -853,7 +910,7 @@
 		},
 		"sys": {
 			"device": {
-				"name": null,
+				"name": "Test - Shelly Plus i4",
 				"mac": "XXXXXXXXXXXX",
 				"fw_id": "20220302-145542/0.10.0-beta6-g15be642",
 				"eco_mode": false
@@ -2104,6 +2161,23 @@
 ```
 
 ### Shelly Pro 4PM
+
+#### /shelly
+
+```
+{
+	"name": "Test - 4Pro",
+	"id": "shellypro4pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SPSW-004PE16EU",
+	"gen": 2,
+	"fw_id": "20220302-144124/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Pro4PM",
+	"auth_en": false,
+	"auth_domain": null
+}
+```
 
 #### /rpc/Shelly.GetConfig
 
