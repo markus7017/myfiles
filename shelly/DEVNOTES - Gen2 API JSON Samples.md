@@ -764,16 +764,218 @@
 ### /shelly
 
 ```
+{
+	"name": null,
+	"id": "shellypro2-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SPSW-002XE16EU",
+	"gen": 2,
+	"fw_id": "20220302-144614/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Pro2",
+	"auth_en": false,
+	"auth_domain": null
+}
 ```
 
 ### /rpc/Shelly.GetConfig
 
 ```
+{
+	"id": 1,
+	"src": "shellypro2-XXXXXXXXXXXX",
+	"result": {
+		"ble": {
+			"enable": false
+		},
+		"cloud": {
+			"enable": true,
+			"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+		},
+		"eth": {
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"input:0": {
+			"id": 0,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:1": {
+			"id": 1,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"mqtt": {
+			"enable": false,
+			"server": null,
+			"user": null,
+			"topic_prefix": "shellypro2-XXXXXXXXXXXX",
+			"rpc_ntf": true,
+			"status_ntf": false
+		},
+		"switch:0": {
+			"id": 0,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0
+		},
+		"switch:1": {
+			"id": 1,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0
+		},
+		"sys": {
+			"device": {
+				"name": null,
+				"mac": "XXXXXXXXXXXX",
+				"fw_id": "20220302-144614/0.10.0-beta6-g15be642",
+				"eco_mode": false
+			},
+			"location": {
+				"tz": "Europe/Berlin",
+				"lat": 0.00000,
+				"lon": 0.00000
+			},
+			"debug": {
+				"mqtt": {
+					"enable": false
+				},
+				"websocket": {
+					"enable": false
+				},
+				"udp": {
+					"addr": null
+				}
+			},
+			"ui_data": {},
+			"rpc_udp": {
+				"dst_addr": null,
+				"listen_port": null
+			},
+			"sntp": {
+				"server": "time.google.com"
+			},
+			"cfg_rev": 11
+		},
+		"wifi": {
+			"ap": {
+				"ssid": "ShellyPro2-XXXXXXXXXXXX",
+				"is_open": true,
+				"enable": false
+			},
+			"sta": {
+				"ssid": "SSID",
+				"is_open": false,
+				"enable": true,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"sta1": {
+				"ssid": null,
+				"is_open": true,
+				"enable": false,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"roam": {
+				"rssi_thr": -80,
+				"interval": 60
+			}
+		}
+	}
+}
 ```
 
 ### /rpc/Shelly.GetStatus
 
 ```
+{
+	"id": 1,
+	"src": "shellypro2-XXXXXXXXXXXX",
+	"result": {
+		"ble": {},
+		"cloud": {
+			"connected": true
+		},
+		"eth": {
+			"ip": null
+		},
+		"input:0": {
+			"id": 0,
+			"state": false
+		},
+		"input:1": {
+			"id": 1,
+			"state": false
+		},
+		"mqtt": {
+			"connected": false
+		},
+		"switch:0": {
+			"id": 0,
+			"source": "init",
+			"output": false,
+			"temperature": {
+				"tC": 26.4,
+				"tF": 79.6
+			}
+		},
+		"switch:1": {
+			"id": 1,
+			"source": "init",
+			"output": false,
+			"temperature": {
+				"tC": 27.6,
+				"tF": 81.7
+			}
+		},
+		"sys": {
+			"mac": "XXXXXXXXXXXX",
+			"restart_required": false,
+			"time": "13:20",
+			"unixtime": 1646310035,
+			"uptime": 222,
+			"ram_size": 254336,
+			"ram_free": 132700,
+			"fs_size": 524288,
+			"fs_free": 290816,
+			"cfg_rev": 11,
+			"available_updates": {
+				"stable": {
+					"version": "0.9.3"
+				}
+			}
+		},
+		"wifi": {
+			"sta_ip": "192.168.33.1",
+			"status": "got ip",
+			"ssid": "SSID",
+			"rssi": -66
+		}
+	}
+}
 ```
 
 ## Shelly plus 2PM (Relay Mode)
@@ -1202,21 +1404,492 @@
 }
 ```
 
-## Shelly Pro 2PM
+## Shelly Pro 2PM (Relay/Switch Mode)
 
 ### /shelly
 
 ```
+{
+	"name": "Test - Shelly Pro 2PM",
+	"id": "shellypro2pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SPSW-002PE16EU",
+	"gen": 2,
+	"fw_id": "20220302-144753/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Pro2PM",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "switch"
+}
 ```
 
 ### /rpc/Shelly.GetConfig
 
 ```
+{
+	"id": 1,
+	"src": "shellypro2pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {
+			"enable": false
+		},
+		"cloud": {
+			"enable": true,
+			"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+		},
+		"eth": {
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"input:0": {
+			"id": 0,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:1": {
+			"id": 1,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"mqtt": {
+			"enable": false,
+			"server": null,
+			"user": null,
+			"topic_prefix": "shellypro2pm-XXXXXXXXXXXX",
+			"rpc_ntf": true,
+			"status_ntf": false
+		},
+		"switch:0": {
+			"id": 0,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"switch:1": {
+			"id": 1,
+			"name": null,
+			"in_mode": "follow",
+			"initial_state": "match_input",
+			"auto_on": false,
+			"auto_on_delay": 60.0,
+			"auto_off": false,
+			"auto_off_delay": 60.0,
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0
+		},
+		"sys": {
+			"device": {
+				"name": "Test - Shelly Pro 2PM",
+				"mac": "XXXXXXXXXXXX",
+				"fw_id": "20220302-144753/0.10.0-beta6-g15be642",
+				"eco_mode": false,
+				"profile": "switch"
+			},
+			"location": {
+				"tz": "Europe/Berlin",
+				"lat": 0.00000,
+				"lon": 0.00000
+			},
+			"debug": {
+				"mqtt": {
+					"enable": false
+				},
+				"websocket": {
+					"enable": false
+				},
+				"udp": {
+					"addr": null
+				}
+			},
+			"ui_data": {},
+			"rpc_udp": {
+				"dst_addr": null,
+				"listen_port": null
+			},
+			"sntp": {
+				"server": "time.google.com"
+			},
+			"cfg_rev": 12
+		},
+		"wifi": {
+			"ap": {
+				"ssid": "ShellyPro2PM-XXXXXXXXXXXX",
+				"is_open": true,
+				"enable": false
+			},
+			"sta": {
+				"ssid": "SSID",
+				"is_open": false,
+				"enable": true,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"sta1": {
+				"ssid": null,
+				"is_open": true,
+				"enable": false,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"roam": {
+				"rssi_thr": -80,
+				"interval": 60
+			}
+		}
+	}
+}
 ```
 
 ### /rpc/Shelly.GetStatus
 
 ```
+{
+	"id": 1,
+	"src": "shellypro2pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {},
+		"cloud": {
+			"connected": true
+		},
+		"eth": {
+			"ip": null
+		},
+		"input:0": {
+			"id": 0,
+			"state": false
+		},
+		"input:1": {
+			"id": 1,
+			"state": false
+		},
+		"mqtt": {
+			"connected": false
+		},
+		"switch:0": {
+			"id": 0,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 0.0,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646310206
+			},
+			"temperature": {
+				"tC": 26.8,
+				"tF": 80.3
+			}
+		},
+		"switch:1": {
+			"id": 1,
+			"source": "init",
+			"output": false,
+			"apower": 0.0,
+			"voltage": 0.0,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 1646310206
+			},
+			"temperature": {
+				"tC": 28.0,
+				"tF": 82.4
+			}
+		},
+		"sys": {
+			"mac": "XXXXXXXXXXXX",
+			"restart_required": false,
+			"time": "13:27",
+			"unixtime": 1646310429,
+			"uptime": 219,
+			"ram_size": 253248,
+			"ram_free": 129688,
+			"fs_size": 524288,
+			"fs_free": 282624,
+			"cfg_rev": 12,
+			"available_updates": {
+				"stable": {
+					"version": "0.9.3"
+				}
+			}
+		},
+		"wifi": {
+			"sta_ip": "192.168.33.1",
+			"status": "got ip",
+			"ssid": "SSID",
+			"rssi": -59
+		}
+	}
+}
+```
+
+## Shelly Pro 2PM (Roller/Cover Mode)
+
+### /shelly
+
+```
+{
+	"name": "Test - Shelly Pro 2PM",
+	"id": "shellypro2pm-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SPSW-002PE16EU",
+	"gen": 2,
+	"fw_id": "20220302-144753/0.10.0-beta6-g15be642",
+	"ver": "0.10.0-beta6",
+	"app": "Pro2PM",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "cover"
+}
+```
+
+### /rpc/Shelly.GetConfig
+
+```
+{
+	"id": 1,
+	"src": "shellypro2pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {
+			"enable": false
+		},
+		"cloud": {
+			"enable": true,
+			"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+		},
+		"cover:0": {
+			"id": 0,
+			"name": null,
+			"motor": {
+				"idle_power_thr": 2.0
+			},
+			"maxtime_open": 60.0,
+			"maxtime_close": 60.0,
+			"initial_state": "stopped",
+			"invert_directions": false,
+			"in_mode": "dual",
+			"swap_inputs": false,
+			"safety_switch": {
+				"enable": false,
+				"direction": "both",
+				"action": "stop",
+				"allowed_move": null
+			},
+			"power_limit": 4480,
+			"voltage_limit": 280,
+			"current_limit": 16.0,
+			"obstruction_detection": {
+				"enable": false,
+				"direction": "both",
+				"action": "stop",
+				"power_thr": 1000,
+				"holdoff": 1.0
+			}
+		},
+		"eth": {
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"input:0": {
+			"id": 0,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"input:1": {
+			"id": 1,
+			"name": null,
+			"type": "switch",
+			"invert": false
+		},
+		"mqtt": {
+			"enable": false,
+			"server": null,
+			"user": null,
+			"topic_prefix": "shellypro2pm-XXXXXXXXXXXX",
+			"rpc_ntf": true,
+			"status_ntf": false
+		},
+		"sys": {
+			"device": {
+				"name": "Test - Shelly Pro 2PM",
+				"mac": "XXXXXXXXXXXX",
+				"fw_id": "20220302-144753/0.10.0-beta6-g15be642",
+				"eco_mode": false,
+				"profile": "cover"
+			},
+			"location": {
+				"tz": "Europe/Berlin",
+				"lat": 0.00000,
+				"lon": 0.00000
+			},
+			"debug": {
+				"mqtt": {
+					"enable": false
+				},
+				"websocket": {
+					"enable": false
+				},
+				"udp": {
+					"addr": null
+				}
+			},
+			"ui_data": {},
+			"rpc_udp": {
+				"dst_addr": null,
+				"listen_port": null
+			},
+			"sntp": {
+				"server": "time.google.com"
+			},
+			"cfg_rev": 13
+		},
+		"wifi": {
+			"ap": {
+				"ssid": "ShellyPro2PM-XXXXXXXXXXXX",
+				"is_open": true,
+				"enable": false
+			},
+			"sta": {
+				"ssid": "XXXXXXXXXXXX",
+				"is_open": false,
+				"enable": true,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"sta1": {
+				"ssid": null,
+				"is_open": true,
+				"enable": false,
+				"ipv4mode": "dhcp",
+				"ip": null,
+				"netmask": null,
+				"gw": null,
+				"nameserver": null
+			},
+			"roam": {
+				"rssi_thr": -80,
+				"interval": 60
+			}
+		}
+	}
+}
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+{
+	"id": 1,
+	"src": "shellypro2pm-XXXXXXXXXXXX",
+	"result": {
+		"ble": {},
+		"cloud": {
+			"connected": true
+		},
+		"cover:0": {
+			"id": 0,
+			"source": "init",
+			"state": "stopped",
+			"apower": 0.0,
+			"voltage": 0.0,
+			"current": 0.0,
+			"pf": 0.0,
+			"aenergy": {
+				"total": 0.0,
+				"by_minute": [
+					0.0,
+					0.0,
+					0.0
+				],
+				"minute_ts": 0
+			},
+			"temperature": {
+				"tC": 28.0,
+				"tF": 82.4
+			},
+			"pos_control": false
+		},
+		"eth": {
+			"ip": null
+		},
+		"input:0": {
+			"id": 0,
+			"state": false
+		},
+		"input:1": {
+			"id": 1,
+			"state": false
+		},
+		"mqtt": {
+			"connected": false
+		},
+		"sys": {
+			"mac": "XXXXXXXXXXXX",
+			"restart_required": false,
+			"time": "13:30",
+			"unixtime": 1646310644,
+			"uptime": 150,
+			"ram_size": 237796,
+			"ram_free": 140768,
+			"fs_size": 524288,
+			"fs_free": 282624,
+			"cfg_rev": 13,
+			"available_updates": {
+				"stable": {
+					"version": "0.9.3"
+				}
+			}
+		},
+		"wifi": {
+			"sta_ip": "192.168.33.1",
+			"status": "got ip",
+			"ssid": "SSID",
+			"rssi": -60
+		}
+	}
+}
 ```
 
 ## Shelly Pro 4PM
