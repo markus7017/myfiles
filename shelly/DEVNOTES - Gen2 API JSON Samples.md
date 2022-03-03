@@ -1,15 +1,16 @@
 # Gen 2 Device API JSON Sample Data
 
-## Shelly plus 1PM
+## Shelly plus 1
 
 ### /rpc/Shelly.GetConfig
 
 ```
-{	"id": 1,
-	"src": "shellyplus1pm-XXXXXXXXXXXX",
+{
+	"id": 1,
+	"src": "shellyplus1-XXXXXXXXXXXX",
 	"result": {
 		"ble": {
-			"enable": true
+			"enable": false
 		},
 		"cloud": {
 			"enable": true,
@@ -26,7 +27,6 @@
 			"enable": false,
 			"server": null,
 			"user": null,
-			"pass": null,
 			"topic_prefix": null,
 			"rpc_ntf": true,
 			"status_ntf": false
@@ -39,16 +39,13 @@
 			"auto_on": false,
 			"auto_on_delay": 60.0,
 			"auto_off": false,
-			"auto_off_delay": 60.0,
-			"power_limit": null,
-			"voltage_limit": 280,
-			"current_limit": 16.0
+			"auto_off_delay": 60.0
 		},
 		"sys": {
 			"device": {
 				"name": null,
 				"mac": "XXXXXXXXXXXX",
-				"fw_id": "20220117-162947/0.9.3-g354c141",
+				"fw_id": "20220302-145102/0.10.0-beta6-g15be642",
 				"eco_mode": false
 			},
 			"location": {
@@ -79,7 +76,7 @@
 		},
 		"wifi": {
 			"ap": {
-				"ssid": "ShellyPlus1PM-XXXXXXXXXXXX",
+				"ssid": "ShellyPlus1-XXXXXXXXXXXX",
 				"is_open": true,
 				"enable": false
 			},
@@ -117,7 +114,7 @@
 ```
 {
 	"id": 1,
-	"src": "shellyplus1pm-XXXXXXXXXXXX",
+	"src": "shellyplus1-XXXXXXXXXXXX",
 	"result": {
 		"ble": {},
 		"cloud": {
@@ -134,37 +131,25 @@
 			"id": 0,
 			"source": "init",
 			"output": false,
-			"apower": 0.0,
-			"voltage": 239.4,
-			"current": 0.0,
-			"aenergy": {
-				"total": 0.0,
-				"by_minute": [
-					0.0,
-					0.0,
-					0.0
-				],
-				"minute_ts": 1646295275
-			},
 			"temperature": {
-				"tC": 42.8,
-				"tF": 109.1
+				"tC": 47.1,
+				"tF": 116.9
 			}
 		},
 		"sys": {
 			"mac": "XXXXXXXXXXXX",
 			"restart_required": false,
-			"time": "09:14",
-			"unixtime": 1646295278,
-			"uptime": 376,
-			"ram_size": 264124,
-			"ram_free": 154420,
+			"time": "12:18",
+			"unixtime": 1646306284,
+			"uptime": 290,
+			"ram_size": 254956,
+			"ram_free": 155244,
 			"fs_size": 458752,
-			"fs_free": 229376,
+			"fs_free": 225280,
 			"cfg_rev": 1,
 			"available_updates": {
-				"beta": {
-					"version": "0.10.0-beta6"
+				"stable": {
+					"version": "0.9.3"
 				}
 			}
 		},
@@ -172,9 +157,105 @@
 			"sta_ip": "192.168.33.1",
 			"status": "got ip",
 			"ssid": "SSID",
-			"rssi": -55
+			"rssi": -64
 		}
 	}
 }
+```
+
+## Shelly pro 1
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly plus 1PM
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly pro 1PM
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly pro 2
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly plus 2PM
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly pro 2PM
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly pro 4PM
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
+```
+
+## Shelly plus i4
+
+### /rpc/Shelly.GetConfig
+
+```
+```
+
+### /rpc/Shelly.GetStatus
+
+```
 ```
 
