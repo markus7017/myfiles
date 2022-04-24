@@ -1033,6 +1033,190 @@
 }
 ```
 
+### Shelly Plus H&T (battery operated)
+
+#### /shelly
+
+```
+{
+	"name": "Test Plus H&T",
+	"id": "shellyplusht-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"model": "SNSN-0013A",
+	"gen": 2,
+	"fw_id": "20220421-144231/plushtbeta1-g4e5dc3e",
+	"ver": "plushtbeta1",
+	"app": "PlusHT",
+	"auth_en": false,
+	"auth_domain": null
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"devicepower:0": {},
+	"ht_ui": {
+		"temperature_unit": "C"
+	},
+	"humidity:0": {
+		"id": 0,
+		"name": null,
+		"report_thr": 5
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyplusht-30839809dd6c",
+		"user": null,
+		"topic_prefix": "shellyplusht-30839809dd6c",
+		"rpc_ntf": true,
+		"status_ntf": false
+	},
+	"sys": {
+		"device": {
+			"name": "Test Plus H&T",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20220421-144231/plushtbeta1-g4e5dc3e",
+			"discoverable": true
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"sleep": {
+			"wakeup_period": 43200
+		},
+		"cfg_rev": 10
+	},
+	"temperature:0": {
+		"id": 0,
+		"name": null,
+		"report_thr_C": 1.0
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyPlusHT-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": false
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "static",
+			"ip": "192.168.33.2",
+			"netmask": "255.255.255.0",
+			"gw": "192.168.33.1",
+			"nameserver": "192.168.33.1"
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"devicepower:0": {
+		"id": 0,
+		"battery": {
+			"V": 6.08,
+			"percent": 89
+		},
+		"external": {
+			"present": false
+		}
+	},
+	"ht_ui": {},
+	"humidity:0": {
+		"id": 0,
+		"rh": 43.2
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "08:11",
+		"unixtime": 1650780678,
+		"uptime": 67,
+		"ram_size": 239544,
+		"ram_free": 166580,
+		"fs_size": 458752,
+		"fs_free": 196608,
+		"cfg_rev": 10,
+		"available_updates": {
+			"stable": {
+				"version": "plushtprod0"
+			}
+		},
+		"wakeup_reason": {
+			"boot": "deepsleep_wake",
+			"cause": "button"
+		}
+	},
+	"temperature:0": {
+		"id": 0,
+		"tC": 26.4,
+		"tF": 79.5
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -54
+	}
+}
+```
+
 ## Pro Series
 
 ### Shelly Pro 1
