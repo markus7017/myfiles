@@ -27,6 +27,8 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 
 ## Supported Devices
 
+Generation 1:
+
 | thing-type         | Model                                                  | Vendor ID |
 |--------------------|--------------------------------------------------------|-----------|
 | shelly1            | Shelly 1 Single Relay Switch                           | SHSW-1    |
@@ -63,6 +65,28 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellysense        | Shelly Motion and IR Controller                        | SHSEN-1   |
 | shellytrv          | Shelly TRV                                             | SHTRV-01  |
 | shellydevice       | A password protected Shelly device or an unknown type  |           |
+
+Generation 2 Plus series:
+
+| thing-type         | Model                                                     | Vendor ID      |
+|--------------------|-----------------------------------------------------------|----------------|
+| shellyplus1         | Shelly Plus 1 with 1xrelay                               | SNSW-001X16EU  |
+| shellyplus1pm       | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU  |
+| shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
+| shellyplus2pm-roller| Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU  |
+| shellyplusi4        | Shelly Plus i4 with 4xinput                              | SNSN-0024X     |
+| shellyplusht        | Shelly Plus HT with temp + humidity sensori              | SNSN-0013A     |
+
+Generation 2 Pro series:
+
+| shellypro1          | Shelly Pro 1 with 1xrelay                                | SPSW-001XE16EU |
+| shellypro1pm        | Shelly Pro 1 PM with 1xrelay + power meter               | SPSW-001PE16EU |
+| shellypro2-relay    | Shelly Pro 2 with 2xrelay, relay mode                    | SPSW-002XE16EU |
+| shellypro2-roller   | Shelly Pro 2 with 2xrelay, roller mode                   | SPSW-002XE16EU |
+| shellypro2pm-relay  | Shelly Pro 2 PM with 2xrelay + power meter, relay mode   | SPSW-002PE16EU |
+| shellypro2pm-roller | Shelly Pro 2 PM with 2xrelay + power meter, roller mode  | SPSW-002PE16EU |
+| shellypro4pm        | Shelly Pro 4 PM with 4xrelay + power meter               | SPSW-004PE16EU |
+
 
 ## Binding Configuration
 
@@ -271,7 +295,7 @@ Enable the autoCoIoT option in the binding configuration or eventsCoIoT in the T
 ### Button events
 
 Various devices signal an event when the physical button is pressed.
-This could be a switch connected to the SW input of the relay or the Button 1.
+This could be a switch connected to the SW input of the relay or the Button 1 or 2.
 
 The following trigger types are sent:
 
@@ -506,8 +530,9 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (reset on restart)      |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                     |
 
-The roller positioning calibration has to be performed using the Shelly App before the position can be set in percent.
+`Note: The Roller should be calibrated using the device Web UI or Shelly App, otherwise the position can .`
 
+The roller positioning calibration has to be performed using the Shelly Web UI or App before the position can be set in percent.
 Refer to [Smartify Roller Shutters with openHAB and Shelly](doc/UseCaseSmartRoller.md) for more information on roller integration. 
 
 ### Shelly 2.5 - relay mode (thing-type:shelly25-relay) 
@@ -541,8 +566,7 @@ For this the binding aggregates the power consumption of both relays and include
 |meter1    |             |         |         |See group meter1 for Shelly 2                                                        |
 |meter2    |             |         |         |See group meter1 for Shelly 2                                                        |
 
-The roller positioning calibration has to be performed using the Shelly App before the position can be set in percent. 
-
+The roller positioning calibration has to be performed using the Shelly Web UI or App before the position can be set in percent.
 Refer to [Smartify Roller Shutters with openHAB and Shelly](doc/UseCaseSmartRoller.md) for more information on roller integration. 
 
 ### Shelly4 Pro (thing-type: shelly4pro)
@@ -848,7 +872,7 @@ Using 'sensorSleepTime' you could suppress motion events while leaving the room,
 ### Shelly TRV (thing-type: shellytrv)
 
 Note: You might need to reboot the device to enable the discovery mode for 3 minutes(use the Web UI). 
-As an alternativ you could press the reset button shortly (refer to the manual to locate the reset button).
+As an alternative you could press the reset button shortly (refer to the manual to locate the reset button).
 While the device is in low power mode (usual operation) it will not respond to discovery requests
 
 You should calibrate the valve using the device Web UI or Shelly App before starting to control it using openHAB.
@@ -856,13 +880,17 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |sensors   |temperature  |Number   |yes      |Current Temperature in °C                                              |
-|          |valve        |String   |yes      |Valve status                                                           |
+|          |state        |Contact  |yes      |Valve status: OPEN or CLOSED (position = 0)                            |
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |control   |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
 |          |position     |Dimmer   |no       |Set valve to manual mode (0..100%) disables auto-temp)                 |
+|          |mode         |String   |no       |Switch between manual and automatic mode                               |
+|          |profile      |Number   |no       |Select profile: 0=disable, 1-n: profile index from Shelly Web App      |
+|          |boost        |Number   |no       |Enable/disable boost mode (full heating power)                         |
+|          |boostTimer   |Number   |no       |Number of minutes to heat at full power while boost mode is enabled    |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
-
+|device    |schedule     |Switch   |yes      |ON: Schedule is active                                                 |
 
 ### Shelly Button 1 or 2 (thing-type: shellybutton1 / shellybutton2)
 
@@ -876,8 +904,6 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-You should calibrate the sensor using the device Web UI or Shelly App to get information on the tilt status.
-
 ### Shelly Smoke (thing-type: shellysmoke)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
@@ -889,7 +915,7 @@ You should calibrate the sensor using the device Web UI or Shelly App to get inf
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |lowBattery   |Switch   |yes      |Low battery alert (< 20%)                                              |
 
-### Shelly Smoke(thing-type: shellysmoke)
+### Shelly Gas (thing-type: shellygas)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
