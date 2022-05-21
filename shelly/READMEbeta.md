@@ -22,8 +22,8 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 Suport openHAB version:
 - **3.3**: Current development branch. [Current DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.3.0-SNAPSHOT.jar)
 - **3.2**: Standard version is included in the official stable OH distribution, [Latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
-- **3.1**: No longer supported, [latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
-- **3.0**: No longer supported, [latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.3-SNAPSHOT.jar)
+- **3.1**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
+- **3.0**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.3-SNAPSHOT.jar)
 - **2.5**: No longer supported. [Last DEV  build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar)
 
 Be ware that there are
@@ -36,7 +36,8 @@ Make sure that the release version is not installed: Check that Shelly is not in
 
 There is no strict dependency on the OH base version, e.g. you could run binding 3.1-SNAPSNOT on top of openHAB 3.0.1.
 
-Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
+Gen1: Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
+Gen2: Use Shelly device firmware version 0.11 or newer
 
 ## Installing DEV build
 
@@ -135,7 +136,9 @@ CoIoT support for Gen1 devices:
 - open the thing properties ([Show Properties])
 - and copy&amp;paste the coapDescr property
 
-Create a new Issue here: https://github.com/openhab/openhab-addons/issues
+---
+
+Create a new Issue [here](https://github.com/openhab/openhab-addons/issues)
 Use [shelly] as prefix for the subject, add a specific title and exact description of the request.
 You might want to send me a PM to give me a heads-up that there is a new Issue, include the link
 
