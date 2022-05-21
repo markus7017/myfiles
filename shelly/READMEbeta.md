@@ -4,7 +4,7 @@ This Binding implements control for the Shelly series of devices.
 This includes sending commands to the devices as well as reading the device status and sensor data.
 
 Author: Markus Michels (markus7017)
-Check  https://community.openhab.org/t/shelly-binding/ for more information, questions and contributing ideas. Any comments are welcome!
+Check  https://community.openhab.org/t/shelly-binding/56862/2486?u=markus7017 for more information, questions and contributing ideas. Any comments are welcome!
 
 Also check section **Additional Information** at the end of the document.
 This includes some general comments, information how to debug and request new features.
@@ -19,21 +19,24 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 
 ## General Notes
 
-**openHAB 2.5.x**: Version 2.5.x of the distribution doesn't receive updates anymore. You can continue to use the Shelly binding, but you have to switch to the DEV build.
-
-**openHAB 3.x**: OH 3.x is fully supported. 
+Suport openHAB version:
+- **3.3**: Current development branch. [Current DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.3.0-SNAPSHOT.jar)
+- **3.2**: Standard version is included in the official stable OH distribution, [Latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
+- **3.1**: No longer supported, [latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
+- **3.0**: No longer supported, [latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.3-SNAPSHOT.jar)
+- **2.5**: No longer supported. [Last DEV  build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar)
 
 Be ware that there are
 - the release distro package, which includes a stable version of the binding
-- the official SNAPSHOT release / milestone builds, which might include a newer binding version, but will never be as current as the DEV build
-- the DEV build: Latest features and bug fixes (from the myfiles repo)
+- the official SNAPSHOT / milestone build could be found [here](https://openhab.jfrog.io/artifactory/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/), which might include a newer binding version, but will never be as current as the DEV build
+- the DEV build: Latest and archived versions could be found in [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly)
 
 If you want to use the SNAPSHOT/DEV build you can **NOT** install it using the UI. 
 Make sure that the release version is not installed: Check that Shelly is not installed, uninstall if so. 
 
 There is no strict dependency on the OH base version, e.g. you could run binding 3.1-SNAPSNOT on top of openHAB 3.0.1.
 
-Use device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to perform and update.
+Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
 
 ## Installing DEV build
 
@@ -41,13 +44,12 @@ Download the following files
 
 **Californium 2.0 libraries**
 You should skip the following 2 steps if you already have installed the Tradfi binding
-- [californium-core-2.0.0.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/californium-core-2.0.0.jar?raw=true)
-- [element-connector-2.0.0.jar from myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
+- [californium-core-2.0.0.jar from [myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/californium-core-2.0.0.jar?raw=true)
+- [element-connector-2.0.0.jar from [myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
 
 **Shelly Binding**
 
-- Download the jar from my myfiles repo on GitHub [2.5.13-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar?raw=true)
-or [3.1-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar?raw=true) .
+- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly).
 
 ### Installation
 
@@ -63,7 +65,7 @@ If everything was install correct a "bundle:list" output show be similar to this
 ```
 246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
 247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
-248 │ Installed │  80 │ 2.5.12.202012150845    │ openHAB Add-ons :: Bundles :: Shelly Binding
+248 │ Installed │  80 │ 3.3.ß.202205190845     │ openHAB Add-ons :: Bundles :: Shelly Binding
 ```
 ## Updating DEV version
 
@@ -80,14 +82,13 @@ Channel definitions are subject to change with any alpha or beta release. Please
 - the channel/item linkage should be restored automatically
   verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
 
-If you hit a problem make sure to post a TRACE log (or send PM) so I could look into the details.
-
 ## Additional Notes
 
 ### Reporting a problem/bug
 
-If you encounter a problem you could put the binding into DEBUG or TRACE mode.
 Check the [community thread](https://community.openhab.org/t/shelly-binding/) first - maybe others already solved the problem:.
+
+If you encounter a problem you could put the binding into DEBUG or TRACE mode.
 
 - open OH console (execute "openhab-cli console")
 - set the bindings's log level: "log:set DEBUG org.openhab.binding.shelly" or "log:set TRACE org.openhab.binding.shelly" for even more details
@@ -116,11 +117,19 @@ If you have one of those devices send me a PM and we could work on the implement
 
 You could help to integrate and support new devices. In general the following information is a good start
 
+For Gen1 devices:
+
 - open a browser and issue the following urls
 - http://&lt;device ip&gt;/settings
 - http://&lt;device ip&gt;/status
 
-once basic discovery is implemented the coapDiscription in the Thing properties is required
+For Gen2 devices:
+
+- open a browser and issue the following urls
+- http://&lt;device ip&gt;/rpc/Shelly.GetConfig
+- http://&lt;device ip&gt;/rpc/Shelly.GetStatus
+
+CoIoT support for Gen1 devices:
 
 - enable CoIoT events within the thing configuration
 - open the thing properties ([Show Properties])
