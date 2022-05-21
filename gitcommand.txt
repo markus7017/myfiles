@@ -1,0 +1,35 @@
+Signed-off-by: Markus Michels <markus7017@gmail.com> (github: markus7017) 
+
+# set remote to markus7017 repo
+git remote set-url origin https://github.com/markus7017/openhab-addons.git
+git fetch origin
+git remote set-url origin https://github.com/openhab/openhab-addons.git
+git remote set-url --push origin https://github.com/markus7017/openhab-addons.git
+git remote -v
+git fetch origin
+
+#rebase
+git fetch
+git rebase origin/main
+<resolve conflicts, use „git add“ for changed files>
+git rebase —continue
+git push origin +<your branch name>
+
+git push origin +gree_snapshot
+git push origin +rachio_snapshot
+
+#build .jar and .kar
+mvn clean install
+mvn karaf:kar
+
+#rename local and remote branch
+git branch -m fsinternetradio_sav
+git push origin :fsinternetradio_sav
+git push origin -u fsinternetradio_sav
+git branch
+
+git config --global credential.helper store
+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
+
+mvn spotless:apply
+mvn spotless:check -Dspotless.check.skip=false
