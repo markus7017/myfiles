@@ -12,7 +12,7 @@ git fetch origin
 git fetch
 git rebase origin/main
 <resolve conflicts, use „git add“ for changed files>
-git rebase —continue
+git rebase --continue
 git push origin +<your branch name>
 
 git push origin +gree_snapshot
