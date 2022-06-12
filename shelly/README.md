@@ -47,7 +47,8 @@ Generation 1:
 | shellyplugs        | Shelly Plug-S                                          | SHPLG-S   |
 | shellyem           | Shelly EM with integrated Power Meters                 | SHEM      |
 | shellyem3          | Shelly 3EM with 3 integrated Power Meter               | SHEM-3    |
-| shellyrgbw2        | Shelly RGB Controller                                  | SHRGBW2   |
+| shellyrgbw2-color  | Shelly RGBW2 Controller in Color Mode                  | SHRGBW2   |
+| shellyrgbw2-white  | Shelly RGBW2 Controller in White Mode                  | SHRGBW2   |
 | shellybulb         | Shelly Bulb in Color or White Mode                     | SHBLB-1   |
 | shellybulbduo      | Shelly Duo White                                       | SHBDUO-1  |
 | shellybulbduo      | Shelly Duo White G10                                   | SHBDUO-1  |
@@ -765,6 +766,8 @@ Channels in group `color`or `white`apply depending on the selected mode - they a
 Using the Thing configuration option `brightnessAutoOn` you could decide if the light is turned on when a brightness > 0 is set.
 `true`:  Brightness will be set and device output is powered = light turns on with the new brightness
 `false`: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
+
+### Shelly RGBW2 in Color Mode (thing-type: shellyrgbw2-color)
 
 ### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-white)
 
