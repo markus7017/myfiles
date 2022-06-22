@@ -27,7 +27,7 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 
 ## Supported Devices
 
-Generation 1:
+### Generation 1:
 
 | thing-type         | Model                                                  | Vendor ID |
 |--------------------|--------------------------------------------------------|-----------|
@@ -58,6 +58,7 @@ Generation 1:
 | shellyflood        | Shelly Flood Sensor                                    | SHWT-1    |
 | shellysmoke        | Shelly Smoke Sensor                                    | SHSM-1    |
 | shellymotion       | Shelly Motion Sensor                                   | SHMOS-01  |
+| shellymotion2      | Shelly Motion Sensor 2                                 | SHMOS-02  |
 | shellygas          | Shelly Gas Sensor                                      | SHGS-1    |
 | shellydw           | Shelly Door/Window                                     | SHDW-1    |
 | shellydw2          | Shelly Door/Window 2                                   | SHDW-2    |
@@ -67,10 +68,10 @@ Generation 1:
 | shellytrv          | Shelly TRV                                             | SHTRV-01  |
 | shellydevice       | A password protected Shelly device or an unknown type  |           |
 
-Generation 2 Plus series:
+### Generation 2 Plus series:
 
-| thing-type         | Model                                                     | Vendor ID      |
-|--------------------|-----------------------------------------------------------|----------------|
+| thing-type          | Model                                                    | Vendor ID      |
+|---------------------|----------------------------------------------------------|----------------|
 | shellyplus1         | Shelly Plus 1 with 1xrelay                               | SNSW-001X16EU  |
 | shellyplus1pm       | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU  |
 | shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
@@ -78,8 +79,10 @@ Generation 2 Plus series:
 | shellyplusi4        | Shelly Plus i4 with 4xinput                              | SNSN-0024X     |
 | shellyplusht        | Shelly Plus HT with temp + humidity sensori              | SNSN-0013A     |
 
-Generation 2 Pro series:
+### Generation 2 Pro series:
 
+| thing-type          | Model                                                    | Vendor ID      |
+|---------------------|----------------------------------------------------------|----------------|
 | shellypro1          | Shelly Pro 1 with 1xrelay                                | SPSW-001XE16EU |
 | shellypro1pm        | Shelly Pro 1 PM with 1xrelay + power meter               | SPSW-001PE16EU |
 | shellypro2-relay    | Shelly Pro 2 with 2xrelay, relay mode                    | SPSW-002XE16EU |
@@ -871,6 +874,23 @@ Use case for the 'sensorSleepTime':
 You have a Motion controlling your light. 
 You switch off the light and want to leave the room, but the motion sensor immediately switches light back on.
 Using 'sensorSleepTime' you could suppress motion events while leaving the room, e.g. for 5sec and the light doesn's switch on. 
+
+### Shelly Motion 2 (thing-type: shellymotion2)
+
+|Group     |Channel        |Type     |read-only|Description                                                          |
+|----------|---------------|---------|---------|---------------------------------------------------------------------|
+|sensors   |motion         |Switch   |yes      |ON: Motion was detected                                              |
+|          |motionTimestamp|DateTime |yes      |Time when motion started/was detected                                |
+|          |lux            |Number   |yes      |Brightness in Lux                                                    |
+|          |illumination   |String   |yes      |Current illumination: dark/twilight/bright                           |
+|          |temperature    |Number   |yes      |Temperature measured by the sensor                                   |
+|          |vibration      |Switch   |yes      |ON: Vibration detected                                               |
+|          |charger        |Switch   |yes      |ON: USB charging cable is connected external power supply activated. |
+|          |motionActive   |Switch   |yes      |ON: Motion detection is currently active                             |
+|          |sensorSleepTime|Number   |no       |Specifies the number of sec the sensor should not report events      ]
+|          |lastUpdate     |DateTime |yes      |Timestamp of the last update (any sensor value changed)              |
+|battery   |batteryLevel   |Number   |yes      |Battery Level in %                                                   |
+|          |lowBattery     |Switch   |yes      |Low battery alert (< 20%)                                            |
 
 ### Shelly TRV (thing-type: shellytrv)
 
