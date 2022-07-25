@@ -69,6 +69,30 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellytrv          | Shelly TRV                                             | SHTRV-01  |
 | shellydevice       | A password protected Shelly device or an unknown type  |           |
 
+### Generation 2 Plus series:
+
+| thing-type          | Model                                                    | Vendor ID      |
+|---------------------|----------------------------------------------------------|----------------|
+| shellyplus1         | Shelly Plus 1 with 1xrelay                               | SNSW-001X16EU  |
+| shellyplus1pm       | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU  |
+| shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
+| shellyplus2pm-roller| Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU  |
+| shellyplusi4        | Shelly Plus i4 with 4xinput                              | SNSN-0024X     |
+| shellyplusht        | Shelly Plus HT with temp + humidity sensori              | SNSN-0013A     |
+
+### Generation 2 Pro series:
+
+| thing-type          | Model                                                    | Vendor ID      |
+|---------------------|----------------------------------------------------------|----------------|
+| shellypro1          | Shelly Pro 1 with 1xrelay                                | SPSW-001XE16EU |
+| shellypro1pm        | Shelly Pro 1 PM with 1xrelay + power meter               | SPSW-001PE16EU |
+| shellypro2-relay    | Shelly Pro 2 with 2xrelay, relay mode                    | SPSW-002XE16EU |
+| shellypro2-roller   | Shelly Pro 2 with 2xrelay, roller mode                   | SPSW-002XE16EU |
+| shellypro2pm-relay  | Shelly Pro 2 PM with 2xrelay + power meter, relay mode   | SPSW-002PE16EU |
+| shellypro2pm-roller | Shelly Pro 2 PM with 2xrelay + power meter, roller mode  | SPSW-002PE16EU |
+| shellypro4pm        | Shelly Pro 4 PM with 4xrelay + power meter               | SPSW-004PE16EU |
+
+
 ## Binding Configuration
 
 The binding has the following configuration options:
@@ -747,22 +771,28 @@ Using the Thing configuration option `brightnessAutoOn` you could decide if the 
 `true`:  Brightness will be set and device output is powered = light turns on with the new brightness
 `false`: Brightness will be set, but output stays unchanged so light will not be switched on when it's currently off.
 
-### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-color)
+### Shelly RGBW2 in Color Mode (thing-type: shellyrgbw2-color)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 |control   |power        |Switch   |r/w      |Switch light ON/OFF                                                    |
-|          |input        |Switch   |yes      |State of Input                                                         |
-|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF; in sec            |
-|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON: in sec            |
+|          |autoOn       |Number   |r/w      |Sets a  timer to turn the device ON after every OFF command; in seconds|
+|          |autoOff      |Number   |r/w      |Sets a  timer to turn the device OFF after every ON command; in seconds|
 |          |timerActive  |Switch   |yes      |ON: An auto-on/off timer is active                                     |
-|color     |             |         |         |Color settings: only valid in COLOR mode                               |
-|          |hsb          |HSB      |r/w      |Represents the color picker (HSBType), control r/g/b, but not white    |
-|meter     |currentWatts |Number   |yes      |Current power consumption in Watts (all channels)                      |
-
-Please note that the settings of channel group color are only valid in color mode and vice versa for white mode.
-The current firmware doesn't support the timestamp report for the meters. 
-The binding emulates this by using the system time on every update.
+|color     |hsb          |HSB      |r/w      |Represents the color picker (HSBType), control r/g/b, bight not white  |
+|          |full         |String   |r/w      |Set Red / Green / Blue / Yellow / White mode and switch mode           |
+|          |             |         |r/w      |Valid settings: "red", "green", "blue", "yellow", "white" or "r,g,b,w" | 
+|          |red          |Dimmer   |r/w      |Red brightness: 0..100% or 0..255 (control only the red channel)       |
+|          |green        |Dimmer   |r/w      |Green brightness: 0..100% or 0..255 (control only the green channel)   |
+|          |blue         |Dimmer   |r/w      |Blue brightness: 0..100% or 0..255 (control only the blue channel)     |
+|          |white        |Dimmer   |r/w      |White brightness: 0..100% or 0..255 (control only the white channel)   |
+|          |gain         |Dimmer   |r/w      |Gain setting: 0..100%     or 0..100                                    |
+|          |effect       |Number   |r/w      |Puts the light into effect mode: 0..3)                                 |
+|          |             |         |         |0=No effect, 1=Meteor Shower, 2=Gradual Change, 3=Flash                |
+|meter     |currentWatts |Number   |yes      |Current power consumption in Watts                                     |
+|          |lastPower1   |Number   |yes      |Energy consumption for a round minute, 1 minute  ago                   |
+|          |totalKWH     |Number   |yes      |Total energy consumption in kWh since the device powered up (resets on restart)|
+|          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                      |
 
 ### Shelly RGBW2 in White Mode (thing-type: shellyrgbw2-white)
 
