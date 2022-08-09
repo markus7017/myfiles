@@ -2344,6 +2344,115 @@
 }
 ```
 
+### Shelly Pro 3
+
+#### /shelly
+
+### /rpc/Shelly.GetConfig
+
+```
+{
+   "ble":{
+      "enable":false
+   },
+   "cloud":{
+      "enable":false,
+      "server":"iot.shelly.cloud:6012/jrpc"
+   },
+   "mqtt":{
+      "enable":false,
+      "rpc_ntf":"true",
+      "status_ntf":"false"
+   },
+   "sys":{
+      "cfg_rev":7,
+      "device":{
+         "name":"testbed-shellypro3",
+         "mac":"84CCA87CD6EC",
+         "fw_id":"20220617-112519/0.10.3-g7c89a05",
+         "eco_mode":"false"
+      },
+      "location":{
+         "tz":"Europe/Berlin",
+         "lat":49.86571,
+         "lon":8.62604
+      },
+      "sntp":{
+         "server":"time.google.com"
+      },
+      "debug":{
+         "mqtt":{
+            "enable":false
+         },
+         "websocket":{
+            "enable":false
+         },
+         "udp":null
+      },
+      "ui_data":null,
+      "rpc_udp":{
+         
+      }
+   },
+   "wifi":{
+      "ap":{
+         "ssid":"ShellyPro3-84CCA87CD6EC",
+         "is_open":false
+      },
+      "sta":{
+         "ssid":"TurtlePineHouse",
+         "is_open":false,
+         "ipv4mode":"dhcp"
+      },
+      "sta1":{
+         "is_open":true,
+         "ipv4mode":"dhcp"
+      }
+   },
+   "input:0":{
+      "id":"0.0",
+      "type":"switch",
+      "invert":false
+   },
+   "input:1":{
+      "id":"1.0",
+      "type":"switch",
+      "invert":false
+   },
+   "input:2":{
+      "id":"2.0",
+      "type":"switch",
+      "invert":false
+   },
+   "switch:0":{
+      "id":"0.0",
+      "in_mode":"follow",
+      "initial_state":"match_input",
+      "auto_on":false,
+      "auto_on_delay":60.0,
+      "auto_off":false,
+      "auto_off_delay":60.0
+   },
+   "switch:1":{
+      "id":"1.0",
+      "in_mode":"follow",
+      "initial_state":"match_input",
+      "auto_on":false,
+      "auto_on_delay":60.0,
+      "auto_off":false,
+      "auto_off_delay":60.0
+   },
+   "switch:2":{
+      "id":"2.0",
+      "in_mode":"follow",
+      "initial_state":"match_input",
+      "auto_on":false,
+      "auto_on_delay":60.0,
+      "auto_off":false,
+      "auto_off_delay":60.0
+   }
+}```
+
 ### Shelly Pro 4PM
 
 #### /shelly
