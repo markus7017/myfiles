@@ -77,8 +77,8 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellyplus1pm       | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU  |
 | shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
 | shellyplus2pm-roller| Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU  |
-| shellyplusi4        | Shelly Plus i4 with 4xinput                              | SNSN-0024X     |
-| shellyplusht        | Shelly Plus HT with temp + humidity sensori              | SNSN-0013A     |
+| shellyplusi4        | Shelly Plus i4 with 4x input                             | SNSN-0024X     |
+| shellyplusht        | Shelly Plus HT with temperature + humidity sensor        | SNSN-0013A     |
 
 ### Generation 2 Pro series:
 
