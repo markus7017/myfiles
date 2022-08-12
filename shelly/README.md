@@ -73,26 +73,25 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 
 | thing-type          | Model                                                    | Vendor ID      |
 |---------------------|----------------------------------------------------------|----------------|
-| shellyplus1         | Shelly Plus 1 with 1x relay                              | SNSW-001X16EU  |
+| shellyplus1         | Shelly Plus 1 with 1xrelay                               | SNSW-001X16EU  |
 | shellyplus1pm       | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU  |
 | shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
 | shellyplus2pm-roller| Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU  |
-| shellyplusi4        | Shelly Plus i4 with 4x input                             | SNSN-0024X     |
-| shellyplusi4dc      | Shelly Plus i4 DC (5 - 24 V) with 4x input               | SNSN-0D24X     |
-| shellyplusht        | Shelly Plus HT with temperature + humidity sensor        | SNSN-0013A     |
+| shellyplusi4        | Shelly Plus i4 with 4x AC Input                          | SNSN-0024X     |
+| shellyplusi4dc      | Shelly Plus i4 with 4x DC Input                          | SNSN-0D24X     |
+| shellyplusht        | Shelly Plus HT with temp + humidity sensori              | SNSN-0013A     |
 
 ### Generation 2 Pro series:
 
 | thing-type          | Model                                                    | Vendor ID      |
 |---------------------|----------------------------------------------------------|----------------|
-| shellypro1          | Shelly Pro 1 with 1x relay                               | SPSW-001XE16EU |
-| shellypro1pm        | Shelly Pro 1 PM with 1x relay + power meter              | SPSW-001PE16EU |
-| shellypro2-relay    | Shelly Pro 2 with 2x relay, relay mode                   | SPSW-002XE16EU |
-| shellypro2-roller   | Shelly Pro 2 with 2x relay, roller mode                  | SPSW-002XE16EU |
-| shellypro2pm-relay  | Shelly Pro 2 PM with 2x relay + power meter, relay mode  | SPSW-002PE16EU |
-| shellypro2pm-roller | Shelly Pro 2 PM with 2x relay + power meter, roller mode | SPSW-002PE16EU |
-| shellypro3          | Shelly Pro 3 with 3x relay (dry contacts)                | SPSW-003XE16EU |
-| shellypro4pm        | Shelly Pro 4 PM with 4x relay + power meter              | SPSW-004PE16EU |
+| shellypro1          | Shelly Pro 1 with 1xrelay                                | SPSW-001XE16EU |
+| shellypro1pm        | Shelly Pro 1 PM with 1xrelay + power meter               | SPSW-001PE16EU |
+| shellypro2-relay    | Shelly Pro 2 with 2xrelay, relay mode                    | SPSW-002XE16EU |
+| shellypro2-roller   | Shelly Pro 2 with 2xrelay, roller mode                   | SPSW-002XE16EU |
+| shellypro2pm-relay  | Shelly Pro 2 PM with 2xrelay + power meter, relay mode   | SPSW-002PE16EU |
+| shellypro2pm-roller | Shelly Pro 2 PM with 2xrelay + power meter, roller mode  | SPSW-002PE16EU |
+| shellypro4pm        | Shelly Pro 4 PM with 4xrelay + power meter               | SPSW-004PE16EU |
 
 
 ## Binding Configuration
@@ -932,7 +931,7 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |control   |targetTemp   |Number   |no       |Temperature in °C: 4=Low/Min; 5..30=target temperature;31=Hi/Max       |
 |          |position     |Dimmer   |no       |Set valve to manual mode (0..100%) disables auto-temp)                 |
 |          |mode         |String   |no       |Switch between manual and automatic mode                               |
-|          |selectedProfile|Number   |no       |Select profile: 0=disable, 1-n: profile index from Shelly Web App    |
+|          |selectedProfile|String |no       |Select profile Id: "0"=disable, "1"-"n": profile index                 |
 |          |boost        |Number   |no       |Enable/disable boost mode (full heating power)                         |
 |          |boostTimer   |Number   |no       |Number of minutes to heat at full power while boost mode is enabled    |
 |          |schedule     |Switch   |yes      |ON: Schedule is active                                                 |
@@ -990,6 +989,8 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
 
+## Shelly Plus Series
+
 ### Shelly Plus 1 (thing-type: shellyplus1)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
@@ -1010,20 +1011,23 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
 
-### Shelly Plus i4 (thing-type: shellyplusi4)
+### Shelly Plus i4, i4DC (thing-types: shellyplusi4, shellyplusi4dc)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
-
-### Shelly Plus i4 DC (thing-type: shellyplusi4dc)
-
-|Group     |Channel      |Type     |read-only|Description                                                            |
-|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+|status    |input1       |Switch   |yes      |State of Input 1                                                       |
+|          |input2       |Switch   |yes      |State of Input 2                                                       |
+|          |input3       |Switch   |yes      |State of Input 3                                                       |
+|          |button       |Trigger  |yes      |Event trigger: Event trigger, see section Button Events                |
+|          |lastEvent    |String   |yes      |S/SS/SSS for 1/2/3x Shortpush or L for Longpush                        |
+|          |eventCount   |Number   |yes      |Counter gets incremented every time the device issues a button event.  |
 
 ### Shelly Plus HT (thing-type: shellyplusht)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+## Shelly Pro Series
 
 ### Shelly Pro 1 (thing-type: shellypro1)
 
@@ -1059,6 +1063,7 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
 
 
 ## Full Example
