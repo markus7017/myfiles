@@ -78,6 +78,7 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellyplus2pm-relay | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU  |
 | shellyplus2pm-roller| Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU  |
 | shellyplusi4        | Shelly Plus i4 with 4x input                             | SNSN-0024X     |
+| shellyplusi4dc      | Shelly Plus i4 DC (5 - 24 V) with 4x input               | SNSN-0D24X     |
 | shellyplusht        | Shelly Plus HT with temperature + humidity sensor        | SNSN-0013A     |
 
 ### Generation 2 Pro series:
@@ -90,6 +91,7 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shellypro2-roller   | Shelly Pro 2 with 2x relay, roller mode                  | SPSW-002XE16EU |
 | shellypro2pm-relay  | Shelly Pro 2 PM with 2x relay + power meter, relay mode  | SPSW-002PE16EU |
 | shellypro2pm-roller | Shelly Pro 2 PM with 2x relay + power meter, roller mode | SPSW-002PE16EU |
+| shellypro3          | Shelly Pro 3 with 3x relay (dry contacts)                | SPSW-003XE16EU |
 | shellypro4pm        | Shelly Pro 4 PM with 4x relay + power meter              | SPSW-004PE16EU |
 
 
@@ -987,6 +989,76 @@ You should calibrate the valve using the device Web UI or Shelly App before star
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last update (any sensor value changed)                |
 |battery   |batteryLevel |Number   |yes      |Battery Level in %                                                     |
 |          |batteryAlert |Switch   |yes      |Low battery alert                                                      |
+
+### Shelly Plus 1 (thing-type: shellyplus1)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus 1PM (thing-type: shellyplus1pm)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus 2PM - relay mode (thing-type: shellyplus2pm-relay)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus 2PM - roller mode (thing-type: shellyplus2pm-roller)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus i4 (thing-type: shellyplusi4)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus i4 DC (thing-type: shellyplusi4dc)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Plus HT (thing-type: shellyplusht)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 1 (thing-type: shellypro1)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 1 PM (thing-type: shellypro1pm)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 2 (thing-type: shellypro2-relay)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 2 PM - relay mode (thing-type: shellypro2pm-relay)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 2 PM - roller mode (thing-type: shellypro2pm-roller)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 3 (thing-type: shellypro3)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
+
+### Shelly Pro 4 PM (thing-type: shellypro4pm)
+
+|Group     |Channel      |Type     |read-only|Description                                                            |
+|----------|-------------|---------|---------|-----------------------------------------------------------------------|
 
 
 ## Full Example
