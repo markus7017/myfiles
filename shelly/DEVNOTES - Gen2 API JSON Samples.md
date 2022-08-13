@@ -1156,7 +1156,7 @@
 }
 ```
 
-#### /rpc/Shelly.GetStatus
+#### /rpc/Shelly.GetStatus (0.10)
 
 ```
 {
@@ -1214,6 +1214,77 @@
 		"ssid": "SSID",
 		"rssi": -54
 	}
+}
+```
+
+### /rpc&/Shelly.GetStatus (0.11beta3)
+
+```
+{
+   "ble":{
+      
+   },
+   "cloud":{
+      "connected":false
+   },
+   "devicepower:0":{
+      "id":0,
+      "battery":{
+         "V":6.18,
+         "percent":100
+      },
+      "external":{
+         "present":false
+      }
+   },
+   "ht_ui":{
+      
+   },
+   "humidity:0":{
+      "id":0,
+      "rh":42.0
+   },
+   "mqtt":{
+      "connected":false
+   },
+   "sys":{
+      "mac":"441793CCAC64",
+      "restart_required":false,
+      "time":"16:55",
+      "unixtime":1660402552,
+      "uptime":19,
+      "ram_size":249952,
+      "ram_free":143880,
+      "fs_size":458752,
+      "fs_free":176128,
+      "cfg_rev":9,
+      "kvs_rev":0,
+      "webhook_rev":0,
+      "available_updates":{
+         "stable":{
+            "version":"plushtprod1.2"
+         }
+      },
+      "wakeup_reason":{
+         "boot":"deepsleep_wake",
+         "cause":"button"
+      },
+      "wakeup_period":43200
+   },
+   "temperature:0":{
+      "id":0,
+      "tC":27.8,
+      "tF":82.0
+   },
+   "wifi":{
+      "sta_ip":"192.168.6.218",
+      "status":"got ip",
+      "ssid":"TurtlePineHouse",
+      "rssi":-59
+   },
+   "ws":{
+      "connected":true
+   }
 }
 ```
 
