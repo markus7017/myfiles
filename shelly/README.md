@@ -35,7 +35,6 @@ Also check out the [Shelly Manager](doc/ShellyManager.md), which
 | shelly1l           | Shelly 1L Single Relay Switch                          | SHSW-L    |
 | shelly1pm          | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
 | shelly2-relay      | Shelly Double Relay Switch in relay mode               | SHSW-21   |
-| shelly2-roller     | Shelly 2 in Roller Mode                                | SHSW-21   |
 | shelly25-relay     | Shelly 2.5 in Relay Switch                             | SHSW-25   |
 | shelly25-roller    | Shelly 2.5 in Roller Mode                              | SHSW-25   |
 | shelly4pro         | Shelly 4x Relay Switch                                 | SHSW-44   |
