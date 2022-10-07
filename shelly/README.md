@@ -186,8 +186,8 @@ The binding sets the following Thing status depending on the device status:
 | UNKNOWN        | Indicates that the status is currently unknown, which must not show a problem. Usually the Thing stays in this status when the device is in sleep mode. Once the device is reachable and was initialized the Thing switches to status ONLINE.|
 | ONLINE         | ONLINE indicates that the device can be accessed and is responding properly. Battery powered devices also stay ONLINE when in sleep mode. The binding has an integrated watchdog timer supervising the device, see below. The Thing switches to status OFFLINE when some type of communication error occurs. | 
 | OFFLINE        | Communication with the device failed. Check the Thing status in the UI and openHAB's log for an indication of the error. Try restarting OH or deleting and re-discovering the Thing. You could also post to the community thread if the problem persists. |
-| CONFIG PENDING | CONFIG PENDING description |
-| ERROR: COMM    | ERROR: COMM descritpion |
+| CONFIG PENDING | The thing has been initialized, but device initialization is in progress or pending (e.g. waiting for device wake-up). |
+| ERROR: COMM    | Communication with the device has reported an error, check detailed status. |
 
 `Battery powered devices:` 
 If the device is in sleep mode and can't be reached by the binding, the Thing will change into CONFIG_PENDING.
@@ -679,7 +679,7 @@ This information applies to the Shelly Duo-1 as well as the Duo White for the G1
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                      |
  
-#### Shelly Vintage (thing-type: shellyvintage)
+### Shelly Vintage (thing-type: shellyvintage)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
