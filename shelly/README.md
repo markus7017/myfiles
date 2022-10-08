@@ -695,7 +695,7 @@ This information applies to the Shelly Duo-1 as well as the Duo White for the G1
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                      |
  
-#### Shelly Vintage (thing-type: shellyvintage)
+### Shelly Vintage (thing-type: shellyvintage)
 
 |Group     |Channel      |Type     |read-only|Description                                                            |
 |----------|-------------|---------|---------|-----------------------------------------------------------------------|
