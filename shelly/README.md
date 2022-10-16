@@ -42,7 +42,7 @@ The binding provides the same feature set across all devices as good as possible
 | shelly1l           | Shelly 1L Single Relay Switch                          | SHSW-L    |
 | shelly1pm          | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
 | shelly2-relay      | Shelly Double Relay Switch in relay mode               | SHSW-21   |
-| shelly2-roller     | Shelly2 in Roller Mode                                 | SHSW-21   |
+| shelly2-roller     | Shelly 2 in Roller Mode                                | SHSW-21   |
 | shelly25-relay     | Shelly 2.5 in Relay Switch                             | SHSW-25   |
 | shelly25-roller    | Shelly 2.5 in Roller Mode                              | SHSW-25   |
 | shelly4pro         | Shelly 4x Relay Switch                                 | SHSW-44   |
@@ -120,7 +120,7 @@ This mode also overrules event settings in the Thing configuration. Disabling th
 
 'Generation 2:' 
 
-### Generation 2 (Plus
+### Generation 2 (Plus/Pro)
 
 ## Firmware
 
@@ -220,8 +220,8 @@ Communication errors are handled depending on the device type:
 The binding also monitors that the device is responding at least once within a given time period.
 The period is computed depending on the device type and configuration:
 
-- battery  powered devices: &lt;sleepPeriod from device config&gt; + 10min, usually 12h+10min=730min
-- else, if CoIoT or WevSocket is enabled: 3*&lt;update Period from device settings&gt;+10sec, usually3*15+10=45sec
+- battery  powered devices: &lt;sleep period from device config&gt; + 10min, usually 12h+10min=730min
+- else, if CoIoT or WebSocket is enabled: 3*&lt;update period from device settings&gt;+10sec, usually3*15+10=45sec
 - else 2*60+10sec = 130sec
 
 Once the timer expires the device switches to OFFFLINE and the bindings starts to re-initialize the device periodically. 
@@ -534,7 +534,7 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |          |totalKWH     |Number   |yes      |Total energy consumption in Watts since the device powered up (resets on restart)|
 |          |lastUpdate   |DateTime |yes      |Timestamp of the last measurement                                                |
 
-### Shelly 2 - roller mode thing-type: shelly2-roller)
+### Shelly 2 - roller mode (thing-type: shelly2-roller)
 
 |Group     |Channel      |Type     |read-only|Description                                                                           |
 |----------|-------------|---------|---------|--------------------------------------------------------------------------------------|
@@ -1029,9 +1029,9 @@ If the Shelly Add-On is installed:
 |          |temperature3 |Number   |yes      |Temperature value of external sensor #3                                          |
 |          |temperature4 |Number   |yes      |Temperature value of external sensor #4                                          |
 |          |temperature5 |Number   |yes      |Temperature value of external sensor #5                                          |
-|          |humidity     |Number   |yes      |Relative Humidity in percent                                                     |
+|          |humidity     |Number   |yes      |Relative humidity in percent                                                     |
 |          |voltage      |Number   |yes      |Measured voltage                                                                 |
-|          |analogInput  |Number   |yes      |Percentage of reference voltage (VREF) at analogous input                        |
+|          |analogInput  |Number   |yes      |Percentage of reference voltage (VREF) at analog input                           |
 |          |digitalInput |Switch   |yes      |State of digital input (ON/OFF)                                                  |
 
 ### Shelly Plus 1PM (thing-type: shellyplus1pm)
