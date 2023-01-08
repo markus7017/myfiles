@@ -2,7 +2,7 @@
 
 ## Plus Series
 
-#### Shelly Plus 1
+### Shelly Plus 1
 
 #### /shelly
 
@@ -2868,3 +2868,194 @@
 	}
 }
 ```
+
+
+## Shelly Dimmer US
+
+### Dimmer US /shelly
+
+{
+   "name":"shellydimmer-dining",
+   "id":"shellypluswdus-441793ccbf30",
+   "mac":"441793CCBF30",
+   "model":"SNDM-0013US",
+   "gen":2,
+   "fw_id":"20221206-143116/0.12.0-gafc2404",
+   "ver":"0.12.0",
+   "app":"PlusWallDimmer",
+   "auth_en":false,
+   "auth_domain":null
+}
+
+### Dimmer US Config
+
+{
+   "ble":{
+      "enable":false,
+      "rpc":{
+         "enable":true
+      }
+   },
+   "cloud":{
+      "enable":false,
+      "server":"iot.shelly.cloud:6012/jrpc"
+   },
+   "light:0":{
+      "id":0,
+      "name":null,
+      "initial_state":"restore_last",
+      "auto_on":false,
+      "auto_on_delay":60.00,
+      "auto_off":false,
+      "auto_off_delay":60.00,
+      "default":{
+         "brightness":50
+      },
+      "night_mode":{
+         "enable":false,
+         "brightness":50,
+         "active_between":[
+            
+         ]
+      }
+   },
+   "mqtt":{
+      "enable":false,
+      "server":null,
+      "client_id":"shellypluswdus-441793ccbf30",
+      "user":null,
+      "topic_prefix":"shellypluswdus-441793ccbf30",
+      "rpc_ntf":true,
+      "status_ntf":false,
+      "use_client_cert":false
+   },
+   "sys":{
+      "device":{
+         "name":"shellydimmer-dining",
+         "mac":"441793CCBF30",
+         "fw_id":"20221206-143116/0.12.0-gafc2404",
+         "discoverable":true,
+         "eco_mode":false
+      },
+      "location":{
+         "tz":"America/New_York",
+         "lat":27.424790,
+         "lon":-81.991850
+      },
+      "debug":{
+         "mqtt":{
+            "enable":false
+         },
+         "websocket":{
+            "enable":false
+         },
+         "udp":{
+            "addr":null
+         }
+      },
+      "ui_data":{
+         
+      },
+      "rpc_udp":{
+         "dst_addr":null,
+         "listen_port":null
+      },
+      "sntp":{
+         "server":"time.google.com"
+      },
+      "cfg_rev":10
+   },
+   "wd_ui":{
+      "sys_led_enable":true,
+      "power_led":"match_output"
+   },
+   "wifi":{
+      "ap":{
+         "ssid":"ShellyPlusWDUS-441793CCBF30",
+         "is_open":false,
+         "enable":false,
+         "range_extender":{
+            "enable":false
+         }
+      },
+      "sta":{
+         "ssid":"TurtlePineHouse",
+         "is_open":false,
+         "enable":true,
+         "ipv4mode":"dhcp",
+         "ip":null,
+         "netmask":null,
+         "gw":null,
+         "nameserver":null
+      },
+      "sta1":{
+         "ssid":null,
+         "is_open":true,
+         "enable":false,
+         "ipv4mode":"dhcp",
+         "ip":null,
+         "netmask":null,
+         "gw":null,
+         "nameserver":null
+      },
+      "roam":{
+         "rssi_thr":-80,
+         "interval":60
+      }
+   },
+   "ws":{
+      "enable":false,
+      "server":null,
+      "ssl_ca":"ca.pem"
+   }
+}
+
+### Dimmer US status
+
+{
+   "ble":{
+      
+   },
+   "cloud":{
+      "connected":false
+   },
+   "light:0":{
+      "id":0,
+      "source":"ui",
+      "output":false,
+      "brightness":43.0
+   },
+   "mqtt":{
+      "connected":false
+   },
+   "sys":{
+      "mac":"441793CCBF30",
+      "restart_required":false,
+      "time":"14:45",
+      "unixtime":1673120702,
+      "uptime":153785,
+      "ram_size":235924,
+      "ram_free":163572,
+      "fs_size":458752,
+      "fs_free":114688,
+      "cfg_rev":10,
+      "kvs_rev":0,
+      "schedule_rev":0,
+      "webhook_rev":0,
+      "available_updates":{
+         
+      }
+   },
+   "wd_ui":{
+      
+   },
+   "wifi":{
+      "sta_ip":"192.168.1.147",
+      "status":"got ip",
+      "ssid":"TurtlePineHouse",
+      "rssi":-48
+   },
+   "ws":{
+      "connected":false
+   }
+}
