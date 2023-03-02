@@ -20,8 +20,10 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 ## General Notes
 
 Suport openHAB version:
-- **3.3**: Current development branch. [Current DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.3.0-SNAPSHOT.jar)
-- **3.2**: Standard version is included in the official stable OH distribution, [Latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
+- **4.0**: Current DEV build [Current DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar)
+- **3.4**: Current DEV build [Current DEV build 3.4.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar)
+- **3.3**: As is, no longer maintained. [Current DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.3.0-SNAPSHOT.jar)
+- **3.2**: As is, no longer maintained.in the official stable OH distribution, [Latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
 - **3.1**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
 - **3.0**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.3-SNAPSHOT.jar)
 - **2.5**: No longer supported. [Last DEV  build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar)
@@ -37,38 +39,31 @@ Make sure that the release version is not installed: Check that Shelly is not in
 There is no strict dependency on the OH base version, e.g. you could run binding 3.1-SNAPSNOT on top of openHAB 3.0.1.
 
 Gen1: Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
-Gen2: Use Shelly device firmware version 0.11 or newer
+Gen2: Use Shelly device firmware version 0.12 or newer
 
 ## Installing DEV build
 
-Download the following files
+### New Install
 
-**Californium 2.0 libraries**
-You should skip the following 2 steps if you already have installed the Tradfi binding
-- [californium-core-2.0.0.jar from [myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/californium-core-2.0.0.jar?raw=true)
-- [element-connector-2.0.0.jar from [myfiles repo](https://github.com/markus7017/myfiles/blob/master/shelly/element-connector-2.0.0.jar?raw=true)
-
-**Shelly Binding**
-
-- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly).
-
-### Installation
-
-### New installation
+- Uninstall Shelly binding form UI
+- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar or org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar
+ -open OH console, run "feature:install openhab-transport-coap"
 - Stop OH
-- copy californium-core-2.0.0.jar to OH's addons folder
-- copy element-connector-2.0.0.jar to OH's addons folder
-- Start OH, wait until fully initialized(!)
 - copy org.openhab.binding.shelly-xxx-SNAPSHOT.jar to OH's addons folder
+- start OH, run discovery
 
 If everything was install correct a "bundle:list" output show be similar to this:
 
 ```
-246 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Core
-247 │ Installed │  80 │ 2.0.0                  │ Californium (Cf) Element Connector
-248 │ Installed │  80 │ 3.3.ß.202205190845     │ openHAB Add-ons :: Bundles :: Shelly Binding
+282 │ Active │ 80 │ 3.4.3.202302261653 │ openHAB Add-ons :: Bundles :: Shelly Binding Gen1+2
+283 │ Active │ 80 │ 0.3.0.v20220506-1020 │ EdDSA-Java
+284 │ Active │ 80 │ 2.7.4 │ Californium (Cf) Core
+285 │ Active │ 80 │ 2.7.4 │ Californium (Cf) Element Connector
+286 │ Active │ 80 │ 2.7.4 │ Californium (Cf) OSGi
+287 │ Active │ 80 │ 2.7.4 │ Scandium (Sc) Core
+248 │ Active │ 80 │ 3.4.0 202301190845     │ openHAB Add-ons :: Bundles :: Shelly Binding
 ```
-## Updating DEV version
+### Updating DEV version
 
 Channel definitions are subject to change with any alpha or beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
@@ -81,7 +76,7 @@ Channel definitions are subject to change with any alpha or beta release. Please
 - start oh service ("openhab-cli start")
 - **re-discover things**
 - the channel/item linkage should be restored automatically
-  verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
+- verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
 
 ## Additional Notes
 
