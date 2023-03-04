@@ -47,6 +47,7 @@ Gen2: Use Shelly device firmware version 0.12 or newer
 
 - Uninstall Shelly binding form UI
 - Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar or org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar
+  Note: If you download via curl or wget and not manually from the github UI you need to add ***?raw=true** to the URL to make sure getting a binary file
  -open OH console, run "feature:install openhab-transport-coap"
 - Stop OH
 - copy org.openhab.binding.shelly-xxx-SNAPSHOT.jar to OH's addons folder
@@ -77,6 +78,17 @@ Channel definitions are subject to change with any alpha or beta release. Please
 - **re-discover things**
 - the channel/item linkage should be restored automatically
 - verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
+
+### Binding does not start (does not show status=active), doesn't show up
+
+Sometimes there are left-overs when removing bindings. In this case try to
+
+- stop OH
+- run "openhab-cli clean-cache"
+- start OH wait a while until fully initialized
+- open OH console, run "feature:install openhab-transport-coap"
+- copy jar to addons folder
+- run bundle:list on the OH console and make sure, Shelly binding shows up with status active
 
 ## Additional Notes
 
