@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.openhab.binding.shelly.internal.handler.ShellyThingTable" configuration-policy="optional" deactivate="deactivate">
-  <service>
-    <provide interface="org.openhab.binding.shelly.internal.handler.ShellyThingTable"/>
-  </service>
-  <implementation class="org.openhab.binding.shelly.internal.handler.ShellyThingTable"/>
-</scr:component>
