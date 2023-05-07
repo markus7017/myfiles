@@ -184,10 +184,10 @@ Follow these steps to add the Shelly BLU Device to openHAB
 - Click the device button again, the binding gets another event and creates the channels and thing changes status to ONLINE
 - Finally link the channels to the equipment in the model
 
-Note: During initialization the script 'oh-blu-scanner.js' gets installed and activated on the Shelly Gateway devicde.
+Note: During initialization the script 'oh-blu-scanner.js' gets installed and activated on the Shelly Gateway device.
 
 Every time an event is received sensors#lastUpdate and channels are updated with the reported values.
-device#wifiSignal indicates the Bluetooth signal stregth and gets updated when the device sends an event.
+device#wifiSignal indicates the Bluetooth signal strength and gets updated when the device sends an event.
 
 The binding supports multiple Shelly Plus/Pro as gateway devices unless they are added as thing and are ONLINE.
 
