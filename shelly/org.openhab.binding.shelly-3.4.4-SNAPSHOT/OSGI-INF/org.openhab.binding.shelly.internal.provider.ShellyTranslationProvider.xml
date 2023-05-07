@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.4.0" name="org.openhab.binding.shelly.internal.provider.ShellyTranslationProvider" init="2">
+  <service>
+    <provide interface="org.openhab.binding.shelly.internal.provider.ShellyTranslationProvider"/>
+  </service>
+  <reference name="$000" interface="org.openhab.core.i18n.TranslationProvider" parameter="0"/>
+  <reference name="$001" interface="org.openhab.core.i18n.LocaleProvider" parameter="1"/>
+  <implementation class="org.openhab.binding.shelly.internal.provider.ShellyTranslationProvider"/>
+</scr:component>

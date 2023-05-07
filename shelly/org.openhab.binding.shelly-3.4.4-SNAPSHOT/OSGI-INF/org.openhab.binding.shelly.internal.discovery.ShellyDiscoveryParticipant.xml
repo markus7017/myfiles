@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.4.0" name="org.openhab.binding.shelly.internal.discovery.ShellyDiscoveryParticipant" modified="modified" init="5">
+  <service>
+    <provide interface="org.openhab.core.config.discovery.mdns.MDNSDiscoveryParticipant"/>
+  </service>
+  <reference name="$000" interface="org.osgi.service.cm.ConfigurationAdmin" parameter="0"/>
+  <reference name="$001" interface="org.openhab.core.io.net.http.HttpClientFactory" parameter="1"/>
+  <reference name="$002" interface="org.openhab.core.i18n.LocaleProvider" parameter="2"/>
+  <reference name="$003" interface="org.openhab.binding.shelly.internal.provider.ShellyTranslationProvider" parameter="3"/>
+  <implementation class="org.openhab.binding.shelly.internal.discovery.ShellyDiscoveryParticipant"/>
+</scr:component>

@@ -175,13 +175,16 @@ The binding can't communicate directly with the device, but the Plus/Pro series 
 The binding automatically installs a script on the Shelly Device (oh-blu-scanner), which forwards the BLU events to the binding using the WebSocket channel.
 
 Follow these steps to add the Shelly BLU Device to openHAB
-- Make sure the gateway device (which should be near the BLU device) is active and has Bluetooth enabled (the Bluetooth Gateway mode is not required)
+- Make sure a Shelly is near by the BLU device, enable Bluetooh on this device (the Bluetooth Gateway mode is not required)
 - Add this thing to openHAB, make sure thing gets online
-- Now press the button on your BLU device, this wakes upo the device and the script forwards this event to the binding
+- Enable "BLU Gateway Support" in the thing configuration of the Shelly device acting as gateway.
+- Now press the button on your BLU device, this wakes up the device and the script forwards this event to the binding
 - As a result the corresponding thing should show up in the Inbox
 - Add the thing (at this point no channels are created), the new thing will show status CONFIG_PENDING
 - Click the device button again, the binding gets another event and creates the channels and thing changes status to ONLINE
 - Finally link the channels to the equipment in the model
+
+Note: During initialization the script 'oh-blu-scanner.js' gets installed and activated on the Shelly Gateway devicde.
 
 Every time an event is received sensors#lastUpdate and channels are updated with the reported values.
 device#wifiSignal indicates the Bluetooth signal stregth and gets updated when the device sends an event.
