@@ -74,8 +74,9 @@
 	<logger name="org.jupnporg.jupnp" level="ERROR" />
 	<logger name="org.jupnp" level="ERROR" />
 
-		<Logger name="org.openhab.binding.connectedcar" level="TRACE" />
 		<Logger name="org.openhab.binding.shelly" level="DEBUG" />
+		<Logger name="org.openhab.binding.bthome" level="DEBUG" />
+		<Logger name="org.openhab.binding.connectedcar" level="TRACE" />
 		<Logger name="org.openhab.binding.magentatv" level="DEBUG" />
 		<Logger name="org.openhab.binding.gree" level="DEBUG" />
 		<Logger name="org.openhab.binding.carnet" level="DEBUG" />
