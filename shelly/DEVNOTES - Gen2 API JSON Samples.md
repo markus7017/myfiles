@@ -4819,3 +4819,336 @@
 	}
 }
 ```
+
+### Shelly Pro DualCover PM
+
+#### /shelly
+
+```
+{
+	"name": "Shelly Pro DualCover PM",
+	"id": "shellypro2cover-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"slot": 0,
+	"model": "SPSH-002PE16EU",
+	"gen": 2,
+	"fw_id": "20230803-125625/1.0.0-gaec0744",
+	"ver": "1.0.0",
+	"app": "Pro4PM",
+	"auth_en": false,
+	"auth_domain": null
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": true,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"cover:0": {
+		"id": 0,
+		"name": null,
+		"motor": {
+			"idle_power_thr": 2.0,
+			"idle_confirm_period": 0.25
+		},
+		"maxtime_open": 60.0,
+		"maxtime_close": 60.0,
+		"initial_state": "stopped",
+		"invert_directions": false,
+		"in_mode": "dual",
+		"swap_inputs": false,
+		"safety_switch": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"allowed_move": null
+		},
+		"power_limit": 4480,
+		"voltage_limit": 280,
+		"undervoltage_limit": 0,
+		"current_limit": 16.0,
+		"obstruction_detection": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"power_thr": 1000,
+			"holdoff": 1.0
+		}
+	},
+	"cover:1": {
+		"id": 1,
+		"name": null,
+		"motor": {
+			"idle_power_thr": 2.0,
+			"idle_confirm_period": 0.25
+		},
+		"maxtime_open": 60.0,
+		"maxtime_close": 60.0,
+		"initial_state": "stopped",
+		"invert_directions": false,
+		"in_mode": "dual",
+		"swap_inputs": false,
+		"safety_switch": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"allowed_move": null
+		},
+		"power_limit": 4480,
+		"voltage_limit": 280,
+		"undervoltage_limit": 0,
+		"current_limit": 16.0,
+		"obstruction_detection": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"power_thr": 1000,
+			"holdoff": 1.0
+		}
+	},
+	"eth": {
+		"enable": true,
+		"ipv4mode": "dhcp",
+		"ip": null,
+		"netmask": null,
+		"gw": null,
+		"nameserver": null
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "switch",
+		"invert": false
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "switch",
+		"invert": false
+	},
+	"input:2": {
+		"id": 2,
+		"name": null,
+		"type": "switch",
+		"invert": false
+	},
+	"input:3": {
+		"id": 3,
+		"name": null,
+		"type": "switch",
+		"invert": false
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellypro2cover-XXXXXXXXXXXX",
+		"user": null,
+		"topic_prefix": "shellypro2cover-XXXXXXXXXXXX",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Shelly Pro DualCover PM",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20230803-125625/1.0.0-gaec0744",
+			"discoverable": true,
+			"eco_mode": true
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 12
+	},
+	"ui": {
+		"idle_brightness": 30
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyPro2Cover-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": true,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"cover:0": {
+		"id": 0,
+		"source": "init",
+		"state": "stopped",
+		"apower": 0.0,
+		"voltage": 235.1,
+		"current": 0.0,
+		"pf": 0.0,
+		"freq": 50.0,
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1693411608
+		},
+		"temperature": {
+			"tC": 31.9,
+			"tF": 89.3
+		},
+		"pos_control": false,
+		"last_direction": null
+	},
+	"cover:1": {
+		"id": 1,
+		"source": "init",
+		"state": "stopped",
+		"apower": 0.0,
+		"voltage": 234.9,
+		"current": 0.0,
+		"pf": 0.0,
+		"freq": 50.0,
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1693411608
+		},
+		"temperature": {
+			"tC": 31.9,
+			"tF": 89.3
+		},
+		"pos_control": false,
+		"last_direction": null
+	},
+	"eth": {
+		"ip": null
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"input:1": {
+		"id": 1,
+		"state": false
+	},
+	"input:2": {
+		"id": 2,
+		"state": false
+	},
+	"input:3": {
+		"id": 3,
+		"state": false
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "18:06",
+		"unixtime": 1693411608,
+		"uptime": 83,
+		"ram_size": 255676,
+		"ram_free": 72108,
+		"fs_size": 524288,
+		"fs_free": 196608,
+		"cfg_rev": 12,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"available_updates": {}
+	},
+	"ui": {},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -58
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
