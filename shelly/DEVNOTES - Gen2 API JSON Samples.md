@@ -1954,6 +1954,897 @@
 }
 ```
 
+### Shelly Plus RGBW - Profile "Light"
+
+#### /shelly
+
+```
+{
+	"name": "Shelly Plus RGBW",
+	"id": "shellyplusrgbw-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"slot": 1,
+	"model": "SNDC-0D4P10WW",
+	"gen": 2,
+	"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+	"ver": "0.99.99-plusrgbwsamples0",
+	"app": "PlusRGBW",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "light",
+	"hf": 125280,
+	"hmf": 106280,
+	"fsf": 98304
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:2": {
+		"id": 2,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:3": {
+		"id": 3,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"light:0": {
+		"id": 0,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"light:1": {
+		"id": 1,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"light:2": {
+		"id": 2,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"light:3": {
+		"id": 3,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyplusrgbw-XXXXXXXXXXXX",
+		"user": null,
+		"topic_prefix": "shellyplusrgbw-XXXXXXXXXXXX",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Shelly Plus RGBW",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+			"discoverable": true,
+			"eco_mode": false,
+			"profile": "light"
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 12
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyPlusRGBW-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": null
+	},
+	"input:1": {
+		"id": 1,
+		"state": null
+	},
+	"input:2": {
+		"id": 2,
+		"state": null
+	},
+	"input:3": {
+		"id": 3,
+		"state": null
+	},
+	"light:0": {
+		"id": 0,
+		"source": "init",
+		"output": false,
+		"brightness": 0.0,
+		"temperature": {
+			"tC": 47.9,
+			"tF": 118.2
+		},
+		"calibrated": false,
+		"voltage": 24.5
+	},
+	"light:1": {
+		"id": 1,
+		"source": "init",
+		"output": false,
+		"brightness": 0.0,
+		"temperature": {
+			"tC": 47.9,
+			"tF": 118.2
+		},
+		"calibrated": false,
+		"voltage": 24.5
+	},
+	"light:2": {
+		"id": 2,
+		"source": "init",
+		"output": false,
+		"brightness": 0.0,
+		"temperature": {
+			"tC": 47.9,
+			"tF": 118.2
+		},
+		"calibrated": false,
+		"voltage": 24.5
+	},
+	"light:3": {
+		"id": 3,
+		"source": "init",
+		"output": false,
+		"brightness": 0.0,
+		"temperature": {
+			"tC": 47.9,
+			"tF": 118.2
+		},
+		"calibrated": false,
+		"voltage": 24.5
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "17:39",
+		"unixtime": 1693409986,
+		"uptime": 192,
+		"ram_size": 242652,
+		"ram_free": 124364,
+		"fs_size": 458752,
+		"fs_free": 98304,
+		"cfg_rev": 12,
+		"kvs_rev": 0,
+		"schedule_rev": 2,
+		"webhook_rev": 2,
+		"available_updates": {}
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -49
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
+
+### Shelly Plus RGBW - Profile "RGB"
+
+#### /shelly
+
+```
+{
+	"name": "Shelly Plus RGBW",
+	"id": "shellyplusrgbw-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"slot": 1,
+	"model": "SNDC-0D4P10WW",
+	"gen": 2,
+	"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+	"ver": "0.99.99-plusrgbwsamples0",
+	"app": "PlusRGBW",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "rgb",
+	"hf": 129696,
+	"hmf": 116088,
+	"fsf": 98304
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:2": {
+		"id": 2,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:3": {
+		"id": 3,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyplusrgbw-XXXXXXXXXXXX",
+		"user": null,
+		"topic_prefix": "shellyplusrgbw-XXXXXXXXXXXX",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"rgb:0": {
+		"id": 0,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0,
+			"rgb": [
+				0.0,
+				0.0,
+				50.0
+			]
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"sys": {
+		"device": {
+			"name": "Shelly Plus RGBW",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+			"discoverable": true,
+			"eco_mode": false,
+			"profile": "rgb"
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 12
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyPlusRGBW-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": null
+	},
+	"input:1": {
+		"id": 1,
+		"state": null
+	},
+	"input:2": {
+		"id": 2,
+		"state": null
+	},
+	"input:3": {
+		"id": 3,
+		"state": null
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"rgb:0": {
+		"id": 0,
+		"source": "init",
+		"output": false,
+		"rgb": [
+			0.0,
+			0.0,
+			50.0
+		],
+		"brightness": 50.0,
+		"temperature": {
+			"tC": 51.9,
+			"tF": 125.4
+		},
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1693410297
+		},
+		"apower": 0.0,
+		"current": 0.0,
+		"voltage": 24.5
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "17:45",
+		"unixtime": 1693410300,
+		"uptime": 103,
+		"ram_size": 242968,
+		"ram_free": 129256,
+		"fs_size": 458752,
+		"fs_free": 98304,
+		"cfg_rev": 12,
+		"kvs_rev": 0,
+		"schedule_rev": 3,
+		"webhook_rev": 3,
+		"available_updates": {}
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -49
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
+
+### Shelly Plus RGBW - Profile "RGBW"
+
+#### /shelly
+
+```
+{
+	"name": "Shelly Plus RGBW",
+	"id": "shellyplusrgbw-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"slot": 1,
+	"model": "SNDC-0D4P10WW",
+	"gen": 2,
+	"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+	"ver": "0.99.99-plusrgbwsamples0",
+	"app": "PlusRGBW",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "rgbw",
+	"hf": 129564,
+	"hmf": 114712,
+	"fsf": 98304
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:2": {
+		"id": 2,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"input:3": {
+		"id": 3,
+		"name": null,
+		"type": "button",
+		"invert": false
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyplusrgbw-XXXXXXXXXXXX",
+		"user": null,
+		"topic_prefix": "shellyplusrgbw-XXXXXXXXXXXX",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"rgbw:0": {
+		"id": 0,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"default": {
+			"brightness": 50.0,
+			"transition": 3.0,
+			"rgb": [
+				0.0,
+				0.0,
+				50.0
+			],
+			"white": 50.0
+		},
+		"min_brightness_on_toggle": 3.0,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50.0,
+			"active_between": []
+		},
+		"button_presets": {
+			"double_click": 50.0,
+			"triple_click": 100.0
+		},
+		"fade_rate": 10.0,
+		"in_mode": "dim"
+	},
+	"sys": {
+		"device": {
+			"name": "Shelly Plus RGBW",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20230518-094154/0.99.99-plusrgbwsamples0-g9f5a998",
+			"discoverable": true,
+			"eco_mode": false,
+			"profile": "rgbw"
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 13
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyPlusRGBW-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": null
+	},
+	"input:1": {
+		"id": 1,
+		"state": null
+	},
+	"input:2": {
+		"id": 2,
+		"state": null
+	},
+	"input:3": {
+		"id": 3,
+		"state": null
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"rgbw:0": {
+		"id": 0,
+		"source": "init",
+		"output": false,
+		"rgb": [
+			0.0,
+			0.0,
+			50.0
+		],
+		"brightness": 50.0,
+		"white": 50.0,
+		"temperature": {
+			"tC": 52.1,
+			"tF": 125.8
+		},
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1693410358
+		},
+		"apower": 0.0,
+		"current": 0.0,
+		"voltage": 24.6
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "17:46",
+		"unixtime": 1693410361,
+		"uptime": 13,
+		"ram_size": 242908,
+		"ram_free": 128600,
+		"fs_size": 458752,
+		"fs_free": 98304,
+		"cfg_rev": 13,
+		"kvs_rev": 0,
+		"schedule_rev": 4,
+		"webhook_rev": 4,
+		"available_updates": {}
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -49
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
+
 ### Shelly Plus Smoke (battery operated)
 
 #### /shelly
