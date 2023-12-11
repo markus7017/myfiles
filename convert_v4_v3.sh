@@ -20,5 +20,6 @@ find . -name *.java -exec sed -i '' -e "s/onOffCommand/((OnOffType) command)/g" 
 find . -name *.java -exec sed -i '' -e "s/increaseDecreaseCommand/((IncreaseDecreaseType) command)/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/quantityCommand/((QuantityType<?>) command)/g" {} \;
 find . -name *.java -exec sed -i '' -e "s/dateTimeState/((DateTimeType) state)/g" {} \;
+
 LC_CTYPE=C find . -name "*.properties" -exec sed -i '' -e 's/addon\.shelly/binding\.shelly/g' {} \;
 mvn spotless:apply
