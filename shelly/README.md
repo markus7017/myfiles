@@ -95,15 +95,13 @@ The binding provides the same feature set across all devices as good as possible
 | shellypluswdus       | Shelly Plus Wall Dimmer US                               | SNDM-0013US                  |
 | shellywalldisplay    | Shelly Plus Wall Display                                 | SAWD-0A1XX10EU1              |
 
-### Generation 2 Plus Mini series (incl. Gen 3)
+### Generation 2 Plus Mini series
 
-| thing-type           | Model                                                    | Vendor ID                      |
-| -------------------- | -------------------------------------------------------- | ------------------------------ |
-| shellymini1          | Shelly Plus 1 Mini with 1x relay                         | SNSW-001X8EU, S3SW-001X8EU     |
-| shellymini1pm        | Shelly Plus 1PM Mini with 1x relay + power meter         | SNSW-001P8EU, S3SW-001P8EU     |
-| shellyminipm         | Shelly Plus PM Mini with 1x power meter                  | SNPM-001PCEU16, S3PM-001PCEU16 |
-
-
+| thing-type           | Model                                                    | Vendor ID                    |
+| -------------------- | -------------------------------------------------------- | ---------------------------- |
+| shellymini1          | Shelly Plus 1 Mini with 1x relay                         | SNSW-001X8EU                 |
+| shellymini1pm        | Shelly Plus 1PM Mini with 1x relay + power meter         | SNSW-001P8EU                 |
+| shellyminipm         | Shelly Plus PM Mini with 1x power meter                  | SNPM-001PCEU16               |
 
 ### Generation 2 Pro series
 
@@ -404,14 +402,18 @@ A new alarm will be triggered on a new condition or every 5 minutes if the condi
 
 ### Non-battery powered devices
 
-| Event Type  | Description                                                                       |
-| ----------- | --------------------------------------------------------------------------------- |
-| RESTARTED   | The device has been restarted. This could be an indicator for a firmware problem. |
-| WEAK_SIGNAL | An alarm is triggered when RSSI is < -80, which indicates an unstable connection. |
-| OVER_TEMP   | The device is overheating, check installation and housing.                        |
-| OVER_LOAD   | An over load condition has been detected, e.g. from the roller motor.             |
-| OVER_POWER  | Maximum allowed power was exceeded. The relay was turned off.                     |
-| LOAD_ERROR  | Device reported a load problem, so far Dimmer only.                               |
+| Event Type   | Description                                                                       |
+| ------------ | --------------------------------------------------------------------------------- |
+| RESTARTED    | The device has been restarted. This could be an indicator for a firmware problem. |
+| WEAK_SIGNAL  | An alarm is triggered when RSSI is < -80, which indicates an unstable connection. |
+| OVERTEMP     | The device is overheating, check installation and housing.                        |
+| OVERLOAD     | An over load condition has been detected, e.g. from the roller motor.             |
+| OVERPOWER    | Maximum allowed power was exceeded. The relay was turned off.                     |
+| LOAD_ERROR   | Device reported a load problem.                                                   |
+| SENSOR_ERROR | Device reported a sensor problem.                                                 |
+| VALVE_ERROR  | Device reported a problem with the valve.                                         |
+| VIBRATION    | Device reported vibration.                                                        |
+| LOW_BATTERY  | Device reported low battery.                                                      |
 
 ### Sensors
 
@@ -571,6 +573,10 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 |        | powerFactor   | Number   | yes       | Power Factor in percent                                                           |
 |        | resetTotals   | Switch   | yes       | ON: Resets total values for the power meter                                       |
 |        | lastUpdate    | DateTime | yes       | Timestamp of the last measurement                                                 |
+| nmeter | ncurrent      | Number   | yes       | Current current based on N clamp (requires calibration)                           |
+|        | ixsum         | Number   | yes       | Measured current over all phases                                                  |
+|        | nmismatch     | Switch   | yes       | ON: abs(ncurrent-ixsum) is greater than nmTreshhold                               |
+|        | nmTreshhold   | Number   | yes       | Treshhod (delta) before  nMismatch goes ON                                        |
 
 ### Shelly 2 - relay mode (thing-type: shelly2-relay)
 
