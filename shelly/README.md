@@ -96,15 +96,6 @@ The binding provides the same feature set across all devices as good as possible
 | shellywalldisplay    | Shelly Plus Wall Display                                 | SAWD-0A1XX10EU1              |
 
 ### Generation 2 Plus Mini series
-<<<<<<< HEAD
-=======
-
-| thing-type           | Model                                                    | Vendor ID                    |
-| -------------------- | -------------------------------------------------------- | ---------------------------- |
-| shellymini1          | Shelly Plus 1 Mini with 1x relay                         | SNSW-001X16EU                |
-| shellymini1pm        | Shelly Plus 1PM Mini with 1x relay + power meter         | SNPM-001PCEU16               |
-| shellyminipm         | Shelly Plus PM Mini with 1x power meter                  | SNSW-001P8EU                 |
->>>>>>> 8fdcd70f413cdf4a24d97a9e592589f1669251b1
 
 | thing-type           | Model                                                    | Vendor ID                    |
 | -------------------- | -------------------------------------------------------- | ---------------------------- |
