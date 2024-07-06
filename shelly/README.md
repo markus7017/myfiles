@@ -36,67 +36,68 @@ The binding provides the same feature set across all devices as good as possible
 
 ### Generation 1
 
-| thing-type        | Model                                                  | Vendor ID |
-| ----------------- | ------------------------------------------------------ | --------- |
-| shelly1           | Shelly 1 Single Relay Switch                           | SHSW-1    |
-| shelly1l          | Shelly 1L Single Relay Switch                          | SHSW-L    |
-| shelly1pm         | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
-| shelly2-relay     | Shelly Double Relay Switch in relay mode               | SHSW-21   |
-| shelly2-roller    | Shelly2 in Roller Mode                                 | SHSW-21   |
-| shelly25-relay    | Shelly 2.5 in Relay Switch                             | SHSW-25   |
-| shelly25-roller   | Shelly 2.5 in Roller Mode                              | SHSW-25   |
-| shelly4pro        | Shelly 4x Relay Switch                                 | SHSW-44   |
-| shellydimmer      | Shelly Dimmer                                          | SHDM-1    |
-| shellydimmer2     | Shelly Dimmer2                                         | SHDM-2    |
-| shellyix3         | Shelly ix3                                             | SHIX3-1   |
-| shellyuni         | Shelly UNI                                             | SHUNI-1   |
-| shellyplug        | Shelly Plug                                            | SHPLG2-1  |
-| shellyplugs       | Shelly Plug-S                                          | SHPLG-S   |
-| shellyem          | Shelly EM with integrated Power Meters                 | SHEM      |
-| shellyem3         | Shelly 3EM with 3 integrated Power Meter               | SHEM-3    |
-| shellyrgbw2-color | Shelly RGBW2 Controller in Color Mode                  | SHRGBW2   |
-| shellyrgbw2-white | Shelly RGBW2 Controller in White Mode                  | SHRGBW2   |
-| shellybulb-color  | Shelly Bulb in Color Mode                              | SHBLB-1   |
-| shellybulb-white  | Shelly Bulb in White Mode                              | SHBLB-1   |
-| shellybulbduo     | Shelly Duo White                                       | SHBDUO-1  |
-| shellybulbduo     | Shelly Duo White G10                                   | SHBDUO-1  |
-| shellycolorbulb   | Shelly Duo Color G10                                   | SHCB-1    |
-| shellyvintage     | Shelly Vintage (White Mode)                            | SHVIN-1   |
-| shellyht          | Shelly Sensor (temperature+humidity)                   | SHHT-1    |
-| shellyflood       | Shelly Flood Sensor                                    | SHWT-1    |
-| shellysmoke       | Shelly Smoke Sensor                                    | SHSM-1    |
-| shellymotion      | Shelly Motion Sensor                                   | SHMOS-01  |
-| shellymotion2     | Shelly Motion Sensor 2                                 | SHMOS-02  |
-| shellygas         | Shelly Gas Sensor                                      | SHGS-1    |
-| shellydw          | Shelly Door/Window                                     | SHDW-1    |
-| shellydw2         | Shelly Door/Window 2                                   | SHDW-2    |
-| shellybutton1     | Shelly Button 1                                        | SHBTN-1   |
-| shellybutton2     | Shelly Button 2                                        | SHBTN-2   |
-| shellysense       | Shelly Motion and IR Controller                        | SHSEN-1   |
-| shellytrv         | Shelly TRV                                             | SHTRV-01  |
-| shellydevice      | A password protected Shelly device or an unknown type  |           |
+| thing-type        | Model                                                  | Vendor ID           |
+| ----------------- | ------------------------------------------------------ | ------------------- |
+| shelly1           | Shelly 1 Single Relay Switch                           | SHSW-1              |
+| shelly1l          | Shelly 1L Single Relay Switch                          | SHSW-L              |
+| shelly1pm         | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM             |
+| shelly2-relay     | Shelly Double Relay Switch in relay mode               | SHSW-21             |
+| shelly2-roller    | Shelly2 in Roller Mode                                 | SHSW-21             |
+| shelly25-relay    | Shelly 2.5 in Relay Switch                             | SHSW-25             |
+| shelly25-roller   | Shelly 2.5 in Roller Mode                              | SHSW-25             |
+| shelly4pro        | Shelly 4x Relay Switch                                 | SHSW-44             |
+| shellydimmer      | Shelly Dimmer                                          | SHDM-1              |
+| shellydimmer2     | Shelly Dimmer2                                         | SHDM-2              |
+| shellyix3         | Shelly ix3                                             | SHIX3-1             |
+| shellyuni         | Shelly UNI, Shelly Plus UNI                            | SHUNI-1, SNSN-0043X |
+| shellyplug        | Shelly Plug                                            | SHPLG2-1            |
+| shellyplugs       | Shelly Plug-S                                          | SHPLG-S             |
+| shellyem          | Shelly EM with integrated Power Meters                 | SHEM                |
+| shellyem3         | Shelly 3EM with 3 integrated Power Meter               | SHEM-3              |
+| shellyrgbw2-color | Shelly RGBW2 Controller in Color Mode                  | SHRGBW2             |
+| shellyrgbw2-white | Shelly RGBW2 Controller in White Mode                  | SHRGBW2             |
+| shellybulb-color  | Shelly Bulb in Color Mode                              | SHBLB-1             |
+| shellybulb-white  | Shelly Bulb in White Mode                              | SHBLB-1             |
+| shellybulbduo     | Shelly Duo White                                       | SHBDUO-1            |
+| shellybulbduo     | Shelly Duo White G10                                   | SHBDUO-1            |
+| shellycolorbulb   | Shelly Duo Color G10                                   | SHCB-1              |
+| shellyvintage     | Shelly Vintage (White Mode)                            | SHVIN-1             |
+| shellyht          | Shelly Sensor (temperature+humidity)                   | SHHT-1              |
+| shellyflood       | Shelly Flood Sensor                                    | SHWT-1              |
+| shellysmoke       | Shelly Smoke Sensor                                    | SHSM-1              |
+| shellymotion      | Shelly Motion Sensor                                   | SHMOS-01            |
+| shellymotion2     | Shelly Motion Sensor 2                                 | SHMOS-02            |
+| shellygas         | Shelly Gas Sensor                                      | SHGS-1              |
+| shellydw          | Shelly Door/Window                                     | SHDW-1              |
+| shellydw2         | Shelly Door/Window 2                                   | SHDW-2              |
+| shellybutton1     | Shelly Button 1                                        | SHBTN-1             |
+| shellybutton2     | Shelly Button 2                                        | SHBTN-2             |
+| shellysense       | Shelly Motion and IR Controller                        | SHSEN-1             |
+| shellytrv         | Shelly TRV                                             | SHTRV-01            |
+| shellydevice      | A password protected Shelly device or an unknown type  |                     |
 
-### Generation 2 Plus series
+### Shelly Plus Series (Generation 2+3)
 
 | thing-type           | Model                                                    | Vendor ID                    |
 | -------------------- | -------------------------------------------------------- | ---------------------------- |
-| shellyplus1          | Shelly Plus 1 with 1x relay                              | SNSW-001X16EU                |
-| shellyplus1pm        | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU                |
+| shellyplus1          | Shelly Plus 1 with 1x relay                              | SNSW-001X16EU, S3SW-001X16EU |
+| shellyplus1pm        | Shelly Plus 1PM with 1x relay + power meter              | SNSW-001P16EU, S3SW-001P16EU |
 | shellyplus2pm-relay  | Shelly Plus 2PM with 2x relay + power meter, relay mode  | SNSW-002P16EU, SNSW-102P16EU |
 | shellyplus2pm-roller | Shelly Plus 2PM with 2x relay + power meter, roller mode | SNSW-002P16EU, SNSW-102P16EU |
 | shellyplusplug       | Shelly Plug-S                                            | SNPL-00112EU                 |
 | shellyplusplug       | Shelly Plug-IT                                           | SNPL-00110IT                 |
 | shellyplusplug       | Shelly Plug-UK                                           | SNPL-00112UK                 |
 | shellyplusplug       | Shelly Plug-US                                           | SNPL-00116US                 |
-| shellyplusi4         | Shelly Plus i4 with 4x AC input                          | SNSN-0024X                   |
+| shellyplusi4         | Shelly Plus i4 with 4x AC input                          | SNSN-0024X, S3SN-0024X       |
 | shellyplusi4dc       | Shelly Plus i4 with 4x DC input                          | SNSN-0D24X                   |
+| shellyplus10v        | Shelly Plus Dimmer 0/10V (Gen 2) or 0/1/10V (Gen 3)      | SNDM-00100WW, S3DM-0010WW    |
 | shellyplusht         | Shelly Plus HT with temperature + humidity sensor        | SNSN-0013A                   |
 | shellyhtg3           | Shelly Plus HT Gen 3 with temperature + humidity sensor  | S3SN-0U12A                   |
 | shellyplussmoke      | Shelly Plus Smoke sensor                                 | SNSN-0031Z                   |
 | shellypluswdus       | Shelly Plus Wall Dimmer US                               | SNDM-0013US                  |
 | shellywalldisplay    | Shelly Plus Wall Display                                 | SAWD-0A1XX10EU1              |
 
-### Generation 2 Plus Mini series (incl. Gen 3)
+### Shelly Plus Mini series (Generation 2+3)
 
  | thing-type           | Model                                                    | Vendor ID                      |
  | -------------------- | -------------------------------------------------------- | ------------------------------ |
@@ -104,8 +105,7 @@ The binding provides the same feature set across all devices as good as possible
  | shellymini1pm        | Shelly Plus 1PM Mini with 1x relay + power meter         | SNSW-001P8EU, S3SW-001P8EU     |
  | shellyminipm         | Shelly Plus PM Mini with 1x power meter                  | SNPM-001PCEU16, S3PM-001PCEU16 |
 
-### Generation 2 Pro series
-
+### Shelly Pro Series (Generation 2+3)
 | thing-type          | Model                                                    | Vendor ID                                      |
 | ------------------- | -------------------------------------------------------- | ---------------------------------------------- |
 | shellypro1          | Shelly Pro 1 with 1x relay                               | SPSW-001XE16EU, SPSW-101XE16EU, SPSW-201XE16EU |
@@ -190,7 +190,7 @@ The binding automatically installs a script on the Shelly Device (oh-blu-scanner
 
 Follow these steps to add the Shelly BLU Device to openHAB
 
-- Make sure a Shelly is near by the BLU device, enable Bluetooh on this device (the Bluetooth Gateway mode is not required)
+- Make sure a Shelly is near by the BLU device, enable Bluetooh on this device (**disabling** the 'Bluetooth Gateway' mode in the Shelly app/UI is recommended)
 - Add this thing to openHAB, make sure thing gets online
 - Enable "BLU Gateway Support" in the thing configuration of the Shelly device acting as gateway.
 - Now press the button on your BLU device, this wakes up the device and the script forwards this event to the binding
@@ -747,7 +747,7 @@ Using the Thing configuration option `brightnessAutoOn` you could decide if the 
 
 Channels lastEvent and eventCount are only available if input type is set to momentary button
 
-### Shelly UNI (thing-type: shellyuni)
+### Shelly UNI, Shelly Plus UNI (thing-type: shellyuni)
 
 | Group   | Channel      | Type    | read-only | Description                                                              |
 | ------- | ------------ | ------- | --------- | ------------------------------------------------------------------------ |
