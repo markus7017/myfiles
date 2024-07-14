@@ -50,7 +50,7 @@ Gen2: Use Shelly device firmware version 0.12 or newer
 - Uninstall Shelly binding form UI
 - Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar or org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar
   Note: If you download via curl or wget and not manually from the github UI you need to add ***?raw=true** to the URL to make sure getting a binary file
- -open OH console, run "feature:install openhab-transport-coap"
+- open OH console, run "feature:install openhab-transport-coap"
 - Stop OH
 - copy org.openhab.binding.shelly-xxx-SNAPSHOT.jar to OH's addons folder
 - start OH, run discovery
