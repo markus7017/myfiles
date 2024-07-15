@@ -20,37 +20,33 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 ## General Notes
 
 Suport openHAB version:
-- **4.2**: Current DEV build [Current DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
-- **4.1**: Last DEV build [Current DEV build 4.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.1.0-SNAPSHOT.jar)
-- **4.0**: Last DEV build [Current DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar)
-- **3.4**: Last DEV build [Current DEV build 3.4.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar)
-- **3.3**: As is, no longer maintained. [Current DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.3.0-SNAPSHOT.jar)
-- **3.2**: As is, no longer maintained.in the official stable OH distribution, [Latest DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
-- **3.1**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.1.0-SNAPSHOT.jar)
-- **3.0**: No longer supported, [Last DEV build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.0.3-SNAPSHOT.jar)
-- **2.5**: No longer supported. [Last DEV  build](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-2.5.13-SNAPSHOT.jar)
+- **4.3**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.3-SNAPSHOT.jar)
+- **4.2**: Outdated [Last DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
+- **4.1**: Outdated[Last DEV build 4.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.1.0-SNAPSHOT.jar)
+- **4.0**: No longer supported.[Last DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar)
+- **3.4**: No longer supported.[Last DEV build 3.4.5-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.4.5-SNAPSHOT.jar)
 
 Be ware that there are
-- the release distro package, which includes a stable version of the binding
-- the official SNAPSHOT / milestone build could be found [here](https://openhab.jfrog.io/artifactory/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/), which might include a newer binding version, but will never be as current as the DEV build
-- the DEV build: Latest and archived versions could be found in [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly)
+- The release distro package includes a stable version of the binding
+- The official SNAPSHOT / milestone build could be found [here](https://openhab.jfrog.io/artifactory/libs-pullrequest-local/org/openhab/addons/bundles/org.openhab.binding.shelly/), which might include a newer binding version, but will never be as current as the DEV build
+- So called DEV build: Latest and archived versions could be found in [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly)
 
 If you want to use the SNAPSHOT/DEV build you can **NOT** install it using the UI. 
 Make sure that the release version is not installed: Check that Shelly is not installed, uninstall if so. 
 
-There is no strict dependency on the OH base version, e.g. you could run binding 3.1-SNAPSNOT on top of openHAB 3.0.1.
+There is no strict dependency on the OH base version, e.g. you could run binding 4.3-SNAPSNOT on top of openHAB 4.2. You can not run DEV build 4.3 on OH 2.5, 3.x or 4.0.
 
 Gen1: Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
-Gen2: Use Shelly device firmware version 0.12 or newer
+Gen2+3: Use Shelly device firmware version 1.10.0 or newer
 
 ## Installing DEV build
 
 ### New Install
 
 - Uninstall Shelly binding form UI
-- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-3.4.0-SNAPSHOT.jar or org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar
+- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-4.3.0-SNAPSHOT.jar
   Note: If you download via curl or wget and not manually from the github UI you need to add ***?raw=true** to the URL to make sure getting a binary file
- -open OH console, run "feature:install openhab-transport-coap"
+- open OH console, run "feature:install openhab-transport-coap"
 - Stop OH
 - copy org.openhab.binding.shelly-xxx-SNAPSHOT.jar to OH's addons folder
 - start OH, run discovery
@@ -74,7 +70,6 @@ Channel definitions are subject to change with any alpha or beta release. Please
 - open OH console ("openhab-cli console")
 - run "bundle:list | grep Shelly" and make sure that the binding is gone
 - otherwise run "bundle:uninstall <bundle id as listed from above (1st column)>"
-- run "feature:install openhab-transport-coap"
 - stop OH ("openhab-cli stop"), wait until everything is stopped (could take some time)
 - copy binding jar or kar into addons (set correct permission)
 - start oh service ("openhab-cli start")
@@ -134,11 +129,14 @@ For Gen1 devices:
 - http://&lt;device ip&gt;/settings
 - http://&lt;device ip&gt;/status
 
-For Gen2 devices:
+For Gen2+3 devices:
 
 - open a browser and issue the following urls
 - http://&lt;device ip&gt;/rpc/Shelly.GetConfig
 - http://&lt;device ip&gt;/rpc/Shelly.GetStatus
+
+For BLU devices:
+There is now way to get directly information from the device. Use Shelly App or Shelly BLE Debug App.
 
 CoIoT support for Gen1 devices:
 
