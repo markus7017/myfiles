@@ -1,12 +1,12 @@
 [
 {
 "title": "Shelly Binding (DEV)",
-"uid": "org-openhab-binding-shelly",
+"uid": "org-markus7017-binding-shelly",
 "id" : "shelly-dev",
 "type": "binding",
 "version" : "4.2.0-SNAPSHOT",
 "author" : "markus7017",
-"maturity": "stable",
+"maturity": "unstable",
 "content_type": "application/vnd.openhab.feature;type=karfile",
 "url" : "https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.0-SNAPSHOT.kar",
 "link" : "https://github.com/markus7017/myfiles/blob/master/shelly/README.md",
