@@ -2,14 +2,13 @@
 {
 “id”: “org-openhab-binding-shelly”,
 “type”: “binding”,
-“version”: “4.3.0-SNAPSHOT”,
-“author”: “markus7017”,
+"version" : "4.3.0-DEV",
+"author" : "markus7017",
 “maturity”: “beta”,
 “content_type”: “application/vnd.openhab.bundle”,
 “link”: “Shelly Binding (DEV)”,
-“url”: “http://localhost:8888/bundles/org.openhab.binding.BINDINGNAME-SNAPSHOT.jar 4”,
+"url" : "https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.0-SNAPSHOT.kar",
 “title”: “Shelly Binding (DEV)”,
 “description”: "DEV Build of the Shelly Binding"
 }
 ]
-
