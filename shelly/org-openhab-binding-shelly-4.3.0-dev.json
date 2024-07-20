@@ -6,7 +6,7 @@
 "type": "binding",
 "version" : "4.2.0-SNAPSHOT",
 "author" : "markus7017",
-"maturity": "beta",
+"maturity": "stable",
 "content_type": "application/vnd.openhab.feature;type=karfile",
 "url" : "https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.0-SNAPSHOT.kar",
 "link" : "https://github.com/markus7017/myfiles/blob/master/shelly/README.md",
