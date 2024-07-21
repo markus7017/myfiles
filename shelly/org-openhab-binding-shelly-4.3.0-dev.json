@@ -11,6 +11,6 @@
 "url" : "https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.0-SNAPSHOT.kar",
 "link" : "https://github.com/markus7017/myfiles/blob/master/shelly/README.md",
 "description" : "DEV Build of the Shelly Binding",
-"compatible_versions" : "[4.1.0.0;4.3.999)",
+"compatible_versions" : "[4.1.0.0;4.3.999)"
 }
 ]
