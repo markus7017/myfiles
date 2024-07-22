@@ -905,3 +905,583 @@
 	}
 }
 ```
+
+### Shelly 2PM G3 - Switch Mode
+
+#### /shelly
+```
+{
+	"name": "Test - Shelly 2PM G3",
+	"id": "shelly2pmg3-000000000000",
+	"mac": "000000000000",
+	"slot": 1,
+	"model": "S3SW-002P16EU",
+	"gen": 3,
+	"fw_id": "20240712-065434/g96b9806",
+	"ver": "1.4.99-dev100685",
+	"app": "S2PMG3",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "switch"
+}
+```
+
+##### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": true,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": false,
+		"server": "iot.shelly.cloud:6012/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"knx": {
+		"enable": false,
+		"ia": "15.15.255",
+		"routing": {
+			"addr": "224.0.23.12:3671"
+		}
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shelly2pmg3-000000000000",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shelly2pmg3-000000000000",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"switch:0": {
+		"id": 0,
+		"name": null,
+		"in_mode": "follow",
+		"initial_state": "match_input",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"power_limit": 2800,
+		"voltage_limit": 280,
+		"undervoltage_limit": 0,
+		"autorecover_voltage_errors": false,
+		"current_limit": 10.0
+	},
+	"switch:1": {
+		"id": 1,
+		"name": null,
+		"in_mode": "follow",
+		"initial_state": "match_input",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"power_limit": 2800,
+		"voltage_limit": 280,
+		"undervoltage_limit": 0,
+		"autorecover_voltage_errors": false,
+		"current_limit": 10.0
+	},
+	"sys": {
+		"device": {
+			"name": "Test - Shelly 2PM G3",
+			"mac": "000000000000",
+			"fw_id": "20240712-065434/g96b9806",
+			"discoverable": true,
+			"eco_mode": true,
+			"profile": "switch",
+			"addon_type": null
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.0000,
+			"lon": 0.0000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": ""
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 9
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "Shelly2PMG3-000000000000",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"bthome": {
+		"errors": [
+			"observer_disabled"
+		]
+	},
+	"cloud": {
+		"connected": false
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"input:1": {
+		"id": 1,
+		"state": false
+	},
+	"knx": {},
+	"mqtt": {
+		"connected": false
+	},
+	"switch:0": {
+		"id": 0,
+		"source": "init",
+		"output": false,
+		"apower": 0.0,
+		"voltage": 222.9,
+		"freq": 50.0,
+		"current": 0.0,
+		"pf": 0.0,
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1721626620
+		},
+		"ret_aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1721626620
+		},
+		"temperature": {
+			"tC": 42.8,
+			"tF": 109.1
+		}
+	},
+	"switch:1": {
+		"id": 1,
+		"source": "init",
+		"output": false,
+		"apower": 0.0,
+		"voltage": 223.0,
+		"freq": 50.0,
+		"current": 0.0,
+		"pf": 0.0,
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1721626620
+		},
+		"ret_aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1721626620
+		},
+		"temperature": {
+			"tC": 42.8,
+			"tF": 109.1
+		}
+	},
+	"sys": {
+		"mac": "000000000000",
+		"restart_required": false,
+		"time": "07:37",
+		"unixtime": 1721626626,
+		"uptime": 97,
+		"ram_size": 250232,
+		"ram_free": 78628,
+		"fs_size": 1048576,
+		"fs_free": 573440,
+		"cfg_rev": 9,
+		"kvs_rev": 0,
+		"schedule_rev": 2,
+		"webhook_rev": 2,
+		"available_updates": {},
+		"reset_reason": 3
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -54
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
+
+### Shelly 2PM G3 - Cover Mode
+
+#### /shelly
+```
+{
+	"name": "Test - Shelly 2PM G3",
+	"id": "shelly2pmg3-000000000000",
+	"mac": "000000000000",
+	"slot": 1,
+	"model": "S3SW-002P16EU",
+	"gen": 3,
+	"fw_id": "20240712-065434/g96b9806",
+	"ver": "1.4.99-dev100685",
+	"app": "S2PMG3",
+	"auth_en": false,
+	"auth_domain": null,
+	"profile": "cover"
+}
+```
+
+##### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": true,
+		"rpc": {
+			"enable": true
+		},
+		"observer": {
+			"enable": false
+		}
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": false,
+		"server": "iot.shelly.cloud:6012/jrpc"
+	},
+	"cover:0": {
+		"id": 0,
+		"name": null,
+		"motor": {
+			"idle_power_thr": 2.0,
+			"idle_confirm_period": 0.25
+		},
+		"maxtime_open": 60.0,
+		"maxtime_close": 60.0,
+		"initial_state": "stopped",
+		"invert_directions": false,
+		"in_mode": "dual",
+		"swap_inputs": false,
+		"safety_switch": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"allowed_move": null
+		},
+		"power_limit": 2800,
+		"voltage_limit": 280,
+		"undervoltage_limit": 0,
+		"current_limit": 10.0,
+		"obstruction_detection": {
+			"enable": false,
+			"direction": "both",
+			"action": "stop",
+			"power_thr": 1000,
+			"holdoff": 1.0
+		},
+		"slat": {
+			"enable": false,
+			"open_time": 1.5,
+			"close_time": 1.5,
+			"step": 20,
+			"retain_pos": false,
+			"precise_ctl": false
+		}
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"knx": {
+		"enable": false,
+		"ia": "15.15.255",
+		"routing": {
+			"addr": "224.0.23.12:3671"
+		}
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shelly2pmg3-000000000000",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shelly2pmg3-000000000000",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Test - Shelly 2PM G3",
+			"mac": "000000000000",
+			"fw_id": "20240712-065434/g96b9806",
+			"discoverable": true,
+			"eco_mode": true,
+			"profile": "cover",
+			"addon_type": null
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.0000,
+			"lon": 0.0000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": ""
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 8
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "Shelly2PMG3-000000000000",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"bthome": {
+		"errors": [
+			"observer_disabled"
+		]
+	},
+	"cloud": {
+		"connected": false
+	},
+	"cover:0": {
+		"id": 0,
+		"source": "init",
+		"state": "stopped",
+		"apower": 0.0,
+		"voltage": 223.4,
+		"current": 0.0,
+		"pf": 0.0,
+		"freq": 50.0,
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1721626440
+		},
+		"temperature": {
+			"tC": 43.8,
+			"tF": 110.8
+		},
+		"pos_control": false,
+		"last_direction": null
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"input:1": {
+		"id": 1,
+		"state": false
+	},
+	"knx": {},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "000000000000",
+		"restart_required": false,
+		"time": "07:34",
+		"unixtime": 1721626495,
+		"uptime": 125,
+		"ram_size": 250528,
+		"ram_free": 83008,
+		"fs_size": 1048576,
+		"fs_free": 577536,
+		"cfg_rev": 8,
+		"kvs_rev": 0,
+		"schedule_rev": 1,
+		"webhook_rev": 1,
+		"available_updates": {},
+		"reset_reason": 3
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -54
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
