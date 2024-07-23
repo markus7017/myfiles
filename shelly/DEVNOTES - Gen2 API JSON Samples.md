@@ -5152,3 +5152,299 @@
 	}
 }
 ```
+
+### Shelly Wall Display
+
+#### /shelly
+
+```
+{
+	"id": "ShellyWallDisplay-000000000000",
+	"mac": "000000000000",
+	"model": "SAWD-0A1XX10EU1",
+	"gen": 2,
+	"fw_id": "20240715-190913/2.0.0-c0bdf3b8",
+	"ver": "2.0.0",
+	"app": "WallDisplay",
+	"auth_en": false,
+	"uptime": 538423,
+	"app_uptime": 538321,
+	"discoverable": false,
+	"cfg_rev": 106,
+	"schedule_rev": 0,
+	"webhook_rev": 0,
+	"platform": "vXD110001",
+	"serial": "1234567890abc",
+	"batch_id": "38467",
+	"batch_date": 230503,
+	"available_updates": {},
+	"restart_required": false,
+	"unixtime": 1721726817,
+	"relay_in_thermostat": true,
+	"sensor_in_thermostat": false
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": true,
+		"observer": {
+			"enable": false
+		},
+		"rpc": {
+			"enable": true
+		}
+	},
+	"wifi": {
+		"sta": {
+			"enable": true,
+			"ssid": "SSID",
+			"roam_interval": 900,
+			"is_open": false,
+			"ipv4mode": "dhcp",
+			"ip": "192.168.1.2",
+			"netmask": "255.255.255.0",
+			"gw": "192.168.1.1",
+			"nameserver": "192.168.1.1"
+		}
+	},
+	"switch:0": {
+		"id": 0,
+		"auto_on": false,
+		"auto_on_delay": 0,
+		"auto_off": false,
+		"auto_off_delay": 0,
+		"initial_state": "restore_last",
+		"in_mode": "detached",
+		"name": "Heizkreis WZ/Küche"
+	},
+	"input:0": {
+		"type": "disabled",
+		"id": 0,
+		"invert": false,
+		"factory_reset": true,
+		"name": null
+	},
+	"temperature:0": {
+		"report_thr_C": 0.5,
+		"id": 0,
+		"name": null,
+		"offset_C": 0
+	},
+	"humidity:0": {
+		"id": 0,
+		"report_thr": 1,
+		"offset": 0,
+		"name": null
+	},
+	"illuminance:0": {
+		"id": 0,
+		"bright_thr": 200,
+		"dark_thr": 30,
+		"name": null
+	},
+	"ui": {
+		"screen_saver": {
+			"enable": true,
+			"timeout": 20,
+			"priority_element": "TEMPERATURE"
+		},
+		"lock_type": "none",
+		"disable_gestures_when_locked": false,
+		"show_favourites": true,
+		"show_main_sensor_graph": false,
+		"use_F": false,
+		"brightness": {
+			"auto": true,
+			"level": 70,
+			"auto_off": {
+				"enable": true,
+				"by_lux": true
+			}
+		},
+		"screen_off_when_idle": true,
+		"relay_state_overlay": {
+			"enable": true,
+			"always_visible": false
+		}
+	},
+	"sys": {
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.0000,
+			"lon": 0.0000
+		},
+		"debug": {
+			"websocket": {
+				"enable": true
+			},
+			"mqtt": {
+				"enable": false
+			},
+			"logs": {
+				"Generic": false,
+				"Bluetooth": false,
+				"Cloud": false,
+				"Interface": false,
+				"Media": true,
+				"MQTT": true,
+				"Network": false,
+				"RPC": false,
+				"Thermostat": true,
+				"Screen": false,
+				"UART": true,
+				"Webhooks": false,
+				"WebSocket": true
+			}
+		},
+		"device": {
+			"name": "Wall Display Wohnzimmer",
+			"mac": "000000000000",
+			"fw_id": "20240715-190913/2.0.0-c0bdf3b8",
+			"discoverable": false,
+			"eco_mode": false
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 106
+	},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"mqtt": {
+		"enable": false,
+		"client_id": "ShellyWallDisplay-000000000000",
+		"topic_prefix": "ShellyWallDisplay-000000000000"
+	},
+	"ws": {
+		"enable": false,
+		"ssl_ca": "ca.pem"
+	},
+	"media": {
+		"rev": 0
+	},
+	"thermostat:0": {
+		"id": 0,
+		"enable": false,
+		"sensor": "shelly+1://shellyht-C45BBE77E62F/c/switch:0",
+		"type": "heating",
+		"actuator": "shelly://shellywalldisplay-000000000000/c/switch:0",
+		"hysteresis": 0.5,
+		"invert_output": false,
+		"display_unit": "C",
+		"target_C": 5,
+		"name": null
+	},
+	"awaiting_auth_code": false
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"cloud": {
+		"connected": true
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"temperature:0": {
+		"id": 0,
+		"tC": 29,
+		"tF": 84.2
+	},
+	"humidity:0": {
+		"id": 0,
+		"rh": 47.5
+	},
+	"illuminance:0": {
+		"id": 0,
+		"lux": 150,
+		"illumination": "twilight"
+	},
+	"switch:0": {
+		"id": 0,
+		"output": false,
+		"source": "Auto power on (restore_last)"
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"sys": {
+		"id": "ShellyWallDisplay-0008222E8DEC",
+		"mac": "0008222E8DEC",
+		"model": "SAWD-0A1XX10EU1",
+		"gen": 2,
+		"fw_id": "20240715-190913/2.0.0-c0bdf3b8",
+		"ver": "2.0.0",
+		"app": "WallDisplay",
+		"auth_en": false,
+		"uptime": 525554,
+		"app_uptime": 525452,
+		"discoverable": false,
+		"cfg_rev": 106,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"platform": "vXD110001",
+		"serial": "SAWD8963F778H",
+		"batch_id": "38467",
+		"batch_date": 230503,
+		"available_updates": {},
+		"restart_required": false,
+		"unixtime": 1721713949,
+		"relay_in_thermostat": true,
+		"sensor_in_thermostat": false
+	},
+	"wifi": {
+		"sta_ip": "192.168.1.2",
+		"status": "got ip",
+		"mac": "00:00:00:00:00:00",
+		"ssid": "SSID",
+		"rssi": -52,
+		"netmask": "255.255.255.0",
+		"gw": "192.168.1.1",
+		"nameserver": "192.168.1.1"
+	},
+	"media": {
+		"total_size": 0,
+		"total_size_h": "0.000 B",
+		"item_counts": {
+			"audio": 0,
+			"photo": 0,
+			"video": 0
+		},
+		"playback": {
+			"enable": false,
+			"media_type": "RADIO",
+			"media_meta": {
+				"title": "Radio Khatereh"
+			}
+		}
+	},
+	"devicepower:0": {
+		"id": 0,
+		"external": {
+			"present": true
+		}
+	},
+	"awaiting_auth_code": false,
+	"thermostat:0": {
+		"id": 0,
+		"enable": false,
+		"target_C": 5,
+		"current_C": 27.5,
+		"output": false,
+		"schedules": {
+			"enable": false
+		}
+	}
+}
+```
