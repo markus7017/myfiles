@@ -1485,3 +1485,262 @@
 	}
 }
 ```
+
+### Shelly Dimmer G3
+
+#### /shelly
+
+```
+{
+	"name": "Test - Shelly Dimmer G3",
+	"id": "shellydimmerg3-XXXXXXXXXXXX",
+	"mac": "XXXXXXXXXXXX",
+	"slot": 0,
+	"model": "S3DM-0A101WWL",
+	"gen": 2,
+	"fw_id": "20240912-104707/g093120a",
+	"ver": "1.4.99-dev105812",
+	"app": "DimmerG3",
+	"auth_en": false,
+	"auth_domain": null
+}
+```
+
+##### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": false
+		}
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": false,
+		"server": "iot.shelly.cloud:6012/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "button",
+		"enable": true,
+		"invert": false
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "button",
+		"enable": true,
+		"invert": false
+	},
+	"knx": {
+		"enable": false,
+		"ia": "15.15.255",
+		"routing": {
+			"addr": "224.0.23.12:3671"
+		}
+	},
+	"light:0": {
+		"id": 0,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"transition_duration": 3.0,
+		"min_brightness_on_toggle": 3,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50,
+			"active_between": []
+		},
+		"range_map": [
+			0,
+			100
+		],
+		"button_fade_rate": 3,
+		"button_presets": {
+			"button_doublepush": {
+				"brightness": 100
+			}
+		},
+		"in_mode": "dim",
+		"current_limit": 2.3,
+		"power_limit": 300,
+		"undervoltage_limit": 100,
+		"voltage_limit": 280
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellydimmerg3-XXXXXXXXXXXX",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shellydimmerg3-XXXXXXXXXXXX",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Test - Shelly Dimmer G3",
+			"mac": "XXXXXXXXXXXX",
+			"fw_id": "20240912-104707/g093120a",
+			"discoverable": true
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.00000,
+			"lon": 0.00000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.google.com"
+		},
+		"cfg_rev": 8
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyDimmerG3-XXXXXXXXXXXX",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"bthome": {
+		"errors": [
+			"bluetooth_disabled"
+		]
+	},
+	"cloud": {
+		"connected": false
+	},
+	"input:0": {
+		"id": 0,
+		"state": null
+	},
+	"input:1": {
+		"id": 1,
+		"state": null
+	},
+	"knx": {},
+	"light:0": {
+		"id": 0,
+		"source": "",
+		"output": false,
+		"brightness": 1,
+		"temperature": {
+			"tC": 37.2,
+			"tF": 98.9
+		},
+		"flags": [
+			"uncalibrated"
+		],
+		"aenergy": {
+			"total": 0.0,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1727279040
+		},
+		"apower": 0.0,
+		"current": 0.0,
+		"voltage": 234.0
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "XXXXXXXXXXXX",
+		"restart_required": false,
+		"time": "17:44",
+		"unixtime": 1727279069,
+		"uptime": 177,
+		"ram_size": 260740,
+		"ram_free": 137248,
+		"fs_size": 1048576,
+		"fs_free": 544768,
+		"cfg_rev": 8,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"available_updates": {},
+		"reset_reason": 3
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -47
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
