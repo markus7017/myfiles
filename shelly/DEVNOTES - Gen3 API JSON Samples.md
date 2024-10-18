@@ -21,7 +21,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -224,7 +224,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -453,7 +453,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -673,7 +673,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -926,7 +926,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -1231,7 +1231,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -1506,7 +1506,7 @@
 }
 ```
 
-##### /rpc/Shelly.GetConfig
+#### /rpc/Shelly.GetConfig
 
 ```
 {
@@ -1738,6 +1738,178 @@
 		"status": "got ip",
 		"ssid": "SSID",
 		"rssi": -47
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
+
+### Shelly BLU Gateway G3
+
+#### /shelly
+```
+{
+	"name": "BLU Gateway G3",
+	"id": "shellyblugwg3-000000000000",
+	"mac": "000000000000",
+	"slot": 1,
+	"model": "S3GW-1DBT001",
+	"gen": 3,
+	"fw_id": "20241007-074728/1.4.99-blugwg3prod2-g689f175",
+	"ver": "1.4.99-blugwg3prod2",
+	"app": "BluGwG3",
+	"auth_en": false,
+	"auth_domain": null
+}
+```
+
+#### /rpc/Shelly.GetConfig
+```
+{
+	"ble": {
+		"enable": true,
+		"rpc": {
+			"enable": true
+		}
+	},
+	"blugw": {
+		"sys_led_enable": false
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyblugwg3-000000000000",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shellyblugwg3-000000000000",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "BLU Gateway G3",
+			"mac": "000000000000",
+			"fw_id": "20241007-074728/1.4.99-blugwg3prod2-g689f175",
+			"discoverable": true,
+			"eco_mode": false
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.000000,
+			"lon": 0.000000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.cloudflare.com"
+		},
+		"cfg_rev": 60
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyBluGwG3-000000000000",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+```
+{
+	"ble": {},
+	"blugw": {},
+	"bthome": {},
+	"cloud": {
+		"connected": true
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "000000000000",
+		"restart_required": false,
+		"time": "12:07",
+		"unixtime": 1729073271,
+		"uptime": 151641,
+		"ram_size": 254360,
+		"ram_free": 79348,
+		"ram_min_free": 52216,
+		"fs_size": 1048576,
+		"fs_free": 98304,
+		"cfg_rev": 63,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"available_updates": {},
+		"reset_reason": 3
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"rssi": -64
 	},
 	"ws": {
 		"connected": false
