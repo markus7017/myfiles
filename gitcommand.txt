@@ -7,6 +7,7 @@ git remote set-url origin https://github.com/openhab/openhab-addons.git
 git remote set-url --push origin https://github.com/markus7017/openhab-addons.git
 git remote -v
 git fetch origin
+mvn install -Pj17 -Dohc.version=4.3.0
 
 #rebase
 git fetch
@@ -33,3 +34,17 @@ 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
 
 mvn spotless:apply
 mvn spotless:check -Dspotless.check.skip=false
+
+mvn install -Pj17 -Dohc.version=4.3.0
+mvn -Dohc.version=4.3.0 -Pj17 clean install
+cp target/org.openhab.binding.shelly-5.0.0-SNAPSHOT.jar ~/Dev/myfiles/shelly/org.openhab.binding.shelly-4.3.5-SNAPSHOT.jar
+
+Uninstall Bnd Tools v7.1.x
+Eclipse | Help | About Eclipse IDE | Installation Details | Installed Software | Filter on ‘bnd’ | One-by-one select each Bnd Tools entry | Uninstall (ignore the restart prompt until the last entry) | Restart Eclipse
+
+Remove Bnd Tools v7.1.x from available update sites
+Eclipse | Help | Install New Software | Manage… | Select entry for Bnd Tools v7.0.0 | Remove
+
+Install Bnd Tools v7.0.0
+
+Eclipse | Help | Install New Software | Add… | Name=OH Bnd Tools v7.0.0 Location=https://bndtools.org/bndtools.p2.repo/7.0.0/ | Accept certificates
