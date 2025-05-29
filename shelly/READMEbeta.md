@@ -20,10 +20,11 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 ## General Notes
 
 Suport openHAB version:
-- **4.3**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.3-SNAPSHOT.jar)
-- **4.2**: Outdated [Last DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
-- **4.1**: Outdated[Last DEV build 4.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.1.0-SNAPSHOT.jar)
-- **4.0**: No longer supported.[Last DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.0-SNAPSHOT.jar)
+- **5.0**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-5.0.0-SNAPSHOT.jar)
+- **4.3**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.6-SNAPSHOT.jar)
+- **4.2**: No longer supported.[ [Last DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
+- **4.1**: No longer supported.[[Last DEV build 4.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.1.0-SNAPSHOT.jar)
+- **4.0**: No longer supported.[Last DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.5-SNAPSHOT.jar)
 - **3.4**: No longer supported.[Last DEV build 3.4.5-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.4.5-SNAPSHOT.jar)
 
 Be ware that there are
