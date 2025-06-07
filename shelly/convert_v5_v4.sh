@@ -5,6 +5,6 @@ find . -name "*.java" -exec sed -i '' -e ':a' -e 'N' -e '$!ba' -e 's|import org.
 find . -name "*.java" -exec sed -i '' -e ':a' -e 'N' -e '$!ba' -e 's|import org.eclipse.californium.elements.config.Configuration;\n||g' {} +
 find . -name "*.java" -exec sed -i '' -e ':a' -e 'N' -e '$!ba' -e 's|    static \{\n        \/\/ register configurations before Configuration\.getStandard\(\) is used\n        DtlsConfig.register\(\);\n    \}\n|g' {} +
 
-find . -name "*.xml" -exec  sed -i '' -E 's|<semantic-equipment-tag>.*<\/semantic-equipment-tag>\n\t\t||g'  {} \;
+find . -name "*.xml" -exec  sed -i '' -E 's|<semantic-equipment-tag>.*<\/semantic-equipment-tag>||g'  {} \;
 cp ~/Dev/myfiles/shelly/Shelly1CoapServer.java src/main/java/org/openhab/binding/shelly/internal/api1/
 mvn spotless:apply
