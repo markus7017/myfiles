@@ -20,9 +20,12 @@ DISCLAIMER: Please be ware, installing a SNAPSHOT or DEV build might impact the 
 ## General Notes
 
 Suport openHAB version:
-- **5.0**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-5.0.0-SNAPSHOT.jar)
-- **4.3**: [Current DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.6-SNAPSHOT.jar)
-- **4.2**: No longer supported.[ [Last DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
+- **5.1.x**: [Current DEV build 5.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-5.1.0-SNAPSHOT.jar)
+- **5.0.x**: Use version, which comes with official 5.0, or switch to 5.1 DEV build (works on 5.0)
+- **4.3.6**: [Current DEV build 4.3.6-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.6-SNAPSHOT.jar)
+- **4.3.3..5: No longer supported, try 4.3.6 DEV build; 
+- **4.3.0..2**: No longer supported. [Last DEV build 4.3.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.3.0-SNAPSHOT.jar)
+- **4.2**: No longer supported.[Last DEV build 4.2.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.2.0-SNAPSHOT.jar)
 - **4.1**: No longer supported.[[Last DEV build 4.1.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.1.0-SNAPSHOT.jar)
 - **4.0**: No longer supported.[Last DEV build 4.0.0-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-4.0.5-SNAPSHOT.jar)
 - **3.4**: No longer supported.[Last DEV build 3.4.5-SNAPSHOT](https://github.com/markus7017/myfiles/blob/master/shelly/org.openhab.binding.shelly-3.4.5-SNAPSHOT.jar)
@@ -38,7 +41,7 @@ Make sure that the release version is not installed: Check that Shelly is not in
 There is no strict dependency on the OH base version, e.g. you could run binding 4.3-SNAPSNOT on top of openHAB 4.2. You can not run DEV build 4.3 on OH 2.5, 3.x or 4.0.
 
 Gen1: Use Shelly device firmware version 1.9.2 or newer - you could use device UI or Shelly Manager to install the update.
-Gen2+3: Use Shelly device firmware version 1.10.0 or newer
+Gen2+3+4: Use Shelly device firmware version 1.33.0 or newer
 
 ## Installing DEV build
 
@@ -64,7 +67,8 @@ If everything was install correct a "bundle:list" output show be similar to this
 ```
 ### Updating DEV version
 
-Channel definitions are subject to change with any alpha or beta release. Please make sure to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
+Channel definitions are subject to change with any alpha or beta release. 
+It's recommended to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
 - **remove all Shelly things** (UI: no worries, they get re-discoverd; and .things file)
 - delete the existing binding jar from the addons folder, wait until OH unloaded the binding (check the OH log)
@@ -77,6 +81,9 @@ Channel definitions are subject to change with any alpha or beta release. Please
 - **re-discover things**
 - the channel/item linkage should be restored automatically
 - verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
+
+After re-adding the things makes sure to review the thing configuration if you had enabled support for Range extender mode, BLU devices or LoRa add-on.
+If you had enabled BLU support and you don't want to use it anymore, go to the device's WebUI and delete any script name starting with 'oh-'.
 
 ### Binding does not start (does not show status=active), doesn't show up
 

@@ -20,6 +20,7 @@ git push origin +gree_snapshot
 git push origin +rachio_snapshot
 
 #build .jar and .kar
+mvn clean compile
 mvn clean install
 mvn karaf:kar
 
