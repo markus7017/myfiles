@@ -6,4 +6,6 @@ find . -name "*.java" -exec sed -i '' -e ':a' -e 'N' -e '$!ba' -e 's|    static 
 
 find . -name "*.xml" -exec  sed -i '' -E 's|<semantic-equipment-tag>.*<\/semantic-equipment-tag>||g'  {} \;
 cp ~/Dev/myfiles/shelly/Shelly1CoapServer.java src/main/java/org/openhab/binding/shelly/internal/api1/
+
+find . -name ".DS_Store" -type f -delete
 mvn spotless:apply
