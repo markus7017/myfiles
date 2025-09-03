@@ -12,6 +12,7 @@ echo Copy Code von $ohdir5/$ohbundledir/src/
 cd $ohdir
 rm -rf ./src
 rm -rf ./target
+jenv local 21
 if cp -r $ohdir5/$ohbundledir/src/ src/; then
 	find . -name ".DS_Store" -type f -delete
 	if mvn clean install; then
