@@ -17,16 +17,11 @@ if cp -r $ohdir5/$ohbundledir/src/ src/; then
 	if mvn clean install; then
       jar=$(ls target/org.openhab.binding.${ohbundle}-*-SNAPSHOT.jar 2>/dev/null | head -n 1)
       basename="${jar#target/}"
-      echo "jar=$jar"
-      echo "basename=$basename"
       basename="${basename%.jar}"
-      echo "basename=$basename"
       src_name="target/$basename.jar"
       dst_name="$destdir/$basename$suffix.jar"
-      echo "\nRead to copy $src_name -> $dst_name"
-      read
-	  cp $src_name -> $dst_name
-	  echo "Build successful, jar copied to $destdir"
+	  cp $src_name $dst_name
+	  echo "Build successful, $jar copied to $destdir"
 	  cd ~/Dev/myfiles
 	  ./push.sh
     fi

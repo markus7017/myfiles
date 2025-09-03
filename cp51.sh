@@ -2,7 +2,11 @@
 OLDPWD=$(pwd)
 
 ohdir=$ohdir5/$ohbundledir
-destdir=~/Dev/myfiles/$ohbundle/
+destdir=~/Dev/myfiles/$ohbundle
+suffix=""
+if [[ -n "$1" ]]; then
+  suffix="-$1"
+fi
 
 cd $ohdir
 find . -name ".DS_Store" -type f -delete
