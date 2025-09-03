@@ -16,8 +16,12 @@ if cp -r $ohdir5/$ohbundledir/src/ src/; then
 	find . -name ".DS_Store" -type f -delete
 	if mvn clean install; then
       jar=$(ls target/org.openhab.binding.${ohbundle}-*-SNAPSHOT.jar 2>/dev/null | head -n 1)
-      basename="${jar%.jar}"
-      src_name="$basename.jar"
+      basename="${jar#target/}"
+      echo "jar=$jar"
+      echo "basename=$basename"
+      basename="${basename%.jar}"
+      echo "basename=$basename"
+      src_name="target/$basename.jar"
       dst_name="$destdir/$basename$suffix.jar"
       echo "\nRead to copy $src_name -> $dst_name"
       read
