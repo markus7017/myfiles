@@ -12,6 +12,7 @@ if cp -r $ohdir5/$ohbundledir/src/ src/; then
 	find . -name ".DS_Store" -type f -delete
 	if mvn clean install; then
 	  cp target/org.openhab.binding*.jar $destdir
+	  rm -f $destdir/*sources.jar
 	  echo "Build successful, jar copied to $destdir"
 	  cd ~/Dev/myfiles
 	  ./push.sh
