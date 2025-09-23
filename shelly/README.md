@@ -1856,7 +1856,7 @@ See notes on discovery of Shelly BLU devices above.
 
 | Group   | Channel       | Type     | read-only | Description                                                                         |
 | ------- | ------------- | -------- | --------- | ----------------------------------------------------------------------------------- |
-| sensors | distance      | Number   | yes       | Distance in m                                                                       |
+| sensors | distance      | Number   | yes       | Distance in mm                                                                      |
 |         | vibration     | Switch   | yes       | ON: Vibration detected                                                              |
 | battery | batteryLevel  | Number   | yes       | Battery Level in %                                                                  |
 |         | lowBattery    | Switch   | yes       | Low battery alert (< 20%)                                                           |
@@ -1870,9 +1870,9 @@ See notes on discovery of Shelly BLU devices above.
 | ------- | ------------- | -------- | --------- | ----------------------------------------------------------------------------------- |
 | sensors | channel       | Number   | yes       | Selected channel                                                                    |
 |         | steps         | Number   | yes       | Number of steps the wheel was moved                                                 |
-|         | rotation1     | Number   | yes       | Rotation X                                                                          |
-|         | rotation2     | Number   | yes       | Rotation Y                                                                          |
-|         | rotation3     | Number   | yes       | Rotation Z                                                                          |
+|         | rotationX     | Number   | yes       | Rotation X axis                                                                     |
+|         | rotationY     | Number   | yes       | Rotation Y axis                                                                     |
+|         | rotationZ     | Number   | yes       | Rotation Z axis                                                                     |
 |         | direction     | Number   | yes       | up / down                                                                           |
 |         | lastUpdate    | DateTime | yes       | Timestamp of the last update (any sensor value changed)                             |
 | status1 | button        | Trigger  | yes       | Event trigger with payload, see SHORT_PRESSED or LONG_PRESSED                       |
