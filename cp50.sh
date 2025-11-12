@@ -14,17 +14,17 @@ rm -rf ./src
 rm -rf ./target
 jenv local 21
 if cp -r $ohdir5/$ohbundledir/src/ src/; then
-	find . -name ".DS_Store" -type f -delete
-	if mvn clean install; then
+    find . -name ".DS_Store" -type f -delete
+    if mvn clean install -Dohc.version=5.0.0; then
       jar=$(ls target/org.openhab.binding.${ohbundle}-*-SNAPSHOT.jar 2>/dev/null | head -n 1)
       basename="${jar#target/}"
       basename="${basename%.jar}"
       src_name="target/$basename.jar"
       dst_name="$destdir/$basename$suffix.jar"
-	  cp $src_name $dst_name
-	  echo "Build successful, $jar copied to $destdir"
-	  cd ~/Dev/myfiles
-	  ./push.sh
+#	  cp $src_name $dst_name
+#	  echo "Build successful, $jar copied to $destdir"
+#	  cd ~/Dev/myfiles
+#	  ./push.sh
     fi
 else
     echo "Build failed"
