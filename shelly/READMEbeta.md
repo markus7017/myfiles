@@ -48,7 +48,7 @@ Gen2+3+4: Use Shelly device firmware version 1.33.0 or newer
 ### New Install
 
 - Uninstall Shelly binding form UI
-- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-4.3.0-SNAPSHOT.jar
+- Download the jar from the [myfiles repo](https://github.com/markus7017/myfiles/tree/master/shelly), e.g. org.openhab.binding.shelly-5.2.0-SNAPSHOT.jar
   Note: If you download via curl or wget and not manually from the github UI you need to add ***?raw=true** to the URL to make sure getting a binary file
 - open OH console, run "feature:install openhab-transport-coap"
 - Stop OH
@@ -63,7 +63,7 @@ If everything was install correct a "bundle:list" output show be similar to this
 285 │ Active │ 80 │ 2.7.4 │ Californium (Cf) Element Connector
 286 │ Active │ 80 │ 2.7.4 │ Californium (Cf) OSGi
 287 │ Active │ 80 │ 2.7.4 │ Scandium (Sc) Core
-282 │ Active │ 80 │ 4.2.0.202401061653 │ openHAB Add-ons :: Bundles :: Shelly Binding Gen 1,2,3 and BLU
+282 │ Active │ 80 │ 5.2.0.202601061653 │ openHAB Add-ons :: Bundles :: Shelly Binding
 ```
 ### Updating DEV version
 
