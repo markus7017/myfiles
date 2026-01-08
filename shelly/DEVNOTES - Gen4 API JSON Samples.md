@@ -1021,3 +1021,278 @@
 	}
 }
 ```
+
+### Shelly Dimmer G4
+
+#### /shelly
+
+```
+{
+	"name": "Shelly Dimmer G4",
+	"id": "shellydimmerg4-000000000000",
+	"mac": "000000000000",
+	"slot": 0,
+	"model": "S4DM-0A101WWL",
+	"gen": 4,
+	"fw_id": "20250612-114743/gac8e021",
+	"ver": "1.8.99-dimmerg4samples0",
+	"app": "DimmerG4",
+	"auth_en": false,
+	"auth_domain": null,
+	"matter": false
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": false
+		}
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "button",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "button",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"knx": {
+		"enable": false,
+		"ia": "15.15.255",
+		"routing": {
+			"addr": "224.0.23.12:3671"
+		}
+	},
+	"light:0": {
+		"id": 0,
+		"name": null,
+		"initial_state": "restore_last",
+		"auto_on": false,
+		"auto_on_delay": 60.0,
+		"auto_off": false,
+		"auto_off_delay": 60.0,
+		"transition_duration": 3.0,
+		"min_brightness_on_toggle": 3,
+		"night_mode": {
+			"enable": false,
+			"brightness": 50,
+			"active_between": []
+		},
+		"range_map": [
+			0,
+			100
+		],
+		"button_fade_rate": 3,
+		"button_presets": {
+			"button_doublepush": {
+				"brightness": 100
+			}
+		},
+		"in_mode": "dim",
+		"current_limit": 1.2,
+		"power_limit": 240,
+		"undervoltage_limit": 100,
+		"voltage_limit": 280
+	},
+	"matter": {
+		"enable": false
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellydimmerg4-000000000000",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shellydimmerg4-000000000000",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Shelly Dimmer G4",
+			"mac": "000000000000",
+			"fw_id": "20250612-114743/gac8e021",
+			"discoverable": true,
+			"eco_mode": false
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.0000,
+			"lon": 0.0000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.cloudflare.com"
+		},
+		"cfg_rev": 15
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyDimmerG4-000000000000",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"bthome": {
+		"errors": [
+			"bluetooth_disabled"
+		]
+	},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": null
+	},
+	"input:1": {
+		"id": 1,
+		"state": null
+	},
+	"knx": {},
+	"light:0": {
+		"id": 0,
+		"source": "dim",
+		"output": false,
+		"brightness": 100,
+		"temperature": {
+			"tC": 50.2,
+			"tF": 122.3
+		},
+		"aenergy": {
+			"total": 3140.037,
+			"by_minute": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"minute_ts": 1767849360
+		},
+		"apower": 0.0,
+		"current": 0.0,
+		"voltage": 237.0
+	},
+	"matter": {
+		"num_fabrics": 0,
+		"commissionable": false
+	},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "000000000000",
+		"restart_required": false,
+		"time": "06:16",
+		"unixtime": 1767849378,
+		"last_sync_ts": 1767848742,
+		"uptime": 14488373,
+		"ram_size": 345624,
+		"ram_free": 206608,
+		"ram_min_free": 154188,
+		"fs_size": 917504,
+		"fs_free": 397312,
+		"cfg_rev": 15,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"btrelay_rev": 0,
+		"available_updates": {},
+		"reset_reason": 1,
+		"utc_offset": 3600
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"bssid": "00:00:00:00:00:00",
+		"rssi": -49,
+		"sta_ip6": [
+			"::1"
+		]
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
