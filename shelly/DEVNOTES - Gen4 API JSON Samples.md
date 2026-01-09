@@ -1296,3 +1296,257 @@
 	}
 }
 ```
+
+### Shelly i4 G4
+
+#### /shelly
+
+```
+{
+	"name": "Test - Shelly i4 G4",
+	"id": "shellyi4g4-000000000000",
+	"mac": "000000000000",
+	"slot": 0,
+	"model": "S4SN-0A24X",
+	"gen": 4,
+	"fw_id": "20251020-070250/gbabfccd",
+	"ver": "1.8.99-i4g4samples0",
+	"app": "I4G4",
+	"auth_en": false,
+	"auth_domain": null,
+	"matter": true
+}
+```
+
+#### /rpc/Shelly.GetConfig
+
+```
+{
+	"ble": {
+		"enable": false,
+		"rpc": {
+			"enable": true
+		}
+	},
+	"bthome": {},
+	"cloud": {
+		"enable": true,
+		"server": "shelly-13-eu.shelly.cloud:6022/jrpc"
+	},
+	"input:0": {
+		"id": 0,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:1": {
+		"id": 1,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:2": {
+		"id": 2,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"input:3": {
+		"id": 3,
+		"name": null,
+		"type": "switch",
+		"enable": true,
+		"invert": false,
+		"factory_reset": true
+	},
+	"knx": {
+		"enable": false,
+		"ia": "15.15.255",
+		"routing": {
+			"addr": "224.0.23.12:3671"
+		}
+	},
+	"matter": {
+		"enable": true
+	},
+	"modbus": {
+		"enable": true
+	},
+	"mqtt": {
+		"enable": false,
+		"server": null,
+		"client_id": "shellyi4g4-000000000000",
+		"user": null,
+		"ssl_ca": null,
+		"topic_prefix": "shellyi4g4-000000000000",
+		"rpc_ntf": true,
+		"status_ntf": false,
+		"use_client_cert": false,
+		"enable_rpc": true,
+		"enable_control": true
+	},
+	"sys": {
+		"device": {
+			"name": "Test - Shelly i4 G4",
+			"mac": "000000000000",
+			"fw_id": "20251020-070250/gbabfccd",
+			"discoverable": true,
+			"eco_mode": false,
+			"addon_type": null,
+			"tls_check_cert_validity_time": true,
+			"enhanced_security": false
+		},
+		"location": {
+			"tz": "Europe/Berlin",
+			"lat": 0.0000,
+			"lon": 0.0000
+		},
+		"debug": {
+			"level": 2,
+			"file_level": null,
+			"mqtt": {
+				"enable": false
+			},
+			"websocket": {
+				"enable": false
+			},
+			"file_log": {
+				"enable": false
+			},
+			"udp": {
+				"addr": null
+			}
+		},
+		"ui_data": {},
+		"rpc_udp": {
+			"dst_addr": null,
+			"listen_port": null
+		},
+		"sntp": {
+			"server": "time.cloudflare.com"
+		},
+		"cfg_rev": 10
+	},
+	"wifi": {
+		"ap": {
+			"ssid": "ShellyI4G4-000000000000",
+			"is_open": true,
+			"enable": false,
+			"range_extender": {
+				"enable": false
+			}
+		},
+		"sta": {
+			"ssid": "SSID",
+			"is_open": false,
+			"enable": true,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"sta1": {
+			"ssid": null,
+			"is_open": true,
+			"enable": false,
+			"ipv4mode": "dhcp",
+			"ip": null,
+			"netmask": null,
+			"gw": null,
+			"nameserver": null
+		},
+		"roam": {
+			"rssi_thr": -80,
+			"interval": 60
+		}
+	},
+	"ws": {
+		"enable": false,
+		"server": null,
+		"ssl_ca": "ca.pem"
+	}
+}
+```
+
+#### /rpc/Shelly.GetStatus
+
+```
+{
+	"ble": {},
+	"bthome": {
+		"errors": [
+			"bluetooth_disabled"
+		]
+	},
+	"cloud": {
+		"connected": true
+	},
+	"input:0": {
+		"id": 0,
+		"state": false
+	},
+	"input:1": {
+		"id": 1,
+		"state": false
+	},
+	"input:2": {
+		"id": 2,
+		"state": false
+	},
+	"input:3": {
+		"id": 3,
+		"state": false
+	},
+	"knx": {},
+	"matter": {
+		"num_fabrics": 0,
+		"commissionable": true
+	},
+	"modbus": {},
+	"mqtt": {
+		"connected": false
+	},
+	"sys": {
+		"mac": "000000000000",
+		"restart_required": false,
+		"time": "14:17",
+		"unixtime": 1767964656,
+		"last_sync_ts": 1767964338,
+		"uptime": 325,
+		"ram_size": 344160,
+		"ram_free": 178808,
+		"ram_min_free": 161052,
+		"fs_size": 917504,
+		"fs_free": 462848,
+		"cfg_rev": 10,
+		"kvs_rev": 0,
+		"schedule_rev": 0,
+		"webhook_rev": 0,
+		"btrelay_rev": 0,
+		"available_updates": {},
+		"reset_reason": 3,
+		"backup": {},
+		"utc_offset": 3600
+	},
+	"wifi": {
+		"sta_ip": "192.168.33.1",
+		"status": "got ip",
+		"ssid": "SSID",
+		"bssid": "00:00:00:00:00:00",
+		"rssi": -45,
+		"sta_ip6": [
+			"::1"
+		]
+	},
+	"ws": {
+		"connected": false
+	}
+}
+```
