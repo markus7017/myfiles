@@ -31,7 +31,6 @@ git push origin -u fsinternetradio_sav
 git branch
 
 git config --global credential.helper store
-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
 
 mvn spotless:apply
 mvn spotless:check -Dspotless.check.skip=false
