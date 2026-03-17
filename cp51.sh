@@ -10,7 +10,7 @@ fi
 
 cd $ohdir
 find . -name ".DS_Store" -type f -delete
-if mvn clean install; then
+if mvn clean install -Dohc.version=5.1.0; then
       jar=$(ls target/org.openhab.binding.${ohbundle}-*-SNAPSHOT.jar 2>/dev/null | head -n 1)
       basename="${jar#target/}"
       basename="${basename%.jar}"
@@ -19,7 +19,7 @@ if mvn clean install; then
 	  cp $src_name $dst_name
 	  echo "Build successful, $jar copied to $destdir"
 	  cd ~/Dev/myfiles
-	  ./push.sh
+#	  ./push.sh
 else
   echo "Build failed"
 fi
