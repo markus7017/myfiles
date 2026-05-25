@@ -70,7 +70,7 @@ If everything was install correct a "bundle:list" output show be similar to this
 Channel definitions are subject to change with any alpha or beta release. 
 It's recommended to **delete all Shelly things before updating*** the binding and clean out the JSON DB:
 
-- **remove all Shelly things** (UI: no worries, they get re-discoverd; and .things file)
+- **remove all Shelly things** (UI: no worries, they get re-discoverd; and .things file) - **It's probably a good idea to make a record of the `thing`s for which `Enable BLU Gateway Support` is enabled (see later).**
 - delete the existing binding jar from the addons folder, wait until OH unloaded the binding (check the OH log)
 - open OH console ("openhab-cli console")
 - run "bundle:list | grep Shelly" and make sure that the binding is gone
@@ -78,7 +78,7 @@ It's recommended to **delete all Shelly things before updating*** the binding an
 - stop OH ("openhab-cli stop"), wait until everything is stopped (could take some time)
 - copy binding jar or kar into addons (set correct permission)
 - start oh service ("openhab-cli start")
-- **re-discover things**
+- **re-discover things** - Don't forget to enable `Enable BLU Gateway Support` for the `thing`s which act as BLE gateway.
 - the channel/item linkage should be restored automatically
 - verify the linked channels, maybe the are new ones and in rare cases I rename channels for consistency.
 
