@@ -14,6 +14,8 @@ The binding gets in sync with the next status refresh.
 
 Refer to [Advanced Users](doc/AdvancedUsers.md) for more information on openHAB Shelly integration, e.g. firmware update, network communication or log filtering.
 
+See [Power Meter Channels](doc/PowerMeter.md) for the power/energy meter channel reference, migration notes, and unit conversion details.
+
 Also check out the [Shelly Manager](doc/ShellyManager.md), which
 
 - provides detailed information on your Shellys
@@ -515,16 +517,6 @@ A new alarm will be triggered on a new condition or every 5 minutes if the condi
 | VIBRATION  | A vibration/tamper was detected (DW2 only)                                                       |
 
 Refer to section [Full Example](#full-example) for examples how to catch alarm triggers in openHAB rules.
-
-## Breaking Changes
-
-### Power/Energy meter channel updates (openHAB 5.2)
-
-Several power meter channels were renamed, corrected, or added in openHAB 5.2.
-Old channel IDs stay active as deprecated aliases for a transition period, so existing items and rules keep working.
-Deprecated channels are marked `[deprecated] Use <new channel> instead.` in their channel description.
-
-See [doc/PowerMeter.md](doc/PowerMeter.md) for the full list of renamed, deprecated, and new channels, the migration table, and the unit conversion details.
 
 ## Channels
 
