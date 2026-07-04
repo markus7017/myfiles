@@ -690,7 +690,8 @@ The Thing id is derived from the service name, so that's the reason why the Thin
 `Note:`
 
 - totalEnergy might reset on restart depending on device type and firmware version
-- You should calibrate the device if you want to use "neutral current" measurements. Check the Shelly documentation for details.
+- You should calibrate the device if you want to use "neutral current" measurements.
+- Check the Shelly documentation for details.
 
 ### Shelly 2 - relay mode (thing-type: shelly2-relay)
 
