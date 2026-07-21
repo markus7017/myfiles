@@ -1,0 +1,1 @@
+/Users/mmichels/Dev/openhab-5.3/git/openhab-addons/bundles/org.openhab.binding.shelly/CLAUDE.md
