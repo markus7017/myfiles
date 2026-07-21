@@ -163,7 +163,7 @@ See section [Discovery](#discovery) for details.
 | shellyblumotion      | Shelly BLU Motion ZB                                   | SBMO-103Z               |
 | shellybludistance    | Shelly BLU Distance                                    | SBDI-003E               |
 | shellybluremote      | Shelly BLU Remote Control                              | SBRC-005B               |
-| shellybluws90        | Ecowitt WS90 (powered by Shelly)                       | SBWS-90CM               |
+| shellybluws90        | Ecowitt WS90 Weather Station (Shelly BLU)              | SBWS-90CM               |
 
 ### Special Thing Types
 
@@ -2139,7 +2139,7 @@ See notes on discovery of Shelly BLU devices above.
 |         | lowBattery    | Switch   | yes       | Low battery alert (< 20%)                                                           |
 | device  | gatewayDevice | String   | yes       | Shelly forwarded last status update (BLU gateway), could vary from packet to packet |
 
-### Ecowitt WS90 - powered by Shelly (thing-type: shellybluws90)
+### Ecowitt WS90 Weather Station (Shelly BLU) (thing-type: shellybluws90)
 
 See notes on discovery of Shelly BLU devices above.
 
@@ -2152,6 +2152,7 @@ See notes on discovery of Shelly BLU devices above.
 |         | windSpeed     | Number:Speed         | yes       | Wind speed in m/s                                                                   |
 |         | windDirection | Number:Angle         | yes       | Wind direction in degrees (0-360)                                                   |
 |         | gustSpeed     | Number:Speed         | yes       | Wind gust speed in m/s                                                              |
+|         | gustDirection | Number:Angle         | yes       | Wind gust direction in degrees (0-360)                                              |
 |         | pressure      | Number:Pressure      | yes       | Atmospheric pressure in hPa                                                         |
 |         | dewPoint      | Number:Temperature   | yes       | Dew point in degrees Celsius                                                        |
 |         | rainStatus    | Switch               | yes       | ON: It's raining, OFF: It's not raining                                             |
@@ -2162,9 +2163,9 @@ See notes on discovery of Shelly BLU devices above.
 | device  | gatewayDevice | String               | yes       | Shelly forwarded last status update (BLU gateway), could vary from packet to packet |
 |         | firmware      | String               | yes       | Firmware version (may be empty — not all firmware versions report it)               |
 
-Known limitations:
+The `rainStatus` channel latches ON for a while after it has actually stopped raining, a hardware behavior of the WS90's piezo rain sensor rather than a binding issue.
 
-- The rain sensor latches `rainStatus` ON for a while after it has actually stopped raining, a hardware behavior of the WS90's piezo rain sensor rather than a binding issue.
+The WS90 hardware reports a single wind direction value per packet, so `gustDirection` always mirrors `windDirection`.
 
 ## Shelly Wall Displays
 
