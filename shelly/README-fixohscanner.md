@@ -186,7 +186,7 @@ The binding has the following configuration options:
 | autoCoIoT       | Auto-enable CoIoT events when firmware 1.6+ is enabled (Gen1 only). | no        | true    |
 
 `defaultUserId` and `defaultPassword:` will be used by the binding if device protection is enabled.
-However, the Plus/Pro devices have a fixed user id admin. Nevertheless the binding provide that option to allow a mixed operation of Gen 1 and 2 devices in the same installation having same defaults.
+However, the Plus/Pro devices have a fixed user id admin`. Nevertheless the binding provide that option to allow a mixed operation of Gen 1 and 2 devices in the same installation having same defaults.
 
 `Generation 1`: The binding defaults to CoIoT events when firmware 1.6 or newer is detected.
 CoIoT provides near-realtime updates on device status changes.
