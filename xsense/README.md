@@ -14,6 +14,19 @@ A future version may add local communication once a local API becomes available.
 The binding maps the X-Sense cloud data model to a four level thing hierarchy: `account` → `home` → `station` → sensor.
 Multiple accounts, multiple homes per account, multiple base stations per home and multiple sensors per station are supported.
 
+## Getting Started
+
+1. In the X-Sense app, make sure the base station is running the latest firmware.
+2. In the X-Sense app, open the base station's settings and enable **Connect with Home
+   Assistant**. This unlocks the cloud data (MQTT-backed) that the binding polls; without it the
+   cloud API will not report live device data.
+3. Create a dedicated X-Sense cloud account for openHAB and share your home with it in the
+   X-Sense app, rather than reusing your primary account.
+4. In openHAB, add an `account` bridge thing with that account's email and password.
+5. Once the `account` bridge is online, your home appears in the inbox — add it.
+6. Adding the `home` thing surfaces its base stations — add a `station`.
+7. Adding the `station` thing surfaces its attached smoke/water sensors — add them.
+
 ## Binding Configuration
 
 The binding configuration (Settings → Add-on Settings → X-Sense Binding) provides defaults for all accounts:
