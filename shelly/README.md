@@ -112,10 +112,11 @@ See section [Discovery](#discovery) for details.
 | shellyplusht         | Shelly Plus HT with temperature + humidity sensor        | SNSN-0013A, S3SN-0U12A                                                    |
 | shellyplussmoke      | Shelly Plus Smoke sensor                                 | SNSN-0031Z                                                                |
 | shellyplusflood      | Shelly Flood Gen4 water leak sensor                      | S4SN-0071A                                                                |
-| shellypluswdus       | Shelly Plus Wall Dimmer US                               | SNDM-0013US                                                               |
-| shellyplusdimmer     | Shelly Plus Dimmer Gen 3                                 | S3DM-0A101WWL                                                             |
+| shellypluswdus       | Shelly Plus Wall Dimmer US                               | SNDM-0013US, S4DM-0A102US                                                 |
+| shellyplusdimmer     | Shelly Plus Wall Dimmer EU / Dimmer Gen 3                | SNDM-0011EU, S3DM-0A101WWL                                                |
 | shellyprodm2pm       | Shelly Pro Dimmer 2PM                                    | SPDM-002PE01EU                                                            |
 | shellyplusrgbwpm     | Shelly Plus RGBW PM                                      | SNDC-0D4P10WW                                                             |
+| shellyprorgbwwpm     | Shelly Pro RGBWW PM                                      | SPDC-0D5PE16EU                                                            |
 | shellywalldisplay    | Shelly Plus Wall Display                                 | SAWD-0A1XX10EU1                                                           |
 | shellyblugw          | Shelly BLU Gateway                                       | SNGW-BT01                                                                 |
 | shellyblugw3         | Shelly BLU Gateway 3                                     | S3GW-1DBT001                                                              |
@@ -581,6 +582,7 @@ A new alarm will be triggered on a new condition or every 5 minutes if the condi
 | VALVE_ERROR  | Device reported a problem with the valve.                                         |
 | VIBRATION    | Device reported vibration.                                                        |
 | LOW_BATTERY  | Device reported low battery.                                                      |
+| LORA_RECEIVED | A datagram has been received via LoRa protocol                                   |
 
 ### Sensors
 
@@ -623,6 +625,31 @@ Old channel IDs stay active as deprecated, advanced channels and keep receiving 
 
 `meterN#powerFactor` additionally changed type from `Number:Dimensionless` to plain `Number` (range −1.0 to +1.0).
 This is an in-place type change on the same channel ID, not a rename, so there is no dual-write; items statically linked as `Number:Dimensionless` need relinking.
+
+### LoRa Add-On (Channel Group: lora)
+
+Two LoRa add-on variants are supported:
+
+- **Shelly LoRa Add-On** (standard form factor): attaches to Gen3 and Gen4 devices — 1, 1PM, 2PM, Shutter, EM, and Dimmer 0/1-10V PM Gen3/Gen4. Requires firmware 1.6 or later. Gen2 Plus devices and the Shelly Wall Dimmer Gen3 do not support this add-on.
+- **Shelly Pro LoRa Add-On** (DIN-rail): attaches to Pro series devices supported by this binding — Pro 1, Pro 1PM, Pro 2, Pro 2PM, Pro 3EM, Pro EM-50, Pro Dimmer 2PM, and Pro RGBWW PM. Requires firmware 2.0 or later.
+
+The binding detects the LoRa Add-On automatically and keeps the `lora` channel group in sync with the device configuration: the channels are created when the add-on is installed, the RX channels follow the add-on's RX-enable setting, and all channels are removed when the add-on is removed.
+No thing configuration is required.
+Both raw LoRa datagrams (`LoRa.SendBytes`) and SheLR datagrams (`LoRa.Send`, AES-CCM encrypted) received by the add-on are reported on the RX channels; sending uses raw LoRa datagrams.
+The add-on firmware version is shown in the Thing property `addonFirmware`; the device reports it asynchronously, so the property appears shortly after the Thing goes online.
+
+| Group   | Channel      | Type              | read-only | Description                                                                       |
+| ------- | ------------ | ----------------- | --------- | --------------------------------------------------------------------------------- |
+| lora    | dataRx       | String            | yes       | Received LoRa datagram decoded as UTF-8 text. Use the LORA_RECEIVED trigger event.|
+|         | dataRxRaw    | String            | yes       | Received LoRa datagram, BASE64-encoded raw payload.                               |
+|         | bytesRx      | Number:DataAmount | yes       | Number of bytes received from LoRa network so far.                                |
+|         | dataTx       | String            | r/w       | Send a UTF-8 text string; the binding encodes it as BASE64 before transmitting.   |
+|         | dataTxRaw    | String            | r/w       | Send a BASE64-encoded datagram directly to the LoRa network.                      |
+|         | bytesTx      | Number:DataAmount | yes       | Number of bytes sent to the LoRa network so far.                                  |
+|         | errorsTx     | Number            | yes       | Number of failed transmissions to the LoRa network.                               |
+|         | rssi         | Number:Power      | yes       | RSSI (received signal strength in dBm) of the last received packet.               |
+|         | snr          | Number:Dimensionless | yes    | SNR (signal-to-noise ratio in dB) of the last received packet.                    |
+|         | airtime      | Number:Time       | yes       | Transmission air time of the LoRa Add-On during the last 60 minutes.              |
 
 ### Shelly 1 (thing-type: shelly1)
 
@@ -1741,6 +1768,71 @@ In `light` profile (white mode), each of the 4 LED output channels is exposed as
 | light3 |             |        |           | Same for LED channel 3                                                  |
 | light4 |             |        |           | Same for LED channel 4                                                  |
 | meter  |             |        |           | Same as color mode, see above                                           |
+
+`Note`:
+totalEnergy might reset on restart depending on device type and firmware version
+
+### Shelly Pro RGBWW PM (thing-type: shellyprorgbwwpm)
+
+The active device profile (`light`, `rgbcct`, `cctx2` or `rgbx2light`) is selected in the Shelly App/device settings and determines which channel groups below are populated.
+Changing the profile requires deleting and re-discovering the Thing.
+
+In `rgbcct` or `rgbx2light` profile, the RGB component is exposed as the color component (color mode):
+
+| Group   | Channel       | Type     | read-only | Description                                                             |
+| ------- | ------------- | -------- | --------- | ----------------------------------------------------------------------- |
+| control | power         | Switch   | r/w       | Switch light ON/OFF                                                     |
+|         | autoOn        | Number   | r/w       | Sets a  timer to turn the device ON after every OFF command; in seconds |
+|         | autoOff       | Number   | r/w       | Sets a  timer to turn the device OFF after every ON command; in seconds |
+|         | timerActive   | Switch   | yes       | ON: An auto-on/off timer is active                                      |
+| color   | hsb           | HSB      | r/w       | Represents the color picker (HSBType)                                   |
+|         | full          | String   | r/w       | Set Red / Green / Blue / Yellow / White mode and switch mode            |
+|         |               |          | r/w       | Valid settings: "red", "green", "blue", "yellow", "white" or "r,g,b"    |
+|         |               |          | r/w       | "white" sets RGB to 255,255,255 (no separate white output)              |
+|         | red           | Dimmer   | r/w       | Red brightness: 0..100% (control only the red channel)                  |
+|         | green         | Dimmer   | r/w       | Green brightness: 0..100% (control only the green channel)              |
+|         | blue          | Dimmer   | r/w       | Blue brightness: 0..100% (control only the blue channel)                |
+| meter1  | currentPower  | Number   | yes       | Current power consumption in Watts                                      |
+|         | energyAvg1Min | Number   | yes       | Energy consumed in the previous minute (Wh)                             |
+|         | totalEnergy   | Number   | yes       | Total energy consumption in kWh                                         |
+|         | lastUpdate    | DateTime | yes       | Timestamp of the last measurement                                       |
+
+`Note`:
+`rgbcct` and `rgbx2light` combine the RGB component above with additional CCT (`rgbcct`) or Light
+(`rgbx2light`) components. Each additional component is exposed as its own `light1`/`light2` group
+(same layout as the `light` profile below) with its own independent meter (`meter2`/`meter3`).
+Since every profile has more than one meter, the device also gets the aggregated `device#accumulatedPower`/`device#totalEnergy` channels described in the general notes on channels above.
+
+In `light` profile (white mode), each of the 5 LED output channels is exposed as its own group:
+
+| Group  | Channel     | Type   | read-only | Description                                                             |
+| ------ | ----------- | ------ | --------- | ----------------------------------------------------------------------- |
+| light1 | brightness  | Dimmer | r/w       | Channel 1: Brightness: 0..100, control power state with ON/OFF          |
+|        | autoOn      | Number | r/w       | Sets a  timer to turn the device ON after every OFF command; in seconds |
+|        | autoOff     | Number | r/w       | Sets a  timer to turn the device OFF after every ON command; in seconds |
+|        | timerActive | Switch | yes       | ON: An auto-on/off timer is active                                      |
+| light2 |             |        |           | Same for LED channel 2                                                  |
+| light3 |             |        |           | Same for LED channel 3                                                  |
+| light4 |             |        |           | Same for LED channel 4                                                  |
+| light5 |             |        |           | Same for LED channel 5                                                  |
+| meter1 |             |        |           | Meter for LED channel 1, see meter group in color mode above            |
+| meter2 |             |        |           | Meter for LED channel 2 (if configured)                                 |
+| meter3 |             |        |           | Meter for LED channel 3 (if configured)                                 |
+| meter4 |             |        |           | Meter for LED channel 4 (if configured)                                 |
+| meter5 |             |        |           | Meter for LED channel 5 (if configured)                                 |
+
+In `cctx2` profile (dual color-temperature mode), the device exposes two independent CCT components (`CCT:0` and `CCT:1`), each controlling its own warm/cold white pair; they are each exposed as their own channel group, with its own independent meter:
+
+| Group  | Channel     | Type   | read-only | Description                                                             |
+| ------ | ----------- | ------ | --------- | ----------------------------------------------------------------------- |
+| light1 | brightness  | Dimmer | r/w       | CCT channel 1: Brightness: 0..100, control power state with ON/OFF      |
+|        | colorTemp   | Dimmer | r/w       | CCT channel 1: Color temperature: 0..100% (2700K..6500K)                |
+|        | autoOn      | Number | r/w       | Sets a  timer to turn the device ON after every OFF command; in seconds |
+|        | autoOff     | Number | r/w       | Sets a  timer to turn the device OFF after every ON command; in seconds |
+|        | timerActive | Switch | yes       | ON: An auto-on/off timer is active                                      |
+| light2 |             |        |           | Same for CCT channel 2                                                  |
+| meter1 |             |        |           | Meter for CCT channel 1 (light1), see meter group above                 |
+| meter2 |             |        |           | Meter for CCT channel 2 (light2), see meter group above                 |
 
 `Note`:
 totalEnergy might reset on restart depending on device type and firmware version
