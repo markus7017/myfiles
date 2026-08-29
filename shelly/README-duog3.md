@@ -261,6 +261,11 @@ Follow these steps to add the Shelly BLU Device to openHAB:
 
 Try moving the device to force status updates.
 
+#### Custom oh-blu-scanner.js
+
+The binding automatically manages the installation of `oh-blu-scanner.js` on the gateway device.
+See [Advanced Users](doc/AdvancedUsers.md) for how to change the script's log level (DEBUG/TRACE) or override the installed script for prototyping.
+
 Every time an event is received sensors#lastUpdate and channels are updated with the reported values.
 `device#wifiSignal` indicates the Bluetooth signal strength and gets updated when the device sends an event.
 
@@ -1198,11 +1203,9 @@ There is no separate power channel: sending brightness 0 turns the bulb off, sen
 | white   | temperature | Number | r/w       | Color temperature (K): 0..100% or 2700..6500                            |
 |         | brightness  | Dimmer | r/w       | Brightness: 0..100% or 0..100; also controls power (ON/OFF)             |
 
-The Multicolor Bulb Gen3 has both full RGB color output and a tunable white (CCT) mode, like the Gen1 Shelly Color
-Bulb, but the two modes share the same LEDs: only one is active at a time, and there is no dedicated `mode` channel.
-Sending `color#full` with any color other than "white" switches to color mode; sending `color#full="white"` or
-`white#temperature` switches back to white mode. `color#hsb`/`red`/`green`/`blue` only take effect while already
-in color mode.
+The Multicolor Bulb Gen3 has both full RGB color output and a tunable white (CCT) mode, like the Gen1 Shelly Color Bulb, but the two modes share the same LEDs: only one is active at a time, and there is no dedicated `mode` channel.
+Sending `color#full` with any color other than "white" switches to color mode; sending `color#full="white"` or `white#temperature` switches back to white mode.
+`color#hsb`/`red`/`green`/`blue` only take effect while already in color mode.
 
 ### Shelly H&T (thing-type: shellyht)
 
