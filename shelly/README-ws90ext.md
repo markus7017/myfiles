@@ -2300,7 +2300,6 @@ See notes on discovery of Shelly BLU devices above.
 |         | windDirectionStr | String               | yes       | Wind direction as 16-point compass rose label (N, NNE, NE, ...)                     |
 |         | gustSpeed        | Number:Speed         | yes       | Wind gust speed in m/s                                                              |
 |         | gustDirection    | Number:Angle         | yes       | Wind gust direction in degrees (0-360)                                              |
-|         | gustDirectionStr | String               | yes       | Wind gust direction as 16-point compass rose label                                  |
 |         | pressure         | Number:Pressure      | yes       | Atmospheric pressure in hPa                                                         |
 |         | seaLevelPressure | Number:Pressure      | yes       | Atmospheric pressure reduced to sea level using the `altitude` configuration        |
 |         | dewPoint         | Number:Temperature   | yes       | Dew point in degrees Celsius                                                        |
