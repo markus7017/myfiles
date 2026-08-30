@@ -1627,6 +1627,7 @@ totalEnergy might reset on restart depending on device type and firmware version
 |       | daliScanActive  | Switch   | yes       | DALI Dimmer only: ON: A scan of the DALI bus is currently in progress             |
 | meter | currentPower    | Number   | yes       | Current power consumption in Watts                                                |
 |       | totalEnergy     | Number   | yes       | Total energy consumption in kWh                                                   |
+|       | resetTotals     | Switch   | r/w       | Send ON to reset the accumulated energy counters for this meter                   |
 |       | lastUpdate      | DateTime | yes       | Timestamp of the last measurement                                                 |
 
 `Note:`
@@ -1715,6 +1716,7 @@ The `alarmMode` channel reflects the Shelly app's Alarm Mode screen:
 |       | timerActive  | Switch   | yes       | ON: An auto-on/off timer is active                                     |
 | meter | currentPower | Number   | yes       | Current power consumption in Watts                                     |
 |       | totalEnergy  | Number   | yes       | Total energy consumption in kWh                                        |
+|       | resetTotals  | Switch   | r/w       | Send ON to reset the accumulated energy counters for this meter        |
 |       | lastUpdate   | DateTime | yes       | Timestamp of the last measurement                                      |
 
 ### Shelly Pro Dimmer 1PM (thing-type: shellyprodimmer1pm)
