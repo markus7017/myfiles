@@ -2348,7 +2348,8 @@ component (e.g. Wall Display when a speaker/radio is configured). Media
 library and radio favorite ids must be looked up via the Shelly app or API;
 there is no channel to browse them.
 
-The `control` group's `thermostatEnable`/`targetTemp` channels are only
+The `control` group is labeled `Thermostat Control` on the Wall Display.
+Its `thermostatEnable`/`targetTemp` channels are only
 available on devices reporting a Thermostat RPC component (e.g. Wall Display
 when a virtual thermostat is configured in the Shelly app). The thermostat's
 current temperature and controlled output are already reflected by the
