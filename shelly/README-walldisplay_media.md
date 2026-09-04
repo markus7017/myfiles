@@ -2361,7 +2361,10 @@ thermostat in the Shelly app makes the channels appear on the next status
 update - the Thing does not need to be deleted and re-discovered.
 
 The `sensors` group's `batteryLevel`/`lowBattery` channels are only available
-when a battery-operated sensor is attached to the Wall Display.
+when a battery-operated sensor is attached to the Wall Display. Like the
+`media`/`control` channels above, they are added as soon as the attached
+sensor's battery is reported, so pairing a sensor after the Thing was
+already created is picked up on the next status update.
 
 ## Full Example
 
