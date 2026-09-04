@@ -1550,3 +1550,44 @@
 	}
 }
 ```
+
+## Shelly Presence
+
+### /shelly
+
+{"name":"testbed-presence","id":"shellypresence-ccba97eca994","mac":"CCBA97ECA994","slot":1,"model":"S4SN-0U61X","gen":4,"fw_id":"20 
+  260429-095812/g00978d4","ver":"2.0.0-beta1presence0","app":"PresenceG4","auth_en":false,"auth_domain":null,"matter":false,"provision":"complete","enha 
+  nced_security":false}
+
+### Shelly.GetConfig
+
+{"ble":{"rpc":{"enable":false}},"bthome":{},"cloud":{"enable":false,"server":"iot.shelly.cloud:6012/jrpc"},"illuminance:0":{"id":0, "name":null,       
+  "dark_thr":10, "bright_thr":50},"matter":{"enable":false,"presence":{"zones":1}},"mqtt":{"enable":false,"server":null,"client_id":"shellypresence-ccba 
+  97eca994","user":null,"ssl_ca":null,"topic_prefix":"shellypresence-ccba97eca994","rpc_ntf":true,"status_ntf":false,"use_client_cert":false,"enable_rpc 
+  ":true,"enable_control":true},"presence":{"enable":true,"zmin":0.00,"zmax":3.00,"sensor":{"flipped":false,"height":2.00,"tilt":15.00,"points":40,"velo 
+  city":0.01,"snr":50,"max_velocity":20.00,"position":"center","power":"high","sensitivity":"medium","state":{"det_act_thr":3,"det_free_thr":3,"act_free 
+  _thr":12,"stat_free_thr":50,"sleep_free_thr":100}},"ui":{"imperial":false},"blind":[],"leds":{"brightness":20.00,"night_mode":{"enable":false,"brightn 
+  ess":20.00,"active_between":[]}},"main_zone":"presencezone:200"},"sys":{"device":{"name":"testbed-presence","mac":"CCBA97ECA994","fw_id":"20260429-095 
+  812/g00978d4","discoverable":true,"eco_mode":false,"tls_check_cert_validity_time":true,"enhanced_security":false},"location":{"tz":"Europe/Berlin","la 
+  t":50.541200,"lon":7.109800},"debug":{"level":2,"file_level":null,"mqtt":{"enable":false},"websocket":{"enable":false},"file_log":{"enable":false},"ud 
+  p":{"addr":null}},"ui_data":{"device_revision":"0-14"},"rpc_udp":{"dst_addr":null,"listen_port":null},"sntp":{"server":"time.cloudflare.com"},"cfg_rev 
+  ":15},"wifi":{"ap":{"ssid":"ShellyPresence-CCBA97ECA994","is_open":true, "enable":false, "range_extender":                                             
+  {"enable":false}},"sta":{"ssid":"TurtlePineHouse","is_open":false, "enable":true,                                                                      
+  "ipv4mode":"dhcp","ip":null,"netmask":null,"gw":null,"nameserver":null},"sta1":{"ssid":null,"is_open":true, "enable":false, "ipv4mode":"dhcp","ip":nul 
+  l,"netmask":null,"gw":null,"nameserver":null},"roam":{"rssi_thr":-80,"interval":60}},"ws":{"enable":false,"server":null,"ssl_ca":"ca.pem"}};           
+  GetStatus: {"ble":{},"bthome":{},"cloud":{"connected":false},"illuminance:0":{"id": 0,                                                                 
+  "illumination":"dark"},"matter":{"num_fabrics":0,"commissionable":false},"mqtt":{"connected":false},"presence":{"sensor_ver":null},"sys":{"mac":"CCBA9 
+  7ECA994","restart_required":false,"time":"23:46","unixtime":1788472016,"last_sync_ts":1788471838,"uptime":182,"ram_size":343824,"ram_free":198908,"ram 
+  _min_free":169852,"fs_size":917504,"fs_free":471040,"cfg_rev":15,"kvs_rev":0,"schedule_rev":0,"webhook_rev":0,"btrelay_rev":0,"available_updates":{"be 
+  ta":{"version":"2.0.1-beta1"},"stable":{"version":"2.0.0"}},"alt":{"PresenceG4ZB":{"name":"Shelly Presence Gen4","desc":"Presence Gen4 with            
+  Zigbee","beta":{"version":"2.0.1-beta1","build_id":"20260819-101713/2.0.1-beta1-g8a88c73"},"stable":{"version":"2.0.0","build_id":"20260710-101157/2.0 
+  .0-g87fbfa4"}}},"reset_reason":1,"utc_offset":7200},"wifi":{"sta_ip":"192.168.6.187","status":"got                                                     
+  ip","ssid":"TurtlePineHouse","channel":6,"rssi":-53,"bssid":"e0:63:da:77:b3:ff","sta_ip6":["fe80::ceba:97ff:feec:a994"]},"ws":{"connected":false}};    
+
+### Presence.GetConfig:
+
+{"enable":true,"zmin":0.00,"zmax":3.00,"sensor":{"flipped":false,"height":2.00,"tilt":15.00,"points":40,"velocity":0.01,"snr":50," 
+  max_velocity":20.00,"position":"center","power":"high","sensitivity":"medium","state":{"det_act_thr":3,"det_free_thr":3,"act_free_thr":12,"stat_free_t 
+  hr":50,"sleep_free_thr":100}},"ui":{"imperial":false},"blind":[],"leds":{"brightness":20.00,"night_mode":{"enable":false,"brightness":20.00,"active_be 
+  tween":[]}},"main_zone":"presencezone:200"}
+  
