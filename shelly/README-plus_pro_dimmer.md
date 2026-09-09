@@ -573,10 +573,6 @@ If you want to use those events triggering a rule:
 - If a physical switch is connected to the Shelly use the input channel(`input` or `input1`/`input2`) to trigger a rule
 - For a momentary button use the `button` trigger channel as trigger, channels `lastEvent` and `eventCount` will provide details on the event
 
-The advanced channel `btnType` (`btnType1`/`btnType2` for devices with multiple inputs) reports the input mode as configured on the device:
-`momentary`, `momentary_on_release`, `one_button`, `dual_button`, `toggle`, `edge`, `detached`, `activate`, `cycle`, `dim` or `dual_dim`.
-Gen2+ devices report `follow` as `edge` and `flip` as `toggle`.
-
 ### Alarms
 
 The binding provides health monitoring functions for the device.
@@ -647,7 +643,7 @@ This is an in-place type change on the same channel ID, not a rename, so there i
 Two LoRa add-on variants are supported:
 
 - **Shelly LoRa Add-On** (standard form factor): attaches to Gen3 and Gen4 devices — 1, 1PM, 2PM, Shutter, EM, and Dimmer 0/1-10V PM Gen3/Gen4. Requires firmware 1.6 or later. Gen2 Plus devices and the Shelly Wall Dimmer Gen3 do not support this add-on.
-- **Shelly Pro LoRa Add-On** (DIN-rail): attaches to Pro series devices supported by this binding — Pro 1, Pro 1PM, Pro 2, Pro 2PM, Pro 3EM, Pro EM-50, Pro Dimmer 2PM, and Pro RGBWW PM. Requires firmware 2.0 or later.
+- **Shelly Pro LoRa Add-On** (DIN-rail): attaches to Pro series devices supported by this binding — Pro 1, Pro 1PM, Pro 2, Pro 2PM, Pro 3EM, Pro EM-50, Pro Dimmer 1PM, Pro Dimmer 2PM, Pro Dimmer 0/1-10V PM, and Pro RGBWW PM. Requires firmware 2.0 or later.
 
 The binding detects the LoRa Add-On automatically and keeps the `lora` channel group in sync with the device configuration: the channels are created when the add-on is installed, the RX channels follow the add-on's RX-enable setting, and all channels are removed when the add-on is removed.
 No thing configuration is required.
