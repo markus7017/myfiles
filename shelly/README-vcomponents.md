@@ -668,23 +668,30 @@ The add-on firmware version is shown in the Thing property `addonFirmware`; the 
 
 ### Virtual Components (Channel Group: vcomponents / vgroupN)
 
-Gen3, Gen4 and Gen2 "Pro" devices (firmware 1.1.0-beta3 or later) let you define custom Boolean/Number/Text/Enum/Group/Button elements under Settings > Virtual Components in the Shelly App or device UI — useful e.g. for a switch driven only by rules, or a status flag shown in the app. The binding discovers configured virtual components automatically (no thing configuration required) and keeps the channel set in sync when components are added or removed on the device.
+Gen3, Gen4 and Gen2 "Pro" devices (firmware 1.3.3 or later) let you define custom Boolean/Number/Text/Enum/Group/Button elements under Settings > Virtual Components in the Shelly App or device UI — useful e.g. for a switch driven only by rules, or a status flag shown in the app.
+The binding discovers configured virtual components automatically (no thing configuration required) and keeps the channel set in sync when components are added or removed on the device.
 
-Each virtual component is identified by a device-assigned instance id (200-299) and gets a channel named after its type plus that id, e.g. `boolean200`, `enum205`. The channel label uses the component's configured name, falling back to a generic label like "Virtual Boolean" when unnamed. A virtual component that is a member of a virtual Group gets its channel under `vgroupN` (N = the Group's id) instead of the default `vcomponents` group; the Group component itself is a grouping container only and has no channel of its own.
+Each virtual component is identified by a device-assigned instance id (200-299) and gets a channel named after its type plus that id, e.g. `boolean200`, `enum205`.
+The channel label uses the component's configured name, falling back to a generic label like "Virtual Boolean" when unnamed.
 
-| Group                  | Channel   | Type    | read-only | Description                                                                              |
-| ----------------------- | --------- | ------- | --------- | ------------------------------------------------------------------------------------------ |
-| vcomponents / vgroupN   | booleanNNN | Switch  | r/w       | Virtual Boolean component; NNN is the device-assigned instance id (200-299)               |
-|                          | numberNNN  | Number  | r/w       | Virtual Number component                                                                  |
-|                          | textNNN    | String  | r/w       | Virtual Text component                                                                    |
-|                          | enumNNN    | String  | r/w       | Virtual Enum component; allowed values are provided by the device                         |
-|                          | buttonNNN  | Trigger | yes       | Virtual Button component; fires SHORT_PRESSED / DOUBLE_PRESSED / TRIPLE_PRESSED / LONG_PRESSED |
+A virtual component that is a member of a virtual Group gets its channel under `vgroupN` (N = the Group's id) instead of the default `vcomponents` group; the Group component itself is a grouping container only and has no channel of its own.
+
+| Group                  | Channel    | Type    | read-only | Description                                                                                    |
+| ---------------------- | ---------- | ------- | --------- | ---------------------------------------------------------------------------------------------- |
+| vcomponents / vgroupN  | booleanNNN | Switch  | r/w       | Virtual Boolean component; NNN is the device-assigned instance id (200-299)                    |
+|                        | numberNNN  | Number  | r/w       | Virtual Number component                                                                       |
+|                        | textNNN    | String  | r/w       | Virtual Text component                                                                         |
+|                        | enumNNN    | String  | r/w       | Virtual Enum component; allowed values are provided by the device                              |
+|                        | buttonNNN  | Trigger | yes       | Virtual Button component; fires SHORT_PRESSED / DOUBLE_PRESSED / TRIPLE_PRESSED / LONG_PRESSED |
 
 Two things to keep in mind when you change virtual components on the device:
 
-- Value changes are pushed by the device and show up in openHAB immediately when the device is connected via WebSocket. Otherwise they are picked up on the regular update cycle (thing configuration `updateInterval`, 60 seconds by default). Commands sent from openHAB take effect immediately. Button events are immediate as well.
+- Value changes are pushed by the device and show up in openHAB immediately when the device is connected via WebSocket.
+Otherwise they are picked up on the regular update cycle (thing configuration `updateInterval`, 60 seconds by default).
+Commands sent from openHAB take effect immediately. Button events are immediate as well.
 - The selection list of an Enum channel shows the titles configured for the options in the Shelly App, the raw option value is what gets sent to the device.
-- Adding a component to a virtual Group (or removing it from one) moves its channel between `vcomponents` and `vgroupN`. This is a different channel, so items linked to the previous one need to be linked again.
+- Adding a component to a virtual Group (or removing it from one) moves its channel between `vcomponents` and `vgroupN`.
+This is a different channel, so items linked to the previous one need to be linked again.
 
 ### Shelly 1 (thing-type: shelly1)
 
