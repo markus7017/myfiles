@@ -686,11 +686,13 @@ A virtual component that is a member of a virtual Group gets its channel under `
 |                        | enumNNN    | String  | r/w       | Virtual Enum component; allowed values are provided by the device                              |
 |                        | buttonNNN  | Trigger | yes       | Virtual Button component; fires SHORT_PRESSED / DOUBLE_PRESSED / TRIPLE_PRESSED / LONG_PRESSED |
 
-Two things to keep in mind when you change virtual components on the device:
+Keep in mind when you change virtual components on the device:
 
 - Value changes are pushed by the device and show up in openHAB immediately when the device is connected via WebSocket.
 Otherwise they are picked up on the regular update cycle (thing configuration `updateInterval`, 60 seconds by default).
 Commands sent from openHAB and Button events take effect immediately.
+- A new component or a changed Group membership reported by the device is picked up within a few seconds.
+Renaming, deleting or reconfiguring a component is picked up after a configuration change event from the device, or at the latest after ten update cycles.
 - The selection list of an Enum channel shows the titles configured for the options in the Shelly App, the raw option value is what gets sent to the device.
 - Adding a component to a virtual Group (or removing it from one) moves its channel between `vcomponents` and `vgroupN`.
 This is a different channel, so items linked to the previous one need to be linked again.
