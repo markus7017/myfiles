@@ -410,6 +410,8 @@ Its placement depends on the device type:
 - Three-phase 3EM devices (Gen1 3EM, Plus 3EM-63, Pro 3EM) expose `resetTotals` once in the common `device` group; it resets all phases together.
 - Gen1 devices with a simple power meter (e.g. 1PM, Plug-S, Shelly 2/2.5, dimmers) have no reset API in the firmware, so no `resetTotals` channel is created for them.
 - The Duo Bulb G3 and Multicolor Bulb G3 meter on CCT/RGBCCT components, which likewise have no reset API in the firmware, so no `resetTotals` channel is created for them.
+- The Plus RGBW PM and Pro RGBWW PM expose `resetTotals` only for channels running as plain `Light` components (profile `light`, or the light channels of `rgbx2light`).
+  Channels running as RGB/RGBW/CCT components have no reset API in the firmware, so no `resetTotals` channel is created for them.
 
 ### Thing Status
 
@@ -1952,6 +1954,7 @@ In `rgbw` or `rgb` profile (color mode):
 | Group   | Channel       | Type     | read-only | Description                                                             |
 | ------- | ------------- | -------- | --------- | ----------------------------------------------------------------------- |
 | control | power         | Switch   | r/w       | Switch light ON/OFF                                                     |
+|         | brightness    | Dimmer   | r/w       | Overall brightness: 0..100%                                             |
 |         | autoOn        | Number   | r/w       | Sets a  timer to turn the device ON after every OFF command; in seconds |
 |         | autoOff       | Number   | r/w       | Sets a  timer to turn the device OFF after every ON command; in seconds |
 |         | timerActive   | Switch   | yes       | ON: An auto-on/off timer is active                                      |
@@ -1993,6 +1996,7 @@ In `rgbcct` or `rgbx2light` profile, the RGB component is exposed as the color c
 | Group   | Channel       | Type     | read-only | Description                                                             |
 | ------- | ------------- | -------- | --------- | ----------------------------------------------------------------------- |
 | control | power         | Switch   | r/w       | Switch light ON/OFF                                                     |
+|         | brightness    | Dimmer   | r/w       | Overall brightness: 0..100%                                             |
 |         | autoOn        | Number   | r/w       | Sets a  timer to turn the device ON after every OFF command; in seconds |
 |         | autoOff       | Number   | r/w       | Sets a  timer to turn the device OFF after every ON command; in seconds |
 |         | timerActive   | Switch   | yes       | ON: An auto-on/off timer is active                                      |
@@ -2545,27 +2549,28 @@ See notes on discovery of Shelly BLU devices above.
 
 See notes on discovery of Shelly BLU devices above.
 
-| Group   | Channel          | Type                 | read-only | Description                                                                         |
-| ------- | ---------------- | -------------------- | --------- | ----------------------------------------------------------------------------------- |
-| sensors | temperature      | Number:Temperature   | yes       | Temperature in degrees Celsius                                                      |
-|         | humidity         | Number:Dimensionless | yes       | Relative humidity in %                                                              |
-|         | uvIndex          | Number               | yes       | UV Index (dimensionless, 0-11+)                                                     |
-|         | lux              | Number:Illuminance   | yes       | Brightness in Lux (created once the device reports a value)                         |
-|         | windSpeed        | Number:Speed         | yes       | Wind speed in m/s                                                                   |
-|         | windDirection    | Number:Angle         | yes       | Wind direction in degrees (0-360)                                                   |
-|         | windDirectionStr | String               | yes       | Wind direction as 16-point compass rose label (N, NNE, NE, ...)                     |
-|         | gustSpeed        | Number:Speed         | yes       | Wind gust speed in m/s                                                              |
-|         | pressure         | Number:Pressure      | yes       | Atmospheric pressure in hPa                                                         |
-|         | seaLevelPressure | Number:Pressure      | yes       | Atmospheric pressure reduced to sea level using the `altitude` configuration        |
-|         | dewPoint         | Number:Temperature   | yes       | Dew point in degrees Celsius                                                        |
-|         | apparentTemp     | Number:Temperature   | yes       | Perceived ("feels like") temperature from temperature, humidity and wind (Steadman) |
-|         | rainStatus       | Switch               | yes       | ON: It's raining, OFF: It's not raining                                             |
-|         | precipitation    | Number:Length        | yes       | Accumulated rainfall in mm (monotonic total since sensor reset)                     |
-|         | lastUpdate       | DateTime             | yes       | Timestamp of the last update (any sensor value changed)                             |
-| battery | batteryLevel     | Number               | yes       | Battery Level in %                                                                  |
-|         | lowBattery       | Switch               | yes       | Low battery alert (< 20%)                                                           |
-| device  | gatewayDevice    | String               | yes       | Shelly forwarded last status update (BLU gateway), could vary from packet to packet |
-|         | firmware         | String               | yes       | Firmware version (may be empty — not all firmware versions report it)               |
+| Group   | Channel          | Type                     | read-only | Description                                                                         |
+| ------- | ---------------- | ------------------------ | --------- | ----------------------------------------------------------------------------------- |
+| sensors | temperature      | Number:Temperature       | yes       | Temperature in degrees Celsius                                                      |
+|         | humidity         | Number:Dimensionless     | yes       | Relative humidity in %                                                              |
+|         | uvIndex          | Number                   | yes       | UV Index (dimensionless, 0-11+)                                                     |
+|         | lux              | Number:Illuminance       | yes       | Brightness in Lux (created once the device reports a value)                         |
+|         | windSpeed        | Number:Speed             | yes       | Wind speed in m/s                                                                   |
+|         | windDirection    | Number:Angle             | yes       | Wind direction in degrees (0-360)                                                   |
+|         | windDirectionStr | String                   | yes       | Wind direction as 16-point compass rose label (N, NNE, NE, ...)                     |
+|         | gustSpeed        | Number:Speed             | yes       | Wind gust speed in m/s                                                              |
+|         | pressure         | Number:Pressure          | yes       | Atmospheric pressure in hPa                                                         |
+|         | seaLevelPressure | Number:Pressure          | yes       | Atmospheric pressure reduced to sea level using the `altitude` configuration        |
+|         | dewPoint         | Number:Temperature       | yes       | Dew point in degrees Celsius                                                        |
+|         | apparentTemp     | Number:Temperature       | yes       | Perceived ("feels like") temperature from temperature, humidity and wind (Steadman) |
+|         | rainStatus       | Switch                   | yes       | ON: It's raining, OFF: It's not raining                                             |
+|         | precipitation    | Number:Length            | yes       | Accumulated rainfall in mm (monotonic total since sensor reset)                     |
+|         | lastUpdate       | DateTime                 | yes       | Timestamp of the last update (any sensor value changed)                             |
+| battery | batteryLevel     | Number                   | yes       | Battery Level in %                                                                  |
+|         | lowBattery       | Switch                   | yes       | Low battery alert (< 20%)                                                           |
+|         | capacitorVoltage | Number:ElectricPotential | yes       | Voltage of the internal energy storage capacitor charged by the solar panel in V    |
+| device  | gatewayDevice    | String                   | yes       | Shelly forwarded last status update (BLU gateway), could vary from packet to packet |
+|         | firmware         | String                   | yes       | Firmware version (may be empty — not all firmware versions report it)               |
 
 The `rainStatus` channel latches ON for a while after it has actually stopped raining, a hardware behavior of the WS90's piezo rain sensor rather than a binding issue.
 
