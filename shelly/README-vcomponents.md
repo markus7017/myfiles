@@ -670,9 +670,9 @@ The add-on firmware version is shown in the Thing property `addonFirmware`; the 
 
 ### Virtual Components (Channel Group: vcomponents)
 
-Gen3, Gen4 and Gen2 "Pro" devices (firmware 1.3.3 or later) let you define custom Boolean/Number/Text/Enum/Group/Button elements under Settings > Virtual Components in the Shelly App or device UI — useful e.g. for a switch driven only by rules, or a status flag shown in the app.
+Gen3, Gen4 and Gen2 "Pro" devices (firmware 1.6.1 or later) let you define custom Boolean/Number/Text/Enum/Group/Button elements under Settings > Virtual Components in the Shelly App or device UI — useful e.g. for a switch driven only by rules, or a status flag shown in the app.
 The binding discovers configured virtual components automatically (no thing configuration required) and keeps the channel set in sync when components are added or removed on the device.
-Battery-powered devices are not checked for virtual components.
+Gen1 and battery-powered devices are not supported.
 
 Each virtual component is identified by a device-assigned instance id (200-299) and gets a channel named after its type plus that id, e.g. `boolean200`, `enum205`.
 The channel label uses the component's configured name, falling back to a generic label like "Virtual Boolean" when unnamed.
@@ -690,10 +690,10 @@ A Group has no channel of its own; the label of each member channel is prefixed 
 Keep in mind when you change virtual components on the device:
 
 - Value changes are pushed by the device and show up in openHAB immediately when the device is connected via WebSocket.
-Otherwise they are picked up on the regular update cycle (thing configuration `updateInterval`, 60 seconds by default).
+Otherwise they are refreshed every ten update cycles (thing configuration `updateInterval`, 60 seconds by default).
 Commands sent from openHAB and Button events take effect immediately.
-- A new component or a changed Group membership is picked up within a few seconds.
-Renaming, deleting or reconfiguring a component is picked up after a configuration change event from the device, or at the latest after ten update cycles.
+- A new component or a changed Group membership is picked up as soon as the device reports a value for it.
+Renaming, deleting or reconfiguring a component is picked up after ten update cycles at the latest.
 - The selection list of an Enum channel shows the titles configured for the options in the Shelly App, the raw option value is what gets sent to the device.
 
 ### Shelly 1 (thing-type: shelly1)
