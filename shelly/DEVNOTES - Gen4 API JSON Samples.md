@@ -1555,7 +1555,7 @@
 
 ### /shelly
 
-{"name":"testbed-presence","id":"shellypresence-ccba97eca994","mac":"CCBA97ECA994","slot":1,"model":"S4SN-0U61X","gen":4,"fw_id":"20 
+{"name":"testbed-presence","id":"shellypresence-000000000000","mac":"000000000000","slot":1,"model":"S4SN-0U61X","gen":4,"fw_id":"20 
   260429-095812/g00978d4","ver":"2.0.0-beta1presence0","app":"PresenceG4","auth_en":false,"auth_domain":null,"matter":false,"provision":"complete","enha 
   nced_security":false}
 
@@ -1581,7 +1581,7 @@
   _min_free":169852,"fs_size":917504,"fs_free":471040,"cfg_rev":15,"kvs_rev":0,"schedule_rev":0,"webhook_rev":0,"btrelay_rev":0,"available_updates":{"be 
   ta":{"version":"2.0.1-beta1"},"stable":{"version":"2.0.0"}},"alt":{"PresenceG4ZB":{"name":"Shelly Presence Gen4","desc":"Presence Gen4 with            
   Zigbee","beta":{"version":"2.0.1-beta1","build_id":"20260819-101713/2.0.1-beta1-g8a88c73"},"stable":{"version":"2.0.0","build_id":"20260710-101157/2.0 
-  .0-g87fbfa4"}}},"reset_reason":1,"utc_offset":7200},"wifi":{"sta_ip":"192.168.6.187","status":"got                                                     
+  .0-g87fbfa4"}}},"reset_reason":1,"utc_offset":7200},"wifi":{"sta_ip":"192.168.1.187","status":"got                                                     
   ip","ssid":"TurtlePineHouse","channel":6,"rssi":-53,"bssid":"e0:63:da:77:b3:ff","sta_ip6":["fe80::ceba:97ff:feec:a994"]},"ws":{"connected":false}};    
 
 ### Presence.GetConfig:
