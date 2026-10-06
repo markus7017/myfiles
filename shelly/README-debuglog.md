@@ -508,6 +508,7 @@ Every device has a channel group `device` with the following channels:
 |        | powerLed                  | Switch        | r/w       | ON: Power LED is disabled, OFF: LED enabled                                    |
 |        | charger                   | Switch        | yes       | ON: USB charging cable is connected external power supply activated.           |
 |        | calibrated                | Switch        | yes       | ON: Device/sensor is calibrated (if supported by device).                      |
+|        | deviceDebug               | Switch        | r/w       | Gen2+ mains-powered: ON streams the device debug log into openhab.log          |
 
 Availability of channels is depending on the device type.
 The binding detects many of those channels on-the-fly (when Thing changes to ONLINE state) and adjusts the Thing's channel structure.
@@ -516,6 +517,9 @@ The accumulated channels are only available for devices with more than 1 meter.
 `accumulatedReturnedEnergy` and `accumulatedApparent` are available for multi-meter EM devices (Gen1: Shelly EM, 3EM; Gen2: Plus EM, Plus 3EM-63, Pro 3EM, Pro EM-50).
 The LED channels are available for the Plug-S with firmware 1.6x and for various other devices with firmware 1.8 or newer.
 The binding detects them automatically.
+Switching `deviceDebug` ON arms the device's debug WebSocket and forwards each line to the `org.openhab.binding.shelly` logger; the openHAB logger for that package must also be at DEBUG for the lines to appear.
+The setting is stored on the device, so streaming resumes after a device restart or Thing re-initialization; it is switched off when the Thing is disabled or removed.
+The channel is available for mains-powered Gen2+ devices (not BLU).
 
 ## Events
 
@@ -676,19 +680,6 @@ The add-on firmware version is shown in the Thing property `addonFirmware`; the 
 |         | rssi         | Number:Power      | yes       | RSSI (received signal strength in dBm) of the last received packet.               |
 |         | snr          | Number:Dimensionless | yes    | SNR (signal-to-noise ratio in dB) of the last received packet.                    |
 |         | airtime      | Number:Time       | yes       | Transmission air time of the LoRa Add-On during the last 60 minutes.              |
-
-### Diagnostics (Channel Group: diagnostics)
-
-Gen2+ devices (Plus, Pro, Gen3, Gen4; not BLU) expose a `diagnostics` channel group.
-All channels are `advanced`.
-
-| Group       | Channel     | Type   | read-only | Description                                                                      |
-| ----------- | ----------- | ------ | --------- | -------------------------------------------------------------------------------- |
-| diagnostics | deviceDebug | Switch | r/w       | ON: stream the device's real-time debug log into the openHAB log at DEBUG level. |
-
-Switching `deviceDebug` ON arms the device's debug WebSocket and forwards each line to the `org.openhab.binding.shelly` logger; the openHAB logger for that package must also be at DEBUG for the lines to appear.
-The setting is stored on the device, so streaming resumes after a device restart or Thing re-initialization; it is switched off when the Thing is disabled or removed.
-The channel is only available for mains-powered devices.
 
 ### Shelly 1 (thing-type: shelly1)
 
