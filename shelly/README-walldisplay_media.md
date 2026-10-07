@@ -518,7 +518,7 @@ The binding detects them automatically.
 
 Mains-powered devices with an attached battery-operated sensor (e.g. the Wall Display with an external H&T sensor) report that sensor's battery as Gen2 `devicepower:1`.
 In this case the binding adds the channels `batteryLevel` (Number, battery level in percent) and `lowBattery` (Switch, ON when the battery is low) to the `sensors` group.
-Those channels only appear when the device actually reports a battery for the attached sensor.
+Those channels only appear while the device actually reports a battery for the attached sensor.
 
 ## Events
 
@@ -2681,7 +2681,8 @@ end
 The `media` channel group is only available on devices reporting a Media RPC
 component (e.g. Wall Display when a speaker/radio is configured). Media
 library and radio favorite ids must be looked up via the Shelly app or API;
-there is no channel to browse them.
+there is no channel to browse them. `title`, `artist`, `album` and `mediaType`
+are UNDEF while the device doesn't report them, e.g. when playback is stopped.
 
 The `control` group is labeled `Thermostat Control` on the Wall Display.
 Its `thermostatEnable`/`targetTemp` channels are only
@@ -2699,7 +2700,8 @@ The `sensors` group's `batteryLevel`/`lowBattery` channels are only available
 when a battery-operated sensor is attached to the Wall Display. Like the
 `media`/`control` channels above, they are added as soon as the attached
 sensor's battery is reported, so pairing a sensor after the Thing was
-already created is picked up on the next status update.
+already created is picked up on the next status update. They are removed
+again once the device no longer reports the sensor's battery (sensor unpaired).
 
 ## Full Example
 
